@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pacific Classics — Auto classiche e youngtimer da tutta Europa</title>
 <meta name="theme-color" content="#14213d">
-<meta name="description" content="Pacific Classics finds the most reliable youngtimers and classic cars for sale across Europe, with historic-registration status and buying advice for every car.">
+<meta name="description" content="Pacific Classics trova, verifica, acquista e porta in Italia auto classiche e youngtimer indistruttibili da tutta Europa. Pagamento protetto in escrow, commissione 5%.">
 <link rel="icon" href="img/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
     <nav class="tabs" role="tablist">
       <button class="tab active" data-view="listings" data-t="listings"></button>
       <button class="tab" data-view="models" data-t="models"></button>
-      <button class="tab" data-view="status" data-t="status"></button>
+      <button class="tab" data-view="service" data-t="service"></button>
     </nav>
     <button id="lang" class="lang"></button>
   </div>
@@ -86,15 +86,115 @@
     <div id="modelGrid" class="model-grid"></div>
   </section>
 
-  <!-- STATUS -->
-  <section id="view-status" class="view" hidden>
-    <div id="statusBox"></div>
+  <!-- SERVICE: how Pacific Classics works -->
+  <section id="view-service" class="view service" hidden>
+    <div class="hero">
+      <p class="eyebrow">Il servizio Pacific Classics</p>
+      <h1>Ti portiamo in Italia l'auto giusta, da tutta Europa.</h1>
+      <p class="lead">Troviamo l'auto, la verifichiamo, la compriamo per te e la consegniamo a casa tua o in officina.
+        Paghi in modo protetto: i soldi restano in un conto di garanzia finché l'auto non è nelle tue mani.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#" data-goto="listings">Cerca tra gli annunci</a>
+        <a class="btn sec" href="#costi">Quanto costa</a>
+      </div>
+      <div class="hero-badges">
+        <span>🛡️ Pagamento in escrow</span><span>🔍 Auto verificata prima dell'acquisto</span>
+        <span>🚚 Trasporto su bisarca</span><span>🧾 Fattura per privati e aziende</span>
+      </div>
+    </div>
+
+    <h2 class="sec-title">Come funziona, passo per passo</h2>
+    <ol class="steps">
+      <li><b>Scegli l'auto</b><p>Dagli annunci di questo sito o mandaci il link di un annuncio che hai trovato tu, in qualsiasi paese europeo. Se non sai cosa cercare, ti consigliamo noi il modello giusto.</p></li>
+      <li><b>La verifichiamo</b><p>Contattiamo il venditore nella sua lingua, chiediamo foto, documenti, storico dei tagliandi e numero di telaio, e controlliamo i punti deboli noti di quel modello. Se qualcosa non torna, te lo diciamo prima di comprare.</p></li>
+      <li><b>Ti mandiamo il preventivo completo</b><p>Prezzo dell'auto, commissione, trasporto e pratiche: un totale chiaro, senza sorprese. Decidi tu se procedere.</p></li>
+      <li><b>Paghi in escrow</b><p>Versi l'importo su un conto di garanzia (escrow) gestito da un servizio terzo indipendente. Né noi né il venditore possiamo toccare i soldi finché l'operazione non è conclusa.</p></li>
+      <li><b>Compriamo e prepariamo l'auto</b><p>Paghiamo il venditore, ritiriamo l'auto e i documenti originali e facciamo la radiazione e l'esportazione nel paese d'origine.</p></li>
+      <li><b>Trasporto o ritiro</b><p>Te la portiamo su bisarca fino a casa o in officina, assicurata durante il viaggio. Oppure, se preferisci, la ritiri tu e la porti in Italia con targa provvisoria.</p></li>
+      <li><b>Consegna e chiusura</b><p>Controlli l'auto alla consegna. Solo allora il conto di garanzia viene sbloccato: il prezzo va al venditore, la commissione e i costi a noi.</p></li>
+    </ol>
+
+    <h2 class="sec-title" id="costi">Quanto costa</h2>
+    <div class="formula">
+      <div><span>Prezzo dell'auto</span><small>quello pagato al venditore, senza ricarichi</small></div><i>+</i>
+      <div><span>Commissione 5%</span><small>sul prezzo dell'auto: ricerca, verifica, trattativa, acquisto</small></div><i>+</i>
+      <div><span>Trasporto</span><small>su bisarca, secondo il paese d'origine</small></div><i>+</i>
+      <div><span>Radiazione e pratiche export</span><small>350 € fissi</small></div>
+    </div>
+    <p class="note">Tutto viene versato in escrow e sbloccato solo alla consegna. Su richiesta, la revisione in Italia (circa 80 €) e l'immatricolazione italiana si aggiungono a parte.</p>
+
+    <div class="cols">
+      <div class="panel">
+        <h3>Trasporto su bisarca verso l'Italia</h3>
+        <p class="src">Prezzi indicativi per auto, fino al Nord e Centro Italia. Il preventivo esatto dipende da indirizzi, periodo e se l'auto è marciante.</p>
+        <table class="price-table">
+          <tr><th>Paese d'origine</th><th>Prezzo indicativo</th></tr>
+          <tr><td>🇦🇹 Austria · 🇸🇮 Slovenia</td><td>450 – 700 €</td></tr>
+          <tr><td>🇩🇪 Germania sud (Baviera, Baden-Württemberg)</td><td>500 – 750 €</td></tr>
+          <tr><td>🇩🇪 Germania centro-nord</td><td>700 – 1.000 €</td></tr>
+          <tr><td>🇨🇿 Repubblica Ceca · 🇸🇰 Slovacchia</td><td>650 – 950 €</td></tr>
+          <tr><td>🇫🇷 Francia</td><td>600 – 1.000 €</td></tr>
+          <tr><td>🇧🇪 Belgio · 🇳🇱 Paesi Bassi · 🇱🇺 Lussemburgo</td><td>800 – 1.100 €</td></tr>
+          <tr><td>🇪🇸 Spagna</td><td>900 – 1.300 €</td></tr>
+          <tr><td>🇮🇹 Auto già in Italia</td><td>250 – 450 €</td></tr>
+        </table>
+        <p class="src">Sud Italia e isole: + 150 – 300 €. Auto non marciante: + 100 – 200 €.</p>
+      </div>
+      <div class="panel">
+        <h3>Esempio</h3>
+        <p class="src">Mercedes 300 D W124 a Stoccarda, prezzo 8.000 €, consegna a Milano su bisarca.</p>
+        <table class="price-table">
+          <tr><td>Prezzo dell'auto</td><td>8.000 €</td></tr>
+          <tr><td>Commissione Pacific Classics (5%)</td><td>400 €</td></tr>
+          <tr><td>Trasporto Germania sud → Milano</td><td>≈ 650 €</td></tr>
+          <tr><td>Radiazione e pratiche export</td><td>350 €</td></tr>
+          <tr class="tot"><td>Totale in escrow</td><td>≈ 9.400 €</td></tr>
+          <tr><td class="src">Revisione in Italia (facoltativa)</td><td class="src">≈ 80 €</td></tr>
+        </table>
+        <p class="src">Ogni scheda auto del sito mostra già una stima del totale con questa formula.</p>
+      </div>
+    </div>
+
+    <h2 class="sec-title">Due modi di ricevere l'auto</h2>
+    <div class="cols">
+      <div class="panel option"><h3>🚚 Consegna su bisarca</h3><p>Pensiamo a tutto noi: ritiro dal venditore, viaggio assicurato, consegna all'indirizzo che scegli. È l'opzione consigliata per le auto d'epoca e per chi è lontano.</p></div>
+      <div class="panel option"><h3>🔑 Ritiro diretto</h3><p>Non vuoi il camion? Prepariamo radiazione, targa provvisoria e documenti, e tu vai a prendere l'auto e la guidi fino in Italia. Paghi prezzo, commissione e i 350 € delle pratiche, senza il trasporto.</p></div>
+    </div>
+
+    <h2 class="sec-title">Perché pagare in escrow</h2>
+    <div class="cols three">
+      <div class="panel"><h3>Per te che compri</h3><p>I soldi non arrivano al venditore finché l'auto non ti viene consegnata come descritta. Se l'acquisto non va a buon fine, ti vengono restituiti.</p></div>
+      <div class="panel"><h3>Per il venditore</h3><p>Sa che l'importo è già depositato e garantito: per questo accetta più volentieri di trattare con un acquirente estero.</p></div>
+      <div class="panel"><h3>Per tutti</h3><p>Un servizio terzo e indipendente custodisce il denaro: nessuno dei due può spenderlo prima del tempo. Niente bonifici al buio verso sconosciuti.</p></div>
+    </div>
+
+    <h2 class="sec-title">Per privati e aziende</h2>
+    <div class="cols">
+      <div class="panel"><h3>Privati e appassionati</h3><p>Cerchi la tua prossima classica o un'auto robusta per tutti i giorni? Ti seguiamo dalla scelta del modello fino alla consegna, con consigli su motori e punti deboli.</p></div>
+      <div class="panel"><h3>Concessionari, officine, flotte</h3><p>Ricerca continua di modelli specifici, più auto per volta, fattura aziendale. Il robot di Pacific Classics controlla migliaia di annunci in tutta Europa tre volte al giorno.</p></div>
+    </div>
+
+    <h2 class="sec-title">Domande frequenti</h2>
+    <div class="faq">
+      <details><summary>Cosa è compreso nella commissione del 5%?</summary><p>Ricerca dell'auto, contatto con il venditore, verifica di foto, documenti e storico, trattativa sul prezzo, acquisto e coordinamento di pratiche e trasporto.</p></details>
+      <details><summary>Cosa sono i 350 € di radiazione?</summary><p>Le pratiche nel paese d'origine per cancellare l'auto dal registro locale ed esportarla in Italia: radiazione, documenti di esportazione e, per il ritiro diretto, la targa provvisoria.</p></details>
+      <details><summary>L'immatricolazione in Italia è inclusa?</summary><p>No, è un costo a parte che dipende dalla provincia e dall'auto (IPT, diritti, targhe). Possiamo indicarti un'agenzia di fiducia o seguirla noi su richiesta.</p></details>
+      <details><summary>E se l'auto non corrisponde all'annuncio?</summary><p>La verifichiamo prima dell'acquisto proprio per evitarlo. Se emergono problemi prima del pagamento al venditore, l'operazione si ferma e i fondi in escrow ti vengono restituiti.</p></details>
+      <details><summary>Posso indicarvi un'auto trovata altrove?</summary><p>Certo: mandaci il link di qualsiasi annuncio europeo e ti prepariamo il preventivo completo.</p></details>
+      <details><summary>Quanto tempo serve?</summary><p>Di solito 2–4 settimane dalla conferma alla consegna, a seconda del paese e dei tempi del venditore.</p></details>
+    </div>
+
+    <div class="cta-band">
+      <h2>Hai visto un'auto che ti piace?</h2>
+      <p>Mandaci il link dell'annuncio: entro 48 ore ricevi il preventivo completo, senza impegno.</p>
+      <a class="btn primary" id="contactBtn" href="#">Richiedi un preventivo</a>
+    </div>
   </section>
 </main>
 
 <footer class="foot wrap">
   <span id="updated"></span>
-  <span>Pacific Classics · a Pacific IT Solutions s.r.o. project · Listings and photos belong to their publishers — every card links to the original ad.</span>
+  <span>Pacific Classics · un progetto Pacific IT Solutions s.r.o. · Annunci e foto appartengono ai rispettivi siti: ogni scheda rimanda all’annuncio originale.</span>
 </footer>
 
 <dialog id="dlg"><div id="dlgBody"></div>

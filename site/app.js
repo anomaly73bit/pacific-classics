@@ -166,6 +166,28 @@
     </article>`;
   }
 
+  // indicative truck transport to northern/central Italy (midpoint of the ranges on the "Come funziona" page)
+  const CONTACT_EMAIL = "info@pacificclassics.eu";   // ← change to the real address
+  const TRANSPORT = { AT: 575, SI: 575, DE: 750, CZ: 800, SK: 800, FR: 800, BE: 950, NL: 950, LU: 950, ES: 1100, IT: 350, PL: 950, HU: 850 };
+  const SOUTH_DE = /^(7|8|9)/;   // German postcodes 7xxxx-9xxxx: Baden-Württemberg / Bavaria
+  const transportEstimate = l => l.country === "DE" && SOUTH_DE.test(l.zip || "") ? 625 : (TRANSPORT[l.country] ?? 900);
+  const PAPERS = 350;
+  function estimateHtml(l) {
+    if (!l.price_eur) return "";
+    const fee = Math.round(l.price_eur * 0.05), tr = transportEstimate(l), tot = l.price_eur + fee + tr + PAPERS;
+    return `<div class="panel est"><h3>${esc(T.estimate)}</h3>
+      <table class="price-table">
+        <tr><td>${esc(T.estCar)}</td><td>€ ${fmt(l.price_eur)}</td></tr>
+        <tr><td>${esc(T.estFee)}</td><td>€ ${fmt(fee)}</td></tr>
+        <tr><td>${esc(T.estTransport)}</td><td>≈ € ${fmt(tr)}</td></tr>
+        <tr><td>${esc(T.estPapers)}</td><td>€ ${fmt(PAPERS)}</td></tr>
+        <tr class="tot"><td>${esc(T.estTotal)}</td><td>≈ € ${fmt(Math.round(tot / 10) * 10)}</td></tr>
+      </table>
+      <p class="actions-row"><a class="btn primary" href="${quoteMail(l)}">${esc(T.estQuote)}</a>
+      <a class="btn sec" href="#" data-goto="service">${esc(T.estMore)}</a></p></div>`;
+  }
+  const quoteMail = l => `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Preventivo Pacific Classics: " + (l?.title || ""))}&body=${encodeURIComponent((l ? "Annuncio: " + l.url + "\n" : "Link dell'annuncio: \n") + "Città di consegna: \nNome e telefono: \n")}`;
+
   function openDetail(id) {
     const l = ALL.find(x => x.id === id); if (!l) return;
     const m = MODEL_BY_ID[l.model_id] || {};
@@ -190,6 +212,7 @@
           ${tDesc(l) ? `<p style="margin-top:12px">${esc(tDesc(l))}</p>` : ""}
           ${lang === "it" && (l.title_it || l.description_it) ? `<details class="orig-text"><summary>${esc(T.original)}</summary><p class="src">${esc(l.title)}${l.description ? " — " + esc(l.description) : ""}</p></details>` : ""}
         </div>
+        ${estimateHtml(l)}
         <div class="panel">
           <dl class="kv">${rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${typeof v === "number" ? v : v}</dd>`).join("")}</dl>
         </div>
@@ -228,20 +251,11 @@
     }).join("");
   }
 
-  function renderStatus() {
-    const s = REPORT.sources || {};
-    const rows = Object.entries(s).map(([k, v]) => `<tr><td>${esc(v.name || k)}</td>
-      <td><span class="pill ${esc(v.status)}">${esc(v.status)}</span></td><td>${v.fetched ?? 0}</td>
-      <td>${esc(v.note || "")}${v.errors?.length ? `<br><small>${v.errors.slice(0, 5).map(esc).join("<br>")}</small>` : ""}</td></tr>`).join("");
-    $("#statusBox").innerHTML = `<table class="st"><tr><th>${esc(T.stSource)}</th><th>${esc(T.stStatus)}</th><th>${esc(T.stFetched)}</th><th>${esc(T.stNote)}</th></tr>${rows || `<tr><td colspan="4">${esc(REPORT.note || "–")}</td></tr>`}</table>
-      <p class="count">${esc(T.published(REPORT.published ?? ALL.length))}${REPORT.dropped ? " · " + Object.entries(REPORT.dropped).map(([k, v]) => `${k}: ${v}`).join(" · ") : ""}${REPORT.fx_source ? " · FX: " + esc(REPORT.fx_source) : ""}</p>`;
-  }
-
   function showView(v) {
     document.querySelectorAll(".tab").forEach(t => t.classList.toggle("active", t.dataset.view === v));
     document.querySelectorAll(".view").forEach(s => s.hidden = s.id !== "view-" + v);
     if (v === "models") renderModels();
-    if (v === "status") renderStatus();
+    if (v === "service") scrollTo(0, 0);
   }
 
   // ---------- photos: big preview on hover, full-screen lightbox on click
@@ -313,9 +327,12 @@
     const gi = e.target.closest(".gallery img"); if (gi) return openLightbox(+gi.dataset.gi);
     const o = e.target.closest("[data-open]"); if (o) return openDetail(o.dataset.open);
     if (e.target.closest("[data-close]")) return $("#dlg").close();
+    const g = e.target.closest("[data-goto]");
+    if (g) { e.preventDefault(); if ($("#dlg").open) $("#dlg").close(); showView(g.dataset.goto); return; }
     const mm = e.target.closest("[data-model]"); if (mm) { $("#fModel").value = mm.dataset.model; showView("listings"); rerender(); }
   });
   $("#dlg").addEventListener("click", e => { if (e.target.id === "dlg" && lb.hidden) $("#dlg").close(); });
 
+  $("#contactBtn").href = quoteMail(null);
   load();
 })();

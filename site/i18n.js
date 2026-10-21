@@ -2,7 +2,7 @@
 window.I18N = {
   en: {
     tagline: "Classics & youngtimers from across Europe",
-    listings: "Listings", models: "Model guide", status: "Crawler status",
+    listings: "Listings", models: "Model guide", service: "How it works",
     search: "Search make, model, engine, city…",
     filters: "Filters", segment: "Segment", segAll: "All", segClassic: "Classics (1970s–90s)", segYoung: "Youngtimers & small cars (1997–2011)", model: "Model family", allModels: "All models", country: "Country", allCountries: "All countries",
     price: "Price (€)", year: "Year", maxKm: "Max mileage (km)", historic: "Historic registration",
@@ -21,7 +21,7 @@ window.I18N = {
     updated: d => `Updated ${d}`, reliability: "Reliability", years: "Years", category: "Type",
     stSource: "Source", stStatus: "Status", stFetched: "Fetched", stNote: "Notes", published: n => `${n} listings published`,
     lang: "Italiano", close: "Close", dealer: "Dealer", private: "Private", fuel: "Fuel", gearbox: "Gearbox",
-    original: "Original text", hoverHint: "Hover a photo to enlarge it, click for full screen", prev: "Previous", next: "Next",
+    original: "Original text", estimate: "Delivered to Italy with Pacific Classics", estCar: "Car price", estFee: "Commission 5%", estTransport: "Truck transport (estimate)", estPapers: "Deregistration & export papers", estTotal: "Estimated total in escrow", estMore: "How it works", estQuote: "Request a quote", hoverHint: "Hover a photo to enlarge it, click for full screen", prev: "Previous", next: "Next",
     alerts: {
       HIST_FIVA: p => `Historic-eligible (FIVA/EU 30 y) — built ${p.year}`,
       HIST_ASI_ONLY: p => `Italy ASI CRS now · FIVA in ${p.years} y (${p.fiva_year})`,
@@ -52,7 +52,7 @@ window.I18N = {
   },
   it: {
     tagline: "Auto classiche e youngtimer da tutta Europa",
-    listings: "Annunci", models: "Guida modelli", status: "Stato robot",
+    listings: "Annunci", models: "Guida modelli", service: "Come funziona",
     search: "Cerca marca, modello, motore, città…",
     filters: "Filtri", segment: "Categoria", segAll: "Tutte", segClassic: "Classiche (anni '70–'90)", segYoung: "Youngtimer e utilitarie (1997–2011)", model: "Modello", allModels: "Tutti i modelli", country: "Paese", allCountries: "Tutti i paesi",
     price: "Prezzo (€)", year: "Anno", maxKm: "Km massimi", historic: "Iscrizione storica",
@@ -71,7 +71,7 @@ window.I18N = {
     updated: d => `Aggiornato ${d}`, reliability: "Affidabilità", years: "Anni", category: "Tipo",
     stSource: "Sito", stStatus: "Stato", stFetched: "Trovati", stNote: "Note", published: n => `${n} annunci pubblicati`,
     lang: "English", close: "Chiudi", dealer: "Concessionario", private: "Privato", fuel: "Alimentazione", gearbox: "Cambio",
-    original: "Testo originale dell'annuncio", hoverHint: "Passa il mouse su una foto per ingrandirla, clicca per vederla a tutto schermo", prev: "Precedente", next: "Successiva",
+    original: "Testo originale dell'annuncio", estimate: "In Italia con Pacific Classics", estCar: "Prezzo dell'auto", estFee: "Commissione 5%", estTransport: "Trasporto su bisarca (stima)", estPapers: "Radiazione e pratiche export", estTotal: "Totale stimato in escrow", estMore: "Come funziona", estQuote: "Richiedi un preventivo", hoverHint: "Passa il mouse su una foto per ingrandirla, clicca per vederla a tutto schermo", prev: "Precedente", next: "Successiva",
     alerts: {
       HIST_FIVA: p => `Iscrivibile come storica (FIVA/UE 30 anni) — del ${p.year}`,
       HIST_ASI_ONLY: p => `CRS ASI già ora · FIVA tra ${p.years} anni (${p.fiva_year})`,
