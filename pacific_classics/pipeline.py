@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import logging
 import re
+import os
 import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timezone
@@ -13,6 +14,7 @@ import requests
 
 from .advisor import advise, market_stats
 from .http import Blocked, PoliteClient
+from .translate import translate_listings
 from .knowledge import ROOT, build_queries, load_models, load_sources, match_listing
 from .sources import REGISTRY
 
@@ -148,7 +150,15 @@ def process(raw: list[tuple[dict, list[str]]], models: dict, cfg: dict, report: 
         l.update(advise(l, models[l["model_id"]], stats.get(l["model_id"]), ref_year, l.pop("_hist", None)))
         if l.get("description"):
             l["description"] = l["description"][:400]
+    for l in listings:
+        l["variant"] = variant_of(l, models[l["model_id"]])
     listings.sort(key=lambda l: -l["score"])
+    if not demo and os.environ.get("PACIFIC_TRANSLATE", "1") == "1":
+        try:
+            report["translation"] = translate_listings(listings)
+        except Exception as e:  # noqa: BLE001 — translation must never break publishing
+            log.warning("translation skipped: %s", e)
+            report["translation"] = {"error": str(e)[:200]}
 
     report["dropped"] = dropped
     report["published"] = len(listings)
@@ -156,6 +166,19 @@ def process(raw: list[tuple[dict, list[str]]], models: dict, cfg: dict, report: 
     if not demo:
         _save_state(state)
     return listings
+
+
+def variant_of(l: dict, m) -> int:
+    """Which model of a family the ad is (e.g. 'Golf III' in 'Passat B3/B4 / Golf III / Polo'): its index."""
+    names = re.split(r"\s+/\s+", m.model)
+    if len(names) < 2:
+        return 0
+    text = " ".join(filter(None, [l.get("title"), l.get("model_raw")])).lower()
+    for i, n in enumerate(names):
+        head = re.sub(r"\(.*?\)", "", n).strip().lower().split()[0]
+        if re.search(rf"\b{re.escape(head)}", text):
+            return i
+    return 0
 
 
 YEAR_HINT = re.compile(r"(?:\bEZ|Baujahr|\bBj\.?|Erstzulassung|rok v\w+|r\.\s?v\.|\banno|immatricolat\w*|\bannée)\s*:?\s*(?:\d{1,2}[./]\s?)?((?:19|20)\d\d)", re.I)

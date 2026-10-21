@@ -36,6 +36,11 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - run: python -m pytest -q
+      - name: Cache translation models
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pacific-argos
+          key: argos-models-v1
       - name: Crawl
         env:
           MOBILEDE_API_USER: ${{ secrets.MOBILEDE_API_USER }}
@@ -49,7 +54,7 @@ jobs:
         run: |
           git config user.name "pacific-classics-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add site/data data/state.json
+          git add -A site/data data
           git diff --cached --quiet || git commit -m "data: crawl $(date -u +%F)"
           for i in 1 2 3; do git pull --rebase -q -X theirs && git push && break; sleep 5; done
       - uses: actions/upload-pages-artifact@v3

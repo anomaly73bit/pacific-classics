@@ -90,7 +90,7 @@
       if (f.safe && l.alerts.some(a => RISKY.has(a.code))) return false;
       if (f.q) {
         const m = MODEL_BY_ID[l.model_id] || {};
-        const hay = [l.title, l.model_raw, l.city, l.region, COUNTRY[l.country], m.make, m.model, m.chassis].join(" ").toLowerCase();
+        const hay = [l.title, l.title_it, l.model_raw, l.city, l.region, COUNTRY[l.country], m.make, m.model, m.chassis].join(" ").toLowerCase();
         if (!f.q.split(/\s+/).every(w => hay.includes(w))) return false;
       }
       return true;
@@ -117,6 +117,14 @@
     writeHash();
   }
 
+  const tTitle = l => (lang === "it" && l.title_it) || l.title;
+  const tDesc = l => (lang === "it" && l.description_it) || l.description;
+  // the specific model of the ad inside its family ("Golf III" rather than "Passat B3/B4 / Golf III / Polo")
+  const variantName = (l, m) => {
+    const names = (mt(m, "model") || "").split(/\s+\/\s+/), chs = (m.chassis || "").split(/\s+\/\s+/);
+    const i = Math.min(l.variant || 0, names.length - 1);
+    return `${m.make} ${names[i]}${chs.length === names.length ? " (" + chs[i] + ")" : names.length === 1 ? " (" + m.chassis + ")" : ""}`;
+  };
   const alertText = (a, m) => {
     const fn = T.alerts[a.code];
     const p = a.code === "ENGINE_BAD" && m ? { ...a.params, note: mt(m, "engine_bad_note") || "" } : (a.params || {});
@@ -134,7 +142,7 @@
     const specs = [l.year, l.mileage_km != null ? `${fmt(l.mileage_km)} km` : null, l.fuel, l.gearbox, l.power_kw ? `${l.power_kw} kW` : null].filter(Boolean);
     return `<article class="card">
       <div class="photo" data-open="${esc(l.id)}">
-        ${img ? `<img src="${esc(safeUrl(img))}" alt="${esc(l.title)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='img/placeholder.svg'">` : `<img src="img/placeholder.svg" alt="">`}
+        ${img ? `<img src="${esc(safeUrl(img))}" alt="${esc(tTitle(l))}" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='img/placeholder.svg'">` : `<img src="img/placeholder.svg" alt="">`}
         <span class="badge score ${l.score >= 75 ? "hi" : ""}" title="${esc(T.score)}">${l.score}</span>
         ${histBadge(l)}
         ${l.images?.length > 1 ? `<span class="badge nph">${esc(T.photos(l.images.length))}</span>` : ""}
@@ -144,8 +152,7 @@
           <span class="price">${priceHtml(l)}</span>
           ${l.currency && l.currency !== "EUR" && l.price ? `<span class="orig">${fmt(l.price)} ${esc(l.currency)}</span>` : ""}
         </div>
-        <h3 class="title">${esc(l.title)}</h3>
-        <span><span class="chip-model">${esc(m.make)} ${esc(mt(m, "model"))} · ${esc(m.chassis)}</span></span>
+        <h3 class="title" title="${esc(l.title)}">${esc(tTitle(l))}</h3>
         <div class="specs">${specs.map(s => `<span>${esc(s)}</span>`).join("")}</div>
         <div class="where">${flag(l.country)} <span>${esc([l.zip, l.city].filter(Boolean).join(" ") || COUNTRY[l.country] || "")}</span>
           · <a href="${mapUrl(l)}" target="_blank" rel="noopener">${esc(T.map)}</a>
@@ -173,20 +180,21 @@
       [T.median, REPORT.market?.[l.model_id] ? `€ ${fmt(REPORT.market[l.model_id].median_price)} (${REPORT.market[l.model_id].count})` : "–"],
     ].filter(r => r[1] != null && r[1] !== "");
     $("#dlgBody").innerHTML = `
-      <div class="dlg-head"><h2>${priceHtml(l)} · ${esc(l.title)}</h2><button class="x" aria-label="${esc(T.close)}" data-close>×</button></div>
+      <div class="dlg-head"><h2>${priceHtml(l)} · ${esc(tTitle(l))}</h2><button class="x" aria-label="${esc(T.close)}" data-close>×</button></div>
       <div class="gallery">${imgs}</div>
       ${l.images?.length ? `<p class="hint">${esc(T.hoverHint)}</p>` : ""}
       <div class="dlg-grid">
         <div class="panel">
           <h3>${esc(T.details)} · ${esc(T.score)} ${l.score}/100</h3>
           <div class="alerts col">${sortAlerts(l.alerts).map(a => `<span class="al ${a.level}">${esc(alertText(a, m))}</span>`).join("")}</div>
-          ${l.description ? `<p class="src" style="margin-top:12px">${esc(l.description)}</p>` : ""}
+          ${tDesc(l) ? `<p style="margin-top:12px">${esc(tDesc(l))}</p>` : ""}
+          ${lang === "it" && (l.title_it || l.description_it) ? `<details class="orig-text"><summary>${esc(T.original)}</summary><p class="src">${esc(l.title)}${l.description ? " — " + esc(l.description) : ""}</p></details>` : ""}
         </div>
         <div class="panel">
           <dl class="kv">${rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${typeof v === "number" ? v : v}</dd>`).join("")}</dl>
         </div>
         <div class="panel">
-          <h3>${esc(m.make)} ${esc(mt(m, "model"))} (${esc(m.chassis)}) <span class="stars">${"★".repeat(m.reliability || 0)}</span></h3>
+          <h3>${esc(variantName(l, m))} <span class="stars">${"★".repeat(m.reliability || 0)}</span></h3>
           <p><b>${esc(T.strengths)}:</b> ${esc(mt(m, "strengths"))}</p>
           <p><b>${esc(T.engines)}:</b> ${esc(mt(m, "recommended_engines"))}</p>
           <p><b>${esc(T.watchOut)}:</b> ${esc(mt(m, "watch_out"))}</p>

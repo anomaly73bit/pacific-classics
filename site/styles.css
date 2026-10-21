@@ -154,3 +154,6 @@ table.st th { background: var(--navy); color: #fff; font-weight: 500; }
 .lb-prev { left: 16px; } .lb-next { right: 16px; }
 .lb-count { position: absolute; bottom: 18px; left: 0; right: 0; text-align: center; color: #d8d8d8; font-size: 14px; }
 @media (max-width: 600px) { .lb-nav { width: 42px; height: 60px; font-size: 34px; } }
+
+.orig-text { margin-top: 10px; font-size: 13px; }
+.orig-text summary { cursor: pointer; color: var(--info); }

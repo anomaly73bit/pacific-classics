@@ -21,7 +21,7 @@ window.I18N = {
     updated: d => `Updated ${d}`, reliability: "Reliability", years: "Years", category: "Type",
     stSource: "Source", stStatus: "Status", stFetched: "Fetched", stNote: "Notes", published: n => `${n} listings published`,
     lang: "Italiano", close: "Close", dealer: "Dealer", private: "Private", fuel: "Fuel", gearbox: "Gearbox",
-    hoverHint: "Hover a photo to enlarge it, click for full screen", prev: "Previous", next: "Next",
+    original: "Original text", hoverHint: "Hover a photo to enlarge it, click for full screen", prev: "Previous", next: "Next",
     alerts: {
       HIST_FIVA: p => `Historic-eligible (FIVA/EU 30 y) — built ${p.year}`,
       HIST_ASI_ONLY: p => `Italy ASI CRS now · FIVA in ${p.years} y (${p.fiva_year})`,
@@ -71,7 +71,7 @@ window.I18N = {
     updated: d => `Aggiornato ${d}`, reliability: "Affidabilità", years: "Anni", category: "Tipo",
     stSource: "Sito", stStatus: "Stato", stFetched: "Trovati", stNote: "Note", published: n => `${n} annunci pubblicati`,
     lang: "English", close: "Chiudi", dealer: "Concessionario", private: "Privato", fuel: "Alimentazione", gearbox: "Cambio",
-    hoverHint: "Passa il mouse su una foto per ingrandirla, clicca per vederla a tutto schermo", prev: "Precedente", next: "Successiva",
+    original: "Testo originale dell'annuncio", hoverHint: "Passa il mouse su una foto per ingrandirla, clicca per vederla a tutto schermo", prev: "Precedente", next: "Successiva",
     alerts: {
       HIST_FIVA: p => `Iscrivibile come storica (FIVA/UE 30 anni) — del ${p.year}`,
       HIST_ASI_ONLY: p => `CRS ASI già ora · FIVA tra ${p.years} anni (${p.fiva_year})`,
