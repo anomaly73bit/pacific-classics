@@ -58,13 +58,24 @@ def crawl(only_sources: list[str] | None = None, only_models: list[str] | None =
         if ok:
             sources[key] = src
 
+    make_ids: dict[str, list[str]] = {}
+    make_years: dict[str, list[int]] = {}
+    for q in queries:
+        make_ids.setdefault(q.make, [])
+        make_ids[q.make] += [i for i in q.model_ids if i not in make_ids[q.make]]
+        y = make_years.setdefault(q.make, [q.year_from, q.year_to])
+        y[0], y[1] = min(y[0], q.year_from), max(y[1], q.year_to)
+    for src in sources.values():
+        src.context = {"models": by_id, "make_years": make_years}
+
     def run_source(key, src):
         rep, found = report["sources"][key], []
         for q in queries:
             n = 0
             try:
+                ids = make_ids[q.make] if src.match_all else q.model_ids
                 for item in src.search(q):
-                    found.append((item, q.model_ids))
+                    found.append((item, ids))
                     n += 1
             except Blocked as e:
                 rep["status"], rep["note"] = "blocked", str(e)

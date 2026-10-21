@@ -6,7 +6,7 @@ import json
 
 from pacific_classics.advisor import advise, historic_status
 from pacific_classics.knowledge import build_queries, load_models, match_listing
-from pacific_classics.sources import autoscout24, kleinanzeigen, sauto, willhaben
+from pacific_classics.sources import autobazar, autoscout24, classictrader, kleinanzeigen, marktplaats, sauto, willhaben
 
 MODELS = {m.id: m for m in load_models()}
 
@@ -128,3 +128,40 @@ def test_robots_matcher():
     assert not r.allowed(ua, "https://a/lst?atype=C")
     assert not r.allowed(ua, "https://auto.bazos.cz/mercedes/?hledat=190")  # wildcard rule honoured
     assert not Robots("User-agent: Googlebot\nAllow: /\n\nUser-agent: *\nDisallow: /\n").allowed(ua, "https://x/api")
+
+
+def test_autobazar_parser():
+    html = nd({"props": {"pageProps": {"searchRecords": {"total": 1, "data": [{
+        "id": "Ab1", "sefName": "mercedes-benz-190-e", "title": "Mercedes-Benz 190 E 2.0", "brandValue": "Mercedes-Benz",
+        "carModelValue": "190", "priceCurrent": 6900, "yearValue": "1990", "mileage": 210000, "fuelValue": "Benzín",
+        "location": {"name": "Nitra", "parentNames": ["okres Nitra", "Nitriansky kraj", "Slovensko"]},
+        "image": {"previewUrls": {"record_premium": "https://img.autobazar.eu/foto/x"}}, "images": [],
+        "user": {"displayName": "Auto s.r.o.", "vatId": "SK1"}}]}}}})
+    items, total = autobazar.parse_page(html)
+    [l] = items
+    assert total == 1 and l["price"] == 6900 and l["year"] == 1990 and l["country"] == "SK"
+    assert l["url"] == "https://www.autobazar.eu/detail/mercedes-benz-190-e/Ab1/" and l["seller_type"] == "dealer"
+
+
+def test_marktplaats_parser_and_keywords():
+    html = nd({"props": {"pageProps": {"searchRequestAndResponse": {"listings": [{
+        "itemId": "m1", "title": "Mercedes-Benz 190 2.0 D 1986", "vipUrl": "/v/auto-s/mercedes-benz/m1-x",
+        "priceInfo": {"priceCents": 295000}, "location": {"cityName": "Weert", "countryName": "Nederland"},
+        "attributes": [{"key": "constructionYear", "value": "1986"}, {"key": "mileage", "value": "345600"}],
+        "pictures": [{"largeUrl": "https://images.marktplaats.com/a?rule=$_83.jpg", "extraExtraLargeUrl": "https://images.marktplaats.com/a?rule=$_85.jpg"}],
+        "verticals": ["mercedes-benz", "cars"], "sellerInformation": {"sellerName": "Desiree"}}]}}}})
+    [l] = marktplaats.parse_page(html, "marktplaats")
+    assert l["price"] == 2950 and l["year"] == 1986 and l["country"] == "NL" and l["seller_type"] == "private"
+    assert marktplaats.keywords_for(MODELS["mercedes-benz-190-w201"]) == ["w201"]
+    assert marktplaats.keywords_for(MODELS["volkswagen-golf-i-ii-jetta-mk1-mk2"]) == ["golf", "jetta"]
+
+
+def test_classictrader_parser():
+    ld = {"@type": "SearchResultsPage", "mainEntity": [{"@type": "ItemList", "itemListElement": [{"item": {
+        "@type": "Car", "name": "1988 | Mercedes-Benz 190 E 2.3", "image": "https://cdn.classic-trader.com/x.jpg",
+        "url": "https://www.classic-trader.com/uk/cars/listing/mercedes-benz/190er/190-e-2-3/1988/123456",
+        "brand": "Mercedes-Benz", "model": "190er", "mileageFromOdometer": {"value": 150000},
+        "offers": {"price": "9500", "priceCurrency": "GBP"}}}]}]}
+    html = f'<script type="application/ld+json">{json.dumps(ld)}</script>'
+    [l] = classictrader.parse_page(html)
+    assert l["id"] == "classictrader:123456" and l["year"] == 1988 and l["currency"] == "GBP" and l["price"] == 9500

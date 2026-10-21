@@ -38,11 +38,14 @@ def new_listing(source: str, sid, **kw) -> dict:
 
 class Source:
     key = "base"
+    match_all = False   # True: results are matched against every model family of the make, not just the query's
+
 
     def __init__(self, client: PoliteClient, cfg: dict, crawler_cfg: dict):
         self.client = client
         self.cfg = cfg
         self.max_pages = crawler_cfg.get("max_pages_per_query", 3)
+        self.context: dict = {}   # filled by the pipeline: models by id, year range per make
 
     def available(self) -> tuple[bool, str]:
         return True, ""

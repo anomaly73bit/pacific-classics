@@ -139,6 +139,8 @@ class PoliteClient:
                 err = Exception(f"HTTP {r.status_code}")
                 time.sleep(2 ** attempt)
                 continue
+            if r.status_code == 404:
+                return r          # unknown model page: the parser simply finds nothing
             r.raise_for_status()
             return r
         raise err or Exception("request failed")

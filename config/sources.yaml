@@ -59,6 +59,18 @@ sources:
   kleinanzeigen:
     enabled: true
     name: Kleinanzeigen.de
+  autobazar:
+    enabled: true
+    name: Autobazar.eu
+  marktplaats:
+    enabled: true
+    name: Marktplaats.nl
+  2dehands:
+    enabled: true
+    name: 2dehands.be
+  classictrader:
+    enabled: true
+    name: Classic Trader
   mobilede:
     # mobile.de blocks scraping; it offers an official Search API to registered dealers.
     # Set MOBILEDE_API_USER and MOBILEDE_API_PASSWORD (GitHub secrets) to enable.
