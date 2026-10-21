@@ -20,6 +20,8 @@ exclude_patterns:
   - "náhradní díly"
   - "\\bdíly\\b"
   - "modellauto"
+  - "sammler ?modell"
+  - "ma(ß|ss)stab"
   - "\\b1:18\\b"
   - "\\b1:43\\b"
   - "\\bsuche\\b"          # wanted ads
@@ -46,8 +48,11 @@ sources:
     # AutoScout24 country codes: D=Germany A=Austria I=Italy F=France B=Belgium NL=Netherlands E=Spain L=Luxembourg
     countries: [D, A, B, NL, L, F, E, I]
   sauto:
-    enabled: true
+    # Sauto.cz robots.txt (checked 2026-10-21) allows only Google, Seznam and Bing bots: "User-agent: * / Disallow: /".
+    # Kept off out of respect for that rule; enable only with Sauto's written permission / data partnership.
+    enabled: false
     name: Sauto.cz
+    note: "robots.txt allows only search engines (User-agent: * Disallow: /) — off until Sauto gives permission"
   willhaben:
     enabled: true
     name: willhaben.at

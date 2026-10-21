@@ -63,15 +63,30 @@ def test_willhaben_parser():
 
 
 def test_kleinanzeigen_parser():
-    html = """<article class="aditem" data-adid="42" data-href="/s-anzeige/golf-2/42">
-      <div class="aditem-main--top--left">80331 München</div>
-      <h2><a class="ellipsis" href="/s-anzeige/golf-2/42">VW Golf 2 1.6 TD</a></h2>
-      <p class="aditem-main--middle--price-shipping--price">3.900 € VB</p>
-      <p class="aditem-main--middle--description">Scheckheft, TÜV neu</p>
-      <div class="aditem-main--bottom"><span class="simpletag">245.000 km</span><span class="simpletag">EZ 03/1989</span></div>
-      <div class="imagebox"><img src="https://img.kleinanzeigen.de/1.jpg"></div></article>"""
-    [l] = kleinanzeigen.parse_page(html, make_hint="Volkswagen")
-    assert l["price"] == 3900 and l["year"] == 1989 and l["mileage_km"] == 245000 and l["zip"] == "80331"
+    # structure of the live search page (2026-10-21), trimmed
+    html = """<article class="flex justify-between p-medium" data-adid="42" data-href="/s-anzeige/mercedes-benz-190/42-216-8068">
+      <div><script type="application/ld+json">{"title":"Mercedes-Benz 190 1-Hand","description":"Rentnerfahrzeug, Scheckheft","contentUrl":"https://img.kleinanzeigen.de/api/v1/prod-ads/images/f9/x?rule=$_59.AUTO"}</script>
+      <a href="/s-anzeige/mercedes-benz-190/42-216-8068"><img src="https://img.kleinanzeigen.de/api/v1/prod-ads/images/f9/x?rule=$_2.AUTO"><div>20</div></a></div>
+      <div><div><div><span>69181 Leimen</span></div><div><span>Heute, 11:32</span></div></div>
+      <div class="flex flex-col"><h3><a href="/s-anzeige/mercedes-benz-190/42-216-8068">Mercedes-Benz 190 Rentnerfahrzeug 1-Hand</a></h3>
+      <p class="mb-xsmall text-bodyRegular text-onSurfaceSubdued">Irrtümer vorbehalten</p>
+      <div class="flex"><p class="my-xsmall text-title3 font-strong text-secondary">4.900 €</p><p class="line-through">5.500 €</p></div></div>
+      <div><p class="flex"><span>79.400 km</span><span>EZ 02/1993</span></p></div></div></article>"""
+    [l] = kleinanzeigen.parse_page(html, make_hint="Mercedes-Benz")
+    assert l["price"] == 4900 and l["year"] == 1993 and l["mileage_km"] == 79400
+    assert l["zip"] == "69181" and l["city"] == "Leimen" and "rule=$_59" in l["images"][0]
+    assert l["url"] == "https://www.kleinanzeigen.de/s-anzeige/mercedes-benz-190/42-216-8068"
+
+
+def test_kleinanzeigen_urls():
+    assert kleinanzeigen.search_path("mercedes-benz", "190", 1982, 1993) == \
+        "/s-autos/c216+autos.ez_i:1982%2C1993+autos.marke_s:mercedes_benz+autos.model_s:190"
+    assert "k0c216" in kleinanzeigen.search_path("mercedes-benz", "g-klasse", 1979, 1996)
+
+
+def test_modern_models_rejected():
+    cands = [MODELS[i] for i in MODELS if i.startswith("mercedes-benz")]
+    assert match_listing({"make": "Mercedes-Benz", "title": "Mercedes-Benz C-Klasse 250D", "year": 1995}, cands)[0] is None
 
 
 def test_matching_disambiguates_shared_queries():

@@ -18,7 +18,7 @@ KEYWORDS = [
     # (level, code, regex) — matched on title + description
     ("danger", "KW_ACCIDENT", r"unfall(?!frei)|unfallwagen|accident(?![- ]?free)|accidenté|(?<!ne)havarov|(?<!ne)bouran|(?<!non )incidentat|(?<!non )sinistrat"),
     ("good", "KW_NO_ACCIDENT", r"unfallfrei|accident[- ]?free|nehavarov|nebouran|non incidentat|mai incidentat"),
-    ("danger", "KW_DEFECT", r"motorschaden|defekt|engine damage|bastler|projekt|project car|nepojízd|non funzionante|guasto|für export"),
+    ("danger", "KW_DEFECT", r"motorschaden|defekt|ohne motor|engine damage|bastler|projekt|project car|nepojízd|non funzionante|guasto|für export"),
     ("warn", "KW_RUST", r"\brost|rust|koroz|ruggine|rouille|durchgerostet"),
     ("warn", "KW_NO_PAPERS", r"ohne papiere|no papers|bez tp|senza documenti|sans papiers|ohne brief"),
     ("good", "KW_HISTORY", r"scheckheft|service ?history|servisní knížk|libretto tagliandi|carnet d.entretien|lückenlos"),

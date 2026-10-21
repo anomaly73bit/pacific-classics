@@ -44,7 +44,11 @@ def crawl(only_sources: list[str] | None = None, only_models: list[str] | None =
     queries = build_queries(models)
     sources, report = {}, {"sources": {}, "started": _now()}
     for key, scfg in cfg["sources"].items():
-        if not scfg.get("enabled") or (only_sources and key not in only_sources):
+        if only_sources and key not in only_sources:
+            continue
+        if not scfg.get("enabled"):
+            report["sources"][key] = {"name": scfg.get("name", key), "status": "skipped", "fetched": 0,
+                                      "note": scfg.get("note", "disabled in config"), "errors": [], "queries": {}}
             continue
         # one client per source: each site keeps its own rate limit, sites are crawled in parallel
         src = REGISTRY[key](PoliteClient(cfg["crawler"]), scfg, cfg["crawler"])
@@ -106,6 +110,9 @@ def process(raw: list[tuple[dict, list[str]]], models: dict, cfg: dict, report: 
         if item["price_eur"] and not (cfg.get("min_price_eur", 0) <= item["price_eur"] <= cfg.get("max_price_eur", 10**7)):
             dropped["price_bounds"] += 1
             continue
+        if not item.get("year"):
+            item["year"] = guess_year(text)
+            item["year_estimated"] = bool(item["year"])
         model, conf = match_listing(item, [models[i] for i in model_ids if i in models])
         if not model:
             dropped["no_match"] += 1
@@ -133,6 +140,14 @@ def process(raw: list[tuple[dict, list[str]]], models: dict, cfg: dict, report: 
     if not demo:
         _save_state(state)
     return listings
+
+
+YEAR_HINT = re.compile(r"(?:\bEZ|Baujahr|\bBj\.?|Erstzulassung|rok v\w+|r\.\s?v\.|\banno|immatricolat\w*|\bannée)\s*:?\s*(?:\d{1,2}[./]\s?)?((?:19|20)\d\d)", re.I)
+
+
+def guess_year(text: str) -> int | None:
+    m = YEAR_HINT.search(text or "")
+    return int(m.group(1)) if m else None
 
 
 def _mark_cross_site_duplicates(listings: list[dict]):

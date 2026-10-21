@@ -18,6 +18,10 @@ class Blocked(Exception):
     """The site refused us (robots.txt, 403, captcha page…)."""
 
 
+def host_of(url: str) -> str:
+    return urlparse(url).netloc
+
+
 class PoliteClient:
     def __init__(self, cfg: dict):
         self.cfg = cfg
@@ -28,6 +32,7 @@ class PoliteClient:
             "Accept": "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8",
         })
         self._robots: dict[str, robotparser.RobotFileParser | None] = {}
+        self.robots_info: dict[str, str] = {}
         self._last: dict[str, float] = {}
 
     def _allowed(self, url: str) -> bool:
@@ -39,9 +44,14 @@ class PoliteClient:
             rp = robotparser.RobotFileParser()
             try:
                 r = self.s.get(base + "/robots.txt", timeout=self.cfg["timeout_seconds"])
-                rp.parse(r.text.splitlines() if r.status_code == 200 else [])
-            except requests.RequestException:
+                lines = r.text.splitlines() if r.status_code == 200 else []
+                rp.parse(lines)
+                star = r.text.find("User-agent: *")
+                self.robots_info[base] = f"robots.txt HTTP {r.status_code}; '*' section: " + \
+                    (r.text[star:star + 120].replace("\n", " / ") if star >= 0 else "none")
+            except requests.RequestException as e:
                 rp.parse([])
+                self.robots_info[base] = f"robots.txt unreachable: {e}"
             self._robots[base] = rp
         rp = self._robots[base]
         return rp.can_fetch(self.cfg["user_agent"], url) if rp else True
@@ -58,7 +68,7 @@ class PoliteClient:
     def get(self, url: str, *, params=None, headers=None, auth=None) -> requests.Response:
         full = requests.Request("GET", url, params=params).prepare().url
         if not self._allowed(full):
-            raise Blocked(f"robots.txt disallows {full}")
+            raise Blocked(f"robots.txt disallows {full[:120]} — {self.robots_info.get(f'{urlparse(url).scheme}://{host_of(url)}', '')}")
         host = urlparse(url).netloc
         err = None
         for attempt in range(self.cfg.get("max_retries", 2) + 1):

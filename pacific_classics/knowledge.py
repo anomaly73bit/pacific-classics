@@ -104,6 +104,18 @@ def build_queries(models: list[Model]) -> list[Query]:
     return list(by_key.values())
 
 
+# Modern models that share a make/number with our families (e.g. "C 250 D" vs W124 "250 D")
+GLOBAL_EXCLUDE = re.compile(r"\b(cdi|crdi|tdci|dci|hdi|jtd|multijet|common.?rail|hybrid|elektro|electric|e-tron|plug-in)\b", re.I)
+EXCLUDE_BY_MAKE = {k: re.compile(v, re.I) for k, v in {
+    "mercedes-benz": r"\b(c|a|b|v|m|r|glk?|gla|glc|gle|gls|cla|cls|clk|slk|ml)-?\s?klasse\b|\bw(20[2-6]|21[0-3]|16[3-9]|22[0-3])\b|\b(clk|slk|cla|cls|gla|glc|gle|glk|ml|sprinter|vito|viano|citan|vaneo)\b|\b[abcv]\s?\d{3}\b",
+    "volkswagen": r"golf\s?(4|iv|5|v|6|vi|7|vii|8)\b|passat\s?(b[5-9]|3c|cc)\b|polo\s?(9n|6r|aw)\b|\bt[5-7]\b|\b(tiguan|touran|sharan|amarok|caddy|up!?)\b",
+    "bmw": r"\b(e4[6-9]|e[6-9]\d|f\d\d|g\d\d)\b|\b(x[1-7]|z4|i3|i8)\b",
+    "volvo": r"\b(s40|s60|s80|v40|v50|v60|v90|xc\d\d|c30|c70)\b",
+    "toyota": r"\b(yaris|auris|prius|aygo|rav ?4|verso|avensis)\b",
+    "audi": r"\b(a[1-8]|q[2-8]|tt)\b",
+}.items()}
+
+
 def match_listing(listing: dict, candidates: list[Model]) -> tuple[Model | None, str]:
     """Pick the model family a listing belongs to.
 
@@ -113,6 +125,8 @@ def match_listing(listing: dict, candidates: list[Model]) -> tuple[Model | None,
     text = " ".join(filter(None, [listing.get("make"), listing.get("model_raw"), listing.get("title")])).lower()
     year = listing.get("year")
     make = norm_make(listing.get("make"))
+    if GLOBAL_EXCLUDE.search(text) or (make in EXCLUDE_BY_MAKE and EXCLUDE_BY_MAKE[make].search(text)):
+        return None, "none"
     scored = []
     for m in candidates:
         if make and norm_make(m.make) != make:
