@@ -200,3 +200,27 @@ table.st th { background: var(--navy); color: #fff; font-weight: 500; }
 .actions-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0 0; }
 .actions-row .btn { flex: 1 1 auto; }
 @media (max-width: 800px) { .cols, .cols.three { grid-template-columns: 1fr; } .hero { padding: 30px 22px; } .formula i { display: none; } }
+
+/* sold cars */
+.card.sold { position: relative; pointer-events: none; user-select: none; }
+.card.sold .photo img, .card.sold .body { opacity: .55; filter: grayscale(.9); }
+.card.sold .photo { cursor: default; }
+.sold-band { position: absolute; top: 42%; left: -12%; right: -12%; transform: rotate(-12deg); background: #c0182b; color: #fff;
+  text-align: center; font: 700 26px/1.6 "Playfair Display", Georgia, serif; letter-spacing: 6px; box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+.card.sold .photo { overflow: hidden; }
+/* key facts */
+.hl { margin: 6px 0 0; padding-left: 0; list-style: none; display: grid; gap: 6px; }
+.hl li { padding: 6px 10px 6px 30px; background: var(--good-bg); color: #184d33; border-radius: 8px; position: relative; font-size: 14px; }
+.hl li::before { content: "✓"; position: absolute; left: 11px; font-weight: 700; }
+.hl li.warn { background: var(--warn-bg); color: var(--warn); }
+.hl li.warn::before { content: "!"; }
+.price-table .opt td { color: var(--muted); font-size: 13.5px; border-bottom: 0; }
+.formula .optional { border-top-style: dashed; background: #fbf8f0; }
+/* escrow explained */
+.escrow-explain .lead-dark { font-size: 16.5px; max-width: 900px; color: #2c2a25; }
+.escrow-flow { display: flex; gap: 10px; align-items: stretch; flex-wrap: wrap; margin: 18px 0 6px; }
+.escrow-flow > div { flex: 1 1 200px; background: var(--paper); border: 1px solid var(--line); border-left: 4px solid var(--navy); border-radius: 12px; padding: 14px 16px; }
+.escrow-flow b { display: block; color: var(--navy); font-size: 16px; margin-bottom: 4px; }
+.escrow-flow span { font-size: 14px; color: #3d3a33; }
+.escrow-flow i { align-self: center; font-style: normal; font-size: 24px; color: var(--gold); font-weight: 700; }
+@media (max-width: 800px) { .escrow-flow i { display: none; } }

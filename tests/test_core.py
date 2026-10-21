@@ -186,3 +186,29 @@ def test_youngtimers_and_badge_engineering():
     assert match_listing({"make": "Audi", "title": "Audi A4 Avant 1.9 TDI B6", "year": 2003}, allm)[0].id.startswith("volkswagen-passat-b5")
     assert match_listing({"make": "Škoda", "title": "Škoda Octavia 1.9 TDI", "year": 2004}, allm)[0].id.startswith("skoda-octavia")
     assert match_listing({"make": "Volkswagen", "title": "VW Golf 7 1.6 TDI", "year": 2014}, allm)[0] is None
+
+
+def test_sold_and_carry_over(monkeypatch):
+    from pacific_classics import pipeline
+    prev = {
+        "a:1": {"id": "a:1", "source": "a", "url": "u1", "model_id": "mercedes-benz-190-w201", "images": ["x"]},
+        "a:2": {"id": "a:2", "source": "a", "url": "u2", "model_id": "mercedes-benz-190-w201", "images": ["x"]},
+        "a:3": {"id": "a:3", "source": "a", "url": "u3", "model_id": "mercedes-benz-190-w201", "images": ["x"],
+                "sold": True, "sold_at": "2026-10-01"},
+        "a:4": {"id": "a:4", "source": "a", "url": "u4", "model_id": "mercedes-benz-190-w201", "images": ["x"]},
+    }
+    monkeypatch.setattr(pipeline, "_load_prev", lambda: prev)
+    state = {"a:4": {"last_seen": "2026-10-10"}}
+    out = pipeline._carry_over(set(), state, {"a:1": "sold", "a:2": "alive"}, "2026-10-21", MODELS)
+    byid = {l["id"]: l for l in out}
+    assert byid["a:1"]["sold"] and byid["a:1"]["sold_at"] == "2026-10-21"
+    assert not byid["a:2"].get("sold")
+    assert "a:3" not in byid          # sold more than 7 days ago: removed
+    assert "a:4" not in byid          # not re-checked for > 3 days: removed
+
+
+def test_highlights_italian():
+    from pacific_classics.highlights import extract
+    h = extract("Mercedes 230 E | 2. Hand | Scheckheft | TÜV bis 05/2027 | Klimaanlage | Rost am Schweller")
+    assert h[0] == "2° proprietario" and "Tagliandi documentati" in h and "Aria condizionata" in h
+    assert "Revisione/collaudo valida fino al 05/2027" in h and h[-1].startswith("⚠ Ruggine")

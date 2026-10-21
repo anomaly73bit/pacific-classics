@@ -21,7 +21,7 @@ window.I18N = {
     updated: d => `Updated ${d}`, reliability: "Reliability", years: "Years", category: "Type",
     stSource: "Source", stStatus: "Status", stFetched: "Fetched", stNote: "Notes", published: n => `${n} listings published`,
     lang: "Italiano", close: "Close", dealer: "Dealer", private: "Private", fuel: "Fuel", gearbox: "Gearbox",
-    original: "Original text", estimate: "Delivered to Italy with Pacific Classics", estCar: "Car price", estFee: "Commission 5%", estTransport: "Truck transport (estimate)", estPapers: "Deregistration & export papers", estTotal: "Estimated total in escrow", estMore: "How it works", estQuote: "Request a quote", hoverHint: "Hover a photo to enlarge it, click for full screen", prev: "Previous", next: "Next",
+    original: "Original text", highlights: "Key facts from the ad", sold: "SOLD", soldTitle: "This car has been sold", soldCount: n => `${n} recently sold`, showSold: "Show recently sold cars", estRev: "+ Italian MOT (optional)", estimate: "Delivered to Italy with Pacific Classics", estCar: "Car price", estFee: "Commission 5%", estTransport: "Truck transport (estimate)", estPapers: "Deregistration & export papers", estTotal: "Estimated total in escrow", estMore: "How it works", estQuote: "Request a quote", hoverHint: "Hover a photo to enlarge it, click for full screen", prev: "Previous", next: "Next",
     alerts: {
       HIST_FIVA: p => `Historic-eligible (FIVA/EU 30 y) — built ${p.year}`,
       HIST_ASI_ONLY: p => `Italy ASI CRS now · FIVA in ${p.years} y (${p.fiva_year})`,
@@ -71,7 +71,7 @@ window.I18N = {
     updated: d => `Aggiornato ${d}`, reliability: "Affidabilità", years: "Anni", category: "Tipo",
     stSource: "Sito", stStatus: "Stato", stFetched: "Trovati", stNote: "Note", published: n => `${n} annunci pubblicati`,
     lang: "English", close: "Chiudi", dealer: "Concessionario", private: "Privato", fuel: "Alimentazione", gearbox: "Cambio",
-    original: "Testo originale dell'annuncio", estimate: "In Italia con Pacific Classics", estCar: "Prezzo dell'auto", estFee: "Commissione 5%", estTransport: "Trasporto su bisarca (stima)", estPapers: "Radiazione e pratiche export", estTotal: "Totale stimato in escrow", estMore: "Come funziona", estQuote: "Richiedi un preventivo", hoverHint: "Passa il mouse su una foto per ingrandirla, clicca per vederla a tutto schermo", prev: "Precedente", next: "Successiva",
+    original: "Testo originale dell'annuncio", highlights: "Punti salienti dell'annuncio", sold: "VENDUTA", soldTitle: "Quest'auto è stata venduta", soldCount: n => `${n} vendute di recente`, showSold: "Mostra le auto vendute di recente", estRev: "+ Revisione in Italia (facoltativa)", estimate: "In Italia con Pacific Classics", estCar: "Prezzo dell'auto", estFee: "Commissione 5%", estTransport: "Trasporto su bisarca (stima)", estPapers: "Radiazione e pratiche export", estTotal: "Totale stimato in escrow", estMore: "Come funziona", estQuote: "Richiedi un preventivo", hoverHint: "Passa il mouse su una foto per ingrandirla, clicca per vederla a tutto schermo", prev: "Precedente", next: "Successiva",
     alerts: {
       HIST_FIVA: p => `Iscrivibile come storica (FIVA/UE 30 anni) — del ${p.year}`,
       HIST_ASI_ONLY: p => `CRS ASI già ora · FIVA tra ${p.years} anni (${p.fiva_year})`,

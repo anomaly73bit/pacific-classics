@@ -47,7 +47,7 @@ def market_stats(listings: list[dict]) -> dict[str, dict]:
     """Median price / mileage per model family, from the current crawl."""
     by_model: dict[str, list[dict]] = {}
     for l in listings:
-        if l.get("model_id") and l.get("price_eur"):
+        if l.get("model_id") and l.get("price_eur") and not l.get("sold"):
             by_model.setdefault(l["model_id"], []).append(l)
     stats = {}
     for mid, ls in by_model.items():

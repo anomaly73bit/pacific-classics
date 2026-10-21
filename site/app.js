@@ -76,6 +76,7 @@
     const f = F();
     const has = (l, c) => l.alerts.some(a => a.code === c);
     let out = ALL.filter(l => {
+      if (l.sold && !$("#fSold").checked) return false;
       if (f.model && l.model_id !== f.model) return false;
       if (f.seg && (MODEL_BY_ID[l.model_id] || {}).segment !== f.seg) return false;
       if (f.country && l.country !== f.country) return false;
@@ -109,7 +110,7 @@
   // ---------- rendering
   function render() {
     const list = filtered();
-    $("#count").textContent = T.results(list.length);
+    $("#count").textContent = T.results(list.filter(l => !l.sold).length) + (list.some(l => l.sold) ? " · " + T.soldCount(list.filter(l => l.sold).length) : "");
     const grid = $("#grid");
     grid.innerHTML = list.length ? list.slice(0, shown).map(card).join("") : `<div class="empty">${esc(T.noResults)}</div>`;
     $("#more").hidden = list.length <= shown;
@@ -140,6 +141,14 @@
     const img = l.images?.[0];
     const keyAlerts = sortAlerts(l.alerts).filter(a => !["DEALER", "PRIVATE", "IMPORT_IT", "HIST_FIVA"].includes(a.code)).slice(0, 4);
     const specs = [l.year, l.mileage_km != null ? `${fmt(l.mileage_km)} km` : null, l.fuel, l.gearbox, l.power_kw ? `${l.power_kw} kW` : null].filter(Boolean);
+    if (l.sold) return `<article class="card sold" aria-disabled="true" title="${esc(T.soldTitle)}">
+      <div class="photo">${img ? `<img src="${esc(safeUrl(img))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='img/placeholder.svg'">` : ""}
+        <span class="sold-band">${esc(T.sold)}</span></div>
+      <div class="body"><div class="top"><span class="price">${priceHtml(l)}</span></div>
+        <h3 class="title">${esc(tTitle(l))}</h3>
+        <div class="specs">${[l.year, l.mileage_km != null ? fmt(l.mileage_km) + " km" : null].filter(Boolean).map(x => `<span>${esc(x)}</span>`).join("")}</div>
+        <div class="where">${flag(l.country)} <span>${esc(l.city || COUNTRY[l.country] || "")}</span></div>
+      </div></article>`;
     return `<article class="card">
       <div class="photo" data-open="${esc(l.id)}">
         ${img ? `<img src="${esc(safeUrl(img))}" alt="${esc(tTitle(l))}" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='img/placeholder.svg'">` : `<img src="img/placeholder.svg" alt="">`}
@@ -171,7 +180,7 @@
   const TRANSPORT = { AT: 575, SI: 575, DE: 750, CZ: 800, SK: 800, FR: 800, BE: 950, NL: 950, LU: 950, ES: 1100, IT: 350, PL: 950, HU: 850 };
   const SOUTH_DE = /^(7|8|9)/;   // German postcodes 7xxxx-9xxxx: Baden-Württemberg / Bavaria
   const transportEstimate = l => l.country === "DE" && SOUTH_DE.test(l.zip || "") ? 625 : (TRANSPORT[l.country] ?? 900);
-  const PAPERS = 350;
+  const PAPERS = 350, REVISIONE = 79;
   function estimateHtml(l) {
     if (!l.price_eur) return "";
     const fee = Math.round(l.price_eur * 0.05), tr = transportEstimate(l), tot = l.price_eur + fee + tr + PAPERS;
@@ -182,6 +191,7 @@
         <tr><td>${esc(T.estTransport)}</td><td>≈ € ${fmt(tr)}</td></tr>
         <tr><td>${esc(T.estPapers)}</td><td>€ ${fmt(PAPERS)}</td></tr>
         <tr class="tot"><td>${esc(T.estTotal)}</td><td>≈ € ${fmt(Math.round(tot / 10) * 10)}</td></tr>
+        <tr class="opt"><td>${esc(T.estRev)}</td><td>≈ € ${REVISIONE}</td></tr>
       </table>
       <p class="actions-row"><a class="btn primary" href="${quoteMail(l)}">${esc(T.estQuote)}</a>
       <a class="btn sec" href="#" data-goto="service">${esc(T.estMore)}</a></p></div>`;
@@ -209,8 +219,7 @@
         <div class="panel">
           <h3>${esc(T.details)} · ${esc(T.score)} ${l.score}/100</h3>
           <div class="alerts col">${sortAlerts(l.alerts).map(a => `<span class="al ${a.level}">${esc(alertText(a, m))}</span>`).join("")}</div>
-          ${tDesc(l) ? `<p style="margin-top:12px">${esc(tDesc(l))}</p>` : ""}
-          ${lang === "it" && (l.title_it || l.description_it) ? `<details class="orig-text"><summary>${esc(T.original)}</summary><p class="src">${esc(l.title)}${l.description ? " — " + esc(l.description) : ""}</p></details>` : ""}
+          ${l.highlights?.length ? `<h3 style="margin-top:16px">${esc(T.highlights)}</h3><ul class="hl">${l.highlights.map(h => `<li class="${h.startsWith("⚠") ? "warn" : ""}">${esc(h.replace(/^⚠\s*/, ""))}</li>`).join("")}</ul>` : ""}
         </div>
         ${estimateHtml(l)}
         <div class="panel">
@@ -318,7 +327,7 @@
   let t;
   const rerender = () => { shown = PAGE; clearTimeout(t); t = setTimeout(render, 120); };
   document.querySelectorAll("#filters input, #filters select, #q, #sort").forEach(el => el.addEventListener("input", rerender));
-  $("#reset").onclick = () => { document.querySelectorAll("#filters input[type=number], #q").forEach(i => i.value = ""); ["#fModel", "#fSeg", "#fCountry", "#fHist", "#fSeller"].forEach(s => $(s).value = ""); $("#fDeals").checked = false; $("#fSafe").checked = true; rerender(); };
+  $("#reset").onclick = () => { document.querySelectorAll("#filters input[type=number], #q").forEach(i => i.value = ""); ["#fModel", "#fSeg", "#fCountry", "#fHist", "#fSeller"].forEach(s => $(s).value = ""); $("#fDeals").checked = false; $("#fSafe").checked = $("#fSold").checked = true; rerender(); };
   $("#more").onclick = () => { shown += PAGE; render(); };
   $("#toggleFilters").onclick = () => $("#filters").classList.toggle("open");
   $("#lang").onclick = () => { lang = lang === "it" ? "en" : "it"; try { localStorage.setItem("pc-lang", lang); } catch (e) {} applyLang(); render(); const v = document.querySelector(".tab.active").dataset.view; if (v !== "listings") showView(v); };

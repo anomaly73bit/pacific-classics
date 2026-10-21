@@ -32,7 +32,7 @@ def main():
 
     if a.cmd == "crawl":
         res = crawl(a.sources, a.models)
-        listings = process(res["raw"], res["models"], res["cfg"], res["report"], a.ref_year)
+        listings = process(res["raw"], res["models"], res["cfg"], res["report"], a.ref_year, verify=res.get("verify"))
         publish(listings, res["models"], res["report"])
     elif a.cmd == "demo":
         from .demo import make_demo

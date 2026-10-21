@@ -71,6 +71,7 @@
         </label>
         <label class="check"><input id="fDeals" type="checkbox"><span data-t="onlyDeals"></span></label>
         <label class="check"><input id="fSafe" type="checkbox" checked><span data-t="hideRisky"></span></label>
+        <label class="check"><input id="fSold" type="checkbox" checked><span data-t="showSold"></span></label>
         <button id="reset" class="ghost" data-t="reset"></button>
       </aside>
       <div class="results">
@@ -92,7 +93,7 @@
       <p class="eyebrow">Il servizio Pacific Classics</p>
       <h1>Ti portiamo in Italia l'auto giusta, da tutta Europa.</h1>
       <p class="lead">Troviamo l'auto, la verifichiamo, la compriamo per te e la consegniamo a casa tua o in officina.
-        Paghi in modo protetto: i soldi restano in un conto di garanzia finché l'auto non è nelle tue mani.</p>
+        Paghi in modo protetto, su un conto di garanzia: il venditore viene pagato solo quando l'auto verificata gli viene ritirata, e noi solo quando l'auto è da te.</p>
       <div class="hero-cta">
         <a class="btn primary" href="#" data-goto="listings">Cerca tra gli annunci</a>
         <a class="btn sec" href="#costi">Quanto costa</a>
@@ -109,9 +110,9 @@
       <li><b>La verifichiamo</b><p>Contattiamo il venditore nella sua lingua, chiediamo foto, documenti, storico dei tagliandi e numero di telaio, e controlliamo i punti deboli noti di quel modello. Se qualcosa non torna, te lo diciamo prima di comprare.</p></li>
       <li><b>Ti mandiamo il preventivo completo</b><p>Prezzo dell'auto, commissione, trasporto e pratiche: un totale chiaro, senza sorprese. Decidi tu se procedere.</p></li>
       <li><b>Paghi in escrow</b><p>Versi l'importo su un conto di garanzia (escrow) gestito da un servizio terzo indipendente. Né noi né il venditore possiamo toccare i soldi finché l'operazione non è conclusa.</p></li>
-      <li><b>Compriamo e prepariamo l'auto</b><p>Paghiamo il venditore, ritiriamo l'auto e i documenti originali e facciamo la radiazione e l'esportazione nel paese d'origine.</p></li>
+      <li><b>Compriamo e prepariamo l'auto</b><p>Dopo il tuo ok sul rapporto di verifica, l'escrow paga il venditore direttamente, al momento del ritiro dell'auto e dei documenti originali. Poi facciamo radiazione ed esportazione.</p></li>
       <li><b>Trasporto o ritiro</b><p>Te la portiamo su bisarca fino a casa o in officina, assicurata durante il viaggio. Oppure, se preferisci, la ritiri tu e la porti in Italia con targa provvisoria.</p></li>
-      <li><b>Consegna e chiusura</b><p>Controlli l'auto alla consegna. Solo allora il conto di garanzia viene sbloccato: il prezzo va al venditore, la commissione e i costi a noi.</p></li>
+      <li><b>Consegna e chiusura</b><p>Controlli l'auto alla consegna. Solo allora l'escrow sblocca la nostra commissione e i costi di trasporto e pratiche.</p></li>
     </ol>
 
     <h2 class="sec-title" id="costi">Quanto costa</h2>
@@ -119,9 +120,10 @@
       <div><span>Prezzo dell'auto</span><small>quello pagato al venditore, senza ricarichi</small></div><i>+</i>
       <div><span>Commissione 5%</span><small>sul prezzo dell'auto: ricerca, verifica, trattativa, acquisto</small></div><i>+</i>
       <div><span>Trasporto</span><small>su bisarca, secondo il paese d'origine</small></div><i>+</i>
-      <div><span>Radiazione e pratiche export</span><small>350 € fissi</small></div>
+      <div><span>Radiazione e pratiche export</span><small>350 € fissi</small></div><i>+</i>
+      <div class="optional"><span>Revisione in Italia</span><small>facoltativa · 79 € (tariffa nazionale presso un centro autorizzato)</small></div>
     </div>
-    <p class="note">Tutto viene versato in escrow e sbloccato solo alla consegna. Su richiesta, la revisione in Italia (circa 80 €) e l'immatricolazione italiana si aggiungono a parte.</p>
+    <p class="note">Tutto viene versato in escrow e sbloccato solo alla consegna. L'immatricolazione italiana (IPT e diritti, variabili per provincia) non è compresa: possiamo seguirla noi su richiesta.</p>
 
     <div class="cols">
       <div class="panel">
@@ -149,7 +151,8 @@
           <tr><td>Trasporto Germania sud → Milano</td><td>≈ 650 €</td></tr>
           <tr><td>Radiazione e pratiche export</td><td>350 €</td></tr>
           <tr class="tot"><td>Totale in escrow</td><td>≈ 9.400 €</td></tr>
-          <tr><td class="src">Revisione in Italia (facoltativa)</td><td class="src">≈ 80 €</td></tr>
+          <tr class="opt"><td>+ Revisione in Italia (facoltativa)</td><td>79 €</td></tr>
+          <tr class="opt"><td>Totale con revisione</td><td>≈ 9.480 €</td></tr>
         </table>
         <p class="src">Ogni scheda auto del sito mostra già una stima del totale con questa formula.</p>
       </div>
@@ -161,9 +164,29 @@
       <div class="panel option"><h3>🔑 Ritiro diretto</h3><p>Non vuoi il camion? Prepariamo radiazione, targa provvisoria e documenti, e tu vai a prendere l'auto e la guidi fino in Italia. Paghi prezzo, commissione e i 350 € delle pratiche, senza il trasporto.</p></div>
     </div>
 
+    <h2 class="sec-title">Cos'è l'escrow, in parole semplici</h2>
+    <div class="escrow-explain">
+      <p class="lead-dark">L'<b>escrow</b> è un <b>conto di garanzia</b>: una "cassaforte" tenuta da un soggetto terzo, che non è né chi compra né chi vende.
+        Funziona come quando dal notaio si lascia la caparra: i soldi ci sono, sono al sicuro, ma nessuno li può prendere finché l'affare non è concluso come promesso.</p>
+      <div class="escrow-flow">
+        <div><b>1. Tu versi</b><span>Fai il bonifico non a noi e non al venditore, ma sul conto escrow. Ricevi la conferma che i soldi sono arrivati e sono bloccati.</span></div>
+        <i>→</i>
+        <div><b>2. Verifica e tuo ok</b><span>Verifichiamo l'auto e ti mandiamo il rapporto con foto e documenti. Il denaro intanto resta fermo nella cassaforte: nessuno può spenderlo, nemmeno noi.</span></div>
+        <i>→</i>
+        <div><b>3. Il venditore viene pagato</b><span>Solo quando ritiriamo l'auto e i documenti originali, l'escrow paga il prezzo direttamente al venditore. A noi non passa nulla.</span></div>
+        <i>→</i>
+        <div><b>4. Consegna, poi noi</b><span>L'auto arriva da te, la controlli e confermi. Solo allora l'escrow sblocca commissione, trasporto e pratiche a Pacific Classics.</span></div>
+      </div>
+      <div class="cols">
+        <div class="panel"><h3>E se qualcosa va storto?</h3><p>Se l'auto non supera la verifica, o tu non approvi il rapporto, l'acquisto non si fa e il denaro torna a te. Le regole su quando si sblocca o si restituisce sono scritte nel contratto di escrow prima che tu paghi.</p></div>
+        <div class="panel"><h3>Perché è più sicuro di un bonifico</h3><p>Con un bonifico diretto a un venditore straniero, se l'auto non arriva o è diversa, recuperare i soldi è difficile. Con l'escrow i soldi non partono finché non hai l'auto: il rischio di truffa sparisce.</p></div>
+      </div>
+      <p class="note">Il costo del servizio di escrow, quando previsto, è indicato chiaramente nel preventivo.</p>
+    </div>
+
     <h2 class="sec-title">Perché pagare in escrow</h2>
     <div class="cols three">
-      <div class="panel"><h3>Per te che compri</h3><p>I soldi non arrivano al venditore finché l'auto non ti viene consegnata come descritta. Se l'acquisto non va a buon fine, ti vengono restituiti.</p></div>
+      <div class="panel"><h3>Per te che compri</h3><p>I soldi non arrivano al venditore finché l'auto non è stata verificata e ritirata, e noi veniamo pagati solo a consegna avvenuta. Se l'acquisto non va a buon fine, ti vengono restituiti.</p></div>
       <div class="panel"><h3>Per il venditore</h3><p>Sa che l'importo è già depositato e garantito: per questo accetta più volentieri di trattare con un acquirente estero.</p></div>
       <div class="panel"><h3>Per tutti</h3><p>Un servizio terzo e indipendente custodisce il denaro: nessuno dei due può spenderlo prima del tempo. Niente bonifici al buio verso sconosciuti.</p></div>
     </div>

@@ -15,6 +15,7 @@ import requests
 from .advisor import advise, market_stats
 from .http import Blocked, PoliteClient
 from .translate import translate_listings
+from .highlights import extract as extract_highlights
 from .knowledge import ROOT, build_queries, load_models, load_sources, match_listing
 from .sources import REGISTRY
 
@@ -71,6 +72,10 @@ def crawl(only_sources: list[str] | None = None, only_models: list[str] | None =
     for src in sources.values():
         src.context = {"models": by_id, "make_years": make_years}
 
+    prev = _load_prev()
+    verify: dict[str, str] = {}
+    max_checks = cfg["crawler"].get("verify_per_source", 150)
+
     def run_source(key, src):
         rep, found = report["sources"][key], []
         for q in queries:
@@ -90,6 +95,16 @@ def crawl(only_sources: list[str] | None = None, only_models: list[str] | None =
             rep["queries"][f"{q.make}|{q.model}"] = n
             rep["fetched"] += n
             log.info("%-14s %-28s %4d", key, f"{q.make}|{q.model}", n)
+        if rep["status"] == "ok" and not only_models:
+            # ads published last time but not found now: open them to see if they are really gone
+            got = {it["id"] for it, _ in found}
+            missing = [l for l in prev.values() if l["source"] == key and l["id"] not in got and not l.get("sold")]
+            checked = 0
+            for l in missing[:max_checks]:
+                verify[l["id"]] = check_gone(src.client, l["url"])
+                checked += 1
+            rep["verified_missing"] = {"missing": len(missing), "checked": checked,
+                                       "sold": sum(1 for l in missing if verify.get(l["id"]) == "sold")}
         return found
 
     raw: list[tuple[dict, list[str]]] = []
@@ -98,11 +113,36 @@ def crawl(only_sources: list[str] | None = None, only_models: list[str] | None =
             raw.extend(found)
 
     report["finished"] = _now()
-    return {"raw": raw, "report": report, "models": by_id, "cfg": cfg}
+    return {"raw": raw, "report": report, "models": by_id, "cfg": cfg, "verify": verify}
+
+
+GONE = re.compile(r"nicht mehr verfügbar|nicht mehr online|wurde (bereits )?verkauft|anzeige (ist )?(gelöscht|deaktiviert|abgelaufen)|"
+                  r"no longer available|has been sold|niet meer beschikbaar|is verkocht|inzerát (již |už )?(není|neexistuje)|"
+                  r"inzerát bol (zmazaný|odstránený)|predan[éeý]|n'est plus disponible|annonce (supprimée|expirée)|"
+                  r"ya no está disponible|vendid[oa]\b|non è più disponibile|venduta\b", re.I)
+
+
+def check_gone(client, url: str | None) -> str:
+    """'sold' if the ad page is gone (404/410, redirect away from the ad, 'no longer available' text), else 'alive'."""
+    if not url:
+        return "unknown"
+    try:
+        r = client.get(url)
+    except Blocked:
+        return "unknown"
+    except Exception:  # noqa: BLE001
+        return "unknown"
+    if r.status_code in (404, 410):
+        return "sold"
+    from urllib.parse import urlparse
+    a, b = urlparse(url).path.rstrip("/"), urlparse(r.url).path.rstrip("/")
+    if a != b and not b.startswith(a):
+        return "sold"
+    return "sold" if GONE.search(r.text[:300000]) else "alive"
 
 
 def process(raw: list[tuple[dict, list[str]]], models: dict, cfg: dict, report: dict,
-            ref_year: int | None = None, demo: bool = False) -> list[dict]:
+            ref_year: int | None = None, demo: bool = False, verify: dict | None = None) -> list[dict]:
     rates, fx_src = fx_rates(cfg.get("fx_fallback", {}))
     report["fx_source"] = fx_src
     excl = [re.compile(p, re.I) for p in cfg.get("exclude_patterns", [])]
@@ -110,10 +150,13 @@ def process(raw: list[tuple[dict, list[str]]], models: dict, cfg: dict, report: 
     today = date.today().isoformat()
 
     seen: dict[str, dict] = {}
-    dropped = {"excluded": 0, "no_match": 0, "price_bounds": 0, "duplicate": 0}
+    dropped = {"excluded": 0, "no_match": 0, "price_bounds": 0, "duplicate": 0, "no_photo": 0}
     for item, model_ids in raw:
         if item["id"] in seen:
             dropped["duplicate"] += 1
+            continue
+        if not [u for u in item.get("images") or [] if u and not u.endswith("placeholder.svg")] and not item.get("demo"):
+            dropped["no_photo"] += 1          # an ad without at least one photo is never published
             continue
         text = " ".join(filter(None, [item.get("title"), item.get("description")]))
         if any(rx.search(text) for rx in excl):
@@ -140,6 +183,7 @@ def process(raw: list[tuple[dict, list[str]]], models: dict, cfg: dict, report: 
         seen[item["id"]] = item
 
     listings = list(seen.values())
+    found_ids = set(seen)
     for l in listings:
         l["fuel"], l["gearbox"] = _it(l.get("fuel"), FUEL_IT), _it(l.get("gearbox"), GEAR_IT)
     _mark_cross_site_duplicates(listings)
@@ -152,6 +196,7 @@ def process(raw: list[tuple[dict, list[str]]], models: dict, cfg: dict, report: 
             l["description"] = l["description"][:400]
     for l in listings:
         l["variant"] = variant_of(l, models[l["model_id"]])
+        l["highlights"] = extract_highlights(" ".join(filter(None, [l.get("title"), l.get("description")])))
     listings.sort(key=lambda l: -l["score"])
     if not demo and os.environ.get("PACIFIC_TRANSLATE", "1") == "1":
         try:
@@ -160,8 +205,11 @@ def process(raw: list[tuple[dict, list[str]]], models: dict, cfg: dict, report: 
             log.warning("translation skipped: %s", e)
             report["translation"] = {"error": str(e)[:200]}
 
+    if not demo:
+        listings += _carry_over(found_ids, state, verify or {}, today, models)
     report["dropped"] = dropped
     report["published"] = len(listings)
+    report["sold_shown"] = sum(1 for l in listings if l.get("sold"))
     report["market"] = stats
     if not demo:
         _save_state(state)
@@ -252,6 +300,44 @@ def publish(listings: list[dict], models: dict, report: dict, demo: bool = False
     (SITE_DATA / "models.json").write_text(json.dumps([m.to_public() for m in models.values()], ensure_ascii=False, indent=1), encoding="utf-8")
     (SITE_DATA / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
     log.info("published %d listings → %s", len(listings), SITE_DATA)
+
+
+SOLD_DAYS = 7      # a sold car stays on the site, greyed out, for this many days
+UNSEEN_DAYS = 3    # an ad we couldn't re-check is kept this long before being dropped
+
+
+def _load_prev() -> dict[str, dict]:
+    try:
+        data = json.loads((SITE_DATA / "listings.json").read_text(encoding="utf-8"))
+        if data.get("meta", {}).get("demo"):
+            return {}
+        return {l["id"]: l for l in data.get("listings", [])}
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+def _carry_over(found_ids: set, state: dict, verify: dict, today: str, models: dict) -> list[dict]:
+    """Ads from the previous run that this crawl didn't find: sold, still alive (kept), or dropped."""
+    now = date.fromisoformat(today)
+    out = []
+    for lid, l in _load_prev().items():
+        if lid in found_ids or l.get("model_id") not in models or not l.get("images"):
+            continue
+        st = state.setdefault(lid, {"first_seen": l.get("first_seen", today), "last_seen": today})
+        if l.get("sold"):
+            if (now - date.fromisoformat(l["sold_at"])).days <= SOLD_DAYS:
+                out.append(l)
+            continue
+        v = verify.get(lid)
+        if v == "sold":
+            l["sold"], l["sold_at"] = True, today
+            out.append(l)
+        elif v == "alive":
+            st["last_seen"] = today
+            out.append(l)
+        elif (now - date.fromisoformat(st.get("last_seen", today))).days <= UNSEEN_DAYS:
+            out.append(l)
+    return out
 
 
 def _load_state() -> dict:

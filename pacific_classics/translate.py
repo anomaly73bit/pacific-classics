@@ -155,7 +155,6 @@ def translate_listings(listings: list[dict], max_new: int = 4000) -> dict:
         if lang == "it":
             continue
         l["title_it"] = tr.to_it(l.get("title"), lang)
-        l["description_it"] = tr.to_it(l.get("description"), lang)
         done += bool(l["title_it"])
     tr.save()
     return {"translated": done, "new_translations": tr.new, "cached": len(tr.cache)}
