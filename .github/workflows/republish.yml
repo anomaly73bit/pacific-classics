@@ -20,6 +20,8 @@ jobs:
       cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main          # latest data, including the crawl that finished while this job waited
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
