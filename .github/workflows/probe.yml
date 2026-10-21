@@ -1,0 +1,25 @@
+name: Probe sites
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python scripts/probe_sites.py
+      - name: Commit probe report
+        run: |
+          git config user.name "pacific-classics-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add probe/report.json
+          git diff --cached --quiet || git commit -m "probe: site reachability $(date -u +%F)"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done
