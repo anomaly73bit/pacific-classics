@@ -57,6 +57,32 @@ def guess_lang(text: str, source: str | None = None, country: str | None = None)
     return DEFAULT_LANG.get(source) or COUNTRY_LANG.get(country or "", "en")
 
 
+# car-ad jargon the generic models get wrong: normalised to English before translating (we pivot through English)
+PRE = [(r"\bOldtimer\b", "classic car"), (r"\bYoungtimer\b", "youngtimer"), (r"\bH-?(Zulassung|Kennzeichen|Kz\.?)\b", "historic plates"),
+       (r"\bT[ÜU]V\s*(neu|NEU|frisch)\b", "new inspection"), (r"\b(HU|TÜV|TUV)\s*/?\s*(AU)?\s*(bis|\b)\s*(\d{1,2})[./](\d{2,4})", r"inspection until \4/\5"),
+       (r"\bVoll-?Scheckheft\b|\bScheckheft(gepflegt)?\b", "full service history"), (r"\bLimousine\b", "sedan"),
+       (r"\bKombi\b|\bT-Modell\b|\bAvant\b|\bVariant\b|\bTouring\b", "estate"), (r"\bSchiebedach\b", "sunroof"),
+       (r"\bBj\.?\s*(\d{4})", r"year \1"), (r"(\d+)\s*TKM\b", r"\1,000 km"), (r"\bunfallfrei\b", "accident-free"),
+       (r"\b1\.\s?Hand\b", "first owner"), (r"\b(\d)\.\s?Hand\b", r"\1 owners"), (r"\bAHK\b", "tow bar"),
+       (r"\bVB\b", "negotiable"), (r"\bveterán\b", "historic vehicle"), (r"\bSTK\b", "inspection"), (r"\bAPK\b", "inspection")]
+PRE = [(re.compile(a, re.I), b) for a, b in PRE]
+POST = [(r"\bSaloon\b|\bBerlina\b", "berlina"), (r"\b([A-Z]{1,3})-Class\b", r"Classe \1"), (r"\bstation wagon\b", "station wagon"),
+        (r"\bauto classica\b", "auto d'epoca"), (r"\btarghe storiche\b", "targa storica"), (r"\bvecchio timer\b", "auto d'epoca")]
+POST = [(re.compile(a, re.I), b) for a, b in POST]
+
+
+def _pre(text: str) -> str:
+    for rx, rep in PRE:
+        text = rx.sub(rep, text)
+    return text
+
+
+def _post(text: str) -> str:
+    for rx, rep in POST:
+        text = rx.sub(rep, text)
+    return text
+
+
 class _Model:
     def __init__(self, path: Path):
         import ctranslate2
@@ -117,18 +143,18 @@ class Translator:
     def _run(self, text: str, src: str) -> str | None:
         chain = [(src, "it")] if any(p["from_code"] == src and p["to_code"] == "it" for p in self._index()) \
             else [(src, "en"), ("en", "it")] if src != "en" else [("en", "it")]
-        sentences = [s for s in re.split(r"(?<=[.!?])\s+|\s+[|•]\s+|\n+", text) if s.strip()][:12]
+        sentences = [s for s in re.split(r"(?<=[.!?])\s+|\s+[|•]\s+|\n+", _pre(text)) if s.strip()][:12]
         for a, b in chain:
             m = self._model(a, b)
             if not m:
                 return None
             sentences = m.translate(sentences)
-        return " ".join(sentences)
+        return _post(" · ".join(sentences) if len(sentences) > 1 else sentences[0])
 
     def to_it(self, text: str | None, src: str) -> str | None:
         if not text or src == "it":
             return None
-        k = hashlib.sha1(f"{src}:{text}".encode()).hexdigest()[:16]
+        k = hashlib.sha1(f"v2:{src}:{text}".encode()).hexdigest()[:16]
         self.used.add(k)
         if k in self.cache:
             return self.cache[k]
