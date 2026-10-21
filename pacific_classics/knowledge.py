@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -31,7 +32,15 @@ class Model:
     auto_gearbox_caution: bool = False
     high_mileage_ok: bool = False
     match_any: list[re.Pattern] = field(default_factory=list)
+    match_none: list[re.Pattern] | None = None   # None = default exclusions for the make
+    allow_modern: bool = False                   # family legitimately has CDI/HDi/dCi/JTD/hybrid engines
+    segment: str = "classic"
     it: dict = field(default_factory=dict)   # Italian texts: strengths, watch_out, engine_bad_note, category, recommended_engines
+
+    @property
+    def makes(self) -> set[str]:
+        """Makes this family is sold under (Aygo/C1/107, Getz/Picanto, Passat/A4…), from its search slugs."""
+        return {norm_make(self.make)} | {q.split("|", 1)[0] for q in self.queries}
 
     @property
     def name(self) -> str:
@@ -46,6 +55,7 @@ class Model:
             "engine_bad_note": self.engine_bad_note,
             "high_mileage_ok": self.high_mileage_ok,
             "it": self.it,
+            "segment": self.segment,
         }
 
 
@@ -54,7 +64,7 @@ def _rx(items):
 
 
 def norm_make(s: str | None) -> str:
-    s = (s or "").lower().replace("ë", "e").replace("é", "e")
+    s = unicodedata.normalize("NFKD", (s or "").lower()).encode("ascii", "ignore").decode()
     s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
     return {"mercedes": "mercedes-benz", "vw": "volkswagen", "landrover": "land-rover"}.get(s, s)
 
@@ -74,6 +84,9 @@ def load_models(path: Path | None = None) -> list[Model]:
             high_mileage_ok=bool(m.get("high_mileage_ok")),
             match_any=_rx(m.get("match_any")),
             it={k[:-3]: m[k] for k in m if k.endswith("_it")},
+            match_none=_rx(m["match_none"]) if "match_none" in m else None,
+            allow_modern=bool(m.get("allow_modern")),
+            segment=m.get("segment", "classic"),
         ))
     return out
 
@@ -128,11 +141,17 @@ def match_listing(listing: dict, candidates: list[Model]) -> tuple[Model | None,
     text = " ".join(filter(None, [listing.get("make"), listing.get("model_raw"), listing.get("title")])).lower()
     year = listing.get("year")
     make = norm_make(listing.get("make"))
-    if GLOBAL_EXCLUDE.search(text) or (make in EXCLUDE_BY_MAKE and EXCLUDE_BY_MAKE[make].search(text)):
-        return None, "none"
+    modern = bool(GLOBAL_EXCLUDE.search(text))
     scored = []
     for m in candidates:
-        if make and norm_make(m.make) != make:
+        if make and make not in m.makes:
+            continue
+        if modern and not m.allow_modern:
+            continue
+        if m.match_none is not None:
+            if any(rx.search(text) for rx in m.match_none):
+                continue
+        elif make in EXCLUDE_BY_MAKE and EXCLUDE_BY_MAKE[make].search(text):
             continue
         if not year or not (m.year_from <= year <= m.year_to):
             continue

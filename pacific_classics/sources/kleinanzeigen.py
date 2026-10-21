@@ -19,20 +19,22 @@ BASE = "https://www.kleinanzeigen.de"
 
 # model_s values offered by Kleinanzeigen for each make (scraped from its filter menu, 2026-10-21)
 KNOWN = {
-    "audi": "80 100", "bmw": "316 318 320 323 325 328 520 525 530 535",
-    "citroen": "bx zx xantia", "daihatsu": "charade feroza_sportrak rocky_fourtrak", "fiat": "panda uno tipo",
-    "ford": "sierra escort transit", "honda": "accord civic crx prelude", "lada": "niva",
-    "land_rover": "defender discovery", "lexus": "ls_400", "mazda": "323 626 mx_5",
+    "audi": "80 100 a4", "bmw": "316 318 320 323 325 328 330 520 523 525 528 530 535",
+    "citroen": "bx zx xantia c1 berlingo", "daihatsu": "charade feroza_sportrak rocky_fourtrak sirion cuore",
+    "fiat": "panda uno tipo doblo", "ford": "sierra escort transit", "honda": "accord civic crx prelude jazz cr_v",
+    "lada": "niva", "land_rover": "defender discovery", "lexus": "ls_400 ls_430 is_200", "mazda": "323 626 mx_5 2 3 6",
     "mercedes_benz": "190 200 220 230 250 280 300 320 350 e_klasse s_klasse sl_280 sl_300 sl_320 sl_500",
     "mitsubishi": "galant l200 lancer pajero", "nissan": "200_sx micra patrol sunny terrano",
-    "opel": "kadett omega vectra", "peugeot": "205 306 309 405 505", "porsche": "911 928 944 964",
-    "renault": "express r_19 r_4 clio", "saab": "900 9000", "subaru": "impreza legacy",
-    "suzuki": "sj_samurai vitara", "toyota": "4_runner camry carina celica corolla hilux land_cruiser mr_2 previa supra",
-    "volkswagen": "golf jetta passat polo t3 t4 transporter", "volvo": "240 245 740 760 850 940 960",
+    "opel": "kadett omega vectra", "peugeot": "205 306 309 405 505 107 406 partner", "porsche": "911 928 944 964",
+    "renault": "express r_19 r_4 clio kangoo", "saab": "900 9000", "subaru": "impreza legacy forester",
+    "suzuki": "sj_samurai vitara swift ignis wagon_rplus jimny grand",
+    "toyota": "4_runner camry carina celica corolla hilux land_cruiser mr_2 previa supra yaris aygo avensis prius rav",
+    "volkswagen": "golf jetta passat polo t3 t4 transporter bora", "volvo": "240 245 740 760 850 940 960 v70 s60",
+    "skoda": "fabia octavia", "hyundai": "getz", "kia": "picanto", "dacia": "logan sandero",
 }
 KNOWN = {k: set(v.split()) for k, v in KNOWN.items()}
 ALIAS = {"samurai": "sj_samurai", "sj": "sj_samurai", "rocky": "rocky_fourtrak", "feroza": "feroza_sportrak",
-         "4": "r_4", "19": "r_19", "ls": "ls_400"}
+         "4": "r_4", "19": "r_19", "ls": "ls_400", "rav-4": "rav", "grand-vitara": "grand", "wagon-r+": "wagon_rplus"}
 MAKE_NAMES = {"mercedes-benz": "Mercedes-Benz", "volkswagen": "Volkswagen", "land-rover": "Land Rover", "bmw": "BMW"}
 
 

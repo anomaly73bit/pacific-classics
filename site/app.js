@@ -65,7 +65,7 @@
 
   // ---------- filtering
   const F = () => ({
-    q: $("#q").value.trim().toLowerCase(), model: $("#fModel").value, country: $("#fCountry").value,
+    q: $("#q").value.trim().toLowerCase(), model: $("#fModel").value, seg: $("#fSeg").value, country: $("#fCountry").value,
     pmin: +$("#fPmin").value || 0, pmax: +$("#fPmax").value || Infinity,
     ymin: +$("#fYmin").value || 0, ymax: +$("#fYmax").value || Infinity, km: +$("#fKm").value || Infinity,
     hist: $("#fHist").value, seller: $("#fSeller").value,
@@ -77,6 +77,7 @@
     const has = (l, c) => l.alerts.some(a => a.code === c);
     let out = ALL.filter(l => {
       if (f.model && l.model_id !== f.model) return false;
+      if (f.seg && (MODEL_BY_ID[l.model_id] || {}).segment !== f.seg) return false;
       if (f.country && l.country !== f.country) return false;
       if (l.price_eur != null && (l.price_eur < f.pmin || l.price_eur > f.pmax)) return false;
       if (l.price_eur == null && (f.pmin || f.pmax !== Infinity)) return false;
@@ -278,7 +279,7 @@
   $("#dlg").addEventListener("close", hidePeek);
 
   // ---------- URL state (shareable searches)
-  const HASH_KEYS = { q: "#q", model: "#fModel", country: "#fCountry", pmin: "#fPmin", pmax: "#fPmax", ymin: "#fYmin", ymax: "#fYmax", km: "#fKm", hist: "#fHist", seller: "#fSeller", sort: "#sort" };
+  const HASH_KEYS = { q: "#q", seg: "#fSeg", model: "#fModel", country: "#fCountry", pmin: "#fPmin", pmax: "#fPmax", ymin: "#fYmin", ymax: "#fYmax", km: "#fKm", hist: "#fHist", seller: "#fSeller", sort: "#sort" };
   function writeHash() {
     const p = new URLSearchParams();
     for (const [k, sel] of Object.entries(HASH_KEYS)) { const v = $(sel).value; if (v && !(k === "sort" && v === "score")) p.set(k, v); }
@@ -295,7 +296,7 @@
   let t;
   const rerender = () => { shown = PAGE; clearTimeout(t); t = setTimeout(render, 120); };
   document.querySelectorAll("#filters input, #filters select, #q, #sort").forEach(el => el.addEventListener("input", rerender));
-  $("#reset").onclick = () => { document.querySelectorAll("#filters input[type=number], #q").forEach(i => i.value = ""); ["#fModel", "#fCountry", "#fHist", "#fSeller"].forEach(s => $(s).value = ""); $("#fDeals").checked = false; $("#fSafe").checked = true; rerender(); };
+  $("#reset").onclick = () => { document.querySelectorAll("#filters input[type=number], #q").forEach(i => i.value = ""); ["#fModel", "#fSeg", "#fCountry", "#fHist", "#fSeller"].forEach(s => $(s).value = ""); $("#fDeals").checked = false; $("#fSafe").checked = true; rerender(); };
   $("#more").onclick = () => { shown += PAGE; render(); };
   $("#toggleFilters").onclick = () => $("#filters").classList.toggle("open");
   $("#lang").onclick = () => { lang = lang === "it" ? "en" : "it"; try { localStorage.setItem("pc-lang", lang); } catch (e) {} applyLang(); render(); const v = document.querySelector(".tab.active").dataset.view; if (v !== "listings") showView(v); };

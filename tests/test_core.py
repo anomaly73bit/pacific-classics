@@ -16,7 +16,7 @@ def nd(obj):
 
 
 def test_knowledge_base_loads():
-    assert len(MODELS) == 50
+    assert len(MODELS) >= 85
     qs = build_queries(list(MODELS.values()))
     shared = next(q for q in qs if q.make == "mercedes-benz" and q.model == "300")
     assert len(shared.model_ids) >= 3  # W123, W124, W126 share this query
@@ -178,3 +178,11 @@ def test_duplicates_published_once():
     _mark_cross_site_duplicates(ls)
     assert a.get("duplicate_of") is None and b["duplicate_of"] == a["id"] and c["duplicate_of"] == a["id"]
     assert d.get("duplicate_of") is None and {o["source"] for o in a["also_on"]} == {"kleinanzeigen", "autoscout24"}
+
+
+def test_youngtimers_and_badge_engineering():
+    allm = list(MODELS.values())
+    assert match_listing({"make": "Kia", "title": "Kia Picanto 1.1", "year": 2007}, allm)[0].id.startswith("hyundai-getz")
+    assert match_listing({"make": "Audi", "title": "Audi A4 Avant 1.9 TDI B6", "year": 2003}, allm)[0].id.startswith("volkswagen-passat-b5")
+    assert match_listing({"make": "Škoda", "title": "Škoda Octavia 1.9 TDI", "year": 2004}, allm)[0].id.startswith("skoda-octavia")
+    assert match_listing({"make": "Volkswagen", "title": "VW Golf 7 1.6 TDI", "year": 2014}, allm)[0] is None

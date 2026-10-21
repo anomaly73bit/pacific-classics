@@ -37,6 +37,7 @@ models:
   category_it: Berlina
   recommended_engines_it: 2.0D, 2.5D, 2.0/2.3 benzina
   model_it: '190'
+  segment: classic
 - id: mercedes-benz-e-class-w124
   make: Mercedes-Benz
   model: E-Class
@@ -80,6 +81,7 @@ models:
   category_it: Berlina / Station wagon / Coupé
   recommended_engines_it: 200D/250D/300D (OM60x), 230E, 300E (M103)
   model_it: Classe E
+  segment: classic
 - id: mercedes-benz-w123-late-units-w123
   make: Mercedes-Benz
   model: W123 (late units)
@@ -114,6 +116,7 @@ models:
   category_it: Berlina / Station wagon
   recommended_engines_it: 240D, 300D, 230E
   model_it: W123 (ultime serie)
+  segment: classic
 - id: mercedes-benz-s-class-w126
   make: Mercedes-Benz
   model: S-Class
@@ -151,6 +154,7 @@ models:
   category_it: Berlina / Coupé
   recommended_engines_it: 300SE, 420SE, 300SD
   model_it: Classe S
+  segment: classic
 - id: mercedes-benz-sl-r107
   make: Mercedes-Benz
   model: SL
@@ -183,6 +187,7 @@ models:
   category_it: Roadster
   recommended_engines_it: 300SL, 420SL, 500SL
   model_it: SL
+  segment: classic
 - id: mercedes-benz-g-class-w460-w463
   make: Mercedes-Benz
   model: G-Class
@@ -218,6 +223,7 @@ models:
   category_it: Fuoristrada
   recommended_engines_it: 300GD, 250GD, 230GE
   model_it: Classe G
+  segment: classic
 - id: mercedes-benz-sl-r129
   make: Mercedes-Benz
   model: SL
@@ -253,6 +259,7 @@ models:
   category_it: Roadster
   recommended_engines_it: 300SL, SL320, 500SL
   model_it: SL
+  segment: classic
 - id: volvo-240-245-240
   make: Volvo
   model: 240 / 245
@@ -285,6 +292,7 @@ models:
   category_it: Berlina / Station wagon
   recommended_engines_it: B230F / B230FK
   model_it: 240 / 245
+  segment: classic
 - id: volvo-740-760-700-series
   make: Volvo
   model: 740 / 760
@@ -316,6 +324,7 @@ models:
   category_it: Berlina / Station wagon
   recommended_engines_it: B230F, B230FT turbo
   model_it: 740 / 760
+  segment: classic
 - id: volvo-940-960-900-series
   make: Volvo
   model: 940 / 960
@@ -347,6 +356,7 @@ models:
   category_it: Berlina / Station wagon
   recommended_engines_it: B230F/FT, 2.4 TD
   model_it: 940 / 960
+  segment: classic
 - id: volvo-850-850
   make: Volvo
   model: '850'
@@ -380,6 +390,7 @@ models:
   category_it: Berlina / Station wagon
   recommended_engines_it: 2.0/2.5 5 cilindri aspirati
   model_it: '850'
+  segment: classic
 - id: toyota-land-cruiser-j60-j70-j80
   make: Toyota
   model: Land Cruiser
@@ -420,6 +431,7 @@ models:
   category_it: Fuoristrada
   recommended_engines_it: 1HZ, 1HD-T, 12H-T, 3F
   model_it: Land Cruiser
+  segment: classic
 - id: toyota-hilux-4runner-n50-n100
   make: Toyota
   model: Hilux / 4Runner
@@ -452,6 +464,7 @@ models:
   category_it: Pick-up / Fuoristrada
   recommended_engines_it: 2L, 2L-T, 22R
   model_it: Hilux / 4Runner
+  segment: classic
 - id: toyota-corolla-e80-e90-e100
   make: Toyota
   model: Corolla
@@ -483,6 +496,7 @@ models:
   category_it: Utilitaria / Berlina
   recommended_engines_it: 4A-FE, 2C diesel
   model_it: Corolla
+  segment: classic
 - id: toyota-camry-carina-ii-carina-e-v20-v30-t150-t190
   make: Toyota
   model: Camry / Carina II / Carina E
@@ -514,6 +528,7 @@ models:
   category_it: Berlina
   recommended_engines_it: 3S-FE, 2C
   model_it: Camry / Carina II / Carina E
+  segment: classic
 - id: toyota-celica-mr2-supra-mk3-t160-t180-w10-w20-a70
   make: Toyota
   model: Celica / MR2 / Supra Mk3
@@ -548,6 +563,7 @@ models:
   category_it: Sportiva
   recommended_engines_it: 3S-GE, 7M-GTE
   model_it: Celica / MR2 / Supra Mk3
+  segment: classic
 - id: toyota-previa-xr10
   make: Toyota
   model: Previa
@@ -576,6 +592,7 @@ models:
   category_it: Monovolume
   recommended_engines_it: 2TZ-FE
   model_it: Previa
+  segment: classic
 - id: lexus-ls400-xf10
   make: Lexus
   model: LS400
@@ -606,6 +623,7 @@ models:
   category_it: Berlina
   recommended_engines_it: 1UZ-FE V8
   model_it: LS400
+  segment: classic
 - id: honda-civic-crx-accord-prelude-various
   make: Honda
   model: Civic / CRX / Accord / Prelude
@@ -642,6 +660,7 @@ models:
   category_it: Utilitaria / Coupé / Berlina
   recommended_engines_it: D16, B16, F20/F22
   model_it: Civic / CRX / Accord / Prelude
+  segment: classic
 - id: mazda-mx-5-na
   make: Mazda
   model: MX-5
@@ -672,6 +691,7 @@ models:
   category_it: Roadster
   recommended_engines_it: 1.6, 1.8
   model_it: MX-5
+  segment: classic
 - id: mazda-323-626-bf-ba-gc-ge
   make: Mazda
   model: 323 / 626
@@ -704,6 +724,7 @@ models:
   category_it: Utilitaria / Berlina
   recommended_engines_it: B6, FE, RF diesel
   model_it: 323 / 626
+  segment: classic
 - id: nissan-patrol-terrano-i-y60-gr-wd21
   make: Nissan
   model: Patrol / Terrano I
@@ -739,6 +760,7 @@ models:
   category_it: Fuoristrada
   recommended_engines_it: TD42, RD28
   model_it: Patrol / Terrano I
+  segment: classic
 - id: nissan-sunny-micra-200sx-n13-n14-k10-s13
   make: Nissan
   model: Sunny / Micra / 200SX
@@ -773,6 +795,7 @@ models:
   category_it: Utilitaria / Coupé
   recommended_engines_it: GA16, MA10, CA18DET
   model_it: Sunny / Micra / 200SX
+  segment: classic
 - id: mitsubishi-pajero-i-ii
   make: Mitsubishi
   model: Pajero
@@ -807,6 +830,7 @@ models:
   category_it: Fuoristrada
   recommended_engines_it: 2.5 TD (4D56), 3.0 V6
   model_it: Pajero
+  segment: classic
 - id: mitsubishi-galant-lancer-l200-various
   make: Mitsubishi
   model: Galant / Lancer / L200
@@ -840,6 +864,7 @@ models:
   category_it: Berlina / Pick-up
   recommended_engines_it: 4G63, 4D56
   model_it: Galant / Lancer / L200
+  segment: classic
 - id: subaru-legacy-impreza-bc-bd-gc
   make: Subaru
   model: Legacy / Impreza
@@ -873,6 +898,7 @@ models:
   category_it: Berlina / Station wagon
   recommended_engines_it: EJ18/EJ20 aspirati
   model_it: Legacy / Impreza
+  segment: classic
 - id: suzuki-sj-samurai-vitara-sj-et
   make: Suzuki
   model: SJ Samurai / Vitara
@@ -906,6 +932,7 @@ models:
   category_it: Fuoristrada
   recommended_engines_it: 1.3, 1.6
   model_it: SJ Samurai / Vitara
+  segment: classic
 - id: daihatsu-rocky-feroza-charade-f70-f80-f300-g100
   make: Daihatsu
   model: Rocky / Feroza / Charade
@@ -939,6 +966,7 @@ models:
   category_it: Fuoristrada / Utilitaria
   recommended_engines_it: 2.8 D, 1.6
   model_it: Rocky / Feroza / Charade
+  segment: classic
 - id: peugeot-205-309-405-306-various
   make: Peugeot
   model: 205 / 309 / 405 / 306
@@ -974,6 +1002,7 @@ models:
   category_it: Utilitaria / Berlina
   recommended_engines_it: XUD7/XUD9 diesel, TU benzina
   model_it: 205 / 309 / 405 / 306
+  segment: classic
 - id: peugeot-505-505
   make: Peugeot
   model: '505'
@@ -1003,6 +1032,7 @@ models:
   category_it: Berlina / Station wagon
   recommended_engines_it: 2.0, 2.5 diesel
   model_it: '505'
+  segment: classic
 - id: citroen-bx-zx-xantia-various
   make: Citroën
   model: BX / ZX / Xantia
@@ -1040,6 +1070,7 @@ models:
   category_it: Utilitaria / Berlina
   recommended_engines_it: XUD diesel
   model_it: BX / ZX / Xantia
+  segment: classic
 - id: renault-4-r4
   make: Renault
   model: '4'
@@ -1073,6 +1104,7 @@ models:
   category_it: Utilitaria
   recommended_engines_it: 956/1108 cc
   model_it: '4'
+  segment: classic
 - id: renault-express-19-clio-i-diesel-various
   make: Renault
   model: Express / 19 / Clio I diesel
@@ -1109,6 +1141,7 @@ models:
   category_it: Furgone / Utilitaria
   recommended_engines_it: F8Q, Energy
   model_it: Express / 19 / Clio I diesel
+  segment: classic
 - id: fiat-panda-141
   make: Fiat
   model: Panda
@@ -1140,6 +1173,7 @@ models:
   category_it: Utilitaria / Fuoristrada
   recommended_engines_it: FIRE 1000/1100, 4x4
   model_it: Panda
+  segment: classic
 - id: fiat-uno-tipo-diesel-146-160
   make: Fiat
   model: Uno / Tipo diesel
@@ -1172,6 +1206,7 @@ models:
   category_it: Utilitaria
   recommended_engines_it: FIRE, 1.7 D
   model_it: Uno / Tipo diesel
+  segment: classic
 - id: volkswagen-golf-i-ii-jetta-mk1-mk2
   make: Volkswagen
   model: Golf I/II / Jetta
@@ -1208,6 +1243,7 @@ models:
   category_it: Utilitaria / Berlina
   recommended_engines_it: 1.6D/TD, 1.6/1.8 benzina
   model_it: Golf I/II / Jetta
+  segment: classic
 - id: volkswagen-passat-b3-b4-golf-iii-polo-b3-b4-mk3-6n
   make: Volkswagen
   model: Passat B3/B4 / Golf III / Polo
@@ -1245,6 +1281,7 @@ models:
   category_it: Utilitaria / Berlina / Station wagon
   recommended_engines_it: 1.9 TDI (1Z/AHU)
   model_it: Passat B3/B4 / Golf III / Polo
+  segment: classic
 - id: volkswagen-transporter-t3-t4-t3-t4
   make: Volkswagen
   model: Transporter T3 / T4
@@ -1285,6 +1322,7 @@ models:
   category_it: Furgone / Camper
   recommended_engines_it: 1.6TD, 2.5 TDI (T4)
   model_it: Transporter T3 / T4
+  segment: classic
 - id: audi-80-b3-b4
   make: Audi
   model: '80'
@@ -1317,6 +1355,7 @@ models:
   category_it: Berlina / Station wagon
   recommended_engines_it: 1.9 TDI, 2.0, 2.3 5 cilindri
   model_it: '80'
+  segment: classic
 - id: audi-100-c3-c4
   make: Audi
   model: '100'
@@ -1349,6 +1388,7 @@ models:
   category_it: Berlina / Station wagon
   recommended_engines_it: 2.5 TDI, 2.3 5 cilindri
   model_it: '100'
+  segment: classic
 - id: bmw-3-series-e30
   make: BMW
   model: 3 Series
@@ -1386,6 +1426,7 @@ models:
   category_it: Berlina / Touring / Cabriolet
   recommended_engines_it: M20 sei cilindri, M40
   model_it: Serie 3
+  segment: classic
 - id: bmw-5-series-e34
   make: BMW
   model: 5 Series
@@ -1424,6 +1465,7 @@ models:
   category_it: Berlina / Touring
   recommended_engines_it: M30 (530i/535i), M50
   model_it: Serie 5
+  segment: classic
 - id: bmw-3-series-e36
   make: BMW
   model: 3 Series
@@ -1462,6 +1504,7 @@ models:
   category_it: Berlina / Coupé / Touring
   recommended_engines_it: M50/M52, M43
   model_it: Serie 3
+  segment: classic
 - id: saab-900-classic-9000-900-9000
   make: Saab
   model: 900 Classic / 9000
@@ -1494,6 +1537,7 @@ models:
   category_it: Utilitaria / Berlina
   recommended_engines_it: B201/B202, B234
   model_it: 900 Classic / 9000
+  segment: classic
 - id: opel-kadett-e-vectra-a-omega-a-various
   make: Opel
   model: Kadett E / Vectra A / Omega A
@@ -1528,6 +1572,7 @@ models:
   category_it: Utilitaria / Berlina
   recommended_engines_it: C20NE, 1.7 D Isuzu
   model_it: Kadett E / Vectra A / Omega A
+  segment: classic
 - id: ford-sierra-escort-transit-various
   make: Ford
   model: Sierra / Escort / Transit
@@ -1564,6 +1609,7 @@ models:
   category_it: Berlina / Furgone
   recommended_engines_it: Pinto 2.0, Endura D
   model_it: Sierra / Escort / Transit
+  segment: classic
 - id: land-rover-defender-discovery-i-90-110-series-i
   make: Land Rover
   model: Defender / Discovery I
@@ -1599,6 +1645,7 @@ models:
   category_it: Fuoristrada
   recommended_engines_it: 200Tdi, 300Tdi
   model_it: Defender / Discovery I
+  segment: classic
 - id: lada-niva-2121
   make: Lada
   model: Niva
@@ -1628,6 +1675,7 @@ models:
   category_it: Fuoristrada
   recommended_engines_it: 1.6/1.7
   model_it: Niva
+  segment: classic
 - id: porsche-911-carrera-3-2-964-g-model-964
   make: Porsche
   model: 911 Carrera 3.2 / 964
@@ -1662,6 +1710,7 @@ models:
   category_it: Sportiva
   recommended_engines_it: 3.2 / 3.6
   model_it: 911 Carrera 3.2 / 964
+  segment: classic
 - id: porsche-944-928-944-928
   make: Porsche
   model: 944 / 928
@@ -1696,3 +1745,1313 @@ models:
   category_it: Sportiva
   recommended_engines_it: 2.5/2.7/3.0, V8
   model_it: 944 / 928
+  segment: classic
+- id: toyota-yaris-i-ii-xp10-xp90
+  make: Toyota
+  model: Yaris I / II
+  chassis: XP10 / XP90
+  category: Hatchback
+  years:
+  - 1999
+  - 2011
+  recommended_engines: 1.0 / 1.3 VVT-i
+  strengths: Tiny engines that run forever, minimal running costs
+  watch_out: Clutch on early 1.0, rust rare
+  reliability: 5
+  queries:
+  - toyota|yaris
+  engine_good:
+  - 1[.,]0
+  - 1[.,]3
+  - vvt
+  engine_bad:
+  - d-?4d
+  engine_bad_note: '1.4 D-4D: injector costs, petrol is the safer bet'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - yaris
+  match_none:
+  - yaris\s?(cross|verso|hybrid)
+  - \bgr\b
+  allow_modern: false
+  segment: youngtimer
+  model_it: Yaris I / II
+  category_it: Utilitaria
+  recommended_engines_it: 1.0 / 1.3 VVT-i
+  strengths_it: Motori piccoli che non muoiono mai, costi di gestione minimi
+  watch_out_it: Frizione sulle prime 1.0, ruggine rara
+  engine_bad_note_it: '1.4 D-4D: iniettori costosi, meglio benzina'
+- id: toyota-aygo-citroen-c1-peugeot-107-ab10
+  make: Toyota
+  model: Aygo / Citroën C1 / Peugeot 107
+  chassis: AB10
+  category: Hatchback
+  years:
+  - 2005
+  - 2011
+  recommended_engines: 1.0 (Toyota 1KR)
+  strengths: 'Toyota 1KR three-cylinder: simple and very durable'
+  watch_out: Clutch, rear window seals
+  reliability: 4
+  queries:
+  - toyota|aygo
+  - citroen|c1
+  - peugeot|107
+  engine_good:
+  - 1[.,]0
+  - 1kr
+  - vti
+  engine_bad:
+  - 1[.,]4\s?hdi
+  engine_bad_note: '1.4 HDi diesel: rare and less robust'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - aygo
+  - \bc1\b
+  - \b107\b
+  allow_modern: false
+  segment: youngtimer
+  model_it: Aygo / Citroën C1 / Peugeot 107
+  category_it: Utilitaria
+  recommended_engines_it: 1.0 (Toyota 1KR)
+  strengths_it: 'Tre cilindri Toyota 1KR: semplice e molto durevole'
+  watch_out_it: Frizione, guarnizioni lunotto
+  engine_bad_note_it: '1.4 HDi diesel: raro e meno robusto'
+- id: suzuki-swift-mz-ez
+  make: Suzuki
+  model: Swift
+  chassis: MZ/EZ
+  category: Hatchback
+  years:
+  - 2005
+  - 2010
+  recommended_engines: 1.3 / 1.5 / 1.6 Sport
+  strengths: Simple chain-driven engines, light and tough
+  watch_out: Rust on rear arches
+  reliability: 4
+  queries:
+  - suzuki|swift
+  engine_good:
+  - 1[.,][356]
+  engine_bad:
+  - ddis
+  - 1[.,]3\s?d
+  engine_bad_note: '1.3 DDiS (Fiat diesel): less durable than the petrols'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - swift
+  allow_modern: false
+  segment: youngtimer
+  model_it: Swift
+  category_it: Utilitaria
+  recommended_engines_it: 1.3 / 1.5 / 1.6 Sport
+  strengths_it: Motori semplici a catena, leggera e robusta
+  watch_out_it: Ruggine sui passaruota posteriori
+  engine_bad_note_it: '1.3 DDiS (diesel Fiat): meno durevole dei benzina'
+- id: suzuki-ignis-wagon-r-fh-mm
+  make: Suzuki
+  model: Ignis / Wagon R+
+  chassis: FH / MM
+  category: Hatchback
+  years:
+  - 1998
+  - 2008
+  recommended_engines: 1.0 / 1.3 / 1.5
+  strengths: Basic, light and nearly unbreakable
+  watch_out: Rust
+  reliability: 4
+  queries:
+  - suzuki|ignis
+  - suzuki|wagon-r+
+  engine_good:
+  - 1[.,][035]
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - ignis
+  - wagon\s?r
+  allow_modern: false
+  segment: youngtimer
+  model_it: Ignis / Wagon R+
+  category_it: Utilitaria
+  recommended_engines_it: 1.0 / 1.3 / 1.5
+  strengths_it: Essenziali, leggere e quasi indistruttibili
+  watch_out_it: Ruggine
+  engine_bad_note_it: null
+- id: honda-jazz-i-ii-gd-ge
+  make: Honda
+  model: Jazz I / II
+  chassis: GD / GE
+  category: Hatchback
+  years:
+  - 2002
+  - 2011
+  recommended_engines: 1.2 / 1.4 i-DSI
+  strengths: Bulletproof i-DSI engines, magic seats, huge space
+  watch_out: CVT gearbox on early cars, check fluid changes
+  reliability: 5
+  queries:
+  - honda|jazz
+  engine_good:
+  - 1[.,][24]
+  - i-?dsi
+  engine_bad:
+  - cvt
+  engine_bad_note: 'CVT automatic (early): fluid changes essential'
+  auto_gearbox_caution: true
+  high_mileage_ok: true
+  match_any:
+  - jazz
+  allow_modern: false
+  segment: youngtimer
+  model_it: Jazz I / II
+  category_it: Utilitaria
+  recommended_engines_it: 1.2 / 1.4 i-DSI
+  strengths_it: Motori i-DSI a prova di bomba, sedili magici, tanto spazio
+  watch_out_it: Cambio CVT sulle prime, verificare i cambi d'olio
+  engine_bad_note_it: 'Automatico CVT (prime serie): cambi d''olio indispensabili'
+- id: daihatsu-sirion-cuore-m1-m3-l7
+  make: Daihatsu
+  model: Sirion / Cuore
+  chassis: M1-M3 / L7
+  category: Hatchback
+  years:
+  - 1998
+  - 2010
+  recommended_engines: 1.0 / 1.3
+  strengths: Toyota-group engines, very cheap to run
+  watch_out: Rust, rare parts
+  reliability: 4
+  queries:
+  - daihatsu|sirion
+  - daihatsu|cuore
+  engine_good:
+  - 1[.,][03]
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - sirion
+  - cuore
+  allow_modern: false
+  segment: youngtimer
+  model_it: Sirion / Cuore
+  category_it: Utilitaria
+  recommended_engines_it: 1.0 / 1.3
+  strengths_it: Motori del gruppo Toyota, costi bassissimi
+  watch_out_it: Ruggine, ricambi rari
+  engine_bad_note_it: null
+- id: fiat-panda-169-169
+  make: Fiat
+  model: Panda (169)
+  chassis: '169'
+  category: Hatchback / 4x4
+  years:
+  - 2003
+  - 2011
+  recommended_engines: 1.2 Fire, 1.1 Fire, 4x4
+  strengths: 'FIRE engine: cheap, simple, everywhere in Italy'
+  watch_out: Rear suspension, electrics
+  reliability: 4
+  queries:
+  - fiat|panda
+  engine_good:
+  - fire
+  - 1[.,][12]\b
+  - 4x4
+  engine_bad:
+  - 1[.,]3\s?(m-?jet|multijet)
+  engine_bad_note: '1.3 Multijet: good but DPF/injector costs on later cars'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - panda
+  match_none:
+  - \b141\b
+  - young
+  - \b1000\b
+  allow_modern: true
+  segment: youngtimer
+  model_it: Panda (169)
+  category_it: Utilitaria / Fuoristrada
+  recommended_engines_it: 1.2 Fire, 1.1 Fire, 4x4
+  strengths_it: 'Motore FIRE: economico, semplice, ricambi ovunque in Italia'
+  watch_out_it: Sospensione posteriore, impianto elettrico
+  engine_bad_note_it: '1.3 Multijet: buono ma costi FAP/iniettori sulle ultime'
+- id: skoda-fabia-i-6y
+  make: Škoda
+  model: Fabia I
+  chassis: 6Y
+  category: Hatchback / Estate
+  years:
+  - 1999
+  - 2007
+  recommended_engines: 1.4 MPI, 1.9 SDI / TDI
+  strengths: '1.9 SDI/TDI: VW diesels that run 500,000+ km'
+  watch_out: 1.2 HTP timing chain, rust on doors
+  reliability: 4
+  queries:
+  - skoda|fabia
+  engine_good:
+  - 1[.,]9\s?(sdi|tdi)
+  - 1[.,]4\s?mpi
+  - 1[.,]4\b
+  engine_bad:
+  - 1[.,]2\s?htp
+  - \bhtp\b
+  engine_bad_note: '1.2 HTP three-cylinder: timing chain trouble'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - fabia
+  match_none:
+  - fabia\s?(ii|2|iii|3|iv|4)\b
+  allow_modern: true
+  segment: youngtimer
+  model_it: Fabia I
+  category_it: Utilitaria / Station wagon
+  recommended_engines_it: 1.4 MPI, 1.9 SDI / TDI
+  strengths_it: '1.9 SDI/TDI: diesel VW da oltre 500.000 km'
+  watch_out_it: Catena 1.2 HTP, ruggine alle porte
+  engine_bad_note_it: '1.2 HTP tre cilindri: problemi alla catena'
+- id: hyundai-getz-kia-picanto-tb-sa
+  make: Hyundai
+  model: Getz / Kia Picanto
+  chassis: TB / SA
+  category: Hatchback
+  years:
+  - 2002
+  - 2011
+  recommended_engines: 1.1 / 1.3 / 1.4
+  strengths: Simple Korean engines, low running costs
+  watch_out: Rust on sills, clutch
+  reliability: 4
+  queries:
+  - hyundai|getz
+  - kia|picanto
+  engine_good:
+  - 1[.,][134]
+  engine_bad:
+  - 1[.,]5\s?crdi
+  engine_bad_note: '1.5 CRDi: weaker than the petrols'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - getz
+  - picanto
+  allow_modern: true
+  segment: youngtimer
+  model_it: Getz / Kia Picanto
+  category_it: Utilitaria
+  recommended_engines_it: 1.1 / 1.3 / 1.4
+  strengths_it: Motori coreani semplici, costi di gestione bassi
+  watch_out_it: Ruggine ai sottoporta, frizione
+  engine_bad_note_it: '1.5 CRDi: più debole dei benzina'
+- id: mazda-2-dy
+  make: Mazda
+  model: '2'
+  chassis: DY
+  category: Hatchback
+  years:
+  - 2003
+  - 2007
+  recommended_engines: 1.25 / 1.4 / 1.6
+  strengths: Ford-Mazda petrol engines, solid build
+  watch_out: Rust on rear arches
+  reliability: 4
+  queries:
+  - mazda|2
+  engine_good:
+  - 1[.,](25|4|6)
+  engine_bad:
+  - 1[.,]4\s?(cd|diesel)
+  engine_bad_note: '1.4 CD diesel (Ford-PSA): less durable'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - mazda\s?2\b
+  - \b2\s?(dy|1[.,]\d)
+  match_none:
+  - de\b
+  - skyactiv
+  allow_modern: false
+  segment: youngtimer
+  model_it: '2'
+  category_it: Utilitaria
+  recommended_engines_it: 1.25 / 1.4 / 1.6
+  strengths_it: Motori benzina Ford-Mazda, costruzione solida
+  watch_out_it: Ruggine sui passaruota posteriori
+  engine_bad_note_it: '1.4 CD diesel (Ford-PSA): meno durevole'
+- id: dacia-logan-sandero-i-l90-b90
+  make: Dacia
+  model: Logan / Sandero I
+  chassis: L90 / B90
+  category: Sedan / Hatchback
+  years:
+  - 2004
+  - 2011
+  recommended_engines: 1.4 / 1.6 MPI, 1.5 dCi
+  strengths: 'Old Renault mechanics: crude, cheap, unkillable'
+  watch_out: Rust under the body on older cars
+  reliability: 4
+  queries:
+  - dacia|logan
+  - dacia|sandero
+  engine_good:
+  - 1[.,][46]\s?(mpi|8v|16v)?
+  - 1[.,]5\s?dci
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - logan
+  - sandero
+  match_none:
+  - stepway\s?(ii|2)
+  - \btce\b
+  allow_modern: true
+  segment: youngtimer
+  model_it: Logan / Sandero I
+  category_it: Berlina / Utilitaria
+  recommended_engines_it: 1.4 / 1.6 MPI, 1.5 dCi
+  strengths_it: 'Vecchia meccanica Renault: grezza, economica, indistruttibile'
+  watch_out_it: Ruggine sotto la scocca sulle più vecchie
+  engine_bad_note_it: null
+- id: skoda-octavia-i-1u
+  make: Škoda
+  model: Octavia I
+  chassis: 1U
+  category: Hatchback / Estate
+  years:
+  - 1997
+  - 2010
+  recommended_engines: 1.9 TDI (ALH/ASV/AXR), 1.6
+  strengths: 'Taxi favourite: 1.9 TDI past 1,000,000 km'
+  watch_out: Rust on tailgate, dual-mass flywheel
+  reliability: 5
+  queries:
+  - skoda|octavia
+  engine_good:
+  - 1[.,]9\s?tdi
+  - \btdi\b
+  - 1[.,]6
+  engine_bad:
+  - 1[.,]8\s?t\b
+  - \brs\b
+  engine_bad_note: '1.8T / RS: turbo petrol, more wear'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - octavia
+  match_none:
+  - octavia\s?(ii|2|iii|3|iv|4)\b
+  - \b1z\b.*\bii\b
+  allow_modern: true
+  segment: youngtimer
+  model_it: Octavia I
+  category_it: Utilitaria / Station wagon
+  recommended_engines_it: 1.9 TDI (ALH/ASV/AXR), 1.6
+  strengths_it: 'Preferita dai tassisti: 1.9 TDI oltre 1.000.000 di km'
+  watch_out_it: Ruggine sul portellone, volano bimassa
+  engine_bad_note_it: '1.8T / RS: turbo benzina, più usura'
+- id: volkswagen-golf-iv-bora-1j
+  make: Volkswagen
+  model: Golf IV / Bora
+  chassis: 1J
+  category: Hatchback / Sedan / Estate
+  years:
+  - 1997
+  - 2005
+  recommended_engines: 1.9 TDI (ALH/ASZ/AXR), 1.6
+  strengths: '1.9 TDI ALH: among the best diesels ever made'
+  watch_out: Window regulators, electrics, coolant sensor
+  reliability: 5
+  queries:
+  - volkswagen|golf
+  - volkswagen|bora
+  engine_good:
+  - 1[.,]9\s?tdi
+  - \balh\b
+  - \basz\b
+  - 1[.,]6
+  engine_bad:
+  - 1[.,]4\s?16v
+  - v5\b
+  - 1[.,]8\s?t\b
+  engine_bad_note: '1.4 16V / 1.8T / V5: weaker or costlier'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - golf\s?(4|iv)\b
+  - golf
+  - bora
+  match_none:
+  - golf\s?(5|v|6|vi|7|vii|8|plus|sportsvan)\b
+  allow_modern: true
+  segment: youngtimer
+  model_it: Golf IV / Bora
+  category_it: Utilitaria / Berlina / Station wagon
+  recommended_engines_it: 1.9 TDI (ALH/ASZ/AXR), 1.6
+  strengths_it: '1.9 TDI ALH: tra i migliori diesel mai costruiti'
+  watch_out_it: Alzacristalli, impianto elettrico, sensore temperatura
+  engine_bad_note_it: '1.4 16V / 1.8T / V5: più deboli o costosi'
+- id: volkswagen-passat-b5-audi-a4-b5-b6-3b-8d-8e
+  make: Volkswagen
+  model: Passat B5 / Audi A4 B5-B6
+  chassis: 3B / 8D / 8E
+  category: Sedan / Estate
+  years:
+  - 1997
+  - 2005
+  recommended_engines: 1.9 TDI (AFN/AVF/AWX)
+  strengths: '1.9 TDI Pumpe-Düse: 500,000+ km common'
+  watch_out: Front suspension arms, V6 TDI to avoid
+  reliability: 4
+  queries:
+  - volkswagen|passat
+  - audi|a4
+  engine_good:
+  - 1[.,]9\s?tdi
+  - \btdi\b
+  engine_bad:
+  - 2[.,]5\s?tdi
+  - v6\s?tdi
+  - 1[.,]8\s?t\b
+  engine_bad_note: '2.5 V6 TDI: camshaft wear, expensive'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - passat
+  - \ba4\b
+  - \bb5\b
+  - \bb6\b
+  match_none:
+  - passat\s?(b[6-9]|3c|cc)\b
+  - \bb[789]\b
+  - a4\s?(b[789]|8k)
+  allow_modern: true
+  segment: youngtimer
+  model_it: Passat B5 / Audi A4 B5-B6
+  category_it: Berlina / Station wagon
+  recommended_engines_it: 1.9 TDI (AFN/AVF/AWX)
+  strengths_it: '1.9 TDI pompa-iniettore: comuni oltre 500.000 km'
+  watch_out_it: Bracci sospensione anteriori, V6 TDI da evitare
+  engine_bad_note_it: '2.5 V6 TDI: usura alberi a camme, costoso'
+- id: toyota-corolla-e120-e120
+  make: Toyota
+  model: Corolla E120
+  chassis: E120
+  category: Hatchback / Sedan / Estate
+  years:
+  - 2002
+  - 2007
+  recommended_engines: 1.4 / 1.6 VVT-i
+  strengths: Quiet, simple, endless km
+  watch_out: 1.4 D-4D injectors, oil use on some 1.6
+  reliability: 5
+  queries:
+  - toyota|corolla
+  engine_good:
+  - 1[.,][46]\s?vvt
+  - vvt-?i
+  engine_bad:
+  - 2[.,]0\s?d-?4d
+  - 2[.,]2\s?d-?4d
+  engine_bad_note: '2.0/2.2 D-4D: head gasket and injector issues'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - corolla
+  match_none:
+  - verso
+  - \be1[5-9]0\b
+  - hybrid
+  allow_modern: true
+  segment: youngtimer
+  model_it: Corolla E120
+  category_it: Utilitaria / Berlina / Station wagon
+  recommended_engines_it: 1.4 / 1.6 VVT-i
+  strengths_it: Silenziosa, semplice, chilometri infiniti
+  watch_out_it: Iniettori 1.4 D-4D, consumo d'olio su alcuni 1.6
+  engine_bad_note_it: '2.0/2.2 D-4D: problemi a guarnizione testata e iniettori'
+- id: toyota-avensis-t22-t25-t22-t25
+  make: Toyota
+  model: Avensis T22 / T25
+  chassis: T22 / T25
+  category: Sedan / Estate
+  years:
+  - 1997
+  - 2008
+  recommended_engines: 1.8 VVT-i, 2.0 petrol
+  strengths: Taxi-grade saloon, very low failure rates
+  watch_out: 2.0/2.2 D-4D (T25) head gasket
+  reliability: 5
+  queries:
+  - toyota|avensis
+  engine_good:
+  - 1[.,]8\s?vvt
+  - vvt-?i
+  - 1[.,]6\s?vvt
+  engine_bad:
+  - 2[.,]2\s?d-?4d
+  - 2[.,]0\s?d-?4d
+  engine_bad_note: '2.0/2.2 D-4D: head gasket failures'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - avensis
+  match_none:
+  - verso
+  - t27
+  allow_modern: true
+  segment: youngtimer
+  model_it: Avensis T22 / T25
+  category_it: Berlina / Station wagon
+  recommended_engines_it: 1.8 VVT-i, 2.0 benzina
+  strengths_it: Berlina da taxi, tassi di guasto bassissimi
+  watch_out_it: Guarnizione testata 2.0/2.2 D-4D (T25)
+  engine_bad_note_it: '2.0/2.2 D-4D: guarnizioni della testata che cedono'
+- id: toyota-prius-ii-xw20
+  make: Toyota
+  model: Prius II
+  chassis: XW20
+  category: Hatchback
+  years:
+  - 2004
+  - 2009
+  recommended_engines: 1.5 Hybrid
+  strengths: Taxis with 500,000-1,000,000 km on original hybrid system
+  watch_out: Hybrid battery age, inverter pump
+  reliability: 5
+  queries:
+  - toyota|prius
+  engine_good:
+  - hybrid
+  - 1[.,]5
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - prius
+  match_none:
+  - plus
+  - plug
+  - \bxw30\b
+  allow_modern: true
+  segment: youngtimer
+  model_it: Prius II
+  category_it: Utilitaria
+  recommended_engines_it: 1.5 Ibrida
+  strengths_it: Taxi con 500.000-1.000.000 km col sistema ibrido originale
+  watch_out_it: Età della batteria ibrida, pompa dell'inverter
+  engine_bad_note_it: null
+- id: honda-civic-vii-accord-vii-eu-ep-cl-cm
+  make: Honda
+  model: Civic VII / Accord VII
+  chassis: EU-EP / CL-CM
+  category: Hatchback / Sedan / Estate
+  years:
+  - 2001
+  - 2008
+  recommended_engines: 1.4 / 1.6 / 2.0 / 2.4 i-VTEC
+  strengths: i-VTEC petrols are near indestructible
+  watch_out: Oil consumption on some 2.4, 2.2 i-CTDi chain
+  reliability: 5
+  queries:
+  - honda|civic
+  - honda|accord
+  engine_good:
+  - i-?vtec
+  - 1[.,][46]
+  - 2[.,][04]
+  engine_bad:
+  - 2[.,]2\s?(i-?)?ctdi
+  - 2[.,]2\s?i-?dtec
+  engine_bad_note: '2.2 i-CTDi diesel: good but costly if neglected'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - civic
+  - accord
+  match_none:
+  - civic\s?(fk|fn|type\s?r\s?fk)
+  - \b(ix|x|xi)\b
+  allow_modern: true
+  segment: youngtimer
+  model_it: Civic VII / Accord VII
+  category_it: Utilitaria / Berlina / Station wagon
+  recommended_engines_it: 1.4 / 1.6 / 2.0 / 2.4 i-VTEC
+  strengths_it: Benzina i-VTEC quasi indistruttibili
+  watch_out_it: Consumo d'olio su alcuni 2.4, catena 2.2 i-CTDi
+  engine_bad_note_it: '2.2 i-CTDi diesel: buono ma costoso se trascurato'
+- id: mazda-3-6-bk-gg
+  make: Mazda
+  model: 3 / 6
+  chassis: BK / GG
+  category: Hatchback / Sedan / Estate
+  years:
+  - 2002
+  - 2008
+  recommended_engines: 1.6 / 2.0 petrol
+  strengths: MZR petrol engines very robust
+  watch_out: Rust on rear arches, 2.0 MZR-CD diesel
+  reliability: 4
+  queries:
+  - mazda|3
+  - mazda|6
+  engine_good:
+  - 1[.,]6
+  - 2[.,]0\s?(mzr|benz|petrol)?
+  engine_bad:
+  - mzr-?cd
+  - 2[.,]0\s?cd
+  - citd
+  engine_bad_note: '2.0 MZR-CD diesel: oil pump and injectors'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - mazda\s?[36]\b
+  - \b[36]\s?(1[.,]6|2[.,]0)
+  match_none:
+  - skyactiv
+  - \bbl\b
+  - \bgh\b
+  allow_modern: true
+  segment: youngtimer
+  model_it: 3 / 6
+  category_it: Utilitaria / Berlina / Station wagon
+  recommended_engines_it: 1.6 / 2.0 benzina
+  strengths_it: Motori benzina MZR molto robusti
+  watch_out_it: Ruggine sui passaruota posteriori, diesel 2.0 MZR-CD
+  engine_bad_note_it: '2.0 MZR-CD diesel: pompa olio e iniettori'
+- id: peugeot-406-8b-8e
+  make: Peugeot
+  model: '406'
+  chassis: 8B/8E
+  category: Sedan / Estate / Coupé
+  years:
+  - 1997
+  - 2004
+  recommended_engines: 2.0 HDi, 1.8 / 2.0 petrol
+  strengths: '2.0 HDi: the classic French taxi engine'
+  watch_out: Rear axle bearings, electrics
+  reliability: 4
+  queries:
+  - peugeot|406
+  engine_good:
+  - 2[.,]0\s?hdi
+  - \bhdi\b
+  - 1[.,]8
+  - 2[.,]0
+  engine_bad:
+  - 3[.,]0\s?v6
+  - 2[.,]2\s?hdi
+  engine_bad_note: '3.0 V6 / 2.2 HDi: costlier to run'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - \b406\b
+  allow_modern: true
+  segment: youngtimer
+  model_it: '406'
+  category_it: Berlina / Station wagon / Coupé
+  recommended_engines_it: 2.0 HDi, 1.8 / 2.0 benzina
+  strengths_it: '2.0 HDi: il classico motore dei taxi francesi'
+  watch_out_it: Cuscinetti assale posteriore, impianto elettrico
+  engine_bad_note_it: '3.0 V6 / 2.2 HDi: costi più alti'
+- id: mercedes-benz-e-class-w210-w210
+  make: Mercedes-Benz
+  model: E-Class W210
+  chassis: W210
+  category: Sedan / Estate
+  years:
+  - 1997
+  - 2002
+  recommended_engines: E 290 TD, E 300 TD (OM606), E 240/280
+  strengths: 'OM606 six-cylinder diesel: a legend'
+  watch_out: Severe rust (wings, doors, boot), first-gen CDI
+  reliability: 4
+  queries:
+  - mercedes-benz|e-klasse
+  - mercedes-benz|300
+  - mercedes-benz|290
+  engine_good:
+  - 300\s?(td|turbodiesel|d)\b
+  - 290\s?td
+  - om606
+  - e\s?2[48]0
+  engine_bad:
+  - e\s?(200|220|270)\s?cdi
+  - e\s?55
+  - e\s?430
+  engine_bad_note: 'E 220/270 CDI first common-rail: injector seals and swirl flaps'
+  auto_gearbox_caution: true
+  high_mileage_ok: true
+  match_any:
+  - w210
+  - s210
+  - e\s?(200|220|240|270|280|290|300|320|430)
+  - e-?klasse
+  match_none:
+  - w211
+  - w212
+  - w213
+  - w124
+  allow_modern: true
+  segment: youngtimer
+  model_it: Classe E W210
+  category_it: Berlina / Station wagon
+  recommended_engines_it: E 290 TD, E 300 TD (OM606), E 240/280
+  strengths_it: 'Sei cilindri diesel OM606: una leggenda'
+  watch_out_it: Ruggine pesante (parafanghi, porte, bagagliaio), CDI prima serie
+  engine_bad_note_it: 'E 220/270 CDI primo common-rail: guarnizioni iniettori e flap'
+- id: bmw-3-series-e46-5-series-e39-e46-e39
+  make: BMW
+  model: 3 Series E46 / 5 Series E39
+  chassis: E46 / E39
+  category: Sedan / Touring / Coupé
+  years:
+  - 1998
+  - 2005
+  recommended_engines: M54 six-cylinder petrol (320i-330i, 520i-530i)
+  strengths: 'M54 straight-six: smooth and very durable'
+  watch_out: Cooling system, rear subframe (E46), oil leaks
+  reliability: 4
+  queries:
+  - bmw|320
+  - bmw|325
+  - bmw|328
+  - bmw|330
+  - bmw|520
+  - bmw|523
+  - bmw|525
+  - bmw|528
+  - bmw|530
+  engine_good:
+  - m54
+  - m52
+  - \b(320|323|325|328|330|520|523|525|528|530)\s?i
+  engine_bad:
+  - 318\s?d
+  - 320\s?d.*m47
+  - n42
+  - n46
+  engine_bad_note: '4-cylinder N42/N46 petrol and early diesels: less durable'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - \be46\b
+  - \be39\b
+  - \b3[23][05]\s?(i|ci|xi)
+  - \b5[23][05]\s?i
+  match_none:
+  - \be9[0-3]\b
+  - \be6[01]\b
+  - \bf\d\d\b
+  - \be36\b
+  - \be34\b
+  allow_modern: false
+  segment: youngtimer
+  model_it: Serie 3 E46 / Serie 5 E39
+  category_it: Berlina / Touring / Coupé
+  recommended_engines_it: Sei cilindri benzina M54 (320i-330i, 520i-530i)
+  strengths_it: 'Sei cilindri in linea M54: fluido e molto durevole'
+  watch_out_it: Raffreddamento, telaietto posteriore (E46), perdite d'olio
+  engine_bad_note_it: '4 cilindri N42/N46 e primi diesel: meno durevoli'
+- id: volvo-v70-ii-s60-p2
+  make: Volvo
+  model: V70 II / S60
+  chassis: P2
+  category: Sedan / Estate
+  years:
+  - 2000
+  - 2007
+  recommended_engines: 2.4 / 2.4T five-cylinder petrol, D5
+  strengths: Five-cylinder engines routinely pass 400,000 km
+  watch_out: Automatic gearbox (AW55), angle gear on AWD
+  reliability: 4
+  queries:
+  - volvo|v70
+  - volvo|s60
+  engine_good:
+  - 2[.,]4\b
+  - 2[.,]5\s?t
+  - \bd5\b
+  engine_bad:
+  - \bt5\b
+  - \br\b
+  engine_bad_note: 'T5 / R: high-performance, more wear'
+  auto_gearbox_caution: true
+  high_mileage_ok: true
+  match_any:
+  - v70
+  - s60
+  - \bp2\b
+  match_none:
+  - v70\s?(iii|3)\b
+  - s60\s?(ii|2|iii)\b
+  allow_modern: true
+  segment: youngtimer
+  model_it: V70 II / S60
+  category_it: Berlina / Station wagon
+  recommended_engines_it: 2.4 / 2.4T benzina 5 cilindri, D5
+  strengths_it: I 5 cilindri superano normalmente i 400.000 km
+  watch_out_it: Cambio automatico (AW55), coppia conica sulle AWD
+  engine_bad_note_it: 'T5 / R: alte prestazioni, più usura'
+- id: lexus-ls430-is200-ucf30-xe10
+  make: Lexus
+  model: LS430 / IS200
+  chassis: UCF30 / XE10
+  category: Sedan
+  years:
+  - 1999
+  - 2006
+  recommended_engines: 4.3 V8 (3UZ), 2.0 straight-six
+  strengths: Toyota luxury engineering, extremely low failure rates
+  watch_out: Air suspension (LS430), parts prices
+  reliability: 5
+  queries:
+  - lexus|ls-430
+  - lexus|is-200
+  engine_good:
+  - ls\s?430
+  - 3uz
+  - is\s?200
+  - is\s?300
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: true
+  high_mileage_ok: true
+  match_any:
+  - ls\s?430
+  - is\s?200
+  - is\s?300
+  match_none:
+  - is\s?(220|250)
+  - ls\s?460
+  allow_modern: false
+  segment: youngtimer
+  model_it: LS430 / IS200
+  category_it: Berlina
+  recommended_engines_it: 4.3 V8 (3UZ), 2.0 sei cilindri in linea
+  strengths_it: Ingegneria di lusso Toyota, tassi di guasto bassissimi
+  watch_out_it: Sospensioni pneumatiche (LS430), prezzi ricambi
+  engine_bad_note_it: null
+- id: toyota-land-cruiser-j100-j100
+  make: Toyota
+  model: Land Cruiser J100
+  chassis: J100
+  category: 4x4
+  years:
+  - 1998
+  - 2007
+  recommended_engines: 4.2 TD (1HD-FTE), 4.7 V8
+  strengths: '1HD-FTE: legendary straight-six diesel'
+  watch_out: Rust on frame, IFS front end
+  reliability: 5
+  queries:
+  - toyota|land-cruiser
+  engine_good:
+  - 1hd
+  - 4[.,]2
+  - 4[.,]7\s?v8
+  engine_bad:
+  - 3[.,]0\s?d-?4d
+  - kdj
+  engine_bad_note: '3.0 D-4D (J120): injector and piston issues'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - j\s?100
+  - \bhdj\s?10\d
+  - \buzj\s?10\d
+  - land\s?cruiser\s?100
+  - amazon
+  match_none:
+  - j\s?120
+  - j\s?150
+  - j\s?200
+  - kdj
+  allow_modern: false
+  segment: youngtimer
+  model_it: Land Cruiser J100
+  category_it: Fuoristrada
+  recommended_engines_it: 4.2 TD (1HD-FTE), 4.7 V8
+  strengths_it: '1HD-FTE: leggendario sei cilindri diesel'
+  watch_out_it: Ruggine al telaio, avantreno a ruote indipendenti
+  engine_bad_note_it: '3.0 D-4D (J120): problemi a iniettori e pistoni'
+- id: toyota-hilux-n140-n150-n140-n170
+  make: Toyota
+  model: Hilux N140-N150
+  chassis: N140-N170
+  category: Pick-up
+  years:
+  - 1997
+  - 2011
+  recommended_engines: 2.4 D, 2.5 / 3.0 D-4D
+  strengths: Top Gear could not kill one
+  watch_out: Frame rust, 2.5 D-4D injectors on high km
+  reliability: 5
+  queries:
+  - toyota|hilux
+  engine_good:
+  - 2[.,]5\s?d-?4d
+  - 3[.,]0\s?d-?4d
+  - 2[.,]4\s?d
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - hilux
+  match_none:
+  - \bn[23]\d\d\b
+  - \bgr\b
+  allow_modern: true
+  segment: youngtimer
+  model_it: Hilux N140-N150
+  category_it: Pick-up
+  recommended_engines_it: 2.4 D, 2.5 / 3.0 D-4D
+  strengths_it: Top Gear non è riuscito a distruggerne uno
+  watch_out_it: Ruggine al telaio, iniettori 2.5 D-4D a km alti
+  engine_bad_note_it: null
+- id: toyota-rav4-ii-xa20
+  make: Toyota
+  model: RAV4 II
+  chassis: XA20
+  category: SUV
+  years:
+  - 2000
+  - 2005
+  recommended_engines: 2.0 VVT-i
+  strengths: Simple petrol SUV, very reliable
+  watch_out: Rear differential, 2.0 D-4D
+  reliability: 4
+  queries:
+  - toyota|rav-4
+  engine_good:
+  - 2[.,]0\s?vvt
+  - vvt-?i
+  - 1[.,]8
+  engine_bad:
+  - d-?4d
+  engine_bad_note: '2.0 D-4D: less durable than the petrol'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - rav\s?-?4
+  match_none:
+  - xa[345]0
+  - hybrid
+  allow_modern: true
+  segment: youngtimer
+  model_it: RAV4 II
+  category_it: SUV
+  recommended_engines_it: 2.0 VVT-i
+  strengths_it: SUV benzina semplice e molto affidabile
+  watch_out_it: Differenziale posteriore, 2.0 D-4D
+  engine_bad_note_it: '2.0 D-4D: meno durevole del benzina'
+- id: suzuki-jimny-fj-sn
+  make: Suzuki
+  model: Jimny
+  chassis: FJ / SN
+  category: 4x4
+  years:
+  - 1998
+  - 2011
+  recommended_engines: '1.3'
+  strengths: Tiny, simple real off-roader that keeps going
+  watch_out: Frame rust, rear axle
+  reliability: 4
+  queries:
+  - suzuki|jimny
+  engine_good:
+  - 1[.,]3
+  - m13a
+  engine_bad:
+  - 1[.,]5\s?ddis
+  engine_bad_note: '1.5 DDiS (Renault diesel): less durable'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - jimny
+  match_none:
+  - \bgj\b
+  - \b20(1[89]|2\d)\b
+  allow_modern: true
+  segment: youngtimer
+  model_it: Jimny
+  category_it: Fuoristrada
+  recommended_engines_it: '1.3'
+  strengths_it: Piccolo vero fuoristrada semplice che non si ferma mai
+  watch_out_it: Ruggine al telaio, ponte posteriore
+  engine_bad_note_it: '1.5 DDiS (diesel Renault): meno durevole'
+- id: suzuki-grand-vitara-ft-jt
+  make: Suzuki
+  model: Grand Vitara
+  chassis: FT / JT
+  category: SUV / 4x4
+  years:
+  - 1998
+  - 2011
+  recommended_engines: 1.6 / 2.0 / 2.4 petrol
+  strengths: Body-on-frame (I), robust petrol engines
+  watch_out: Rust, 1.9 DDiS diesel
+  reliability: 4
+  queries:
+  - suzuki|grand-vitara
+  engine_good:
+  - 1[.,]6
+  - 2[.,][04]
+  engine_bad:
+  - 1[.,]9\s?ddis
+  - 2[.,]0\s?hdi
+  engine_bad_note: '1.9 DDiS / 2.0 HDi diesels: weaker'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - grand\s?vitara
+  match_none:
+  - vitara\s?(2015|ly)
+  allow_modern: true
+  segment: youngtimer
+  model_it: Grand Vitara
+  category_it: SUV / Fuoristrada
+  recommended_engines_it: 1.6 / 2.0 / 2.4 benzina
+  strengths_it: Telaio a longheroni (I serie), motori benzina robusti
+  watch_out_it: Ruggine, diesel 1.9 DDiS
+  engine_bad_note_it: 'Diesel 1.9 DDiS / 2.0 HDi: più deboli'
+- id: honda-cr-v-ii-rd4-rd9
+  make: Honda
+  model: CR-V II
+  chassis: RD4-RD9
+  category: SUV
+  years:
+  - 2002
+  - 2006
+  recommended_engines: 2.0 i-VTEC
+  strengths: 'K20 engine: one of Honda''s best'
+  watch_out: Rear differential fluid, A/C compressor
+  reliability: 5
+  queries:
+  - honda|cr-v
+  engine_good:
+  - 2[.,]0
+  - i-?vtec
+  - k20
+  engine_bad:
+  - 2[.,]2\s?i-?ctdi
+  engine_bad_note: '2.2 i-CTDi: good but costly if neglected'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - cr-?v
+  match_none:
+  - \bre\d\b
+  - cr-?v\s?(iii|iv|v|3|4|5)\b
+  allow_modern: true
+  segment: youngtimer
+  model_it: CR-V II
+  category_it: SUV
+  recommended_engines_it: 2.0 i-VTEC
+  strengths_it: 'Motore K20: uno dei migliori Honda'
+  watch_out_it: Olio differenziale posteriore, compressore clima
+  engine_bad_note_it: '2.2 i-CTDi: buono ma costoso se trascurato'
+- id: subaru-forester-sf-sg-sf-sg
+  make: Subaru
+  model: Forester SF / SG
+  chassis: SF / SG
+  category: SUV / Estate
+  years:
+  - 1997
+  - 2008
+  recommended_engines: 2.0 naturally aspirated (EJ20)
+  strengths: Symmetrical AWD and naturally aspirated boxer
+  watch_out: Head gaskets on EJ25, rust on rear arches
+  reliability: 4
+  queries:
+  - subaru|forester
+  engine_good:
+  - 2[.,]0\s?(x|i|ej20)?
+  - ej20
+  engine_bad:
+  - 2[.,]5
+  - ej25
+  - turbo
+  - \bxt\b
+  engine_bad_note: '2.5 / XT turbo: head gasket and turbo issues'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - forester
+  match_none:
+  - \bsh\b
+  - \bsj\b
+  - \bsk\b
+  - e-?boxer
+  allow_modern: true
+  segment: youngtimer
+  model_it: Forester SF / SG
+  category_it: SUV / Station wagon
+  recommended_engines_it: 2.0 aspirato (EJ20)
+  strengths_it: Trazione integrale simmetrica e boxer aspirato
+  watch_out_it: Guarnizioni testata sull'EJ25, ruggine sui passaruota posteriori
+  engine_bad_note_it: '2.5 / XT turbo: guarnizione testata e turbo'
+- id: mitsubishi-l200-iii-k60-k70
+  make: Mitsubishi
+  model: L200 III
+  chassis: K60-K70
+  category: Pick-up
+  years:
+  - 1997
+  - 2005
+  recommended_engines: 2.5 TD (4D56)
+  strengths: '4D56: simple mechanical diesel, runs forever'
+  watch_out: Frame rust, timing belt intervals
+  reliability: 4
+  queries:
+  - mitsubishi|l200
+  engine_good:
+  - 2[.,]5\s?td
+  - 4d56
+  engine_bad:
+  - 2[.,]5\s?di-?d
+  engine_bad_note: '2.5 DI-D (later): timing chain and DPF'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - l\s?-?200
+  match_none:
+  - \bkb4t\b
+  - \bkj\b
+  - \b20(0[6-9]|1\d)\b
+  allow_modern: false
+  segment: youngtimer
+  model_it: L200 III
+  category_it: Pick-up
+  recommended_engines_it: 2.5 TD (4D56)
+  strengths_it: '4D56: diesel meccanico semplice che dura per sempre'
+  watch_out_it: Ruggine al telaio, intervalli cinghia di distribuzione
+  engine_bad_note_it: '2.5 DI-D (successivo): catena e FAP'
+- id: citroen-berlingo-peugeot-partner-i-m49-m59
+  make: Citroën
+  model: Berlingo / Peugeot Partner I
+  chassis: M49 / M59
+  category: Van / MPV
+  years:
+  - 1997
+  - 2008
+  recommended_engines: 1.9 D (DW8), 2.0 HDi, 1.4 petrol
+  strengths: '1.9 D DW8: mechanical diesel, practically unbreakable'
+  watch_out: Rust on sills, rear axle bearings
+  reliability: 4
+  queries:
+  - citroen|berlingo
+  - peugeot|partner
+  engine_good:
+  - 1[.,]9\s?d\b
+  - dw8
+  - 2[.,]0\s?hdi
+  - 1[.,]4
+  engine_bad:
+  - 1[.,]6\s?hdi
+  engine_bad_note: '1.6 HDi: turbo and injector seals'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - berlingo
+  - partner
+  match_none:
+  - berlingo\s?(ii|iii|2|3)\b
+  - tepee\s?(ii|2)
+  - \bk9\b
+  - e-?berlingo
+  allow_modern: true
+  segment: youngtimer
+  model_it: Berlingo / Peugeot Partner I
+  category_it: Furgone / Monovolume
+  recommended_engines_it: 1.9 D (DW8), 2.0 HDi, 1.4 benzina
+  strengths_it: '1.9 D DW8: diesel meccanico praticamente indistruttibile'
+  watch_out_it: Ruggine ai sottoporta, cuscinetti assale posteriore
+  engine_bad_note_it: '1.6 HDi: turbo e guarnizioni iniettori'
+- id: renault-kangoo-i-kc
+  make: Renault
+  model: Kangoo I
+  chassis: KC
+  category: Van / MPV
+  years:
+  - 1997
+  - 2008
+  recommended_engines: 1.5 dCi (K9K), 1.9 D, 1.2 / 1.6 petrol
+  strengths: '1.5 dCi: one of Europe''s most widespread diesels'
+  watch_out: Rust, electrics, dCi injectors on high km
+  reliability: 4
+  queries:
+  - renault|kangoo
+  engine_good:
+  - 1[.,]5\s?dci
+  - k9k
+  - 1[.,]9\s?d
+  - 1[.,][26]\b
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - kangoo
+  match_none:
+  - kangoo\s?(ii|2|iii|3)\b
+  - z\.?e\b
+  - e-?tech
+  allow_modern: true
+  segment: youngtimer
+  model_it: Kangoo I
+  category_it: Furgone / Monovolume
+  recommended_engines_it: 1.5 dCi (K9K), 1.9 D, 1.2 / 1.6 benzina
+  strengths_it: '1.5 dCi: uno dei diesel più diffusi in Europa'
+  watch_out_it: Ruggine, impianto elettrico, iniettori dCi a km alti
+  engine_bad_note_it: null
+- id: fiat-doblo-i-119-223
+  make: Fiat
+  model: Doblò I
+  chassis: 119/223
+  category: Van / MPV
+  years:
+  - 2001
+  - 2011
+  recommended_engines: 1.9 JTD / Multijet, 1.4 petrol
+  strengths: '1.9 JTD: robust Fiat diesel, cheap parts in Italy'
+  watch_out: Rust, front suspension
+  reliability: 4
+  queries:
+  - fiat|doblo
+  engine_good:
+  - 1[.,]9\s?(jtd|multijet|m-?jet)
+  - \bjtd\b
+  - 1[.,]4
+  engine_bad:
+  - 1[.,]3\s?multijet
+  engine_bad_note: '1.3 Multijet: less suited to heavy use'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - dobl[oò]
+  match_none:
+  - dobl[oò]\s?(ii|2)\b
+  - \b263\b
+  allow_modern: true
+  segment: youngtimer
+  model_it: Doblò I
+  category_it: Furgone / Monovolume
+  recommended_engines_it: 1.9 JTD / Multijet, 1.4 benzina
+  strengths_it: '1.9 JTD: diesel Fiat robusto, ricambi economici in Italia'
+  watch_out_it: Ruggine, sospensione anteriore
+  engine_bad_note_it: '1.3 Multijet: meno adatto a uso pesante'
