@@ -176,7 +176,7 @@
   }
 
   // indicative truck transport to northern/central Italy (midpoint of the ranges on the "Come funziona" page)
-  const CONTACT_EMAIL = "info@pacificclassics.eu";   // ← change to the real address
+  const CONTACT_EMAIL = "info@pacificit.solutions", WHATSAPP = "420775368380";
   const TRANSPORT = { AT: 575, SI: 575, DE: 750, CZ: 800, SK: 800, FR: 800, BE: 950, NL: 950, LU: 950, ES: 1100, IT: 350, PL: 950, HU: 850 };
   const SOUTH_DE = /^(7|8|9)/;   // German postcodes 7xxxx-9xxxx: Baden-Württemberg / Bavaria
   const transportEstimate = l => l.country === "DE" && SOUTH_DE.test(l.zip || "") ? 625 : (TRANSPORT[l.country] ?? 900);
@@ -193,9 +193,11 @@
         <tr class="tot"><td>${esc(T.estTotal)}</td><td>≈ € ${fmt(Math.round(tot / 10) * 10)}</td></tr>
         <tr class="opt"><td>${esc(T.estRev)}</td><td>≈ € ${REVISIONE}</td></tr>
       </table>
-      <p class="actions-row"><a class="btn primary" href="${quoteMail(l)}">${esc(T.estQuote)}</a>
+      <p class="actions-row"><a class="btn wa" href="${quoteWa(l)}" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a class="btn primary" href="${quoteMail(l)}">${esc(T.estQuote)}</a>
       <a class="btn sec" href="#" data-goto="service">${esc(T.estMore)}</a></p></div>`;
   }
+  const quoteWa = l => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Ciao Pacific Classics, vorrei un preventivo per questa auto: " + (l?.url || ""))}`;
   const quoteMail = l => `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Preventivo Pacific Classics: " + (l?.title || ""))}&body=${encodeURIComponent((l ? "Annuncio: " + l.url + "\n" : "Link dell'annuncio: \n") + "Città di consegna: \nNome e telefono: \n")}`;
 
   function openDetail(id) {
