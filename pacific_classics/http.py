@@ -6,12 +6,66 @@ import logging
 import random
 import re
 import time
-from urllib import robotparser
 from urllib.parse import urlparse
 
 import requests
 
 log = logging.getLogger("pacific.http")
+
+
+class Robots:
+    """robots.txt per RFC 9309: groups by user-agent, '*' and '$' patterns, longest match wins, Allow wins ties."""
+
+    def __init__(self, text: str):
+        self.groups: list[tuple[list[str], list[tuple[bool, str]]]] = []
+        agents, rules, last_was_agent = [], [], False
+        for raw in text.splitlines():
+            line = raw.split("#", 1)[0].strip()
+            if ":" not in line:
+                continue
+            k, v = (x.strip() for x in line.split(":", 1))
+            k = k.lower()
+            if k == "user-agent":
+                if not last_was_agent and (agents or rules):
+                    self.groups.append((agents, rules))
+                    agents, rules = [], []
+                agents.append(v.lower())
+                last_was_agent = True
+            elif k in ("allow", "disallow"):
+                last_was_agent = False
+                if agents:
+                    rules.append((k == "allow", v))
+        if agents:
+            self.groups.append((agents, rules))
+
+    def _rules_for(self, ua: str):
+        token = re.sub(r"[^a-z0-9_-].*$", "", ua.lower().split("compatible;")[-1].strip()) or ua.lower()
+        best, best_len = None, -1
+        for agents, rules in self.groups:
+            for a in agents:
+                if a != "*" and a in token and len(a) > best_len:
+                    best, best_len = rules, len(a)
+        if best is not None:
+            return best
+        merged = [r for agents, rules in self.groups if "*" in agents for r in rules]
+        return merged
+
+    @staticmethod
+    def _match(pattern: str, path: str) -> bool:
+        if not pattern:
+            return False
+        rx = "^" + re.escape(pattern).replace(r"\*", ".*")
+        rx = rx[:-2] + "$" if rx.endswith(r"\$") else rx
+        return re.match(rx, path) is not None
+
+    def allowed(self, ua: str, url: str) -> bool:
+        p = urlparse(url)
+        path = (p.path or "/") + (("?" + p.query) if p.query else "")
+        verdict, length = True, -1
+        for allow, pat in self._rules_for(ua):
+            if self._match(pat, path) and (len(pat) > length or (len(pat) == length and allow)):
+                verdict, length = allow, len(pat)
+        return verdict
 
 
 class Blocked(Exception):
@@ -31,7 +85,7 @@ class PoliteClient:
             "Accept-Language": "en-GB,en;q=0.9,de;q=0.8,it;q=0.7,cs;q=0.6",
             "Accept": "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8",
         })
-        self._robots: dict[str, robotparser.RobotFileParser | None] = {}
+        self._robots: dict[str, Robots] = {}
         self.robots_info: dict[str, str] = {}
         self._last: dict[str, float] = {}
 
@@ -41,20 +95,19 @@ class PoliteClient:
         p = urlparse(url)
         base = f"{p.scheme}://{p.netloc}"
         if base not in self._robots:
-            rp = robotparser.RobotFileParser()
+            rp = Robots("")
             try:
                 r = self.s.get(base + "/robots.txt", timeout=self.cfg["timeout_seconds"])
                 lines = r.text.splitlines() if r.status_code == 200 else []
-                rp.parse(lines)
+                rp = Robots("\n".join(lines))
                 star = r.text.find("User-agent: *")
                 self.robots_info[base] = f"robots.txt HTTP {r.status_code}; '*' section: " + \
                     (r.text[star:star + 120].replace("\n", " / ") if star >= 0 else "none")
             except requests.RequestException as e:
-                rp.parse([])
                 self.robots_info[base] = f"robots.txt unreachable: {e}"
             self._robots[base] = rp
         rp = self._robots[base]
-        return rp.can_fetch(self.cfg["user_agent"], url) if rp else True
+        return rp.allowed(self.cfg["user_agent"], url)
 
     def _wait(self, host: str):
         lo, hi = self.cfg.get("delay_seconds", [3, 7])

@@ -118,3 +118,13 @@ def test_advisor_flags():
     scam = dict(base, price_eur=2500, title="Mercedes E 300 W124 Motorschaden", gearbox="Automatik")
     codes = {a["code"] for a in advise(scam, m, stats, 2026)["alerts"]}
     assert {"PRICE_SUSPICIOUS", "KW_DEFECT", "AUTO_GEARBOX"} <= codes
+
+
+def test_robots_matcher():
+    from pacific_classics.http import Robots
+    ua = "Mozilla/5.0 (compatible; PacificClassicsBot/1.0; +https://github.com/x)"
+    r = Robots("User-agent: ClaudeBot\nDisallow: /\n\nUser-agent: *\nDisallow: /lst?\nDisallow: /*hledat=\n")
+    assert r.allowed(ua, "https://a/lst/mercedes-benz/190?atype=C")      # /lst? must not block /lst/...
+    assert not r.allowed(ua, "https://a/lst?atype=C")
+    assert not r.allowed(ua, "https://auto.bazos.cz/mercedes/?hledat=190")  # wildcard rule honoured
+    assert not Robots("User-agent: Googlebot\nAllow: /\n\nUser-agent: *\nDisallow: /\n").allowed(ua, "https://x/api")
