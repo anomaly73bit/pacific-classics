@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#ebe3d2"/>
+  <g fill="none" stroke="#b9ad92" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M60 190 h280 v-28 q0-10 -10-12 l-42-8 -38-34 q-6-6 -16-6 h-86 q-10 0 -16 7 l-28 33 -30 8 q-14 4 -14 16 z"/>
+    <path d="M128 142 l24-28 h44 v28 z M212 142 v-28 h34 l30 28 z"/>
+    <circle cx="122" cy="192" r="22" fill="#ebe3d2"/><circle cx="282" cy="192" r="22" fill="#ebe3d2"/>
+  </g>
+  <text x="200" y="250" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#9c917a">Pacific Classics</text>
+</svg>

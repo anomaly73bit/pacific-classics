@@ -1,0 +1,1398 @@
+# Pacific Classics — model knowledge base
+# One entry per model family. Edit freely: the crawler and the advisor read this file.
+#   queries:          "make|model" slugs searched on each marketplace
+#   engine_good/bad:  regexes matched against listing title/description (case-insensitive)
+#   high_mileage_ok:  true for engines that routinely pass 500,000 km
+models:
+- id: mercedes-benz-190-w201
+  make: Mercedes-Benz
+  model: '190'
+  chassis: W201
+  category: Sedan
+  years:
+  - 1982
+  - 1993
+  recommended_engines: 2.0D, 2.5D, 2.0/2.3 petrol
+  strengths: Over-engineered; engines run 500,000+ km
+  watch_out: 'Rust: wheel arches, jacking points'
+  reliability: 5
+  queries:
+  - mercedes-benz|190
+  engine_good:
+  - 190\s?d
+  - 2[.,]5\s?d
+  - 190\s?e?\s?2[.,][03]
+  engine_bad:
+  - 2[.,]3-16
+  - 2[.,]5-16
+  engine_bad_note: '16V Cosworth versions: great but expensive and specialist'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - \b190\b
+  - w201
+- id: mercedes-benz-e-class-w124
+  make: Mercedes-Benz
+  model: E-Class
+  chassis: W124
+  category: Sedan / Estate / Coupé
+  years:
+  - 1984
+  - 1996
+  recommended_engines: 200D/250D/300D (OM60x), 230E, 300E (M103)
+  strengths: The benchmark; taxis with 1,000,000 km
+  watch_out: Biodegradable wiring 1993-95, rust
+  reliability: 5
+  queries:
+  - mercedes-benz|e-klasse
+  - mercedes-benz|200
+  - mercedes-benz|250
+  - mercedes-benz|300
+  engine_good:
+  - \b(200|250|300)\s?d\b
+  - 230\s?e
+  - 300\s?e\b
+  - om60[1-6]
+  engine_bad:
+  - e\s?420
+  - 500\s?e
+  - e\s?500
+  engine_bad_note: 'V8 versions (E420/500E): magnificent, but not ''increvable'' running costs'
+  auto_gearbox_caution: true
+  high_mileage_ok: true
+  match_any:
+  - w124
+  - e-?klasse
+  - e-?class
+  - \be\s?\d{3}\b
+  - \b(200|220|230|250|260|280|300|320)\s?(d|td|e|te|ce|ce-24|t|diesel)\b
+  - \bs124\b
+  - \bc124\b
+- id: mercedes-benz-w123-late-units-w123
+  make: Mercedes-Benz
+  model: W123 (late units)
+  chassis: W123
+  category: Sedan / Estate
+  years:
+  - 1976
+  - 1985
+  recommended_engines: 240D, 300D, 230E
+  strengths: Indestructible, very simple mechanics
+  watch_out: Structural rust
+  reliability: 5
+  queries:
+  - mercedes-benz|w123
+  - mercedes-benz|240
+  - mercedes-benz|300
+  engine_good:
+  - 240\s?d
+  - 300\s?d
+  - 230\s?e
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - w123
+  - \bs123\b
+  - \b(200|230|240|250|280|300)\s?(d|td|e|te|ce)\b
+- id: mercedes-benz-s-class-w126
+  make: Mercedes-Benz
+  model: S-Class
+  chassis: W126
+  category: Sedan / Coupé
+  years:
+  - 1979
+  - 1991
+  recommended_engines: 300SE, 420SE, 300SD
+  strengths: Flagship build quality, everlasting engines
+  watch_out: Parts cost, climate control
+  reliability: 4
+  queries:
+  - mercedes-benz|s-klasse
+  - mercedes-benz|300
+  - mercedes-benz|420
+  - mercedes-benz|560
+  engine_good:
+  - 300\s?se
+  - 420\s?se
+  - 300\s?sd
+  engine_bad:
+  - 380\s?se
+  engine_bad_note: '380SE early V8: timing chain issues'
+  auto_gearbox_caution: true
+  high_mileage_ok: true
+  match_any:
+  - w126
+  - s-?klasse
+  - s-?class
+  - \b(260|280|300|380|420|500|560)\s?(se|sel|sd|sec)\b
+- id: mercedes-benz-sl-r107
+  make: Mercedes-Benz
+  model: SL
+  chassis: R107
+  category: Roadster
+  years:
+  - 1971
+  - 1989
+  recommended_engines: 300SL, 420SL, 500SL
+  strengths: Very robust roadster, already an investment
+  watch_out: Rust under carpets
+  reliability: 4
+  queries:
+  - mercedes-benz|sl
+  engine_good:
+  - 300\s?sl
+  - 420\s?sl
+  - 500\s?sl
+  engine_bad:
+  - 380\s?sl
+  engine_bad_note: '380SL: single-row timing chain on early cars'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - r107
+  - \b(280|300|350|380|420|450|500|560)\s?sl\b
+- id: mercedes-benz-g-class-w460-w463
+  make: Mercedes-Benz
+  model: G-Class
+  chassis: W460 / W463
+  category: 4x4
+  years:
+  - 1979
+  - 1996
+  recommended_engines: 300GD, 250GD, 230GE
+  strengths: Military-grade DNA
+  watch_out: Rust on frame and doors
+  reliability: 5
+  queries:
+  - mercedes-benz|g-klasse
+  engine_good:
+  - 300\s?gd
+  - 250\s?gd
+  - 230\s?ge
+  - 300\s?ge
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - w46[03]
+  - g-?klasse
+  - g-?class
+  - \b\d{3}\s?g[de]\b
+  - puch
+- id: mercedes-benz-sl-r129
+  make: Mercedes-Benz
+  model: SL
+  chassis: R129
+  category: Roadster
+  years:
+  - 1989
+  - 1996
+  recommended_engines: 300SL, SL320, 500SL
+  strengths: Built like a tank
+  watch_out: Soft-top hydraulics/electronics
+  reliability: 4
+  queries:
+  - mercedes-benz|sl
+  engine_good:
+  - 300\s?sl
+  - sl\s?320
+  - 500\s?sl
+  - sl\s?500
+  engine_bad:
+  - sl\s?600
+  - 600\s?sl
+  engine_bad_note: 'V12 SL600: very expensive to maintain'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - r129
+  - \b(300|500|600)\s?sl\b
+  - \bsl\s?(280|320|500|600)\b
+- id: volvo-240-245-240
+  make: Volvo
+  model: 240 / 245
+  chassis: '240'
+  category: Sedan / Estate
+  years:
+  - 1974
+  - 1993
+  recommended_engines: B230F / B230FK
+  strengths: The Swedish brick, 500,000+ km is normal
+  watch_out: Little; rust in low areas
+  reliability: 5
+  queries:
+  - volvo|240
+  - volvo|245
+  engine_good:
+  - b230
+  - 2[.,]3
+  engine_bad:
+  - \b264\b
+  - b28
+  engine_bad_note: 'PRV V6 (264/B28): avoid'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - \b24[0-5]\b
+- id: volvo-740-760-700-series
+  make: Volvo
+  model: 740 / 760
+  chassis: 700 series
+  category: Sedan / Estate
+  years:
+  - 1982
+  - 1992
+  recommended_engines: B230F, B230FT turbo
+  strengths: Same mechanics as the 240
+  watch_out: Worn automatic gearbox
+  reliability: 5
+  queries:
+  - volvo|740
+  - volvo|760
+  engine_good:
+  - b230
+  engine_bad:
+  - \b760\b.*(gle|v6)
+  - b28
+  engine_bad_note: '760 with PRV V6: the weak engine of the range'
+  auto_gearbox_caution: true
+  high_mileage_ok: false
+  match_any:
+  - \b7[46]0\b
+- id: volvo-940-960-900-series
+  make: Volvo
+  model: 940 / 960
+  chassis: 900 series
+  category: Sedan / Estate
+  years:
+  - 1990
+  - 1998
+  recommended_engines: B230F/FT, 2.4 TD
+  strengths: Evolution of the 740, easy parts
+  watch_out: 960 six-cylinder more delicate
+  reliability: 4
+  queries:
+  - volvo|940
+  - volvo|960
+  engine_good:
+  - b230
+  - 2[.,]3
+  engine_bad:
+  - \b960\b
+  engine_bad_note: '960 straight-six: more delicate and costly'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - \b9[46]0\b
+- id: volvo-850-850
+  make: Volvo
+  model: '850'
+  chassis: '850'
+  category: Sedan / Estate
+  years:
+  - 1991
+  - 1996
+  recommended_engines: 2.0/2.5 5-cyl naturally aspirated
+  strengths: Very robust 5-cylinder
+  watch_out: AW50 automatic gearbox
+  reliability: 4
+  queries:
+  - volvo|850
+  engine_good:
+  - 2[.,]5\b
+  - 2[.,]0\b
+  - 10v
+  - 20v
+  engine_bad:
+  - t-?5\b
+  - \br\b
+  engine_bad_note: 'T5/R turbos: stronger wear, check carefully'
+  auto_gearbox_caution: true
+  high_mileage_ok: false
+  match_any:
+  - \b850\b
+- id: toyota-land-cruiser-j60-j70-j80
+  make: Toyota
+  model: Land Cruiser
+  chassis: J60 / J70 / J80
+  category: 4x4
+  years:
+  - 1980
+  - 1997
+  recommended_engines: 1HZ, 1HD-T, 12H-T, 3F
+  strengths: Possibly the most reliable vehicle ever made
+  watch_out: High prices, frame rust
+  reliability: 5
+  queries:
+  - toyota|land-cruiser
+  engine_good:
+  - 1hz
+  - 1hd
+  - 12h
+  - \bhj6
+  - \bhzj
+  - \bhdj
+  engine_bad:
+  - 1kz
+  - kzj9
+  engine_bad_note: '1KZ-TE 3.0 TD (J90): cylinder head cracking'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - land\s?cruiser
+  - \b[bfhl]?[jz]j?[678]\d\b
+  - \bhj\d
+  - \bhzj
+  - \bhdj
+  - \bfj\d
+- id: toyota-hilux-4runner-n50-n100
+  make: Toyota
+  model: Hilux / 4Runner
+  chassis: N50-N100
+  category: Pick-up / 4x4
+  years:
+  - 1983
+  - 1997
+  recommended_engines: 2L, 2L-T, 22R
+  strengths: Legendary, practically immortal
+  watch_out: Frame
+  reliability: 5
+  queries:
+  - toyota|hilux
+  - toyota|4-runner
+  engine_good:
+  - 2l
+  - 22r
+  - 2[.,]4\s?d
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - hilux
+  - 4\s?-?runner
+- id: toyota-corolla-e80-e90-e100
+  make: Toyota
+  model: Corolla
+  chassis: E80 / E90 / E100
+  category: Hatchback / Sedan
+  years:
+  - 1983
+  - 1997
+  recommended_engines: 4A-FE, 2C diesel
+  strengths: Minimal maintenance, endless km
+  watch_out: Rust on arches
+  reliability: 5
+  queries:
+  - toyota|corolla
+  engine_good:
+  - 4a-?fe
+  - 1[.,]6
+  - \b2c\b
+  - 2[.,]0\s?d
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - corolla
+- id: toyota-camry-carina-ii-carina-e-v20-v30-t150-t190
+  make: Toyota
+  model: Camry / Carina II / Carina E
+  chassis: V20-V30 / T150-T190
+  category: Sedan
+  years:
+  - 1984
+  - 1997
+  recommended_engines: 3S-FE, 2C
+  strengths: 3S engines near indestructible
+  watch_out: Few well-kept examples
+  reliability: 5
+  queries:
+  - toyota|camry
+  - toyota|carina
+  engine_good:
+  - 3s-?fe
+  - 2[.,]0
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - camry
+  - carina
+- id: toyota-celica-mr2-supra-mk3-t160-t180-w10-w20-a70
+  make: Toyota
+  model: Celica / MR2 / Supra Mk3
+  chassis: T160-T180 / W10-W20 / A70
+  category: Sports
+  years:
+  - 1985
+  - 1993
+  recommended_engines: 3S-GE, 7M-GTE
+  strengths: Reliable Japanese sports cars
+  watch_out: 7M head gasket
+  reliability: 4
+  queries:
+  - toyota|celica
+  - toyota|mr-2
+  - toyota|supra
+  engine_good:
+  - 3s-?ge
+  - 7m
+  engine_bad:
+  - 7m-?gte
+  engine_bad_note: '7M-GTE: head gasket weak point; check for upgraded MLS gasket'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - celica
+  - \bmr-?2\b
+  - supra
+- id: toyota-previa-xr10
+  make: Toyota
+  model: Previa
+  chassis: XR10
+  category: MPV
+  years:
+  - 1990
+  - 1996
+  recommended_engines: 2TZ-FE
+  strengths: '''Eternal'' people carrier'
+  watch_out: Body parts availability
+  reliability: 4
+  queries:
+  - toyota|previa
+  engine_good:
+  - 2tz
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - previa
+- id: lexus-ls400-xf10
+  make: Lexus
+  model: LS400
+  chassis: XF10
+  category: Sedan
+  years:
+  - 1989
+  - 1994
+  recommended_engines: 1UZ-FE V8
+  strengths: Most reliable V8 ever, 1,000,000 km
+  watch_out: Few in Europe, fuel consumption
+  reliability: 5
+  queries:
+  - lexus|ls-400
+  - lexus|ls
+  engine_good:
+  - ls\s?400
+  - 1uz
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - ls\s?400
+- id: honda-civic-crx-accord-prelude-various
+  make: Honda
+  model: Civic / CRX / Accord / Prelude
+  chassis: various
+  category: Hatchback / Coupé / Sedan
+  years:
+  - 1983
+  - 1996
+  recommended_engines: D16, B16, F20/F22
+  strengths: Very solid VTEC and non-VTEC engines
+  watch_out: Rust, modified examples
+  reliability: 4
+  queries:
+  - honda|civic
+  - honda|crx
+  - honda|accord
+  - honda|prelude
+  engine_good:
+  - d16
+  - b16
+  - f2[02]
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - civic
+  - \bcrx\b
+  - accord
+  - prelude
+- id: mazda-mx-5-na
+  make: Mazda
+  model: MX-5
+  chassis: NA
+  category: Roadster
+  years:
+  - 1989
+  - 1997
+  recommended_engines: 1.6, 1.8
+  strengths: Simple and highly reliable
+  watch_out: Sill rust
+  reliability: 5
+  queries:
+  - mazda|mx-5
+  engine_good:
+  - 1[.,][68]
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - mx-?5
+  - miata
+  - \bna\b
+- id: mazda-323-626-bf-ba-gc-ge
+  make: Mazda
+  model: 323 / 626
+  chassis: BF-BA / GC-GE
+  category: Hatchback / Sedan
+  years:
+  - 1985
+  - 1996
+  recommended_engines: B6, FE, RF diesel
+  strengths: Cheap and robust
+  watch_out: Rust
+  reliability: 4
+  queries:
+  - mazda|323
+  - mazda|626
+  engine_good:
+  - \bb6\b
+  - \bfe\b
+  - \brf\b
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - \b323\b
+  - \b626\b
+- id: nissan-patrol-terrano-i-y60-gr-wd21
+  make: Nissan
+  model: Patrol / Terrano I
+  chassis: Y60 / GR / WD21
+  category: 4x4
+  years:
+  - 1987
+  - 1997
+  recommended_engines: TD42, RD28
+  strengths: TD42 among the toughest diesels ever
+  watch_out: Frame
+  reliability: 5
+  queries:
+  - nissan|patrol
+  - nissan|terrano
+  engine_good:
+  - td42
+  - 4[.,]2
+  - rd28
+  - 2[.,]8
+  engine_bad:
+  - zd30
+  - 3[.,]0\s?di
+  engine_bad_note: 'ZD30 3.0 Di (later Patrol): known for piston/head failures'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - patrol
+  - terrano
+- id: nissan-sunny-micra-200sx-n13-n14-k10-s13
+  make: Nissan
+  model: Sunny / Micra / 200SX
+  chassis: N13-N14 / K10 / S13
+  category: Hatchback / Coupé
+  years:
+  - 1982
+  - 1996
+  recommended_engines: GA16, MA10, CA18DET
+  strengths: Micra K10 near indestructible
+  watch_out: Rust
+  reliability: 4
+  queries:
+  - nissan|sunny
+  - nissan|micra
+  - nissan|200-sx
+  engine_good:
+  - ga16
+  - \bk10\b
+  - ca18
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - sunny
+  - micra
+  - 200\s?sx
+- id: mitsubishi-pajero-i-ii
+  make: Mitsubishi
+  model: Pajero
+  chassis: I / II
+  category: 4x4
+  years:
+  - 1982
+  - 1999
+  recommended_engines: 2.5 TD (4D56), 3.0 V6
+  strengths: Very robust, Dakar winner
+  watch_out: 2.8 TD cylinder head
+  reliability: 4
+  queries:
+  - mitsubishi|pajero
+  engine_good:
+  - 2[.,]5\s?td
+  - 4d56
+  - 3[.,]0\s?v6
+  engine_bad:
+  - 2[.,]8\s?td
+  - 4m40
+  engine_bad_note: '2.8 TD (4M40): cylinder head cracks'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - pajero
+  - montero
+  - shogun
+- id: mitsubishi-galant-lancer-l200-various
+  make: Mitsubishi
+  model: Galant / Lancer / L200
+  chassis: various
+  category: Sedan / Pick-up
+  years:
+  - 1984
+  - 1996
+  recommended_engines: 4G63, 4D56
+  strengths: 4G63 very robust
+  watch_out: Rust
+  reliability: 4
+  queries:
+  - mitsubishi|galant
+  - mitsubishi|lancer
+  - mitsubishi|l200
+  engine_good:
+  - 4g63
+  - 4d56
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - galant
+  - lancer
+  - l\s?200
+- id: subaru-legacy-impreza-bc-bd-gc
+  make: Subaru
+  model: Legacy / Impreza
+  chassis: BC-BD / GC
+  category: Sedan / Estate
+  years:
+  - 1989
+  - 1996
+  recommended_engines: EJ18/EJ20 naturally aspirated
+  strengths: Robust boxer + AWD
+  watch_out: EJ25 head gaskets
+  reliability: 4
+  queries:
+  - subaru|legacy
+  - subaru|impreza
+  engine_good:
+  - 1[.,]8
+  - 2[.,]0
+  engine_bad:
+  - 2[.,]5
+  - ej25
+  engine_bad_note: 'EJ25: head gasket failures'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - legacy
+  - impreza
+- id: suzuki-sj-samurai-vitara-sj-et
+  make: Suzuki
+  model: SJ Samurai / Vitara
+  chassis: SJ / ET
+  category: 4x4
+  years:
+  - 1981
+  - 1998
+  recommended_engines: 1.3, 1.6
+  strengths: Very simple, never die
+  watch_out: Frame rust
+  reliability: 4
+  queries:
+  - suzuki|samurai
+  - suzuki|sj
+  - suzuki|vitara
+  engine_good:
+  - 1[.,]3
+  - 1[.,]6
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - samurai
+  - \bsj\s?4
+  - vitara
+- id: daihatsu-rocky-feroza-charade-f70-f80-f300-g100
+  make: Daihatsu
+  model: Rocky / Feroza / Charade
+  chassis: F70-F80 / F300 / G100
+  category: 4x4 / Hatchback
+  years:
+  - 1984
+  - 1998
+  recommended_engines: 2.8 D, 1.6
+  strengths: Spartan, robust Japanese
+  watch_out: Rust
+  reliability: 4
+  queries:
+  - daihatsu|rocky
+  - daihatsu|feroza
+  - daihatsu|charade
+  engine_good:
+  - 2[.,]8
+  - 1[.,]6
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - rocky
+  - feroza
+  - charade
+- id: peugeot-205-309-405-306-various
+  make: Peugeot
+  model: 205 / 309 / 405 / 306
+  chassis: various
+  category: Hatchback / Sedan
+  years:
+  - 1983
+  - 1997
+  recommended_engines: XUD7/XUD9 diesel, TU petrol
+  strengths: XUD = the everlasting French diesel
+  watch_out: Electrics, minor rust
+  reliability: 4
+  queries:
+  - peugeot|205
+  - peugeot|309
+  - peugeot|405
+  - peugeot|306
+  engine_good:
+  - \bd\b
+  - diesel
+  - xud
+  - 1[.,][79]\s?d
+  engine_bad:
+  - \bgti\b.*1[.,]9
+  engine_bad_note: 'GTI 1.9: enthusiast car, often abused'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - \b(205|309|405|306)\b
+- id: peugeot-505-505
+  make: Peugeot
+  model: '505'
+  chassis: '505'
+  category: Sedan / Estate
+  years:
+  - 1979
+  - 1992
+  recommended_engines: 2.0, 2.5 diesel
+  strengths: The archetypal African taxi
+  watch_out: Body parts availability
+  reliability: 4
+  queries:
+  - peugeot|505
+  engine_good:
+  - 2[.,]5\s?d
+  - 2[.,]0
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - \b505\b
+- id: citroen-bx-zx-xantia-various
+  make: Citroën
+  model: BX / ZX / Xantia
+  chassis: various
+  category: Hatchback / Sedan
+  years:
+  - 1982
+  - 1997
+  recommended_engines: XUD diesel
+  strengths: Robust PSA mechanics
+  watch_out: Hydraulics need upkeep (BX/Xantia)
+  reliability: 3
+  queries:
+  - citroen|bx
+  - citroen|zx
+  - citroen|xantia
+  engine_good:
+  - \bd\b
+  - diesel
+  - xud
+  - td
+  engine_bad:
+  - activa
+  - v6
+  engine_bad_note: 'Xantia Activa / V6: complex hydraulics'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - \bbx\b
+  - \bzx\b
+  - xantia
+- id: renault-4-r4
+  make: Renault
+  model: '4'
+  chassis: R4
+  category: Hatchback
+  years:
+  - 1961
+  - 1992
+  recommended_engines: 956/1108 cc
+  strengths: Simple, repairable anywhere
+  watch_out: Chassis rust
+  reliability: 4
+  queries:
+  - renault|r-4
+  - renault|4
+  engine_good:
+  - '956'
+  - '1108'
+  - gtl
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - \br\s?4\b
+  - renault\s?4\b
+  - \b4\s?(gtl|tl)\b
+- id: renault-express-19-clio-i-diesel-various
+  make: Renault
+  model: Express / 19 / Clio I diesel
+  chassis: various
+  category: Van / Hatchback
+  years:
+  - 1985
+  - 1996
+  recommended_engines: F8Q, Energy
+  strengths: F8Q diesel near indestructible
+  watch_out: Electrics
+  reliability: 3
+  queries:
+  - renault|express
+  - renault|r-19
+  - renault|19
+  - renault|clio
+  engine_good:
+  - f8q
+  - 1[.,]9\s?d
+  engine_bad:
+  - williams
+  - 16v
+  engine_bad_note: 'Clio Williams/16V: sporty, often abused'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - express
+  - \b19\b
+  - clio
+- id: fiat-panda-141
+  make: Fiat
+  model: Panda
+  chassis: '141'
+  category: Hatchback / 4x4
+  years:
+  - 1980
+  - 2003
+  recommended_engines: FIRE 1000/1100, 4x4
+  strengths: Repairable with a screwdriver
+  watch_out: Rust
+  reliability: 4
+  queries:
+  - fiat|panda
+  engine_good:
+  - fire
+  - '1000'
+  - '1100'
+  - 4x4
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - panda
+- id: fiat-uno-tipo-diesel-146-160
+  make: Fiat
+  model: Uno / Tipo diesel
+  chassis: 146 / 160
+  category: Hatchback
+  years:
+  - 1983
+  - 1995
+  recommended_engines: FIRE, 1.7 D
+  strengths: Simple and cheap
+  watch_out: Rust
+  reliability: 3
+  queries:
+  - fiat|uno
+  - fiat|tipo
+  engine_good:
+  - fire
+  - 1[.,]7\s?d
+  engine_bad:
+  - turbo
+  engine_bad_note: 'Uno Turbo: fun, but tired turbos'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - \buno\b
+  - \btipo\b
+- id: volkswagen-golf-i-ii-jetta-mk1-mk2
+  make: Volkswagen
+  model: Golf I/II / Jetta
+  chassis: Mk1 / Mk2
+  category: Hatchback / Sedan
+  years:
+  - 1980
+  - 1992
+  recommended_engines: 1.6D/TD, 1.6/1.8 petrol
+  strengths: Golf II 1.6D/TD among the toughest
+  watch_out: Rust at battery tray
+  reliability: 5
+  queries:
+  - volkswagen|golf
+  - volkswagen|jetta
+  engine_good:
+  - 1[.,]6\s?t?d
+  - \btd\b
+  - 1[.,]6
+  - 1[.,]8
+  engine_bad:
+  - g60
+  - rallye
+  engine_bad_note: 'G60 supercharger: specialist maintenance'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - golf\s?(1|2|i|ii)\b
+  - golf
+  - jetta
+- id: volkswagen-passat-b3-b4-golf-iii-polo-b3-b4-mk3-6n
+  make: Volkswagen
+  model: Passat B3/B4 / Golf III / Polo
+  chassis: B3-B4 / Mk3 / 6N
+  category: Hatchback / Sedan / Estate
+  years:
+  - 1988
+  - 1997
+  recommended_engines: 1.9 TDI (1Z/AHU)
+  strengths: '1Z/AHU: 500,000+ km easily'
+  watch_out: Electrics
+  reliability: 5
+  queries:
+  - volkswagen|passat
+  - volkswagen|golf
+  - volkswagen|polo
+  engine_good:
+  - 1[.,]9\s?tdi
+  - \btdi\b
+  - \b1z\b
+  - \bahu\b
+  engine_bad:
+  - vr6
+  engine_bad_note: 'VR6: great engine, but cooling and timing chain costs'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - passat
+  - golf\s?(3|iii)\b
+  - golf
+  - polo
+- id: volkswagen-transporter-t3-t4-t3-t4
+  make: Volkswagen
+  model: Transporter T3 / T4
+  chassis: T3 / T4
+  category: Van / Camper
+  years:
+  - 1979
+  - 2003
+  recommended_engines: 1.6TD, 2.5 TDI (T4)
+  strengths: T4 2.5 TDI near eternal
+  watch_out: Rust (T3), high prices
+  reliability: 4
+  queries:
+  - volkswagen|t3
+  - volkswagen|t4
+  - volkswagen|transporter
+  - volkswagen|caravelle
+  - volkswagen|multivan
+  engine_good:
+  - 2[.,]5\s?tdi
+  - 1[.,]6\s?td
+  - 1[.,]9\s?td
+  engine_bad:
+  - 2[.,]8\s?vr6
+  engine_bad_note: 'T4 VR6: thirsty and complex'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - \bt[34]\b
+  - transporter
+  - caravelle
+  - multivan
+  - california
+  - westfalia
+- id: audi-80-b3-b4
+  make: Audi
+  model: '80'
+  chassis: B3 / B4
+  category: Sedan / Estate
+  years:
+  - 1986
+  - 1996
+  recommended_engines: 1.9 TDI, 2.0, 2.3 5-cyl
+  strengths: Galvanised body, minimal rust
+  watch_out: Electrics
+  reliability: 5
+  queries:
+  - audi|80
+  engine_good:
+  - 1[.,]9\s?tdi
+  - \btdi\b
+  - 2[.,]0
+  - 2[.,]3
+  engine_bad:
+  - \brs2\b
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - \b80\b
+- id: audi-100-c3-c4
+  make: Audi
+  model: '100'
+  chassis: C3 / C4
+  category: Sedan / Estate
+  years:
+  - 1982
+  - 1997
+  recommended_engines: 2.5 TDI, 2.3 5-cyl
+  strengths: Galvanised, very robust 5-cyl TDI
+  watch_out: C4 electronics
+  reliability: 4
+  queries:
+  - audi|100
+  engine_good:
+  - 2[.,]5\s?tdi
+  - \btdi\b
+  - 2[.,]3
+  engine_bad:
+  - 2[.,]2\s?turbo
+  - \bs4\b
+  engine_bad_note: 'Early 2.2 turbo: more fragile than the NA 5-cyl'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - \b100\b
+- id: bmw-3-series-e30
+  make: BMW
+  model: 3 Series
+  chassis: E30
+  category: Sedan / Touring / Cabrio
+  years:
+  - 1982
+  - 1994
+  recommended_engines: M20 six-cylinder, M40
+  strengths: Simple mechanics, endless parts
+  watch_out: M20 timing belt, rust
+  reliability: 4
+  queries:
+  - bmw|318
+  - bmw|320
+  - bmw|325
+  - bmw|316
+  engine_good:
+  - m20
+  - m40
+  - 32[05]i
+  - 31[68]i
+  engine_bad:
+  - 324\s?d
+  - 325\s?td
+  engine_bad_note: 'E30 324d/td: underpowered, weaker diesel'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - e30
+  - \b3[12][0-8]\s?i
+- id: bmw-5-series-e34
+  make: BMW
+  model: 5 Series
+  chassis: E34
+  category: Sedan / Touring
+  years:
+  - 1988
+  - 1996
+  recommended_engines: M30 (530i/535i), M50
+  strengths: M30 one of BMW's best sixes
+  watch_out: Cooling system
+  reliability: 4
+  queries:
+  - bmw|520
+  - bmw|525
+  - bmw|530
+  - bmw|535
+  engine_good:
+  - m30
+  - 53[05]i
+  - m50
+  - 52[05]i
+  engine_bad:
+  - m60
+  - 540i
+  - 530i\s?v8
+  engine_bad_note: M60 V8 (Nikasil bores on early cars)
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - e34
+  - \b5[23][05]\s?i
+- id: bmw-3-series-e36
+  make: BMW
+  model: 3 Series
+  chassis: E36
+  category: Sedan / Coupé / Touring
+  years:
+  - 1990
+  - 1998
+  recommended_engines: M50/M52, M43
+  strengths: Robust if maintained
+  watch_out: Cooling, rear shock mounts
+  reliability: 4
+  queries:
+  - bmw|318
+  - bmw|320
+  - bmw|323
+  - bmw|325
+  - bmw|328
+  engine_good:
+  - m5[02]
+  - m43
+  - 32[058]i
+  - 318i
+  engine_bad:
+  - 318\s?tds
+  - m41
+  engine_bad_note: '318tds (M41): weak diesel'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - e36
+  - \b3[12][0-8]\s?(i|ti|is|ci)
+- id: saab-900-classic-9000-900-9000
+  make: Saab
+  model: 900 Classic / 9000
+  chassis: 900 / 9000
+  category: Hatchback / Sedan
+  years:
+  - 1978
+  - 1998
+  recommended_engines: B201/B202, B234
+  strengths: Very tough engines
+  watch_out: Clutch, gearbox
+  reliability: 4
+  queries:
+  - saab|900
+  - saab|9000
+  engine_good:
+  - b20[12]
+  - b234
+  engine_bad:
+  - v6
+  engine_bad_note: '9000 V6: GM engine, less robust'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - \b900\b
+  - '9000'
+- id: opel-kadett-e-vectra-a-omega-a-various
+  make: Opel
+  model: Kadett E / Vectra A / Omega A
+  chassis: various
+  category: Hatchback / Sedan
+  years:
+  - 1984
+  - 1995
+  recommended_engines: C20NE, 1.7 D Isuzu
+  strengths: C20NE very robust
+  watch_out: Rust
+  reliability: 3
+  queries:
+  - opel|kadett
+  - opel|vectra
+  - opel|omega
+  engine_good:
+  - c20ne
+  - 2[.,]0i
+  - 1[.,]7\s?d
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - kadett
+  - vectra
+  - omega
+- id: ford-sierra-escort-transit-various
+  make: Ford
+  model: Sierra / Escort / Transit
+  chassis: various
+  category: Sedan / Van
+  years:
+  - 1982
+  - 1994
+  recommended_engines: Pinto 2.0, Endura D
+  strengths: Simple and cheap
+  watch_out: Rust
+  reliability: 3
+  queries:
+  - ford|sierra
+  - ford|escort
+  - ford|transit
+  engine_good:
+  - 2[.,]0
+  - pinto
+  - 1[.,]8\s?d
+  engine_bad:
+  - cosworth
+  - rs\b
+  engine_bad_note: 'Cosworth/RS: collector cars, not workhorses'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - sierra
+  - escort
+  - transit
+- id: land-rover-defender-discovery-i-90-110-series-i
+  make: Land Rover
+  model: Defender / Discovery I
+  chassis: 90/110 / Series I
+  category: 4x4
+  years:
+  - 1983
+  - 1998
+  recommended_engines: 200Tdi, 300Tdi
+  strengths: Tdi near indestructible, fixable anywhere
+  watch_out: Chassis, oil leaks
+  reliability: 4
+  queries:
+  - land-rover|defender
+  - land-rover|discovery
+  engine_good:
+  - 200\s?tdi
+  - 300\s?tdi
+  - \btdi\b
+  engine_bad:
+  - td5
+  - v8
+  engine_bad_note: 'Td5 / V8: different reliability profile than the Tdi'
+  auto_gearbox_caution: false
+  high_mileage_ok: true
+  match_any:
+  - defender
+  - discovery
+  - \b(90|110|130)\b
+- id: lada-niva-2121
+  make: Lada
+  model: Niva
+  chassis: '2121'
+  category: 4x4
+  years:
+  - 1977
+  - 2026
+  recommended_engines: 1.6/1.7
+  strengths: Not reliable, but repairable with anything
+  watch_out: Rust, trim quality
+  reliability: 3
+  queries:
+  - lada|niva
+  engine_good: []
+  engine_bad: []
+  engine_bad_note: null
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - niva
+  - '2121'
+  - 4x4
+- id: porsche-911-carrera-3-2-964-g-model-964
+  make: Porsche
+  model: 911 Carrera 3.2 / 964
+  chassis: G-model / 964
+  category: Sports
+  years:
+  - 1984
+  - 1994
+  recommended_engines: 3.2 / 3.6
+  strengths: 3.2 boxer very robust
+  watch_out: Price, oil leaks (964)
+  reliability: 4
+  queries:
+  - porsche|911
+  engine_good:
+  - 3[.,]2
+  - carrera
+  - '964'
+  - 3[.,]6
+  engine_bad:
+  - turbo
+  engine_bad_note: '930/964 Turbo: very expensive to maintain'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - '911'
+  - '964'
+  - carrera
+- id: porsche-944-928-944-928
+  make: Porsche
+  model: 944 / 928
+  chassis: 944 / 928
+  category: Sports
+  years:
+  - 1982
+  - 1995
+  recommended_engines: 2.5/2.7/3.0, V8
+  strengths: Very solid
+  watch_out: Timing belts, running costs
+  reliability: 4
+  queries:
+  - porsche|944
+  - porsche|928
+  engine_good:
+  - 2[.,][57]
+  - 3[.,]0
+  - \bs2\b
+  - '928'
+  engine_bad:
+  - turbo
+  engine_bad_note: '944 Turbo: higher running costs'
+  auto_gearbox_caution: false
+  high_mileage_ok: false
+  match_any:
+  - \b944\b
+  - \b928\b

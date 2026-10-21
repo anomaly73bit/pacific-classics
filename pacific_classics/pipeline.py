@@ -1,0 +1,183 @@
+"""Crawl → normalise → match → advise → publish JSON for the website."""
+from __future__ import annotations
+
+import json
+import logging
+import re
+import time
+from datetime import date, datetime, timezone
+from pathlib import Path
+
+import requests
+
+from .advisor import advise, market_stats
+from .http import Blocked, PoliteClient
+from .knowledge import ROOT, build_queries, load_models, load_sources, match_listing
+from .sources import REGISTRY
+
+log = logging.getLogger("pacific")
+SITE_DATA = ROOT / "site" / "data"
+STATE = ROOT / "data" / "state.json"
+
+
+def fx_rates(fallback: dict) -> tuple[dict, str]:
+    """EUR value of one unit of each currency. Live from the ECB when reachable."""
+    try:
+        r = requests.get("https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml", timeout=15)
+        rates = {"EUR": 1.0}
+        for cur, rate in re.findall(r"currency='([A-Z]{3})' rate='([\d.]+)'", r.text):
+            rates[cur] = 1 / float(rate)
+        if len(rates) > 10:
+            return rates, "ECB"
+    except requests.RequestException:
+        pass
+    return dict(fallback), "fallback"
+
+
+def crawl(only_sources: list[str] | None = None, only_models: list[str] | None = None) -> dict:
+    cfg = load_sources()
+    models = load_models()
+    if only_models:
+        models = [m for m in models if any(k in m.id for k in only_models)]
+    by_id = {m.id: m for m in models}
+    queries = build_queries(models)
+    client = PoliteClient(cfg["crawler"])
+
+    sources, report = {}, {"sources": {}, "started": _now()}
+    for key, scfg in cfg["sources"].items():
+        if not scfg.get("enabled") or (only_sources and key not in only_sources):
+            continue
+        src = REGISTRY[key](client, scfg, cfg["crawler"])
+        ok, why = src.available()
+        report["sources"][key] = {"name": scfg.get("name", key), "status": "ok" if ok else "skipped",
+                                  "note": why, "fetched": 0, "errors": [], "queries": {}}
+        if ok:
+            sources[key] = src
+
+    raw: list[tuple[dict, list[str]]] = []
+    for q in queries:
+        for key, src in list(sources.items()):
+            rep = report["sources"][key]
+            n = 0
+            try:
+                for item in src.search(q):
+                    raw.append((item, q.model_ids))
+                    n += 1
+            except Blocked as e:
+                rep["status"] = "blocked"
+                rep["note"] = str(e)
+                log.warning("%s blocked: %s — skipping it for the rest of this run", key, e)
+                del sources[key]
+            except Exception as e:  # noqa: BLE001 — one bad query must not stop the crawl
+                rep["errors"].append(f"{q.make}|{q.model}: {type(e).__name__}: {e}"[:300])
+                log.warning("%s %s|%s failed: %s", key, q.make, q.model, e)
+            rep["queries"][f"{q.make}|{q.model}"] = n
+            rep["fetched"] += n
+            log.info("%-14s %-28s %4d", key, f"{q.make}|{q.model}", n)
+
+    report["finished"] = _now()
+    return {"raw": raw, "report": report, "models": by_id, "cfg": cfg}
+
+
+def process(raw: list[tuple[dict, list[str]]], models: dict, cfg: dict, report: dict,
+            ref_year: int | None = None, demo: bool = False) -> list[dict]:
+    rates, fx_src = fx_rates(cfg.get("fx_fallback", {}))
+    report["fx_source"] = fx_src
+    excl = [re.compile(p, re.I) for p in cfg.get("exclude_patterns", [])]
+    state = _load_state() if not demo else {}
+    today = date.today().isoformat()
+
+    seen: dict[str, dict] = {}
+    dropped = {"excluded": 0, "no_match": 0, "price_bounds": 0, "duplicate": 0}
+    for item, model_ids in raw:
+        if item["id"] in seen:
+            dropped["duplicate"] += 1
+            continue
+        text = " ".join(filter(None, [item.get("title"), item.get("description")]))
+        if any(rx.search(text) for rx in excl):
+            dropped["excluded"] += 1
+            continue
+        rate = rates.get(item.get("currency") or "EUR")
+        item["price_eur"] = int(round(item["price"] * rate)) if item.get("price") and rate else None
+        if item["price_eur"] and not (cfg.get("min_price_eur", 0) <= item["price_eur"] <= cfg.get("max_price_eur", 10**7)):
+            dropped["price_bounds"] += 1
+            continue
+        model, conf = match_listing(item, [models[i] for i in model_ids if i in models])
+        if not model:
+            dropped["no_match"] += 1
+            continue
+        item["model_id"], item["match_confidence"] = model.id, conf
+        st = state.get(item["id"]) or {"first_seen": today, "first_price": item["price_eur"]}
+        st["last_seen"] = today
+        state[item["id"]] = st
+        item["first_seen"] = st["first_seen"]
+        item["_hist"] = st
+        seen[item["id"]] = item
+
+    listings = list(seen.values())
+    _mark_cross_site_duplicates(listings)
+    stats = market_stats([l for l in listings if not l.get("duplicate_of")])
+    for l in listings:
+        l.update(advise(l, models[l["model_id"]], stats.get(l["model_id"]), ref_year, l.pop("_hist", None)))
+        if l.get("description"):
+            l["description"] = l["description"][:400]
+    listings.sort(key=lambda l: -l["score"])
+
+    report["dropped"] = dropped
+    report["published"] = len(listings)
+    report["market"] = stats
+    if not demo:
+        _save_state(state)
+    return listings
+
+
+def _mark_cross_site_duplicates(listings: list[dict]):
+    """Same car often appears on several sites: same model, year, km (±1%) and price (±3%)."""
+    keyed: dict[tuple, list[dict]] = {}
+    for l in listings:
+        if l.get("mileage_km") and l.get("price_eur") and l.get("year"):
+            keyed.setdefault((l["model_id"], l["year"]), []).append(l)
+    for group in keyed.values():
+        for i, a in enumerate(group):
+            for b in group[i + 1:]:
+                if a["source"] == b["source"] or b.get("duplicate_of"):
+                    continue
+                if abs(a["mileage_km"] - b["mileage_km"]) <= a["mileage_km"] * 0.01 and \
+                   abs(a["price_eur"] - b["price_eur"]) <= a["price_eur"] * 0.03:
+                    b["duplicate_of"] = a["id"]
+                    a.setdefault("also_on", []).append({"source": b["source"], "url": b["url"]})
+
+
+def publish(listings: list[dict], models: dict, report: dict, demo: bool = False):
+    SITE_DATA.mkdir(parents=True, exist_ok=True)
+    out = SITE_DATA / "listings.json"
+    if not listings and not demo and out.exists():
+        # every source failed: keep yesterday's cars online instead of publishing an empty site
+        log.warning("crawl returned nothing — keeping previous listings, updating the report only")
+        report["kept_previous"] = True
+        (SITE_DATA / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+        return
+    meta = {"generated": _now(), "demo": demo, "count": len(listings)}
+    (SITE_DATA / "listings.json").write_text(json.dumps({"meta": meta, "listings": listings}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    (SITE_DATA / "models.json").write_text(json.dumps([m.to_public() for m in models.values()], ensure_ascii=False, indent=1), encoding="utf-8")
+    (SITE_DATA / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+    log.info("published %d listings → %s", len(listings), SITE_DATA)
+
+
+def _load_state() -> dict:
+    try:
+        return json.loads(STATE.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+def _save_state(state: dict):
+    cutoff = time.time() - 120 * 86400  # forget cars not seen for 120 days
+    state = {k: v for k, v in state.items()
+             if datetime.fromisoformat(v["last_seen"]).timestamp() > cutoff}
+    STATE.parent.mkdir(parents=True, exist_ok=True)
+    STATE.write_text(json.dumps(state, separators=(",", ":")), encoding="utf-8")
+
+
+def _now() -> str:
+    return datetime.now(timezone.utc).isoformat(timespec="seconds")

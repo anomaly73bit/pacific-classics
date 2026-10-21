@@ -1,0 +1,78 @@
+name: Crawl & publish
+
+on:
+  schedule:
+    - cron: "17 4 * * *"        # every day at 04:17 UTC
+  workflow_dispatch:
+    inputs:
+      models:
+        description: "Only models whose id contains these words (space separated, empty = all)"
+        required: false
+      sources:
+        description: "Only these sources (autoscout24 sauto willhaben kleinanzeigen mobilede; empty = all)"
+        required: false
+  push:
+    branches: [main]
+    paths: ["site/**"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: crawl
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q
+      - name: Crawl
+        env:
+          MOBILEDE_API_USER: ${{ secrets.MOBILEDE_API_USER }}
+          MOBILEDE_API_PASSWORD: ${{ secrets.MOBILEDE_API_PASSWORD }}
+        run: |
+          ARGS=""
+          [ -n "${{ inputs.models }}" ] && ARGS="$ARGS --models ${{ inputs.models }}"
+          [ -n "${{ inputs.sources }}" ] && ARGS="$ARGS --sources ${{ inputs.sources }}"
+          python -m pacific_classics crawl $ARGS
+      - name: Commit data
+        run: |
+          git config user.name "pacific-classics-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add site/data data/state.json
+          git diff --cached --quiet || git commit -m "data: crawl $(date -u +%F)"
+          git push
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy-only:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: [crawl, deploy-only]
+    if: always() && (needs.crawl.result == 'success' || needs['deploy-only'].result == 'success')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - id: pages
+        uses: actions/deploy-pages@v4

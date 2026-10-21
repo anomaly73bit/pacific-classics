@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="30" fill="#14213d" stroke="#c9a227" stroke-width="3"/>
+  <circle cx="32" cy="32" r="24.5" fill="none" stroke="#c9a227" stroke-width="1"/>
+  <text x="32" y="36" text-anchor="middle" font-family="Georgia, 'Playfair Display', serif" font-size="20" font-weight="700" fill="#e9d79a">PC</text>
+  <path d="M15 43 q4.25 -4 8.5 0 t8.5 0 t8.5 0 t8.5 0" fill="none" stroke="#c9a227" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

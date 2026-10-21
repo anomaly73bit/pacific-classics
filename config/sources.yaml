@@ -1,0 +1,61 @@
+# Pacific Classics — crawler configuration
+
+crawler:
+  respect_robots_txt: true        # skip any URL the site's robots.txt disallows
+  delay_seconds: [3, 7]           # random pause between requests to the same host
+  timeout_seconds: 25
+  max_retries: 2
+  max_pages_per_query: 3          # pages fetched per model query per source
+  user_agent: "Mozilla/5.0 (compatible; PacificClassicsBot/1.0; +https://github.com/anomaly73bit/pacific-classics)"
+
+# Listings whose title/description matches any of these are dropped (parts, wrecks, toys…)
+exclude_patterns:
+  - "ersatzteil"
+  - "\\bteile\\b"
+  - "ausschlacht"
+  - "schlachtfest"
+  - "\\bfelgen\\b"
+  - "\\bparts\\b"
+  - "ricambi"
+  - "náhradní díly"
+  - "\\bdíly\\b"
+  - "modellauto"
+  - "\\b1:18\\b"
+  - "\\b1:43\\b"
+  - "\\bsuche\\b"          # wanted ads
+  - "\\bkoupím\\b"
+
+min_price_eur: 500               # below this it's almost always parts or a wanted ad
+max_price_eur: 400000
+
+# Fallback EUR exchange rates (live ECB rates are fetched at crawl time when reachable)
+fx_fallback:
+  EUR: 1.0
+  CZK: 0.0400
+  CHF: 1.06
+  PLN: 0.233
+  HUF: 0.00253
+  SEK: 0.0875
+  DKK: 0.134
+  GBP: 1.17
+
+sources:
+  autoscout24:
+    enabled: true
+    name: AutoScout24
+    # AutoScout24 country codes: D=Germany A=Austria I=Italy F=France B=Belgium NL=Netherlands E=Spain L=Luxembourg
+    countries: [D, A, B, NL, L, F, E, I]
+  sauto:
+    enabled: true
+    name: Sauto.cz
+  willhaben:
+    enabled: true
+    name: willhaben.at
+  kleinanzeigen:
+    enabled: true
+    name: Kleinanzeigen.de
+  mobilede:
+    # mobile.de blocks scraping; it offers an official Search API to registered dealers.
+    # Set MOBILEDE_API_USER and MOBILEDE_API_PASSWORD (GitHub secrets) to enable.
+    enabled: true
+    name: mobile.de

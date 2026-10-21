@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pacific Classics — Bulletproof classics from across Europe</title>
+<meta name="description" content="Pacific Classics finds the most reliable youngtimers and classic cars for sale across Europe, with historic-registration status and buying advice for every car.">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap masthead-in">
+    <a class="brand" href="#">
+      <img src="img/logo.svg" alt="" width="46" height="46">
+      <span><b>Pacific Classics</b><small data-t="tagline"></small></span>
+    </a>
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-view="listings" data-t="listings"></button>
+      <button class="tab" data-view="models" data-t="models"></button>
+      <button class="tab" data-view="status" data-t="status"></button>
+    </nav>
+    <button id="lang" class="lang"></button>
+  </div>
+</header>
+
+<div id="demo" class="demo" hidden></div>
+
+<main class="wrap">
+  <!-- LISTINGS -->
+  <section id="view-listings" class="view">
+    <div class="toolbar">
+      <input id="q" type="search" autocomplete="off">
+      <label class="sortlbl"><span data-t="sort"></span>
+        <select id="sort">
+          <option value="score" data-t="sScore"></option>
+          <option value="price_asc" data-t="sPriceAsc"></option>
+          <option value="price_desc" data-t="sPriceDesc"></option>
+          <option value="year" data-t="sYear"></option>
+          <option value="km" data-t="sKm"></option>
+          <option value="new" data-t="sNew"></option>
+        </select>
+      </label>
+      <button id="toggleFilters" class="ghost" data-t="filters"></button>
+    </div>
+    <div class="layout">
+      <aside id="filters" class="filters">
+        <label><span data-t="model"></span><select id="fModel"></select></label>
+        <label><span data-t="country"></span><select id="fCountry"></select></label>
+        <div class="row2">
+          <label><span data-t="price"></span><input id="fPmin" type="number" min="0" step="500" placeholder="min"></label>
+          <label><span>&nbsp;</span><input id="fPmax" type="number" min="0" step="500" placeholder="max"></label>
+        </div>
+        <div class="row2">
+          <label><span data-t="year"></span><input id="fYmin" type="number" min="1960" max="2010" placeholder="1980"></label>
+          <label><span>&nbsp;</span><input id="fYmax" type="number" min="1960" max="2010" placeholder="2000"></label>
+        </div>
+        <label><span data-t="maxKm"></span><input id="fKm" type="number" min="0" step="10000" placeholder="300000"></label>
+        <label><span data-t="historic"></span>
+          <select id="fHist"><option value="" data-t="hAny"></option><option value="fiva" data-t="hFiva"></option><option value="asi" data-t="hAsi"></option></select>
+        </label>
+        <label><span data-t="seller"></span>
+          <select id="fSeller"><option value="" data-t="sAny"></option><option value="dealer" data-t="sDealer"></option><option value="private" data-t="sPrivate"></option></select>
+        </label>
+        <label class="check"><input id="fDeals" type="checkbox"><span data-t="onlyDeals"></span></label>
+        <label class="check"><input id="fSafe" type="checkbox" checked><span data-t="hideRisky"></span></label>
+        <label class="check"><input id="fDupes" type="checkbox" checked><span data-t="hideDupes"></span></label>
+        <button id="reset" class="ghost" data-t="reset"></button>
+      </aside>
+      <div class="results">
+        <p id="count" class="count"></p>
+        <div id="grid" class="grid"></div>
+        <button id="more" class="more" hidden>+</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODELS -->
+  <section id="view-models" class="view" hidden>
+    <div id="modelGrid" class="model-grid"></div>
+  </section>
+
+  <!-- STATUS -->
+  <section id="view-status" class="view" hidden>
+    <div id="statusBox"></div>
+  </section>
+</main>
+
+<footer class="foot wrap">
+  <span id="updated"></span>
+  <span>Pacific Classics · a Pacific IT Solutions s.r.o. project · Listings and photos belong to their publishers — every card links to the original ad.</span>
+</footer>
+
+<dialog id="dlg"><div id="dlgBody"></div></dialog>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
