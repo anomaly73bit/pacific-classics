@@ -20,15 +20,14 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: crawl
-  cancel-in-progress: false
-
 jobs:
   crawl:
     if: github.event_name != 'push'
     runs-on: ubuntu-latest
     timeout-minutes: 150
+    concurrency:
+      group: crawl
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -70,6 +69,9 @@ jobs:
     needs: [crawl, deploy-only]
     if: always() && (needs.crawl.result == 'success' || needs['deploy-only'].result == 'success')
     runs-on: ubuntu-latest
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.pages.outputs.page_url }}
