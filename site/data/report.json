@@ -2,51 +2,143 @@
  "sources": {
   "autoscout24": {
    "name": "AutoScout24",
-   "status": "blocked",
-   "note": "robots.txt disallows https://www.autoscout24.com/lst/mercedes-benz/190?atype=C&cy=D%2CA%2CB%2CNL%2CL%2CF%2CE%2CI&fregfrom=1982&fregto=1993&sort=price&desc=0&ustate=N%2CU&page=1",
-   "fetched": 0,
+   "status": "ok",
+   "note": "",
+   "fetched": 3418,
    "errors": [],
-   "queries": {}
+   "queries": {
+    "mercedes-benz|190": 17,
+    "mercedes-benz|e-klasse": 17,
+    "mercedes-benz|200": 59,
+    "mercedes-benz|250": 37,
+    "mercedes-benz|300": 17,
+    "mercedes-benz|w123": 17,
+    "mercedes-benz|240": 35,
+    "mercedes-benz|s-klasse": 17,
+    "mercedes-benz|420": 22,
+    "mercedes-benz|560": 59,
+    "mercedes-benz|sl": 17,
+    "mercedes-benz|g-klasse": 60,
+    "volvo|240": 60,
+    "volvo|245": 16,
+    "volvo|740": 10,
+    "volvo|760": 9,
+    "volvo|940": 29,
+    "volvo|960": 20,
+    "volvo|850": 60,
+    "toyota|land-cruiser": 60,
+    "toyota|hilux": 19,
+    "toyota|4-runner": 18,
+    "toyota|corolla": 31,
+    "toyota|camry": 8,
+    "toyota|carina": 7,
+    "toyota|celica": 59,
+    "toyota|mr-2": 34,
+    "toyota|supra": 18,
+    "toyota|previa": 1,
+    "lexus|ls-400": 2,
+    "lexus|ls": 2,
+    "honda|civic": 60,
+    "honda|crx": 60,
+    "honda|accord": 13,
+    "honda|prelude": 31,
+    "mazda|mx-5": 60,
+    "mazda|323": 29,
+    "mazda|626": 14,
+    "nissan|patrol": 60,
+    "nissan|terrano": 19,
+    "nissan|sunny": 19,
+    "nissan|micra": 28,
+    "nissan|200-sx": 32,
+    "mitsubishi|pajero": 60,
+    "mitsubishi|galant": 7,
+    "mitsubishi|lancer": 7,
+    "mitsubishi|l200": 3,
+    "subaru|legacy": 7,
+    "subaru|impreza": 16,
+    "suzuki|samurai": 60,
+    "suzuki|sj": 60,
+    "suzuki|vitara": 60,
+    "daihatsu|rocky": 4,
+    "daihatsu|feroza": 24,
+    "daihatsu|charade": 5,
+    "peugeot|205": 59,
+    "peugeot|309": 15,
+    "peugeot|405": 19,
+    "peugeot|306": 45,
+    "peugeot|505": 12,
+    "citroen|bx": 33,
+    "citroen|zx": 7,
+    "citroen|xantia": 10,
+    "renault|r-4": 59,
+    "renault|4": 17,
+    "renault|express": 3,
+    "renault|r-19": 46,
+    "renault|19": 17,
+    "renault|clio": 60,
+    "fiat|panda": 17,
+    "fiat|uno": 18,
+    "fiat|tipo": 22,
+    "volkswagen|golf": 17,
+    "volkswagen|jetta": 40,
+    "volkswagen|passat": 18,
+    "volkswagen|polo": 60,
+    "volkswagen|t3": 59,
+    "volkswagen|t4": 59,
+    "volkswagen|transporter": 60,
+    "volkswagen|caravelle": 17,
+    "volkswagen|multivan": 17,
+    "audi|80": 17,
+    "audi|100": 59,
+    "bmw|318": 18,
+    "bmw|320": 17,
+    "bmw|325": 59,
+    "bmw|316": 59,
+    "bmw|520": 52,
+    "bmw|525": 55,
+    "bmw|530": 6,
+    "bmw|535": 16,
+    "bmw|323": 38,
+    "bmw|328": 18,
+    "saab|900": 60,
+    "saab|9000": 28,
+    "opel|kadett": 60,
+    "opel|vectra": 31,
+    "opel|omega": 19,
+    "ford|sierra": 59,
+    "ford|escort": 60,
+    "ford|transit": 49,
+    "land-rover|defender": 60,
+    "land-rover|discovery": 43,
+    "lada|niva": 60,
+    "porsche|911": 17,
+    "porsche|944": 18,
+    "porsche|928": 59
+   }
   },
   "sauto": {
    "name": "Sauto.cz",
-   "status": "blocked",
-   "note": "robots.txt disallows https://www.sauto.cz/api/v1/items/search?limit=50&offset=0&category_id=838&manufacturer_model_seo=mercedes-benz%3A190&manufacturing_date_from=1982-01-01&manufacturing_date_to=1993-12-31",
+   "status": "skipped",
    "fetched": 0,
+   "note": "robots.txt allows only search engines (User-agent: * Disallow: /) — off until Sauto gives permission",
    "errors": [],
    "queries": {}
   },
   "willhaben": {
    "name": "willhaben.at",
-   "status": "ok",
-   "note": "",
-   "fetched": 399,
+   "status": "blocked",
+   "note": "robots.txt disallows https://www.willhaben.at/iad/gebrauchtwagen/auto/gebrauchtwagenboerse?keyword=mercedes+benz+190&YEAR_MODEL_FROM=1982&YEA — robots.txt HTTP 200; '*' section: User-agent: * / Disallow: /*?*counterId=* / Disallow: /*?*PRICE_FROM=* / Disallow: /*?*SEGMENT=* / Disallow: /*?*TYPE=* / Disallow",
+   "fetched": 0,
    "errors": [],
-   "queries": {
-    "mercedes-benz|190": 86,
-    "mercedes-benz|e-klasse": 170,
-    "mercedes-benz|200": 43,
-    "mercedes-benz|250": 21,
-    "mercedes-benz|300": 77,
-    "volvo|240": 2,
-    "volvo|245": 0
-   }
+   "queries": {}
   },
   "kleinanzeigen": {
    "name": "Kleinanzeigen.de",
-   "status": "ok",
-   "note": "",
+   "status": "blocked",
+   "note": "robots.txt disallows https://www.kleinanzeigen.de/s-autos/c216+autos.ez_i:1982%2C1993+autos.marke_s:mercedes_benz+autos.model_s:190 — robots.txt HTTP 200; '*' section: User-agent: * / Allow: /?utm_source=ekde$ / Disallow: /*?utm_source=ekde / Disallow: /account/index.html / Disallow: /ad/ / Disall",
    "fetched": 0,
    "errors": [],
-   "queries": {
-    "mercedes-benz|190": 0,
-    "mercedes-benz|e-klasse": 0,
-    "mercedes-benz|200": 0,
-    "mercedes-benz|250": 0,
-    "mercedes-benz|300": 0,
-    "volvo|240": 0,
-    "volvo|245": 0
-   }
+   "queries": {}
   },
   "mobilede": {
    "name": "mobile.de",
@@ -57,37 +149,352 @@
    "queries": {}
   }
  },
- "started": "2026-10-21T09:30:42+00:00",
- "finished": "2026-10-21T09:31:21+00:00",
+ "started": "2026-10-21T10:04:24+00:00",
+ "finished": "2026-10-21T10:21:23+00:00",
  "fx_source": "ECB",
  "dropped": {
-  "excluded": 1,
-  "no_match": 73,
-  "price_bounds": 1,
-  "duplicate": 69
+  "excluded": 3,
+  "no_match": 250,
+  "price_bounds": 37,
+  "duplicate": 49
  },
- "published": 255,
+ "published": 3079,
  "market": {
   "mercedes-benz-190-w201": {
-   "count": 85,
-   "median_price": 8900,
-   "p25": 5000,
-   "p75": 11500,
-   "median_km": 189543
+   "count": 16,
+   "median_price": 2099,
+   "p25": 1950,
+   "p75": 2500,
+   "median_km": 200339
   },
   "mercedes-benz-e-class-w124": {
-   "count": 168,
-   "median_price": 8999,
-   "p25": 4050,
-   "p75": 15450,
-   "median_km": 207850
+   "count": 81,
+   "median_price": 4950,
+   "p25": 3000,
+   "p75": 6900,
+   "median_km": 240000
+  },
+  "mercedes-benz-s-class-w126": {
+   "count": 65,
+   "median_price": 19800,
+   "p25": 11749,
+   "p75": 27000,
+   "median_km": 234000
+  },
+  "mercedes-benz-w123-late-units-w123": {
+   "count": 26,
+   "median_price": 10249,
+   "p25": 6500,
+   "p75": 13000,
+   "median_km": 194500
+  },
+  "mercedes-benz-g-class-w460-w463": {
+   "count": 43,
+   "median_price": 18000,
+   "p25": 15500,
+   "p75": 20000,
+   "median_km": 108000
   },
   "volvo-240-245-240": {
+   "count": 76,
+   "median_price": 9175,
+   "p25": 6500,
+   "p75": 14900,
+   "median_km": 244975
+  },
+  "volvo-740-760-700-series": {
+   "count": 19,
+   "median_price": 8900,
+   "p25": 6550,
+   "p75": 10000,
+   "median_km": 200000
+  },
+  "volvo-940-960-900-series": {
+   "count": 48,
+   "median_price": 5920,
+   "p25": 3998,
+   "p75": 8950,
+   "median_km": 315088
+  },
+  "volvo-850-850": {
+   "count": 59,
+   "median_price": 8500,
+   "p25": 4000,
+   "p75": 13800,
+   "median_km": 256500
+  },
+  "toyota-land-cruiser-j60-j70-j80": {
+   "count": 60,
+   "median_price": 12725,
+   "p25": 9800,
+   "p75": 15000,
+   "median_km": 267500
+  },
+  "toyota-hilux-4runner-n50-n100": {
+   "count": 37,
+   "median_price": 11000,
+   "p25": 7950,
+   "p75": 17500,
+   "median_km": 210000
+  },
+  "toyota-corolla-e80-e90-e100": {
+   "count": 30,
+   "median_price": 4000,
+   "p25": 2800,
+   "p75": 6990,
+   "median_km": 124396
+  },
+  "toyota-camry-carina-ii-carina-e-v20-v30-t150-t190": {
+   "count": 15,
+   "median_price": 4000,
+   "p25": 2990,
+   "p75": 6490,
+   "median_km": 223000
+  },
+  "toyota-celica-mr2-supra-mk3-t160-t180-w10-w20-a70": {
+   "count": 82,
+   "median_price": 21000,
+   "p25": 12995,
+   "p75": 31900,
+   "median_km": 148325
+  },
+  "toyota-previa-xr10": {
+   "count": 1,
+   "median_price": 9350,
+   "p25": 9350,
+   "p75": 9350,
+   "median_km": 111000
+  },
+  "lexus-ls400-xf10": {
    "count": 2,
-   "median_price": 11017,
-   "p25": 9790,
-   "p75": 12244,
-   "median_km": 133500
+   "median_price": 14245,
+   "p25": 8500,
+   "p75": 19990,
+   "median_km": 332250
+  },
+  "honda-civic-crx-accord-prelude-various": {
+   "count": 164,
+   "median_price": 8595,
+   "p25": 5300,
+   "p75": 11950,
+   "median_km": 170061
+  },
+  "mazda-mx-5-na": {
+   "count": 60,
+   "median_price": 8325,
+   "p25": 6900,
+   "p75": 9499,
+   "median_km": 191162
+  },
+  "mazda-323-626-bf-ba-gc-ge": {
+   "count": 42,
+   "median_price": 3472,
+   "p25": 1999,
+   "p75": 6300,
+   "median_km": 125636
+  },
+  "nissan-patrol-terrano-i-y60-gr-wd21": {
+   "count": 79,
+   "median_price": 9900,
+   "p25": 7000,
+   "p75": 15000,
+   "median_km": 216000
+  },
+  "nissan-sunny-micra-200sx-n13-n14-k10-s13": {
+   "count": 76,
+   "median_price": 8500,
+   "p25": 3295,
+   "p75": 24500,
+   "median_km": 135000
+  },
+  "mitsubishi-pajero-i-ii": {
+   "count": 60,
+   "median_price": 6050,
+   "p25": 5000,
+   "p75": 7500,
+   "median_km": 298999
+  },
+  "mitsubishi-galant-lancer-l200-various": {
+   "count": 17,
+   "median_price": 4500,
+   "p25": 2900,
+   "p75": 5900,
+   "median_km": 186300
+  },
+  "subaru-legacy-impreza-bc-bd-gc": {
+   "count": 22,
+   "median_price": 19200,
+   "p25": 9900,
+   "p75": 24990,
+   "median_km": 129500
+  },
+  "suzuki-sj-samurai-vitara-sj-et": {
+   "count": 164,
+   "median_price": 5500,
+   "p25": 4350,
+   "p75": 6900,
+   "median_km": 100000
+  },
+  "daihatsu-rocky-feroza-charade-f70-f80-f300-g100": {
+   "count": 33,
+   "median_price": 5000,
+   "p25": 3998,
+   "p75": 6500,
+   "median_km": 112000
+  },
+  "peugeot-205-309-405-306-various": {
+   "count": 137,
+   "median_price": 3800,
+   "p25": 2000,
+   "p75": 5950,
+   "median_km": 134482
+  },
+  "peugeot-505-505": {
+   "count": 12,
+   "median_price": 7250,
+   "p25": 5500,
+   "p75": 10950,
+   "median_km": 172730
+  },
+  "citroen-bx-zx-xantia-various": {
+   "count": 50,
+   "median_price": 5000,
+   "p25": 3450,
+   "p75": 9900,
+   "median_km": 145500
+  },
+  "renault-4-r4": {
+   "count": 59,
+   "median_price": 4500,
+   "p25": 3200,
+   "p75": 4999,
+   "median_km": 123000
+  },
+  "renault-express-19-clio-i-diesel-various": {
+   "count": 108,
+   "median_price": 6400,
+   "p25": 2990,
+   "p75": 15000,
+   "median_km": 125000
+  },
+  "fiat-panda-141": {
+   "count": 13,
+   "median_price": 700,
+   "p25": 600,
+   "p75": 700,
+   "median_km": 189000
+  },
+  "fiat-uno-tipo-diesel-146-160": {
+   "count": 40,
+   "median_price": 1450,
+   "p25": 1000,
+   "p75": 3500,
+   "median_km": 149000
+  },
+  "volkswagen-golf-i-ii-jetta-mk1-mk2": {
+   "count": 43,
+   "median_price": 4500,
+   "p25": 2990,
+   "p75": 6990,
+   "median_km": 119000
+  },
+  "volkswagen-passat-b3-b4-golf-iii-polo-b3-b4-mk3-6n": {
+   "count": 80,
+   "median_price": 999,
+   "p25": 700,
+   "p75": 1300,
+   "median_km": 172500
+  },
+  "volkswagen-transporter-t3-t4-t3-t4": {
+   "count": 200,
+   "median_price": 2874,
+   "p25": 1999,
+   "p75": 6000,
+   "median_km": 256000
+  },
+  "audi-80-b3-b4": {
+   "count": 14,
+   "median_price": 658,
+   "p25": 550,
+   "p75": 799,
+   "median_km": 206638
+  },
+  "audi-100-c3-c4": {
+   "count": 59,
+   "median_price": 3900,
+   "p25": 2500,
+   "p75": 4999,
+   "median_km": 199800
+  },
+  "bmw-3-series-e36": {
+   "count": 104,
+   "median_price": 7974,
+   "p25": 4500,
+   "p75": 11490,
+   "median_km": 222585
+  },
+  "bmw-3-series-e30": {
+   "count": 59,
+   "median_price": 6000,
+   "p25": 4000,
+   "p75": 9950,
+   "median_km": 180000
+  },
+  "bmw-5-series-e34": {
+   "count": 105,
+   "median_price": 9500,
+   "p25": 7000,
+   "p75": 13500,
+   "median_km": 197315
+  },
+  "saab-900-classic-9000-900-9000": {
+   "count": 86,
+   "median_price": 3950,
+   "p25": 2900,
+   "p75": 5000,
+   "median_km": 230500
+  },
+  "opel-kadett-e-vectra-a-omega-a-various": {
+   "count": 109,
+   "median_price": 4500,
+   "p25": 2999,
+   "p75": 8830,
+   "median_km": 113500
+  },
+  "ford-sierra-escort-transit-various": {
+   "count": 167,
+   "median_price": 6900,
+   "p25": 3950,
+   "p75": 13500,
+   "median_km": 92000
+  },
+  "land-rover-defender-discovery-i-90-110-series-i": {
+   "count": 103,
+   "median_price": 13000,
+   "p25": 9000,
+   "p75": 16900,
+   "median_km": 207360
+  },
+  "lada-niva-2121": {
+   "count": 60,
+   "median_price": 8500,
+   "p25": 5500,
+   "p75": 10500,
+   "median_km": 73500
+  },
+  "porsche-911-carrera-3-2-964-g-model-964": {
+   "count": 17,
+   "median_price": 54900,
+   "p25": 49995,
+   "p75": 56000,
+   "median_km": 222000
+  },
+  "porsche-944-928-944-928": {
+   "count": 77,
+   "median_price": 26500,
+   "p25": 16100,
+   "p75": 29900,
+   "median_km": 160000
   }
  }
 }
