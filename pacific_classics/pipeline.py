@@ -51,7 +51,8 @@ def crawl(only_sources: list[str] | None = None, only_models: list[str] | None =
                                       "note": scfg.get("note", "disabled in config"), "errors": [], "queries": {}}
             continue
         # one client per source: each site keeps its own rate limit, sites are crawled in parallel
-        src = REGISTRY[key](PoliteClient(cfg["crawler"]), scfg, cfg["crawler"])
+        ccfg = {**cfg["crawler"], **{k: scfg[k] for k in ("delay_seconds",) if k in scfg}}
+        src = REGISTRY[key](PoliteClient(ccfg), scfg, cfg["crawler"])
         ok, why = src.available()
         report["sources"][key] = {"name": scfg.get("name", key), "status": "ok" if ok else "skipped",
                                   "note": why, "fetched": 0, "errors": [], "queries": {}}

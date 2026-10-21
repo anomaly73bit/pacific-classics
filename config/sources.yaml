@@ -68,9 +68,11 @@ sources:
   marktplaats:
     enabled: true
     name: Marktplaats.nl
+    delay_seconds: [12, 20]      # answered 403 after ~50 requests at the default pace: go slower
   2dehands:
     enabled: true
     name: 2dehands.be
+    delay_seconds: [12, 20]
   classictrader:
     enabled: true
     name: Classic Trader
