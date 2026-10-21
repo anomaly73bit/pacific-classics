@@ -31,6 +31,7 @@ class Model:
     auto_gearbox_caution: bool = False
     high_mileage_ok: bool = False
     match_any: list[re.Pattern] = field(default_factory=list)
+    it: dict = field(default_factory=dict)   # Italian texts: strengths, watch_out, engine_bad_note, category, recommended_engines
 
     @property
     def name(self) -> str:
@@ -44,6 +45,7 @@ class Model:
             "watch_out": self.watch_out, "reliability": self.reliability,
             "engine_bad_note": self.engine_bad_note,
             "high_mileage_ok": self.high_mileage_ok,
+            "it": self.it,
         }
 
 
@@ -71,6 +73,7 @@ def load_models(path: Path | None = None) -> list[Model]:
             auto_gearbox_caution=bool(m.get("auto_gearbox_caution")),
             high_mileage_ok=bool(m.get("high_mileage_ok")),
             match_any=_rx(m.get("match_any")),
+            it={k[:-3]: m[k] for k in m if k.endswith("_it")},
         ))
     return out
 

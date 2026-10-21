@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pacific Classics — Bulletproof classics from across Europe</title>
+<title>Pacific Classics — Auto classiche e youngtimer da tutta Europa</title>
 <meta name="theme-color" content="#14213d">
 <meta name="description" content="Pacific Classics finds the most reliable youngtimers and classic cars for sale across Europe, with historic-registration status and buying advice for every car.">
 <link rel="icon" href="img/logo.svg" type="image/svg+xml">
@@ -68,7 +68,6 @@
         </label>
         <label class="check"><input id="fDeals" type="checkbox"><span data-t="onlyDeals"></span></label>
         <label class="check"><input id="fSafe" type="checkbox" checked><span data-t="hideRisky"></span></label>
-        <label class="check"><input id="fDupes" type="checkbox" checked><span data-t="hideDupes"></span></label>
         <button id="reset" class="ghost" data-t="reset"></button>
       </aside>
       <div class="results">
@@ -95,7 +94,17 @@
   <span>Pacific Classics · a Pacific IT Solutions s.r.o. project · Listings and photos belong to their publishers — every card links to the original ad.</span>
 </footer>
 
-<dialog id="dlg"><div id="dlgBody"></div></dialog>
+<dialog id="dlg"><div id="dlgBody"></div>
+  <!-- inside the dialog so they sit in the same top layer, above the modal -->
+  <div id="peek" class="peek" hidden><img alt=""></div>
+  <div id="lightbox" class="lightbox" hidden>
+    <button class="lb-x" data-lb="close" aria-label="Chiudi">×</button>
+    <button class="lb-nav lb-prev" data-lb="prev" aria-label="Precedente">‹</button>
+    <img alt="">
+    <button class="lb-nav lb-next" data-lb="next" aria-label="Successiva">›</button>
+    <div class="lb-count"></div>
+  </div>
+</dialog>
 
 <script src="i18n.js"></script>
 <script src="app.js"></script>

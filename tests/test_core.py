@@ -165,3 +165,16 @@ def test_classictrader_parser():
     html = f'<script type="application/ld+json">{json.dumps(ld)}</script>'
     [l] = classictrader.parse_page(html)
     assert l["id"] == "classictrader:123456" and l["year"] == 1988 and l["currency"] == "GBP" and l["price"] == 9500
+
+
+def test_duplicates_published_once():
+    from pacific_classics.pipeline import _mark_cross_site_duplicates
+    a = {"id": "autoscout24:1", "source": "autoscout24", "url": "u1", "model_id": "m", "year": 1990,
+         "price_eur": 7990, "mileage_km": 250000, "images": ["a", "b"], "title": "Mercedes 300 D W124"}
+    b = dict(a, id="kleinanzeigen:9", source="kleinanzeigen", url="u2", price_eur=7900, mileage_km=250500, images=["a"])
+    c = dict(a, id="autoscout24:2", url="u3", mileage_km=None, title="Mercedes-Benz 300 D W124", price_eur=8000)
+    d = dict(a, id="autoscout24:3", url="u4", price_eur=12000)
+    ls = [b, a, c, d]
+    _mark_cross_site_duplicates(ls)
+    assert a.get("duplicate_of") is None and b["duplicate_of"] == a["id"] and c["duplicate_of"] == a["id"]
+    assert d.get("duplicate_of") is None and {o["source"] for o in a["also_on"]} == {"kleinanzeigen", "autoscout24"}

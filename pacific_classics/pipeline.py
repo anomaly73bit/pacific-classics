@@ -137,7 +137,11 @@ def process(raw: list[tuple[dict, list[str]]], models: dict, cfg: dict, report: 
         seen[item["id"]] = item
 
     listings = list(seen.values())
+    for l in listings:
+        l["fuel"], l["gearbox"] = _it(l.get("fuel"), FUEL_IT), _it(l.get("gearbox"), GEAR_IT)
     _mark_cross_site_duplicates(listings)
+    dropped["duplicate"] += sum(1 for l in listings if l.get("duplicate_of"))
+    listings = [l for l in listings if not l.get("duplicate_of")]   # publish each car once
     stats = market_stats([l for l in listings if not l.get("duplicate_of")])
     for l in listings:
         l.update(advise(l, models[l["model_id"]], stats.get(l["model_id"]), ref_year, l.pop("_hist", None)))
@@ -161,19 +165,51 @@ def guess_year(text: str) -> int | None:
     return int(m.group(1)) if m else None
 
 
+FUEL_IT = [(r"diesel|nafta|tdi|\btd\b", "Diesel"), (r"lpg|gpl|autogas", "GPL"), (r"cng|metano|erdgas", "Metano"),
+           (r"hybrid|ibrid", "Ibrida"), (r"elektr|electric", "Elettrica"),
+           (r"benz|petrol|gasoline|essence|gasolina|super|otto|\bb\b", "Benzina")]
+GEAR_IT = [(r"auto|automat|tiptronic", "Automatico"), (r"man|schalt|hand|ruční|manu", "Manuale")]
+
+
+def _it(value, table):
+    if not value:
+        return value
+    for rx, it in table:
+        if re.search(rx, str(value), re.I):
+            return it
+    return value
+
+
+def _words(t: str) -> set[str]:
+    return set(re.findall(r"[a-z0-9]{2,}", (t or "").lower()))
+
+
+def _same_car(a: dict, b: dict) -> bool:
+    if a.get("year") != b.get("year") or not a.get("price_eur") or not b.get("price_eur"):
+        return False
+    if abs(a["price_eur"] - b["price_eur"]) > max(a["price_eur"], b["price_eur"]) * 0.03:
+        return False
+    if a.get("mileage_km") and b.get("mileage_km"):
+        return abs(a["mileage_km"] - b["mileage_km"]) <= max(a["mileage_km"], b["mileage_km"]) * 0.01
+    wa, wb = _words(a.get("title")), _words(b.get("title"))
+    same_place = a.get("zip") and a.get("zip") == b.get("zip")
+    return bool(wa and wb) and (len(wa & wb) / len(wa | wb) >= 0.6 or (same_place and len(wa & wb) >= 2))
+
+
 def _mark_cross_site_duplicates(listings: list[dict]):
-    """Same car often appears on several sites: same model, year, km (±1%) and price (±3%)."""
+    """The same car is often listed on several sites (or twice on one): keep one, link the others."""
     keyed: dict[tuple, list[dict]] = {}
     for l in listings:
-        if l.get("mileage_km") and l.get("price_eur") and l.get("year"):
+        if l.get("year") and l.get("price_eur"):
             keyed.setdefault((l["model_id"], l["year"]), []).append(l)
     for group in keyed.values():
+        # keep the copy with most photos and most data
+        group.sort(key=lambda l: (-len(l.get("images") or []), l.get("mileage_km") is None))
         for i, a in enumerate(group):
+            if a.get("duplicate_of"):
+                continue
             for b in group[i + 1:]:
-                if a["source"] == b["source"] or b.get("duplicate_of"):
-                    continue
-                if abs(a["mileage_km"] - b["mileage_km"]) <= a["mileage_km"] * 0.01 and \
-                   abs(a["price_eur"] - b["price_eur"]) <= a["price_eur"] * 0.03:
+                if not b.get("duplicate_of") and _same_car(a, b):
                     b["duplicate_of"] = a["id"]
                     a.setdefault("also_on", []).append({"source": b["source"], "url": b["url"]})
 
