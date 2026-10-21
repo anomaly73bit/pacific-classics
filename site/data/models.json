@@ -14,7 +14,15 @@
   "watch_out": "Rust: wheel arches, jacking points",
   "reliability": 5,
   "engine_bad_note": "16V Cosworth versions: great but expensive and specialist",
-  "high_mileage_ok": true
+  "high_mileage_ok": true,
+  "it": {
+   "strengths": "Sovradimensionata; motori da oltre 500.000 km",
+   "watch_out": "Ruggine: passaruota e punti del cric",
+   "engine_bad_note": "Versioni 16V Cosworth: splendide ma costose e da specialisti",
+   "category": "Berlina",
+   "recommended_engines": "2.0D, 2.5D, 2.0/2.3 benzina",
+   "model": "190"
+  }
  },
  {
   "id": "mercedes-benz-e-class-w124",
@@ -31,7 +39,15 @@
   "watch_out": "Biodegradable wiring 1993-95, rust",
   "reliability": 5,
   "engine_bad_note": "V8 versions (E420/500E): magnificent, but not 'increvable' running costs",
-  "high_mileage_ok": true
+  "high_mileage_ok": true,
+  "it": {
+   "strengths": "Il riferimento assoluto; taxi da 1.000.000 di km",
+   "watch_out": "Cablaggio biodegradabile 1993-95, ruggine",
+   "engine_bad_note": "Versioni V8 (E420/500E): magnifiche, ma costi di gestione non da 'increvable'",
+   "category": "Berlina / Station wagon / Coupé",
+   "recommended_engines": "200D/250D/300D (OM60x), 230E, 300E (M103)",
+   "model": "Classe E"
+  }
  },
  {
   "id": "mercedes-benz-w123-late-units-w123",
@@ -48,7 +64,15 @@
   "watch_out": "Structural rust",
   "reliability": 5,
   "engine_bad_note": null,
-  "high_mileage_ok": true
+  "high_mileage_ok": true,
+  "it": {
+   "strengths": "Indistruttibile, meccanica semplicissima",
+   "watch_out": "Ruggine strutturale",
+   "engine_bad_note": null,
+   "category": "Berlina / Station wagon",
+   "recommended_engines": "240D, 300D, 230E",
+   "model": "W123 (ultime serie)"
+  }
  },
  {
   "id": "mercedes-benz-s-class-w126",
@@ -65,7 +89,15 @@
   "watch_out": "Parts cost, climate control",
   "reliability": 4,
   "engine_bad_note": "380SE early V8: timing chain issues",
-  "high_mileage_ok": true
+  "high_mileage_ok": true,
+  "it": {
+   "strengths": "Qualità da ammiraglia, motori eterni",
+   "watch_out": "Costo ricambi, climatizzatore",
+   "engine_bad_note": "380SE V8 prima serie: problemi alla catena di distribuzione",
+   "category": "Berlina / Coupé",
+   "recommended_engines": "300SE, 420SE, 300SD",
+   "model": "Classe S"
+  }
  },
  {
   "id": "mercedes-benz-sl-r107",
@@ -82,7 +114,15 @@
   "watch_out": "Rust under carpets",
   "reliability": 4,
   "engine_bad_note": "380SL: single-row timing chain on early cars",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Roadster robustissima, già un investimento",
+   "watch_out": "Ruggine sotto i tappeti",
+   "engine_bad_note": "380SL: catena di distribuzione a una fila sulle prime serie",
+   "category": "Roadster",
+   "recommended_engines": "300SL, 420SL, 500SL",
+   "model": "SL"
+  }
  },
  {
   "id": "mercedes-benz-g-class-w460-w463",
@@ -99,7 +139,15 @@
   "watch_out": "Rust on frame and doors",
   "reliability": 5,
   "engine_bad_note": null,
-  "high_mileage_ok": true
+  "high_mileage_ok": true,
+  "it": {
+   "strengths": "DNA militare",
+   "watch_out": "Ruggine su telaio e porte",
+   "engine_bad_note": null,
+   "category": "Fuoristrada",
+   "recommended_engines": "300GD, 250GD, 230GE",
+   "model": "Classe G"
+  }
  },
  {
   "id": "mercedes-benz-sl-r129",
@@ -116,7 +164,15 @@
   "watch_out": "Soft-top hydraulics/electronics",
   "reliability": 4,
   "engine_bad_note": "V12 SL600: very expensive to maintain",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Costruita come un carro armato",
+   "watch_out": "Idraulica ed elettronica della capote",
+   "engine_bad_note": "SL600 V12: manutenzione molto costosa",
+   "category": "Roadster",
+   "recommended_engines": "300SL, SL320, 500SL",
+   "model": "SL"
+  }
  },
  {
   "id": "volvo-240-245-240",
@@ -133,7 +189,15 @@
   "watch_out": "Little; rust in low areas",
   "reliability": 5,
   "engine_bad_note": "PRV V6 (264/B28): avoid",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Il 'mattone' svedese: 500.000 km sono normali",
+   "watch_out": "Poco; ruggine nelle parti basse",
+   "engine_bad_note": "V6 PRV (264/B28): da evitare",
+   "category": "Berlina / Station wagon",
+   "recommended_engines": "B230F / B230FK",
+   "model": "240 / 245"
+  }
  },
  {
   "id": "volvo-740-760-700-series",
@@ -150,7 +214,15 @@
   "watch_out": "Worn automatic gearbox",
   "reliability": 5,
   "engine_bad_note": "760 with PRV V6: the weak engine of the range",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Stessa meccanica della 240",
+   "watch_out": "Cambio automatico usurato",
+   "engine_bad_note": "760 con V6 PRV: il motore debole della gamma",
+   "category": "Berlina / Station wagon",
+   "recommended_engines": "B230F, B230FT turbo",
+   "model": "740 / 760"
+  }
  },
  {
   "id": "volvo-940-960-900-series",
@@ -167,7 +239,15 @@
   "watch_out": "960 six-cylinder more delicate",
   "reliability": 4,
   "engine_bad_note": "960 straight-six: more delicate and costly",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Evoluzione della 740, ricambi facili",
+   "watch_out": "960 sei cilindri più delicata",
+   "engine_bad_note": "960 sei cilindri in linea: più delicato e costoso",
+   "category": "Berlina / Station wagon",
+   "recommended_engines": "B230F/FT, 2.4 TD",
+   "model": "940 / 960"
+  }
  },
  {
   "id": "volvo-850-850",
@@ -184,7 +264,15 @@
   "watch_out": "AW50 automatic gearbox",
   "reliability": 4,
   "engine_bad_note": "T5/R turbos: stronger wear, check carefully",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "5 cilindri robustissimo",
+   "watch_out": "Cambio automatico AW50",
+   "engine_bad_note": "T5/R turbo: usura maggiore, controllare bene",
+   "category": "Berlina / Station wagon",
+   "recommended_engines": "2.0/2.5 5 cilindri aspirati",
+   "model": "850"
+  }
  },
  {
   "id": "toyota-land-cruiser-j60-j70-j80",
@@ -201,7 +289,15 @@
   "watch_out": "High prices, frame rust",
   "reliability": 5,
   "engine_bad_note": "1KZ-TE 3.0 TD (J90): cylinder head cracking",
-  "high_mileage_ok": true
+  "high_mileage_ok": true,
+  "it": {
+   "strengths": "Forse il veicolo più affidabile mai costruito",
+   "watch_out": "Prezzi alti, ruggine al telaio",
+   "engine_bad_note": "1KZ-TE 3.0 TD (J90): crepe alla testata",
+   "category": "Fuoristrada",
+   "recommended_engines": "1HZ, 1HD-T, 12H-T, 3F",
+   "model": "Land Cruiser"
+  }
  },
  {
   "id": "toyota-hilux-4runner-n50-n100",
@@ -218,7 +314,15 @@
   "watch_out": "Frame",
   "reliability": 5,
   "engine_bad_note": null,
-  "high_mileage_ok": true
+  "high_mileage_ok": true,
+  "it": {
+   "strengths": "Leggendario, praticamente immortale",
+   "watch_out": "Telaio",
+   "engine_bad_note": null,
+   "category": "Pick-up / Fuoristrada",
+   "recommended_engines": "2L, 2L-T, 22R",
+   "model": "Hilux / 4Runner"
+  }
  },
  {
   "id": "toyota-corolla-e80-e90-e100",
@@ -235,7 +339,15 @@
   "watch_out": "Rust on arches",
   "reliability": 5,
   "engine_bad_note": null,
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Manutenzione minima, chilometri infiniti",
+   "watch_out": "Ruggine sui passaruota",
+   "engine_bad_note": null,
+   "category": "Utilitaria / Berlina",
+   "recommended_engines": "4A-FE, 2C diesel",
+   "model": "Corolla"
+  }
  },
  {
   "id": "toyota-camry-carina-ii-carina-e-v20-v30-t150-t190",
@@ -252,7 +364,15 @@
   "watch_out": "Few well-kept examples",
   "reliability": 5,
   "engine_bad_note": null,
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Motori 3S quasi indistruttibili",
+   "watch_out": "Pochi esemplari ben tenuti",
+   "engine_bad_note": null,
+   "category": "Berlina",
+   "recommended_engines": "3S-FE, 2C",
+   "model": "Camry / Carina II / Carina E"
+  }
  },
  {
   "id": "toyota-celica-mr2-supra-mk3-t160-t180-w10-w20-a70",
@@ -269,7 +389,15 @@
   "watch_out": "7M head gasket",
   "reliability": 4,
   "engine_bad_note": "7M-GTE: head gasket weak point; check for upgraded MLS gasket",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Sportive giapponesi affidabili",
+   "watch_out": "Guarnizione testata del 7M",
+   "engine_bad_note": "7M-GTE: guarnizione della testata punto debole; verificare se sostituita con quella multistrato",
+   "category": "Sportiva",
+   "recommended_engines": "3S-GE, 7M-GTE",
+   "model": "Celica / MR2 / Supra Mk3"
+  }
  },
  {
   "id": "toyota-previa-xr10",
@@ -286,7 +414,15 @@
   "watch_out": "Body parts availability",
   "reliability": 4,
   "engine_bad_note": null,
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Monovolume 'eterno'",
+   "watch_out": "Disponibilità ricambi di carrozzeria",
+   "engine_bad_note": null,
+   "category": "Monovolume",
+   "recommended_engines": "2TZ-FE",
+   "model": "Previa"
+  }
  },
  {
   "id": "lexus-ls400-xf10",
@@ -303,7 +439,15 @@
   "watch_out": "Few in Europe, fuel consumption",
   "reliability": 5,
   "engine_bad_note": null,
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Il V8 più affidabile di sempre, 1.000.000 di km",
+   "watch_out": "Poche in Europa, consumi",
+   "engine_bad_note": null,
+   "category": "Berlina",
+   "recommended_engines": "1UZ-FE V8",
+   "model": "LS400"
+  }
  },
  {
   "id": "honda-civic-crx-accord-prelude-various",
@@ -320,7 +464,15 @@
   "watch_out": "Rust, modified examples",
   "reliability": 4,
   "engine_bad_note": null,
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Motori VTEC e non VTEC solidissimi",
+   "watch_out": "Ruggine, esemplari modificati",
+   "engine_bad_note": null,
+   "category": "Utilitaria / Coupé / Berlina",
+   "recommended_engines": "D16, B16, F20/F22",
+   "model": "Civic / CRX / Accord / Prelude"
+  }
  },
  {
   "id": "mazda-mx-5-na",
@@ -337,7 +489,15 @@
   "watch_out": "Sill rust",
   "reliability": 5,
   "engine_bad_note": null,
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Semplice e affidabilissima",
+   "watch_out": "Ruggine ai sottoporta",
+   "engine_bad_note": null,
+   "category": "Roadster",
+   "recommended_engines": "1.6, 1.8",
+   "model": "MX-5"
+  }
  },
  {
   "id": "mazda-323-626-bf-ba-gc-ge",
@@ -354,7 +514,15 @@
   "watch_out": "Rust",
   "reliability": 4,
   "engine_bad_note": null,
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Economiche e robuste",
+   "watch_out": "Ruggine",
+   "engine_bad_note": null,
+   "category": "Utilitaria / Berlina",
+   "recommended_engines": "B6, FE, RF diesel",
+   "model": "323 / 626"
+  }
  },
  {
   "id": "nissan-patrol-terrano-i-y60-gr-wd21",
@@ -371,7 +539,15 @@
   "watch_out": "Frame",
   "reliability": 5,
   "engine_bad_note": "ZD30 3.0 Di (later Patrol): known for piston/head failures",
-  "high_mileage_ok": true
+  "high_mileage_ok": true,
+  "it": {
+   "strengths": "Il TD42 è tra i diesel più robusti di sempre",
+   "watch_out": "Telaio",
+   "engine_bad_note": "ZD30 3.0 Di (Patrol successivi): noti per rotture di pistoni e testata",
+   "category": "Fuoristrada",
+   "recommended_engines": "TD42, RD28",
+   "model": "Patrol / Terrano I"
+  }
  },
  {
   "id": "nissan-sunny-micra-200sx-n13-n14-k10-s13",
@@ -388,7 +564,15 @@
   "watch_out": "Rust",
   "reliability": 4,
   "engine_bad_note": null,
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Micra K10 quasi indistruttibile",
+   "watch_out": "Ruggine",
+   "engine_bad_note": null,
+   "category": "Utilitaria / Coupé",
+   "recommended_engines": "GA16, MA10, CA18DET",
+   "model": "Sunny / Micra / 200SX"
+  }
  },
  {
   "id": "mitsubishi-pajero-i-ii",
@@ -405,7 +589,15 @@
   "watch_out": "2.8 TD cylinder head",
   "reliability": 4,
   "engine_bad_note": "2.8 TD (4M40): cylinder head cracks",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Robustissimo, vincitore della Dakar",
+   "watch_out": "Testata del 2.8 TD",
+   "engine_bad_note": "2.8 TD (4M40): crepe alla testata",
+   "category": "Fuoristrada",
+   "recommended_engines": "2.5 TD (4D56), 3.0 V6",
+   "model": "Pajero"
+  }
  },
  {
   "id": "mitsubishi-galant-lancer-l200-various",
@@ -422,7 +614,15 @@
   "watch_out": "Rust",
   "reliability": 4,
   "engine_bad_note": null,
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "4G63 molto robusto",
+   "watch_out": "Ruggine",
+   "engine_bad_note": null,
+   "category": "Berlina / Pick-up",
+   "recommended_engines": "4G63, 4D56",
+   "model": "Galant / Lancer / L200"
+  }
  },
  {
   "id": "subaru-legacy-impreza-bc-bd-gc",
@@ -439,7 +639,15 @@
   "watch_out": "EJ25 head gaskets",
   "reliability": 4,
   "engine_bad_note": "EJ25: head gasket failures",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Boxer robusto + trazione integrale",
+   "watch_out": "Guarnizioni testata EJ25",
+   "engine_bad_note": "EJ25: guarnizioni della testata che cedono",
+   "category": "Berlina / Station wagon",
+   "recommended_engines": "EJ18/EJ20 aspirati",
+   "model": "Legacy / Impreza"
+  }
  },
  {
   "id": "suzuki-sj-samurai-vitara-sj-et",
@@ -456,7 +664,15 @@
   "watch_out": "Frame rust",
   "reliability": 4,
   "engine_bad_note": null,
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Semplicissimi, non muoiono mai",
+   "watch_out": "Ruggine al telaio",
+   "engine_bad_note": null,
+   "category": "Fuoristrada",
+   "recommended_engines": "1.3, 1.6",
+   "model": "SJ Samurai / Vitara"
+  }
  },
  {
   "id": "daihatsu-rocky-feroza-charade-f70-f80-f300-g100",
@@ -473,7 +689,15 @@
   "watch_out": "Rust",
   "reliability": 4,
   "engine_bad_note": null,
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Giapponesi spartane e robuste",
+   "watch_out": "Ruggine",
+   "engine_bad_note": null,
+   "category": "Fuoristrada / Utilitaria",
+   "recommended_engines": "2.8 D, 1.6",
+   "model": "Rocky / Feroza / Charade"
+  }
  },
  {
   "id": "peugeot-205-309-405-306-various",
@@ -490,7 +714,15 @@
   "watch_out": "Electrics, minor rust",
   "reliability": 4,
   "engine_bad_note": "GTI 1.9: enthusiast car, often abused",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "XUD = il diesel francese eterno",
+   "watch_out": "Impianto elettrico, poca ruggine",
+   "engine_bad_note": "GTI 1.9: auto da appassionati, spesso maltrattata",
+   "category": "Utilitaria / Berlina",
+   "recommended_engines": "XUD7/XUD9 diesel, TU benzina",
+   "model": "205 / 309 / 405 / 306"
+  }
  },
  {
   "id": "peugeot-505-505",
@@ -507,7 +739,15 @@
   "watch_out": "Body parts availability",
   "reliability": 4,
   "engine_bad_note": null,
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Il taxi africano per eccellenza",
+   "watch_out": "Disponibilità ricambi di carrozzeria",
+   "engine_bad_note": null,
+   "category": "Berlina / Station wagon",
+   "recommended_engines": "2.0, 2.5 diesel",
+   "model": "505"
+  }
  },
  {
   "id": "citroen-bx-zx-xantia-various",
@@ -524,7 +764,15 @@
   "watch_out": "Hydraulics need upkeep (BX/Xantia)",
   "reliability": 3,
   "engine_bad_note": "Xantia Activa / V6: complex hydraulics",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Meccanica PSA robusta",
+   "watch_out": "Idraulica da manutenere (BX/Xantia)",
+   "engine_bad_note": "Xantia Activa / V6: idraulica complessa",
+   "category": "Utilitaria / Berlina",
+   "recommended_engines": "XUD diesel",
+   "model": "BX / ZX / Xantia"
+  }
  },
  {
   "id": "renault-4-r4",
@@ -541,7 +789,15 @@
   "watch_out": "Chassis rust",
   "reliability": 4,
   "engine_bad_note": null,
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Semplice, riparabile ovunque",
+   "watch_out": "Ruggine al telaio",
+   "engine_bad_note": null,
+   "category": "Utilitaria",
+   "recommended_engines": "956/1108 cc",
+   "model": "4"
+  }
  },
  {
   "id": "renault-express-19-clio-i-diesel-various",
@@ -558,7 +814,15 @@
   "watch_out": "Electrics",
   "reliability": 3,
   "engine_bad_note": "Clio Williams/16V: sporty, often abused",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Diesel F8Q quasi indistruttibile",
+   "watch_out": "Impianto elettrico",
+   "engine_bad_note": "Clio Williams/16V: sportive, spesso maltrattate",
+   "category": "Furgone / Utilitaria",
+   "recommended_engines": "F8Q, Energy",
+   "model": "Express / 19 / Clio I diesel"
+  }
  },
  {
   "id": "fiat-panda-141",
@@ -575,7 +839,15 @@
   "watch_out": "Rust",
   "reliability": 4,
   "engine_bad_note": null,
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Si ripara con un cacciavite",
+   "watch_out": "Ruggine",
+   "engine_bad_note": null,
+   "category": "Utilitaria / Fuoristrada",
+   "recommended_engines": "FIRE 1000/1100, 4x4",
+   "model": "Panda"
+  }
  },
  {
   "id": "fiat-uno-tipo-diesel-146-160",
@@ -592,7 +864,15 @@
   "watch_out": "Rust",
   "reliability": 3,
   "engine_bad_note": "Uno Turbo: fun, but tired turbos",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Semplici ed economiche",
+   "watch_out": "Ruggine",
+   "engine_bad_note": "Uno Turbo: divertente, ma turbo stanchi",
+   "category": "Utilitaria",
+   "recommended_engines": "FIRE, 1.7 D",
+   "model": "Uno / Tipo diesel"
+  }
  },
  {
   "id": "volkswagen-golf-i-ii-jetta-mk1-mk2",
@@ -609,7 +889,15 @@
   "watch_out": "Rust at battery tray",
   "reliability": 5,
   "engine_bad_note": "G60 supercharger: specialist maintenance",
-  "high_mileage_ok": true
+  "high_mileage_ok": true,
+  "it": {
+   "strengths": "Golf II 1.6D/TD tra le più robuste",
+   "watch_out": "Ruggine sotto la batteria",
+   "engine_bad_note": "Compressore G60: manutenzione da specialisti",
+   "category": "Utilitaria / Berlina",
+   "recommended_engines": "1.6D/TD, 1.6/1.8 benzina",
+   "model": "Golf I/II / Jetta"
+  }
  },
  {
   "id": "volkswagen-passat-b3-b4-golf-iii-polo-b3-b4-mk3-6n",
@@ -626,7 +914,15 @@
   "watch_out": "Electrics",
   "reliability": 5,
   "engine_bad_note": "VR6: great engine, but cooling and timing chain costs",
-  "high_mileage_ok": true
+  "high_mileage_ok": true,
+  "it": {
+   "strengths": "1Z/AHU: 500.000 km senza problemi",
+   "watch_out": "Impianto elettrico",
+   "engine_bad_note": "VR6: ottimo motore, ma costi di raffreddamento e catena",
+   "category": "Utilitaria / Berlina / Station wagon",
+   "recommended_engines": "1.9 TDI (1Z/AHU)",
+   "model": "Passat B3/B4 / Golf III / Polo"
+  }
  },
  {
   "id": "volkswagen-transporter-t3-t4-t3-t4",
@@ -643,7 +939,15 @@
   "watch_out": "Rust (T3), high prices",
   "reliability": 4,
   "engine_bad_note": "T4 VR6: thirsty and complex",
-  "high_mileage_ok": true
+  "high_mileage_ok": true,
+  "it": {
+   "strengths": "T4 2.5 TDI quasi eterno",
+   "watch_out": "Ruggine (T3), prezzi alti",
+   "engine_bad_note": "T4 VR6: assetato e complesso",
+   "category": "Furgone / Camper",
+   "recommended_engines": "1.6TD, 2.5 TDI (T4)",
+   "model": "Transporter T3 / T4"
+  }
  },
  {
   "id": "audi-80-b3-b4",
@@ -660,7 +964,15 @@
   "watch_out": "Electrics",
   "reliability": 5,
   "engine_bad_note": null,
-  "high_mileage_ok": true
+  "high_mileage_ok": true,
+  "it": {
+   "strengths": "Scocca zincata, ruggine minima",
+   "watch_out": "Impianto elettrico",
+   "engine_bad_note": null,
+   "category": "Berlina / Station wagon",
+   "recommended_engines": "1.9 TDI, 2.0, 2.3 5 cilindri",
+   "model": "80"
+  }
  },
  {
   "id": "audi-100-c3-c4",
@@ -677,7 +989,15 @@
   "watch_out": "C4 electronics",
   "reliability": 4,
   "engine_bad_note": "Early 2.2 turbo: more fragile than the NA 5-cyl",
-  "high_mileage_ok": true
+  "high_mileage_ok": true,
+  "it": {
+   "strengths": "Zincata, 5 cilindri TDI robustissimo",
+   "watch_out": "Elettronica della C4",
+   "engine_bad_note": "2.2 turbo prima serie: più fragile del 5 cilindri aspirato",
+   "category": "Berlina / Station wagon",
+   "recommended_engines": "2.5 TDI, 2.3 5 cilindri",
+   "model": "100"
+  }
  },
  {
   "id": "bmw-3-series-e30",
@@ -694,7 +1014,15 @@
   "watch_out": "M20 timing belt, rust",
   "reliability": 4,
   "engine_bad_note": "E30 324d/td: underpowered, weaker diesel",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Meccanica semplice, ricambi infiniti",
+   "watch_out": "Cinghia di distribuzione M20, ruggine",
+   "engine_bad_note": "E30 324d/td: diesel poco potente e più debole",
+   "category": "Berlina / Touring / Cabriolet",
+   "recommended_engines": "M20 sei cilindri, M40",
+   "model": "Serie 3"
+  }
  },
  {
   "id": "bmw-5-series-e34",
@@ -711,7 +1039,15 @@
   "watch_out": "Cooling system",
   "reliability": 4,
   "engine_bad_note": "M60 V8 (Nikasil bores on early cars)",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "M30, uno dei migliori sei cilindri BMW",
+   "watch_out": "Impianto di raffreddamento",
+   "engine_bad_note": "V8 M60 (cilindri Nikasil sulle prime serie)",
+   "category": "Berlina / Touring",
+   "recommended_engines": "M30 (530i/535i), M50",
+   "model": "Serie 5"
+  }
  },
  {
   "id": "bmw-3-series-e36",
@@ -728,7 +1064,15 @@
   "watch_out": "Cooling, rear shock mounts",
   "reliability": 4,
   "engine_bad_note": "318tds (M41): weak diesel",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Robusta se manutenuta",
+   "watch_out": "Raffreddamento, attacchi ammortizzatori posteriori",
+   "engine_bad_note": "318tds (M41): diesel debole",
+   "category": "Berlina / Coupé / Touring",
+   "recommended_engines": "M50/M52, M43",
+   "model": "Serie 3"
+  }
  },
  {
   "id": "saab-900-classic-9000-900-9000",
@@ -745,7 +1089,15 @@
   "watch_out": "Clutch, gearbox",
   "reliability": 4,
   "engine_bad_note": "9000 V6: GM engine, less robust",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Motori robustissimi",
+   "watch_out": "Frizione, cambio",
+   "engine_bad_note": "9000 V6: motore GM, meno robusto",
+   "category": "Utilitaria / Berlina",
+   "recommended_engines": "B201/B202, B234",
+   "model": "900 Classic / 9000"
+  }
  },
  {
   "id": "opel-kadett-e-vectra-a-omega-a-various",
@@ -762,7 +1114,15 @@
   "watch_out": "Rust",
   "reliability": 3,
   "engine_bad_note": null,
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "C20NE molto robusto",
+   "watch_out": "Ruggine",
+   "engine_bad_note": null,
+   "category": "Utilitaria / Berlina",
+   "recommended_engines": "C20NE, 1.7 D Isuzu",
+   "model": "Kadett E / Vectra A / Omega A"
+  }
  },
  {
   "id": "ford-sierra-escort-transit-various",
@@ -779,7 +1139,15 @@
   "watch_out": "Rust",
   "reliability": 3,
   "engine_bad_note": "Cosworth/RS: collector cars, not workhorses",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Semplici ed economiche",
+   "watch_out": "Ruggine",
+   "engine_bad_note": "Cosworth/RS: auto da collezione, non da lavoro",
+   "category": "Berlina / Furgone",
+   "recommended_engines": "Pinto 2.0, Endura D",
+   "model": "Sierra / Escort / Transit"
+  }
  },
  {
   "id": "land-rover-defender-discovery-i-90-110-series-i",
@@ -796,7 +1164,15 @@
   "watch_out": "Chassis, oil leaks",
   "reliability": 4,
   "engine_bad_note": "Td5 / V8: different reliability profile than the Tdi",
-  "high_mileage_ok": true
+  "high_mileage_ok": true,
+  "it": {
+   "strengths": "Tdi quasi indistruttibile, si ripara ovunque",
+   "watch_out": "Telaio, perdite d'olio",
+   "engine_bad_note": "Td5 / V8: affidabilità diversa dal Tdi",
+   "category": "Fuoristrada",
+   "recommended_engines": "200Tdi, 300Tdi",
+   "model": "Defender / Discovery I"
+  }
  },
  {
   "id": "lada-niva-2121",
@@ -813,7 +1189,15 @@
   "watch_out": "Rust, trim quality",
   "reliability": 3,
   "engine_bad_note": null,
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Non affidabile, ma si ripara con qualsiasi cosa",
+   "watch_out": "Ruggine, qualità delle finiture",
+   "engine_bad_note": null,
+   "category": "Fuoristrada",
+   "recommended_engines": "1.6/1.7",
+   "model": "Niva"
+  }
  },
  {
   "id": "porsche-911-carrera-3-2-964-g-model-964",
@@ -830,7 +1214,15 @@
   "watch_out": "Price, oil leaks (964)",
   "reliability": 4,
   "engine_bad_note": "930/964 Turbo: very expensive to maintain",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Boxer 3.2 robustissimo",
+   "watch_out": "Prezzo, perdite d'olio (964)",
+   "engine_bad_note": "930/964 Turbo: manutenzione molto costosa",
+   "category": "Sportiva",
+   "recommended_engines": "3.2 / 3.6",
+   "model": "911 Carrera 3.2 / 964"
+  }
  },
  {
   "id": "porsche-944-928-944-928",
@@ -847,6 +1239,14 @@
   "watch_out": "Timing belts, running costs",
   "reliability": 4,
   "engine_bad_note": "944 Turbo: higher running costs",
-  "high_mileage_ok": false
+  "high_mileage_ok": false,
+  "it": {
+   "strengths": "Molto solide",
+   "watch_out": "Cinghie di distribuzione, costi di gestione",
+   "engine_bad_note": "944 Turbo: costi di gestione più alti",
+   "category": "Sportiva",
+   "recommended_engines": "2.5/2.7/3.0, V8",
+   "model": "944 / 928"
+  }
  }
 ]
