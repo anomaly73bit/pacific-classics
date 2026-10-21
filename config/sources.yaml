@@ -54,8 +54,11 @@ sources:
     name: Sauto.cz
     note: "robots.txt allows only search engines (User-agent: * Disallow: /) — off until Sauto gives permission"
   willhaben:
-    enabled: true
+    # willhaben.at robots.txt (checked 2026-10-21) forbids automated access without permission and
+    # disallows the keyword and year search parameters. Off until willhaben grants access.
+    enabled: false
     name: willhaben.at
+    note: "robots.txt forbids crawlers without willhaben's permission — off"
   kleinanzeigen:
     enabled: true
     name: Kleinanzeigen.de

@@ -80,7 +80,7 @@ def test_kleinanzeigen_parser():
 
 def test_kleinanzeigen_urls():
     assert kleinanzeigen.search_path("mercedes-benz", "190", 1982, 1993) == \
-        "/s-autos/c216+autos.ez_i:1982%2C1993+autos.marke_s:mercedes_benz+autos.model_s:190"
+        "/s-autos/c216+autos.marke_s:mercedes_benz+autos.model_s:190"
     assert "k0c216" in kleinanzeigen.search_path("mercedes-benz", "g-klasse", 1979, 1996)
 
 

@@ -1,7 +1,7 @@
 """Kleinanzeigen.de (ex eBay Kleinanzeigen) — Germany's biggest private classifieds site.
 
 Uses the car category's own make/model/year filters:
-  /s-autos/c216+autos.ez_i:1982%2C1993+autos.marke_s:mercedes_benz+autos.model_s:190
+  /s-autos/c216+autos.marke_s:mercedes_benz+autos.model_s:190   (year filter is disallowed in robots.txt)
 When the site has no model value for a family, falls back to keyword + make + year filters.
 Markup checked against the live site on 2026-10-21.
 """
@@ -39,7 +39,8 @@ MAKE_NAMES = {"mercedes-benz": "Mercedes-Benz", "volkswagen": "Volkswagen", "lan
 def _filters(make: str, model: str, y1: int, y2: int) -> tuple[str, str | None]:
     mk = make.replace("-", "_")
     md = ALIAS.get(model, model.replace("-", "_"))
-    f = f"c216+autos.ez_i:{y1}%2C{y2}+autos.marke_s:{mk}"
+    # robots.txt disallows the year filter (autos.ez_i) and pages beyond 5: years are filtered by the matcher
+    f = f"c216+autos.marke_s:{mk}"
     if md in KNOWN.get(mk, set()):
         return f + f"+autos.model_s:{md}", None
     return f, f"{make} {model}".replace("-", " ")
@@ -107,7 +108,7 @@ class Kleinanzeigen(Source):
 
     def search(self, q):
         make = MAKE_NAMES.get(q.make, q.make.replace("-", " ").title())
-        for page in range(1, self.max_pages + 1):
+        for page in range(1, min(self.max_pages + 2, 5) + 1):
             items = parse_page(self.client.get(BASE + search_path(q.make, q.model, q.year_from, q.year_to, page)).text, make_hint=make)
             yield from items
             if len(items) < 25:
