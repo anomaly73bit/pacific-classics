@@ -15,7 +15,9 @@
   let ALL = [], MODELS = [], MODEL_BY_ID = {}, REPORT = {}, META = {}, ADMIN = false;
   const keyOf = l => l.id || l.ref;
   // admin sees the purchase price; customers see the final price (car + Pacific Classics service)
-  const priceOf = l => ADMIN ? l.price_eur : l.price;
+  const priceOf = l => ADMIN ? l.price_eur
+    : l.ref ? l.price                                                       // new public format: final price
+    : l.price_eur ? Math.ceil(l.price_eur * 1.05 / 50) * 50 : null;          // older data file: compute it
   let shown = PAGE;
   const $ = s => document.querySelector(s);
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
