@@ -5,6 +5,7 @@ import json
 import logging
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timezone
 from pathlib import Path
 
@@ -41,39 +42,42 @@ def crawl(only_sources: list[str] | None = None, only_models: list[str] | None =
         models = [m for m in models if any(k in m.id for k in only_models)]
     by_id = {m.id: m for m in models}
     queries = build_queries(models)
-    client = PoliteClient(cfg["crawler"])
-
     sources, report = {}, {"sources": {}, "started": _now()}
     for key, scfg in cfg["sources"].items():
         if not scfg.get("enabled") or (only_sources and key not in only_sources):
             continue
-        src = REGISTRY[key](client, scfg, cfg["crawler"])
+        # one client per source: each site keeps its own rate limit, sites are crawled in parallel
+        src = REGISTRY[key](PoliteClient(cfg["crawler"]), scfg, cfg["crawler"])
         ok, why = src.available()
         report["sources"][key] = {"name": scfg.get("name", key), "status": "ok" if ok else "skipped",
                                   "note": why, "fetched": 0, "errors": [], "queries": {}}
         if ok:
             sources[key] = src
 
-    raw: list[tuple[dict, list[str]]] = []
-    for q in queries:
-        for key, src in list(sources.items()):
-            rep = report["sources"][key]
+    def run_source(key, src):
+        rep, found = report["sources"][key], []
+        for q in queries:
             n = 0
             try:
                 for item in src.search(q):
-                    raw.append((item, q.model_ids))
+                    found.append((item, q.model_ids))
                     n += 1
             except Blocked as e:
-                rep["status"] = "blocked"
-                rep["note"] = str(e)
+                rep["status"], rep["note"] = "blocked", str(e)
                 log.warning("%s blocked: %s — skipping it for the rest of this run", key, e)
-                del sources[key]
+                break
             except Exception as e:  # noqa: BLE001 — one bad query must not stop the crawl
                 rep["errors"].append(f"{q.make}|{q.model}: {type(e).__name__}: {e}"[:300])
                 log.warning("%s %s|%s failed: %s", key, q.make, q.model, e)
             rep["queries"][f"{q.make}|{q.model}"] = n
             rep["fetched"] += n
             log.info("%-14s %-28s %4d", key, f"{q.make}|{q.model}", n)
+        return found
+
+    raw: list[tuple[dict, list[str]]] = []
+    with ThreadPoolExecutor(max_workers=max(1, len(sources))) as ex:
+        for found in ex.map(lambda kv: run_source(*kv), sources.items()):
+            raw.extend(found)
 
     report["finished"] = _now()
     return {"raw": raw, "report": report, "models": by_id, "cfg": cfg}
