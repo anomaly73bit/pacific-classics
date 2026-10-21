@@ -22,7 +22,8 @@
    "category": "Berlina",
    "recommended_engines": "2.0D, 2.5D, 2.0/2.3 benzina",
    "model": "190"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "mercedes-benz-e-class-w124",
@@ -47,7 +48,8 @@
    "category": "Berlina / Station wagon / Coupé",
    "recommended_engines": "200D/250D/300D (OM60x), 230E, 300E (M103)",
    "model": "Classe E"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "mercedes-benz-w123-late-units-w123",
@@ -72,7 +74,8 @@
    "category": "Berlina / Station wagon",
    "recommended_engines": "240D, 300D, 230E",
    "model": "W123 (ultime serie)"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "mercedes-benz-s-class-w126",
@@ -97,7 +100,8 @@
    "category": "Berlina / Coupé",
    "recommended_engines": "300SE, 420SE, 300SD",
    "model": "Classe S"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "mercedes-benz-sl-r107",
@@ -122,7 +126,8 @@
    "category": "Roadster",
    "recommended_engines": "300SL, 420SL, 500SL",
    "model": "SL"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "mercedes-benz-g-class-w460-w463",
@@ -147,7 +152,8 @@
    "category": "Fuoristrada",
    "recommended_engines": "300GD, 250GD, 230GE",
    "model": "Classe G"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "mercedes-benz-sl-r129",
@@ -172,7 +178,8 @@
    "category": "Roadster",
    "recommended_engines": "300SL, SL320, 500SL",
    "model": "SL"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "volvo-240-245-240",
@@ -197,7 +204,8 @@
    "category": "Berlina / Station wagon",
    "recommended_engines": "B230F / B230FK",
    "model": "240 / 245"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "volvo-740-760-700-series",
@@ -222,7 +230,8 @@
    "category": "Berlina / Station wagon",
    "recommended_engines": "B230F, B230FT turbo",
    "model": "740 / 760"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "volvo-940-960-900-series",
@@ -247,7 +256,8 @@
    "category": "Berlina / Station wagon",
    "recommended_engines": "B230F/FT, 2.4 TD",
    "model": "940 / 960"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "volvo-850-850",
@@ -272,7 +282,8 @@
    "category": "Berlina / Station wagon",
    "recommended_engines": "2.0/2.5 5 cilindri aspirati",
    "model": "850"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "toyota-land-cruiser-j60-j70-j80",
@@ -297,7 +308,8 @@
    "category": "Fuoristrada",
    "recommended_engines": "1HZ, 1HD-T, 12H-T, 3F",
    "model": "Land Cruiser"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "toyota-hilux-4runner-n50-n100",
@@ -322,7 +334,8 @@
    "category": "Pick-up / Fuoristrada",
    "recommended_engines": "2L, 2L-T, 22R",
    "model": "Hilux / 4Runner"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "toyota-corolla-e80-e90-e100",
@@ -347,7 +360,8 @@
    "category": "Utilitaria / Berlina",
    "recommended_engines": "4A-FE, 2C diesel",
    "model": "Corolla"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "toyota-camry-carina-ii-carina-e-v20-v30-t150-t190",
@@ -372,7 +386,8 @@
    "category": "Berlina",
    "recommended_engines": "3S-FE, 2C",
    "model": "Camry / Carina II / Carina E"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "toyota-celica-mr2-supra-mk3-t160-t180-w10-w20-a70",
@@ -397,7 +412,8 @@
    "category": "Sportiva",
    "recommended_engines": "3S-GE, 7M-GTE",
    "model": "Celica / MR2 / Supra Mk3"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "toyota-previa-xr10",
@@ -422,7 +438,8 @@
    "category": "Monovolume",
    "recommended_engines": "2TZ-FE",
    "model": "Previa"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "lexus-ls400-xf10",
@@ -447,7 +464,8 @@
    "category": "Berlina",
    "recommended_engines": "1UZ-FE V8",
    "model": "LS400"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "honda-civic-crx-accord-prelude-various",
@@ -472,7 +490,8 @@
    "category": "Utilitaria / Coupé / Berlina",
    "recommended_engines": "D16, B16, F20/F22",
    "model": "Civic / CRX / Accord / Prelude"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "mazda-mx-5-na",
@@ -497,7 +516,8 @@
    "category": "Roadster",
    "recommended_engines": "1.6, 1.8",
    "model": "MX-5"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "mazda-323-626-bf-ba-gc-ge",
@@ -522,7 +542,8 @@
    "category": "Utilitaria / Berlina",
    "recommended_engines": "B6, FE, RF diesel",
    "model": "323 / 626"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "nissan-patrol-terrano-i-y60-gr-wd21",
@@ -547,7 +568,8 @@
    "category": "Fuoristrada",
    "recommended_engines": "TD42, RD28",
    "model": "Patrol / Terrano I"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "nissan-sunny-micra-200sx-n13-n14-k10-s13",
@@ -572,7 +594,8 @@
    "category": "Utilitaria / Coupé",
    "recommended_engines": "GA16, MA10, CA18DET",
    "model": "Sunny / Micra / 200SX"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "mitsubishi-pajero-i-ii",
@@ -597,7 +620,8 @@
    "category": "Fuoristrada",
    "recommended_engines": "2.5 TD (4D56), 3.0 V6",
    "model": "Pajero"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "mitsubishi-galant-lancer-l200-various",
@@ -622,7 +646,8 @@
    "category": "Berlina / Pick-up",
    "recommended_engines": "4G63, 4D56",
    "model": "Galant / Lancer / L200"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "subaru-legacy-impreza-bc-bd-gc",
@@ -647,7 +672,8 @@
    "category": "Berlina / Station wagon",
    "recommended_engines": "EJ18/EJ20 aspirati",
    "model": "Legacy / Impreza"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "suzuki-sj-samurai-vitara-sj-et",
@@ -672,7 +698,8 @@
    "category": "Fuoristrada",
    "recommended_engines": "1.3, 1.6",
    "model": "SJ Samurai / Vitara"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "daihatsu-rocky-feroza-charade-f70-f80-f300-g100",
@@ -697,7 +724,8 @@
    "category": "Fuoristrada / Utilitaria",
    "recommended_engines": "2.8 D, 1.6",
    "model": "Rocky / Feroza / Charade"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "peugeot-205-309-405-306-various",
@@ -722,7 +750,8 @@
    "category": "Utilitaria / Berlina",
    "recommended_engines": "XUD7/XUD9 diesel, TU benzina",
    "model": "205 / 309 / 405 / 306"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "peugeot-505-505",
@@ -747,7 +776,8 @@
    "category": "Berlina / Station wagon",
    "recommended_engines": "2.0, 2.5 diesel",
    "model": "505"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "citroen-bx-zx-xantia-various",
@@ -772,7 +802,8 @@
    "category": "Utilitaria / Berlina",
    "recommended_engines": "XUD diesel",
    "model": "BX / ZX / Xantia"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "renault-4-r4",
@@ -797,7 +828,8 @@
    "category": "Utilitaria",
    "recommended_engines": "956/1108 cc",
    "model": "4"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "renault-express-19-clio-i-diesel-various",
@@ -822,7 +854,8 @@
    "category": "Furgone / Utilitaria",
    "recommended_engines": "F8Q, Energy",
    "model": "Express / 19 / Clio I diesel"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "fiat-panda-141",
@@ -847,7 +880,8 @@
    "category": "Utilitaria / Fuoristrada",
    "recommended_engines": "FIRE 1000/1100, 4x4",
    "model": "Panda"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "fiat-uno-tipo-diesel-146-160",
@@ -872,7 +906,8 @@
    "category": "Utilitaria",
    "recommended_engines": "FIRE, 1.7 D",
    "model": "Uno / Tipo diesel"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "volkswagen-golf-i-ii-jetta-mk1-mk2",
@@ -897,7 +932,8 @@
    "category": "Utilitaria / Berlina",
    "recommended_engines": "1.6D/TD, 1.6/1.8 benzina",
    "model": "Golf I/II / Jetta"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "volkswagen-passat-b3-b4-golf-iii-polo-b3-b4-mk3-6n",
@@ -922,7 +958,8 @@
    "category": "Utilitaria / Berlina / Station wagon",
    "recommended_engines": "1.9 TDI (1Z/AHU)",
    "model": "Passat B3/B4 / Golf III / Polo"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "volkswagen-transporter-t3-t4-t3-t4",
@@ -947,7 +984,8 @@
    "category": "Furgone / Camper",
    "recommended_engines": "1.6TD, 2.5 TDI (T4)",
    "model": "Transporter T3 / T4"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "audi-80-b3-b4",
@@ -972,7 +1010,8 @@
    "category": "Berlina / Station wagon",
    "recommended_engines": "1.9 TDI, 2.0, 2.3 5 cilindri",
    "model": "80"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "audi-100-c3-c4",
@@ -997,7 +1036,8 @@
    "category": "Berlina / Station wagon",
    "recommended_engines": "2.5 TDI, 2.3 5 cilindri",
    "model": "100"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "bmw-3-series-e30",
@@ -1022,7 +1062,8 @@
    "category": "Berlina / Touring / Cabriolet",
    "recommended_engines": "M20 sei cilindri, M40",
    "model": "Serie 3"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "bmw-5-series-e34",
@@ -1047,7 +1088,8 @@
    "category": "Berlina / Touring",
    "recommended_engines": "M30 (530i/535i), M50",
    "model": "Serie 5"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "bmw-3-series-e36",
@@ -1072,7 +1114,8 @@
    "category": "Berlina / Coupé / Touring",
    "recommended_engines": "M50/M52, M43",
    "model": "Serie 3"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "saab-900-classic-9000-900-9000",
@@ -1097,7 +1140,8 @@
    "category": "Utilitaria / Berlina",
    "recommended_engines": "B201/B202, B234",
    "model": "900 Classic / 9000"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "opel-kadett-e-vectra-a-omega-a-various",
@@ -1122,7 +1166,8 @@
    "category": "Utilitaria / Berlina",
    "recommended_engines": "C20NE, 1.7 D Isuzu",
    "model": "Kadett E / Vectra A / Omega A"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "ford-sierra-escort-transit-various",
@@ -1147,7 +1192,8 @@
    "category": "Berlina / Furgone",
    "recommended_engines": "Pinto 2.0, Endura D",
    "model": "Sierra / Escort / Transit"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "land-rover-defender-discovery-i-90-110-series-i",
@@ -1172,7 +1218,8 @@
    "category": "Fuoristrada",
    "recommended_engines": "200Tdi, 300Tdi",
    "model": "Defender / Discovery I"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "lada-niva-2121",
@@ -1197,7 +1244,8 @@
    "category": "Fuoristrada",
    "recommended_engines": "1.6/1.7",
    "model": "Niva"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "porsche-911-carrera-3-2-964-g-model-964",
@@ -1222,7 +1270,8 @@
    "category": "Sportiva",
    "recommended_engines": "3.2 / 3.6",
    "model": "911 Carrera 3.2 / 964"
-  }
+  },
+  "segment": "classic"
  },
  {
   "id": "porsche-944-928-944-928",
@@ -1247,6 +1296,917 @@
    "category": "Sportiva",
    "recommended_engines": "2.5/2.7/3.0, V8",
    "model": "944 / 928"
-  }
+  },
+  "segment": "classic"
+ },
+ {
+  "id": "toyota-yaris-i-ii-xp10-xp90",
+  "make": "Toyota",
+  "model": "Yaris I / II",
+  "chassis": "XP10 / XP90",
+  "category": "Hatchback",
+  "years": [
+   1999,
+   2011
+  ],
+  "recommended_engines": "1.0 / 1.3 VVT-i",
+  "strengths": "Tiny engines that run forever, minimal running costs",
+  "watch_out": "Clutch on early 1.0, rust rare",
+  "reliability": 5,
+  "engine_bad_note": "1.4 D-4D: injector costs, petrol is the safer bet",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Yaris I / II",
+   "category": "Utilitaria",
+   "recommended_engines": "1.0 / 1.3 VVT-i",
+   "strengths": "Motori piccoli che non muoiono mai, costi di gestione minimi",
+   "watch_out": "Frizione sulle prime 1.0, ruggine rara",
+   "engine_bad_note": "1.4 D-4D: iniettori costosi, meglio benzina"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "toyota-aygo-citroen-c1-peugeot-107-ab10",
+  "make": "Toyota",
+  "model": "Aygo / Citroën C1 / Peugeot 107",
+  "chassis": "AB10",
+  "category": "Hatchback",
+  "years": [
+   2005,
+   2011
+  ],
+  "recommended_engines": "1.0 (Toyota 1KR)",
+  "strengths": "Toyota 1KR three-cylinder: simple and very durable",
+  "watch_out": "Clutch, rear window seals",
+  "reliability": 4,
+  "engine_bad_note": "1.4 HDi diesel: rare and less robust",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Aygo / Citroën C1 / Peugeot 107",
+   "category": "Utilitaria",
+   "recommended_engines": "1.0 (Toyota 1KR)",
+   "strengths": "Tre cilindri Toyota 1KR: semplice e molto durevole",
+   "watch_out": "Frizione, guarnizioni lunotto",
+   "engine_bad_note": "1.4 HDi diesel: raro e meno robusto"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "suzuki-swift-mz-ez",
+  "make": "Suzuki",
+  "model": "Swift",
+  "chassis": "MZ/EZ",
+  "category": "Hatchback",
+  "years": [
+   2005,
+   2010
+  ],
+  "recommended_engines": "1.3 / 1.5 / 1.6 Sport",
+  "strengths": "Simple chain-driven engines, light and tough",
+  "watch_out": "Rust on rear arches",
+  "reliability": 4,
+  "engine_bad_note": "1.3 DDiS (Fiat diesel): less durable than the petrols",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Swift",
+   "category": "Utilitaria",
+   "recommended_engines": "1.3 / 1.5 / 1.6 Sport",
+   "strengths": "Motori semplici a catena, leggera e robusta",
+   "watch_out": "Ruggine sui passaruota posteriori",
+   "engine_bad_note": "1.3 DDiS (diesel Fiat): meno durevole dei benzina"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "suzuki-ignis-wagon-r-fh-mm",
+  "make": "Suzuki",
+  "model": "Ignis / Wagon R+",
+  "chassis": "FH / MM",
+  "category": "Hatchback",
+  "years": [
+   1998,
+   2008
+  ],
+  "recommended_engines": "1.0 / 1.3 / 1.5",
+  "strengths": "Basic, light and nearly unbreakable",
+  "watch_out": "Rust",
+  "reliability": 4,
+  "engine_bad_note": null,
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Ignis / Wagon R+",
+   "category": "Utilitaria",
+   "recommended_engines": "1.0 / 1.3 / 1.5",
+   "strengths": "Essenziali, leggere e quasi indistruttibili",
+   "watch_out": "Ruggine",
+   "engine_bad_note": null
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "honda-jazz-i-ii-gd-ge",
+  "make": "Honda",
+  "model": "Jazz I / II",
+  "chassis": "GD / GE",
+  "category": "Hatchback",
+  "years": [
+   2002,
+   2011
+  ],
+  "recommended_engines": "1.2 / 1.4 i-DSI",
+  "strengths": "Bulletproof i-DSI engines, magic seats, huge space",
+  "watch_out": "CVT gearbox on early cars, check fluid changes",
+  "reliability": 5,
+  "engine_bad_note": "CVT automatic (early): fluid changes essential",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Jazz I / II",
+   "category": "Utilitaria",
+   "recommended_engines": "1.2 / 1.4 i-DSI",
+   "strengths": "Motori i-DSI a prova di bomba, sedili magici, tanto spazio",
+   "watch_out": "Cambio CVT sulle prime, verificare i cambi d'olio",
+   "engine_bad_note": "Automatico CVT (prime serie): cambi d'olio indispensabili"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "daihatsu-sirion-cuore-m1-m3-l7",
+  "make": "Daihatsu",
+  "model": "Sirion / Cuore",
+  "chassis": "M1-M3 / L7",
+  "category": "Hatchback",
+  "years": [
+   1998,
+   2010
+  ],
+  "recommended_engines": "1.0 / 1.3",
+  "strengths": "Toyota-group engines, very cheap to run",
+  "watch_out": "Rust, rare parts",
+  "reliability": 4,
+  "engine_bad_note": null,
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Sirion / Cuore",
+   "category": "Utilitaria",
+   "recommended_engines": "1.0 / 1.3",
+   "strengths": "Motori del gruppo Toyota, costi bassissimi",
+   "watch_out": "Ruggine, ricambi rari",
+   "engine_bad_note": null
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "fiat-panda-169-169",
+  "make": "Fiat",
+  "model": "Panda (169)",
+  "chassis": "169",
+  "category": "Hatchback / 4x4",
+  "years": [
+   2003,
+   2011
+  ],
+  "recommended_engines": "1.2 Fire, 1.1 Fire, 4x4",
+  "strengths": "FIRE engine: cheap, simple, everywhere in Italy",
+  "watch_out": "Rear suspension, electrics",
+  "reliability": 4,
+  "engine_bad_note": "1.3 Multijet: good but DPF/injector costs on later cars",
+  "high_mileage_ok": false,
+  "it": {
+   "model": "Panda (169)",
+   "category": "Utilitaria / Fuoristrada",
+   "recommended_engines": "1.2 Fire, 1.1 Fire, 4x4",
+   "strengths": "Motore FIRE: economico, semplice, ricambi ovunque in Italia",
+   "watch_out": "Sospensione posteriore, impianto elettrico",
+   "engine_bad_note": "1.3 Multijet: buono ma costi FAP/iniettori sulle ultime"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "skoda-fabia-i-6y",
+  "make": "Škoda",
+  "model": "Fabia I",
+  "chassis": "6Y",
+  "category": "Hatchback / Estate",
+  "years": [
+   1999,
+   2007
+  ],
+  "recommended_engines": "1.4 MPI, 1.9 SDI / TDI",
+  "strengths": "1.9 SDI/TDI: VW diesels that run 500,000+ km",
+  "watch_out": "1.2 HTP timing chain, rust on doors",
+  "reliability": 4,
+  "engine_bad_note": "1.2 HTP three-cylinder: timing chain trouble",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Fabia I",
+   "category": "Utilitaria / Station wagon",
+   "recommended_engines": "1.4 MPI, 1.9 SDI / TDI",
+   "strengths": "1.9 SDI/TDI: diesel VW da oltre 500.000 km",
+   "watch_out": "Catena 1.2 HTP, ruggine alle porte",
+   "engine_bad_note": "1.2 HTP tre cilindri: problemi alla catena"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "hyundai-getz-kia-picanto-tb-sa",
+  "make": "Hyundai",
+  "model": "Getz / Kia Picanto",
+  "chassis": "TB / SA",
+  "category": "Hatchback",
+  "years": [
+   2002,
+   2011
+  ],
+  "recommended_engines": "1.1 / 1.3 / 1.4",
+  "strengths": "Simple Korean engines, low running costs",
+  "watch_out": "Rust on sills, clutch",
+  "reliability": 4,
+  "engine_bad_note": "1.5 CRDi: weaker than the petrols",
+  "high_mileage_ok": false,
+  "it": {
+   "model": "Getz / Kia Picanto",
+   "category": "Utilitaria",
+   "recommended_engines": "1.1 / 1.3 / 1.4",
+   "strengths": "Motori coreani semplici, costi di gestione bassi",
+   "watch_out": "Ruggine ai sottoporta, frizione",
+   "engine_bad_note": "1.5 CRDi: più debole dei benzina"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "mazda-2-dy",
+  "make": "Mazda",
+  "model": "2",
+  "chassis": "DY",
+  "category": "Hatchback",
+  "years": [
+   2003,
+   2007
+  ],
+  "recommended_engines": "1.25 / 1.4 / 1.6",
+  "strengths": "Ford-Mazda petrol engines, solid build",
+  "watch_out": "Rust on rear arches",
+  "reliability": 4,
+  "engine_bad_note": "1.4 CD diesel (Ford-PSA): less durable",
+  "high_mileage_ok": false,
+  "it": {
+   "model": "2",
+   "category": "Utilitaria",
+   "recommended_engines": "1.25 / 1.4 / 1.6",
+   "strengths": "Motori benzina Ford-Mazda, costruzione solida",
+   "watch_out": "Ruggine sui passaruota posteriori",
+   "engine_bad_note": "1.4 CD diesel (Ford-PSA): meno durevole"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "dacia-logan-sandero-i-l90-b90",
+  "make": "Dacia",
+  "model": "Logan / Sandero I",
+  "chassis": "L90 / B90",
+  "category": "Sedan / Hatchback",
+  "years": [
+   2004,
+   2011
+  ],
+  "recommended_engines": "1.4 / 1.6 MPI, 1.5 dCi",
+  "strengths": "Old Renault mechanics: crude, cheap, unkillable",
+  "watch_out": "Rust under the body on older cars",
+  "reliability": 4,
+  "engine_bad_note": null,
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Logan / Sandero I",
+   "category": "Berlina / Utilitaria",
+   "recommended_engines": "1.4 / 1.6 MPI, 1.5 dCi",
+   "strengths": "Vecchia meccanica Renault: grezza, economica, indistruttibile",
+   "watch_out": "Ruggine sotto la scocca sulle più vecchie",
+   "engine_bad_note": null
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "skoda-octavia-i-1u",
+  "make": "Škoda",
+  "model": "Octavia I",
+  "chassis": "1U",
+  "category": "Hatchback / Estate",
+  "years": [
+   1997,
+   2010
+  ],
+  "recommended_engines": "1.9 TDI (ALH/ASV/AXR), 1.6",
+  "strengths": "Taxi favourite: 1.9 TDI past 1,000,000 km",
+  "watch_out": "Rust on tailgate, dual-mass flywheel",
+  "reliability": 5,
+  "engine_bad_note": "1.8T / RS: turbo petrol, more wear",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Octavia I",
+   "category": "Utilitaria / Station wagon",
+   "recommended_engines": "1.9 TDI (ALH/ASV/AXR), 1.6",
+   "strengths": "Preferita dai tassisti: 1.9 TDI oltre 1.000.000 di km",
+   "watch_out": "Ruggine sul portellone, volano bimassa",
+   "engine_bad_note": "1.8T / RS: turbo benzina, più usura"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "volkswagen-golf-iv-bora-1j",
+  "make": "Volkswagen",
+  "model": "Golf IV / Bora",
+  "chassis": "1J",
+  "category": "Hatchback / Sedan / Estate",
+  "years": [
+   1997,
+   2005
+  ],
+  "recommended_engines": "1.9 TDI (ALH/ASZ/AXR), 1.6",
+  "strengths": "1.9 TDI ALH: among the best diesels ever made",
+  "watch_out": "Window regulators, electrics, coolant sensor",
+  "reliability": 5,
+  "engine_bad_note": "1.4 16V / 1.8T / V5: weaker or costlier",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Golf IV / Bora",
+   "category": "Utilitaria / Berlina / Station wagon",
+   "recommended_engines": "1.9 TDI (ALH/ASZ/AXR), 1.6",
+   "strengths": "1.9 TDI ALH: tra i migliori diesel mai costruiti",
+   "watch_out": "Alzacristalli, impianto elettrico, sensore temperatura",
+   "engine_bad_note": "1.4 16V / 1.8T / V5: più deboli o costosi"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "volkswagen-passat-b5-audi-a4-b5-b6-3b-8d-8e",
+  "make": "Volkswagen",
+  "model": "Passat B5 / Audi A4 B5-B6",
+  "chassis": "3B / 8D / 8E",
+  "category": "Sedan / Estate",
+  "years": [
+   1997,
+   2005
+  ],
+  "recommended_engines": "1.9 TDI (AFN/AVF/AWX)",
+  "strengths": "1.9 TDI Pumpe-Düse: 500,000+ km common",
+  "watch_out": "Front suspension arms, V6 TDI to avoid",
+  "reliability": 4,
+  "engine_bad_note": "2.5 V6 TDI: camshaft wear, expensive",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Passat B5 / Audi A4 B5-B6",
+   "category": "Berlina / Station wagon",
+   "recommended_engines": "1.9 TDI (AFN/AVF/AWX)",
+   "strengths": "1.9 TDI pompa-iniettore: comuni oltre 500.000 km",
+   "watch_out": "Bracci sospensione anteriori, V6 TDI da evitare",
+   "engine_bad_note": "2.5 V6 TDI: usura alberi a camme, costoso"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "toyota-corolla-e120-e120",
+  "make": "Toyota",
+  "model": "Corolla E120",
+  "chassis": "E120",
+  "category": "Hatchback / Sedan / Estate",
+  "years": [
+   2002,
+   2007
+  ],
+  "recommended_engines": "1.4 / 1.6 VVT-i",
+  "strengths": "Quiet, simple, endless km",
+  "watch_out": "1.4 D-4D injectors, oil use on some 1.6",
+  "reliability": 5,
+  "engine_bad_note": "2.0/2.2 D-4D: head gasket and injector issues",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Corolla E120",
+   "category": "Utilitaria / Berlina / Station wagon",
+   "recommended_engines": "1.4 / 1.6 VVT-i",
+   "strengths": "Silenziosa, semplice, chilometri infiniti",
+   "watch_out": "Iniettori 1.4 D-4D, consumo d'olio su alcuni 1.6",
+   "engine_bad_note": "2.0/2.2 D-4D: problemi a guarnizione testata e iniettori"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "toyota-avensis-t22-t25-t22-t25",
+  "make": "Toyota",
+  "model": "Avensis T22 / T25",
+  "chassis": "T22 / T25",
+  "category": "Sedan / Estate",
+  "years": [
+   1997,
+   2008
+  ],
+  "recommended_engines": "1.8 VVT-i, 2.0 petrol",
+  "strengths": "Taxi-grade saloon, very low failure rates",
+  "watch_out": "2.0/2.2 D-4D (T25) head gasket",
+  "reliability": 5,
+  "engine_bad_note": "2.0/2.2 D-4D: head gasket failures",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Avensis T22 / T25",
+   "category": "Berlina / Station wagon",
+   "recommended_engines": "1.8 VVT-i, 2.0 benzina",
+   "strengths": "Berlina da taxi, tassi di guasto bassissimi",
+   "watch_out": "Guarnizione testata 2.0/2.2 D-4D (T25)",
+   "engine_bad_note": "2.0/2.2 D-4D: guarnizioni della testata che cedono"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "toyota-prius-ii-xw20",
+  "make": "Toyota",
+  "model": "Prius II",
+  "chassis": "XW20",
+  "category": "Hatchback",
+  "years": [
+   2004,
+   2009
+  ],
+  "recommended_engines": "1.5 Hybrid",
+  "strengths": "Taxis with 500,000-1,000,000 km on original hybrid system",
+  "watch_out": "Hybrid battery age, inverter pump",
+  "reliability": 5,
+  "engine_bad_note": null,
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Prius II",
+   "category": "Utilitaria",
+   "recommended_engines": "1.5 Ibrida",
+   "strengths": "Taxi con 500.000-1.000.000 km col sistema ibrido originale",
+   "watch_out": "Età della batteria ibrida, pompa dell'inverter",
+   "engine_bad_note": null
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "honda-civic-vii-accord-vii-eu-ep-cl-cm",
+  "make": "Honda",
+  "model": "Civic VII / Accord VII",
+  "chassis": "EU-EP / CL-CM",
+  "category": "Hatchback / Sedan / Estate",
+  "years": [
+   2001,
+   2008
+  ],
+  "recommended_engines": "1.4 / 1.6 / 2.0 / 2.4 i-VTEC",
+  "strengths": "i-VTEC petrols are near indestructible",
+  "watch_out": "Oil consumption on some 2.4, 2.2 i-CTDi chain",
+  "reliability": 5,
+  "engine_bad_note": "2.2 i-CTDi diesel: good but costly if neglected",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Civic VII / Accord VII",
+   "category": "Utilitaria / Berlina / Station wagon",
+   "recommended_engines": "1.4 / 1.6 / 2.0 / 2.4 i-VTEC",
+   "strengths": "Benzina i-VTEC quasi indistruttibili",
+   "watch_out": "Consumo d'olio su alcuni 2.4, catena 2.2 i-CTDi",
+   "engine_bad_note": "2.2 i-CTDi diesel: buono ma costoso se trascurato"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "mazda-3-6-bk-gg",
+  "make": "Mazda",
+  "model": "3 / 6",
+  "chassis": "BK / GG",
+  "category": "Hatchback / Sedan / Estate",
+  "years": [
+   2002,
+   2008
+  ],
+  "recommended_engines": "1.6 / 2.0 petrol",
+  "strengths": "MZR petrol engines very robust",
+  "watch_out": "Rust on rear arches, 2.0 MZR-CD diesel",
+  "reliability": 4,
+  "engine_bad_note": "2.0 MZR-CD diesel: oil pump and injectors",
+  "high_mileage_ok": false,
+  "it": {
+   "model": "3 / 6",
+   "category": "Utilitaria / Berlina / Station wagon",
+   "recommended_engines": "1.6 / 2.0 benzina",
+   "strengths": "Motori benzina MZR molto robusti",
+   "watch_out": "Ruggine sui passaruota posteriori, diesel 2.0 MZR-CD",
+   "engine_bad_note": "2.0 MZR-CD diesel: pompa olio e iniettori"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "peugeot-406-8b-8e",
+  "make": "Peugeot",
+  "model": "406",
+  "chassis": "8B/8E",
+  "category": "Sedan / Estate / Coupé",
+  "years": [
+   1997,
+   2004
+  ],
+  "recommended_engines": "2.0 HDi, 1.8 / 2.0 petrol",
+  "strengths": "2.0 HDi: the classic French taxi engine",
+  "watch_out": "Rear axle bearings, electrics",
+  "reliability": 4,
+  "engine_bad_note": "3.0 V6 / 2.2 HDi: costlier to run",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "406",
+   "category": "Berlina / Station wagon / Coupé",
+   "recommended_engines": "2.0 HDi, 1.8 / 2.0 benzina",
+   "strengths": "2.0 HDi: il classico motore dei taxi francesi",
+   "watch_out": "Cuscinetti assale posteriore, impianto elettrico",
+   "engine_bad_note": "3.0 V6 / 2.2 HDi: costi più alti"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "mercedes-benz-e-class-w210-w210",
+  "make": "Mercedes-Benz",
+  "model": "E-Class W210",
+  "chassis": "W210",
+  "category": "Sedan / Estate",
+  "years": [
+   1997,
+   2002
+  ],
+  "recommended_engines": "E 290 TD, E 300 TD (OM606), E 240/280",
+  "strengths": "OM606 six-cylinder diesel: a legend",
+  "watch_out": "Severe rust (wings, doors, boot), first-gen CDI",
+  "reliability": 4,
+  "engine_bad_note": "E 220/270 CDI first common-rail: injector seals and swirl flaps",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Classe E W210",
+   "category": "Berlina / Station wagon",
+   "recommended_engines": "E 290 TD, E 300 TD (OM606), E 240/280",
+   "strengths": "Sei cilindri diesel OM606: una leggenda",
+   "watch_out": "Ruggine pesante (parafanghi, porte, bagagliaio), CDI prima serie",
+   "engine_bad_note": "E 220/270 CDI primo common-rail: guarnizioni iniettori e flap"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "bmw-3-series-e46-5-series-e39-e46-e39",
+  "make": "BMW",
+  "model": "3 Series E46 / 5 Series E39",
+  "chassis": "E46 / E39",
+  "category": "Sedan / Touring / Coupé",
+  "years": [
+   1998,
+   2005
+  ],
+  "recommended_engines": "M54 six-cylinder petrol (320i-330i, 520i-530i)",
+  "strengths": "M54 straight-six: smooth and very durable",
+  "watch_out": "Cooling system, rear subframe (E46), oil leaks",
+  "reliability": 4,
+  "engine_bad_note": "4-cylinder N42/N46 petrol and early diesels: less durable",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Serie 3 E46 / Serie 5 E39",
+   "category": "Berlina / Touring / Coupé",
+   "recommended_engines": "Sei cilindri benzina M54 (320i-330i, 520i-530i)",
+   "strengths": "Sei cilindri in linea M54: fluido e molto durevole",
+   "watch_out": "Raffreddamento, telaietto posteriore (E46), perdite d'olio",
+   "engine_bad_note": "4 cilindri N42/N46 e primi diesel: meno durevoli"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "volvo-v70-ii-s60-p2",
+  "make": "Volvo",
+  "model": "V70 II / S60",
+  "chassis": "P2",
+  "category": "Sedan / Estate",
+  "years": [
+   2000,
+   2007
+  ],
+  "recommended_engines": "2.4 / 2.4T five-cylinder petrol, D5",
+  "strengths": "Five-cylinder engines routinely pass 400,000 km",
+  "watch_out": "Automatic gearbox (AW55), angle gear on AWD",
+  "reliability": 4,
+  "engine_bad_note": "T5 / R: high-performance, more wear",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "V70 II / S60",
+   "category": "Berlina / Station wagon",
+   "recommended_engines": "2.4 / 2.4T benzina 5 cilindri, D5",
+   "strengths": "I 5 cilindri superano normalmente i 400.000 km",
+   "watch_out": "Cambio automatico (AW55), coppia conica sulle AWD",
+   "engine_bad_note": "T5 / R: alte prestazioni, più usura"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "lexus-ls430-is200-ucf30-xe10",
+  "make": "Lexus",
+  "model": "LS430 / IS200",
+  "chassis": "UCF30 / XE10",
+  "category": "Sedan",
+  "years": [
+   1999,
+   2006
+  ],
+  "recommended_engines": "4.3 V8 (3UZ), 2.0 straight-six",
+  "strengths": "Toyota luxury engineering, extremely low failure rates",
+  "watch_out": "Air suspension (LS430), parts prices",
+  "reliability": 5,
+  "engine_bad_note": null,
+  "high_mileage_ok": true,
+  "it": {
+   "model": "LS430 / IS200",
+   "category": "Berlina",
+   "recommended_engines": "4.3 V8 (3UZ), 2.0 sei cilindri in linea",
+   "strengths": "Ingegneria di lusso Toyota, tassi di guasto bassissimi",
+   "watch_out": "Sospensioni pneumatiche (LS430), prezzi ricambi",
+   "engine_bad_note": null
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "toyota-land-cruiser-j100-j100",
+  "make": "Toyota",
+  "model": "Land Cruiser J100",
+  "chassis": "J100",
+  "category": "4x4",
+  "years": [
+   1998,
+   2007
+  ],
+  "recommended_engines": "4.2 TD (1HD-FTE), 4.7 V8",
+  "strengths": "1HD-FTE: legendary straight-six diesel",
+  "watch_out": "Rust on frame, IFS front end",
+  "reliability": 5,
+  "engine_bad_note": "3.0 D-4D (J120): injector and piston issues",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Land Cruiser J100",
+   "category": "Fuoristrada",
+   "recommended_engines": "4.2 TD (1HD-FTE), 4.7 V8",
+   "strengths": "1HD-FTE: leggendario sei cilindri diesel",
+   "watch_out": "Ruggine al telaio, avantreno a ruote indipendenti",
+   "engine_bad_note": "3.0 D-4D (J120): problemi a iniettori e pistoni"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "toyota-hilux-n140-n150-n140-n170",
+  "make": "Toyota",
+  "model": "Hilux N140-N150",
+  "chassis": "N140-N170",
+  "category": "Pick-up",
+  "years": [
+   1997,
+   2011
+  ],
+  "recommended_engines": "2.4 D, 2.5 / 3.0 D-4D",
+  "strengths": "Top Gear could not kill one",
+  "watch_out": "Frame rust, 2.5 D-4D injectors on high km",
+  "reliability": 5,
+  "engine_bad_note": null,
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Hilux N140-N150",
+   "category": "Pick-up",
+   "recommended_engines": "2.4 D, 2.5 / 3.0 D-4D",
+   "strengths": "Top Gear non è riuscito a distruggerne uno",
+   "watch_out": "Ruggine al telaio, iniettori 2.5 D-4D a km alti",
+   "engine_bad_note": null
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "toyota-rav4-ii-xa20",
+  "make": "Toyota",
+  "model": "RAV4 II",
+  "chassis": "XA20",
+  "category": "SUV",
+  "years": [
+   2000,
+   2005
+  ],
+  "recommended_engines": "2.0 VVT-i",
+  "strengths": "Simple petrol SUV, very reliable",
+  "watch_out": "Rear differential, 2.0 D-4D",
+  "reliability": 4,
+  "engine_bad_note": "2.0 D-4D: less durable than the petrol",
+  "high_mileage_ok": false,
+  "it": {
+   "model": "RAV4 II",
+   "category": "SUV",
+   "recommended_engines": "2.0 VVT-i",
+   "strengths": "SUV benzina semplice e molto affidabile",
+   "watch_out": "Differenziale posteriore, 2.0 D-4D",
+   "engine_bad_note": "2.0 D-4D: meno durevole del benzina"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "suzuki-jimny-fj-sn",
+  "make": "Suzuki",
+  "model": "Jimny",
+  "chassis": "FJ / SN",
+  "category": "4x4",
+  "years": [
+   1998,
+   2011
+  ],
+  "recommended_engines": "1.3",
+  "strengths": "Tiny, simple real off-roader that keeps going",
+  "watch_out": "Frame rust, rear axle",
+  "reliability": 4,
+  "engine_bad_note": "1.5 DDiS (Renault diesel): less durable",
+  "high_mileage_ok": false,
+  "it": {
+   "model": "Jimny",
+   "category": "Fuoristrada",
+   "recommended_engines": "1.3",
+   "strengths": "Piccolo vero fuoristrada semplice che non si ferma mai",
+   "watch_out": "Ruggine al telaio, ponte posteriore",
+   "engine_bad_note": "1.5 DDiS (diesel Renault): meno durevole"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "suzuki-grand-vitara-ft-jt",
+  "make": "Suzuki",
+  "model": "Grand Vitara",
+  "chassis": "FT / JT",
+  "category": "SUV / 4x4",
+  "years": [
+   1998,
+   2011
+  ],
+  "recommended_engines": "1.6 / 2.0 / 2.4 petrol",
+  "strengths": "Body-on-frame (I), robust petrol engines",
+  "watch_out": "Rust, 1.9 DDiS diesel",
+  "reliability": 4,
+  "engine_bad_note": "1.9 DDiS / 2.0 HDi diesels: weaker",
+  "high_mileage_ok": false,
+  "it": {
+   "model": "Grand Vitara",
+   "category": "SUV / Fuoristrada",
+   "recommended_engines": "1.6 / 2.0 / 2.4 benzina",
+   "strengths": "Telaio a longheroni (I serie), motori benzina robusti",
+   "watch_out": "Ruggine, diesel 1.9 DDiS",
+   "engine_bad_note": "Diesel 1.9 DDiS / 2.0 HDi: più deboli"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "honda-cr-v-ii-rd4-rd9",
+  "make": "Honda",
+  "model": "CR-V II",
+  "chassis": "RD4-RD9",
+  "category": "SUV",
+  "years": [
+   2002,
+   2006
+  ],
+  "recommended_engines": "2.0 i-VTEC",
+  "strengths": "K20 engine: one of Honda's best",
+  "watch_out": "Rear differential fluid, A/C compressor",
+  "reliability": 5,
+  "engine_bad_note": "2.2 i-CTDi: good but costly if neglected",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "CR-V II",
+   "category": "SUV",
+   "recommended_engines": "2.0 i-VTEC",
+   "strengths": "Motore K20: uno dei migliori Honda",
+   "watch_out": "Olio differenziale posteriore, compressore clima",
+   "engine_bad_note": "2.2 i-CTDi: buono ma costoso se trascurato"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "subaru-forester-sf-sg-sf-sg",
+  "make": "Subaru",
+  "model": "Forester SF / SG",
+  "chassis": "SF / SG",
+  "category": "SUV / Estate",
+  "years": [
+   1997,
+   2008
+  ],
+  "recommended_engines": "2.0 naturally aspirated (EJ20)",
+  "strengths": "Symmetrical AWD and naturally aspirated boxer",
+  "watch_out": "Head gaskets on EJ25, rust on rear arches",
+  "reliability": 4,
+  "engine_bad_note": "2.5 / XT turbo: head gasket and turbo issues",
+  "high_mileage_ok": false,
+  "it": {
+   "model": "Forester SF / SG",
+   "category": "SUV / Station wagon",
+   "recommended_engines": "2.0 aspirato (EJ20)",
+   "strengths": "Trazione integrale simmetrica e boxer aspirato",
+   "watch_out": "Guarnizioni testata sull'EJ25, ruggine sui passaruota posteriori",
+   "engine_bad_note": "2.5 / XT turbo: guarnizione testata e turbo"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "mitsubishi-l200-iii-k60-k70",
+  "make": "Mitsubishi",
+  "model": "L200 III",
+  "chassis": "K60-K70",
+  "category": "Pick-up",
+  "years": [
+   1997,
+   2005
+  ],
+  "recommended_engines": "2.5 TD (4D56)",
+  "strengths": "4D56: simple mechanical diesel, runs forever",
+  "watch_out": "Frame rust, timing belt intervals",
+  "reliability": 4,
+  "engine_bad_note": "2.5 DI-D (later): timing chain and DPF",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "L200 III",
+   "category": "Pick-up",
+   "recommended_engines": "2.5 TD (4D56)",
+   "strengths": "4D56: diesel meccanico semplice che dura per sempre",
+   "watch_out": "Ruggine al telaio, intervalli cinghia di distribuzione",
+   "engine_bad_note": "2.5 DI-D (successivo): catena e FAP"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "citroen-berlingo-peugeot-partner-i-m49-m59",
+  "make": "Citroën",
+  "model": "Berlingo / Peugeot Partner I",
+  "chassis": "M49 / M59",
+  "category": "Van / MPV",
+  "years": [
+   1997,
+   2008
+  ],
+  "recommended_engines": "1.9 D (DW8), 2.0 HDi, 1.4 petrol",
+  "strengths": "1.9 D DW8: mechanical diesel, practically unbreakable",
+  "watch_out": "Rust on sills, rear axle bearings",
+  "reliability": 4,
+  "engine_bad_note": "1.6 HDi: turbo and injector seals",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Berlingo / Peugeot Partner I",
+   "category": "Furgone / Monovolume",
+   "recommended_engines": "1.9 D (DW8), 2.0 HDi, 1.4 benzina",
+   "strengths": "1.9 D DW8: diesel meccanico praticamente indistruttibile",
+   "watch_out": "Ruggine ai sottoporta, cuscinetti assale posteriore",
+   "engine_bad_note": "1.6 HDi: turbo e guarnizioni iniettori"
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "renault-kangoo-i-kc",
+  "make": "Renault",
+  "model": "Kangoo I",
+  "chassis": "KC",
+  "category": "Van / MPV",
+  "years": [
+   1997,
+   2008
+  ],
+  "recommended_engines": "1.5 dCi (K9K), 1.9 D, 1.2 / 1.6 petrol",
+  "strengths": "1.5 dCi: one of Europe's most widespread diesels",
+  "watch_out": "Rust, electrics, dCi injectors on high km",
+  "reliability": 4,
+  "engine_bad_note": null,
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Kangoo I",
+   "category": "Furgone / Monovolume",
+   "recommended_engines": "1.5 dCi (K9K), 1.9 D, 1.2 / 1.6 benzina",
+   "strengths": "1.5 dCi: uno dei diesel più diffusi in Europa",
+   "watch_out": "Ruggine, impianto elettrico, iniettori dCi a km alti",
+   "engine_bad_note": null
+  },
+  "segment": "youngtimer"
+ },
+ {
+  "id": "fiat-doblo-i-119-223",
+  "make": "Fiat",
+  "model": "Doblò I",
+  "chassis": "119/223",
+  "category": "Van / MPV",
+  "years": [
+   2001,
+   2011
+  ],
+  "recommended_engines": "1.9 JTD / Multijet, 1.4 petrol",
+  "strengths": "1.9 JTD: robust Fiat diesel, cheap parts in Italy",
+  "watch_out": "Rust, front suspension",
+  "reliability": 4,
+  "engine_bad_note": "1.3 Multijet: less suited to heavy use",
+  "high_mileage_ok": true,
+  "it": {
+   "model": "Doblò I",
+   "category": "Furgone / Monovolume",
+   "recommended_engines": "1.9 JTD / Multijet, 1.4 benzina",
+   "strengths": "1.9 JTD: diesel Fiat robusto, ricambi economici in Italia",
+   "watch_out": "Ruggine, sospensione anteriore",
+   "engine_bad_note": "1.3 Multijet: meno adatto a uso pesante"
+  },
+  "segment": "youngtimer"
  }
 ]
