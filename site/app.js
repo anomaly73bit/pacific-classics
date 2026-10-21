@@ -12,7 +12,10 @@
 
   let lang = pickLang(), T = I18N[lang];
   const mt = (m, k) => (lang === "it" && m.it && m.it[k]) || m[k];   // model text in the current language
-  let ALL = [], MODELS = [], MODEL_BY_ID = {}, REPORT = {}, META = {};
+  let ALL = [], MODELS = [], MODEL_BY_ID = {}, REPORT = {}, META = {}, ADMIN = false;
+  const keyOf = l => l.id || l.ref;
+  // admin sees the purchase price; customers see the final price (car + Pacific Classics service)
+  const priceOf = l => ADMIN ? l.price_eur : l.price;
   let shown = PAGE;
   const $ = s => document.querySelector(s);
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -26,8 +29,17 @@
 
   async function load() {
     const get = p => fetch(p, { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null);
-    const [ls, models, report] = await Promise.all([get("data/listings.json"), get("data/models.json"), get("data/report.json")]);
-    ALL = ls?.listings || []; META = ls?.meta || {}; MODELS = models || []; REPORT = report || {};
+    const [ls, models] = await Promise.all([get("data/listings.json"), get("data/models.json")]);
+    ALL = ls?.listings || []; META = ls?.meta || {}; MODELS = models || [];
+    const creds = (() => { try { return JSON.parse(sessionStorage.getItem("pc-admin") || "null"); } catch (e) { return null; } })();
+    if (creds) {
+      const bundle = await PCAdmin.open(creds.u, creds.p).catch(() => null);
+      if (bundle) { ADMIN = true; ALL = bundle.listings; META = bundle.meta; REPORT = bundle.report || {}; }
+      else { try { sessionStorage.removeItem("pc-admin"); } catch (e) {} }
+    }
+    document.body.classList.toggle("is-admin", ADMIN);
+    document.body.classList.toggle("is-client", !ADMIN);
+    $("#adminBar").hidden = !ADMIN;
     MODEL_BY_ID = Object.fromEntries(MODELS.map(m => [m.id, m]));
     fillSelects();
     applyLang();
@@ -76,12 +88,12 @@
     const f = F();
     const has = (l, c) => l.alerts.some(a => a.code === c);
     let out = ALL.filter(l => {
-      if (l.sold && !$("#fSold").checked) return false;
       if (f.model && l.model_id !== f.model) return false;
       if (f.seg && (MODEL_BY_ID[l.model_id] || {}).segment !== f.seg) return false;
       if (f.country && l.country !== f.country) return false;
-      if (l.price_eur != null && (l.price_eur < f.pmin || l.price_eur > f.pmax)) return false;
-      if (l.price_eur == null && (f.pmin || f.pmax !== Infinity)) return false;
+      const pr = priceOf(l);
+      if (pr != null && (pr < f.pmin || pr > f.pmax)) return false;
+      if (pr == null && (f.pmin || f.pmax !== Infinity)) return false;
       if (l.year && (l.year < f.ymin || l.year > f.ymax)) return false;
       if (l.mileage_km && l.mileage_km > f.km) return false;
       if (f.hist === "fiva" && !l.historic?.fiva) return false;
@@ -91,15 +103,15 @@
       if (f.safe && l.alerts.some(a => RISKY.has(a.code))) return false;
       if (f.q) {
         const m = MODEL_BY_ID[l.model_id] || {};
-        const hay = [l.title, l.title_it, l.model_raw, l.city, l.region, COUNTRY[l.country], m.make, m.model, m.chassis].join(" ").toLowerCase();
+        const hay = [l.ref, l.title, l.title_it, l.model_raw, l.city, l.region, COUNTRY[l.country], m.make, m.model, m.chassis].join(" ").toLowerCase();
         if (!f.q.split(/\s+/).every(w => hay.includes(w))) return false;
       }
       return true;
     });
     const by = {
       score: (a, b) => b.score - a.score,
-      price_asc: (a, b) => (a.price_eur ?? 9e9) - (b.price_eur ?? 9e9),
-      price_desc: (a, b) => (b.price_eur ?? -1) - (a.price_eur ?? -1),
+      price_asc: (a, b) => (priceOf(a) ?? 9e9) - (priceOf(b) ?? 9e9),
+      price_desc: (a, b) => (priceOf(b) ?? -1) - (priceOf(a) ?? -1),
       year: (a, b) => (a.year ?? 9999) - (b.year ?? 9999),
       km: (a, b) => (a.mileage_km ?? 9e9) - (b.mileage_km ?? 9e9),
       new: (a, b) => String(b.first_seen).localeCompare(String(a.first_seen)),
@@ -133,7 +145,7 @@
   };
   const sortAlerts = als => [...als].sort((a, b) => LEVEL_ORDER[a.level] - LEVEL_ORDER[b.level]);
   const mapUrl = l => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent([l.zip, l.city, l.region, COUNTRY[l.country] || l.country].filter(Boolean).join(" "))}`;
-  const priceHtml = l => l.price_eur != null ? `€ ${fmt(l.price_eur)}` : "—";
+  const priceHtml = l => priceOf(l) != null ? `€ ${fmt(priceOf(l))}` : "—";
   const histBadge = l => l.historic?.fiva ? `<span class="badge hist">FIVA ✓</span>` : l.historic?.asi ? `<span class="badge hist asi">ASI ✓</span>` : "";
 
   function card(l) {
@@ -150,7 +162,7 @@
         <div class="where">${flag(l.country)} <span>${esc(l.city || COUNTRY[l.country] || "")}</span></div>
       </div></article>`;
     return `<article class="card">
-      <div class="photo" data-open="${esc(l.id)}">
+      <div class="photo" data-open="${esc(keyOf(l))}">
         ${img ? `<img src="${esc(safeUrl(img))}" alt="${esc(tTitle(l))}" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='img/placeholder.svg'">` : `<img src="img/placeholder.svg" alt="">`}
         <span class="badge score ${l.score >= 75 ? "hi" : ""}" title="${esc(T.score)}">${l.score}</span>
         ${histBadge(l)}
@@ -159,17 +171,18 @@
       <div class="body">
         <div class="top">
           <span class="price">${priceHtml(l)}</span>
-          ${l.currency && l.currency !== "EUR" && l.price ? `<span class="orig">${fmt(l.price)} ${esc(l.currency)}</span>` : ""}
+          ${ADMIN && l.currency && l.currency !== "EUR" && l.price ? `<span class="orig">${fmt(l.price)} ${esc(l.currency)}</span>` : ""}
         </div>
-        <h3 class="title" title="${esc(l.title)}">${esc(tTitle(l))}</h3>
+        <h3 class="title"${ADMIN ? ` title="${esc(l.title)}"` : ""}>${esc(tTitle(l))}</h3>
         <div class="specs">${specs.map(s => `<span>${esc(s)}</span>`).join("")}</div>
         <div class="where">${flag(l.country)} <span>${esc([l.zip, l.city].filter(Boolean).join(" ") || COUNTRY[l.country] || "")}</span>
           · <a href="${mapUrl(l)}" target="_blank" rel="noopener">${esc(T.map)}</a>
-          · <span class="src">${esc(SOURCE_NAMES[l.source] || l.source)}${l.seller_type ? " · " + esc(T[l.seller_type]) : ""}</span></div>
+          · <span class="src">${ADMIN ? esc(SOURCE_NAMES[l.source] || l.source) + " · " : ""}${l.seller_type ? esc(T[l.seller_type]) : ""}</span></div>
         <div class="alerts">${keyAlerts.map(a => `<span class="al ${a.level}">${esc(alertText(a, m))}</span>`).join("")}</div>
-        <div class="actions">
-          <button class="btn sec" data-open="${esc(l.id)}">${esc(T.details)}</button>
-          <a class="btn primary" href="${esc(safeUrl(l.url))}" target="_blank" rel="noopener nofollow">${esc(T.view(SOURCE_NAMES[l.source] || l.source))}</a>
+        <div class="actions">${ADMIN ? `
+          <button class="btn sec" data-open="${esc(keyOf(l))}">${esc(T.details)}</button>
+          <a class="btn primary" href="${esc(safeUrl(l.url))}" target="_blank" rel="noopener nofollow">${esc(T.view(SOURCE_NAMES[l.source] || l.source))}</a>` : `
+          <button class="btn primary" data-open="${esc(keyOf(l))}">${esc(T.openSheet)}</button>`}
         </div>
       </div>
     </article>`;
@@ -180,28 +193,31 @@
   const TRANSPORT = { AT: 575, SI: 575, DE: 750, CZ: 800, SK: 800, FR: 800, BE: 950, NL: 950, LU: 950, ES: 1100, IT: 350, PL: 950, HU: 850 };
   const SOUTH_DE = /^(7|8|9)/;   // German postcodes 7xxxx-9xxxx: Baden-Württemberg / Bavaria
   const transportEstimate = l => l.country === "DE" && SOUTH_DE.test(l.zip || "") ? 625 : (TRANSPORT[l.country] ?? 900);
-  const PAPERS = 350, REVISIONE = 79;
+  const PAPERS = 350;
   function estimateHtml(l) {
-    if (!l.price_eur) return "";
-    const fee = Math.round(l.price_eur * 0.05), tr = transportEstimate(l), tot = l.price_eur + fee + tr + PAPERS;
+    const pr = priceOf(l);
+    if (!pr) return "";
+    const commission = ADMIN ? Math.round(pr * (META.commission ?? 0.05)) : 0;
+    const tr = transportEstimate(l), tot = pr + commission + tr + PAPERS;
     return `<div class="panel est"><h3>${esc(T.estimate)}</h3>
       <table class="price-table">
-        <tr><td>${esc(T.estCar)}</td><td>€ ${fmt(l.price_eur)}</td></tr>
-        <tr><td>${esc(T.estFee)}</td><td>€ ${fmt(fee)}</td></tr>
+        <tr><td>${esc(ADMIN ? T.estCarAdmin : T.estCar)}</td><td>€ ${fmt(pr)}</td></tr>
+        ${ADMIN ? `<tr><td>${esc(T.estFee)}</td><td>€ ${fmt(commission)}</td></tr>` : ""}
         <tr><td>${esc(T.estTransport)}</td><td>≈ € ${fmt(tr)}</td></tr>
         <tr><td>${esc(T.estPapers)}</td><td>€ ${fmt(PAPERS)}</td></tr>
         <tr class="tot"><td>${esc(T.estTotal)}</td><td>≈ € ${fmt(Math.round(tot / 10) * 10)}</td></tr>
-        <tr class="opt"><td>${esc(T.estRev)}</td><td>≈ € ${REVISIONE}</td></tr>
+        <tr class="opt"><td>${esc(T.estInspection)}</td><td>${esc(T.onRequest)}</td></tr>
       </table>
       <p class="actions-row"><a class="btn wa" href="${quoteWa(l)}" target="_blank" rel="noopener">💬 WhatsApp</a>
       <a class="btn primary" href="${quoteMail(l)}">${esc(T.estQuote)}</a>
       <a class="btn sec" href="#" data-goto="service">${esc(T.estMore)}</a></p></div>`;
   }
-  const quoteWa = l => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Ciao Pacific Classics, vorrei un preventivo per questa auto: " + (l?.url || ""))}`;
-  const quoteMail = l => `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Preventivo Pacific Classics: " + (l?.title || ""))}&body=${encodeURIComponent((l ? "Annuncio: " + l.url + "\n" : "Link dell'annuncio: \n") + "Città di consegna: \nNome e telefono: \n")}`;
+  const carRef = l => !l ? "" : ADMIN ? l.url : `${l.ref} – ${tTitle(l)} (${location.origin}${location.pathname}#q=${l.ref})`;
+  const quoteWa = l => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Ciao Pacific Classics, vorrei un preventivo per questa auto: " + carRef(l))}`;
+  const quoteMail = l => `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Preventivo Pacific Classics: " + (l?.title || ""))}&body=${encodeURIComponent((l ? "Auto: " + carRef(l) + "\n" : "Link o descrizione dell'auto: \n") + "Città di consegna: \nNome e telefono: \n")}`;
 
   function openDetail(id) {
-    const l = ALL.find(x => x.id === id); if (!l) return;
+    const l = ALL.find(x => keyOf(x) === id); if (!l) return;
     const m = MODEL_BY_ID[l.model_id] || {};
     const h = l.historic || {}, ref = new Date().getFullYear();
     GALLERY = (l.images?.length ? l.images : ["img/placeholder.svg"]).map(safeUrl);
@@ -210,8 +226,10 @@
       [T.year, l.year], ["Km", l.mileage_km != null ? fmt(l.mileage_km) : null], [T.fuel, l.fuel], [T.gearbox, l.gearbox],
       [T.country, `${flag(l.country)} ${esc(COUNTRY[l.country] || l.country || "")}`],
       ["📍", `${esc([l.zip, l.city, l.region].filter(Boolean).join(" "))} · <a href="${mapUrl(l)}" target="_blank" rel="noopener">${esc(T.map)}</a>`],
-      [T.seller, `${esc(T[l.seller_type] || "–")}${l.seller_name ? " · " + esc(l.seller_name) : ""}`],
-      [T.median, REPORT.market?.[l.model_id] ? `€ ${fmt(REPORT.market[l.model_id].median_price)} (${REPORT.market[l.model_id].count})` : "–"],
+      [T.ref, l.ref ? `<b>${esc(l.ref)}</b>` : null],
+      [T.seller, `${esc(T[l.seller_type] || "–")}${ADMIN && l.seller_name ? " · " + esc(l.seller_name) : ""}`],
+      ...(ADMIN ? [[T.median, REPORT.market?.[l.model_id] ? `€ ${fmt(REPORT.market[l.model_id].median_price)} (${REPORT.market[l.model_id].count})` : "–"],
+                   ["Fonte", `${esc(SOURCE_NAMES[l.source] || l.source)}${l.currency !== "EUR" && l.price ? " · " + fmt(l.price) + " " + esc(l.currency) : ""}`]] : []),
     ].filter(r => r[1] != null && r[1] !== "");
     $("#dlgBody").innerHTML = `
       <div class="dlg-head"><h2>${priceHtml(l)} · ${esc(tTitle(l))}</h2><button class="x" aria-label="${esc(T.close)}" data-close>×</button></div>
@@ -239,8 +257,8 @@
           <p>${esc(T.fivaFrom(h.fiva_year ?? "–"))}${h.fiva ? " · <b>" + esc(T.eligibleNow) + "</b>" : ""}</p>
           <p>${esc(T.asiFrom(h.asi_year ?? "–"))}${h.asi ? " · <b>" + esc(T.eligibleNow) + "</b>" : ""}</p>
           ${l.first_seen ? `<p class="src">${esc(T.firstSeen(l.first_seen))}</p>` : ""}
-          ${l.also_on?.length ? `<p>${esc(T.alsoOn)}: ${l.also_on.map(o => `<a href="${esc(safeUrl(o.url))}" target="_blank" rel="noopener">${esc(SOURCE_NAMES[o.source] || o.source)}</a>`).join(", ")}</p>` : ""}
-          <p style="margin-top:12px"><a class="btn primary" style="display:inline-block" href="${esc(safeUrl(l.url))}" target="_blank" rel="noopener nofollow">${esc(T.view(SOURCE_NAMES[l.source] || l.source))}</a></p>
+          ${ADMIN && l.also_on?.length ? `<p>${esc(T.alsoOn)}: ${l.also_on.map(o => `<a href="${esc(safeUrl(o.url))}" target="_blank" rel="noopener">${esc(SOURCE_NAMES[o.source] || o.source)}</a>`).join(", ")}</p>` : ""}
+          ${ADMIN ? `<p style="margin-top:12px"><a class="btn primary" style="display:inline-block" href="${esc(safeUrl(l.url))}" target="_blank" rel="noopener nofollow">${esc(T.view(SOURCE_NAMES[l.source] || l.source))}</a></p>` : ""}
         </div>
       </div>`;
     $("#dlg").showModal();
@@ -329,7 +347,7 @@
   let t;
   const rerender = () => { shown = PAGE; clearTimeout(t); t = setTimeout(render, 120); };
   document.querySelectorAll("#filters input, #filters select, #q, #sort").forEach(el => el.addEventListener("input", rerender));
-  $("#reset").onclick = () => { document.querySelectorAll("#filters input[type=number], #q").forEach(i => i.value = ""); ["#fModel", "#fSeg", "#fCountry", "#fHist", "#fSeller"].forEach(s => $(s).value = ""); $("#fDeals").checked = false; $("#fSafe").checked = $("#fSold").checked = true; rerender(); };
+  $("#reset").onclick = () => { document.querySelectorAll("#filters input[type=number], #q").forEach(i => i.value = ""); ["#fModel", "#fSeg", "#fCountry", "#fHist", "#fSeller"].forEach(s => $(s).value = ""); $("#fDeals").checked = false; $("#fSafe").checked = true; rerender(); };
   $("#more").onclick = () => { shown += PAGE; render(); };
   $("#toggleFilters").onclick = () => $("#filters").classList.toggle("open");
   $("#lang").onclick = () => { lang = lang === "it" ? "en" : "it"; try { localStorage.setItem("pc-lang", lang); } catch (e) {} applyLang(); render(); const v = document.querySelector(".tab.active").dataset.view; if (v !== "listings") showView(v); };
@@ -345,5 +363,6 @@
   $("#dlg").addEventListener("click", e => { if (e.target.id === "dlg" && lb.hidden) $("#dlg").close(); });
 
   $("#contactBtn").href = quoteMail(null);
+  $("#logout").onclick = e => { e.preventDefault(); try { sessionStorage.removeItem("pc-admin"); } catch (x) {} location.reload(); };
   load();
 })();

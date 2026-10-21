@@ -45,6 +45,8 @@ jobs:
         env:
           MOBILEDE_API_USER: ${{ secrets.MOBILEDE_API_USER }}
           MOBILEDE_API_PASSWORD: ${{ secrets.MOBILEDE_API_PASSWORD }}
+          PACIFIC_ADMIN_USER: ${{ secrets.PACIFIC_ADMIN_USER }}
+          PACIFIC_ADMIN_PASSWORD: ${{ secrets.PACIFIC_ADMIN_PASSWORD }}
         run: |
           ARGS=""
           [ -n "${{ inputs.models }}" ] && ARGS="$ARGS --models ${{ inputs.models }}"

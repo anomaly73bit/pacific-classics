@@ -198,7 +198,7 @@ def test_sold_and_carry_over(monkeypatch):
         "a:4": {"id": "a:4", "source": "a", "url": "u4", "model_id": "mercedes-benz-190-w201", "images": ["x"]},
     }
     monkeypatch.setattr(pipeline, "_load_prev", lambda: prev)
-    state = {"a:4": {"last_seen": "2026-10-10"}}
+    state = {pipeline.ref_of("a:4"): {"last_seen": "2026-10-10"}}
     out = pipeline._carry_over(set(), state, {"a:1": "sold", "a:2": "alive"}, "2026-10-21", MODELS)
     byid = {l["id"]: l for l in out}
     assert byid["a:1"]["sold"] and byid["a:1"]["sold_at"] == "2026-10-21"
@@ -212,3 +212,23 @@ def test_highlights_italian():
     h = extract("Mercedes 230 E | 2. Hand | Scheckheft | TÜV bis 05/2027 | Klimaanlage | Rost am Schweller")
     assert h[0] == "2° proprietario" and "Tagliandi documentati" in h and "Aria condizionata" in h
     assert "Revisione/collaudo valida fino al 05/2027" in h and h[-1].startswith("⚠ Ruggine")
+
+
+def test_public_view_hides_sources_and_adds_commission():
+    from pacific_classics import pipeline
+    l = {"id": "autoscout24:abc", "ref": pipeline.ref_of("autoscout24:abc"), "source": "autoscout24",
+         "url": "https://www.autoscout24.com/offers/x", "seller_name": "Auto GmbH", "price": 8000, "price_eur": 8000,
+         "title": "Mercedes 300 D", "alerts": [{"level": "good", "code": "PRICE_DEAL", "params": {"pct": 30, "median": 11000}}]}
+    p = pipeline.public_view(l)
+    assert p["price"] == 8400 and "source" not in p and "url" not in p and "seller_name" not in p and "price_eur" not in p
+    assert p["ref"].startswith("PC-") and "autoscout" not in str(p).lower()
+    assert p["alerts"][0]["params"]["median"] == 11550
+
+
+def test_admin_bundle_roundtrip():
+    from pacific_classics.crypto import decrypt_bundle, encrypt_bundle
+    env = encrypt_bundle({"listings": [{"id": "x"}]}, "user", "secret")
+    assert decrypt_bundle(env, "user", "secret")["listings"][0]["id"] == "x"
+    import pytest
+    with pytest.raises(Exception):
+        decrypt_bundle(env, "user", "wrong")

@@ -28,6 +28,7 @@
   </div>
 </header>
 
+<div id="adminBar" class="admin-bar" hidden>Modalità amministratore · prezzi d'acquisto, fonti e link visibili solo a te · <a href="#" id="logout">Esci</a></div>
 <div id="demo" class="demo" hidden></div>
 
 <main class="wrap">
@@ -71,7 +72,6 @@
         </label>
         <label class="check"><input id="fDeals" type="checkbox"><span data-t="onlyDeals"></span></label>
         <label class="check"><input id="fSafe" type="checkbox" checked><span data-t="hideRisky"></span></label>
-        <label class="check"><input id="fSold" type="checkbox" checked><span data-t="showSold"></span></label>
         <button id="reset" class="ghost" data-t="reset"></button>
       </aside>
       <div class="results">
@@ -89,8 +89,8 @@
       <h3>Condizioni del servizio (sintesi)</h3>
       <ul>
         <li>Pacific Classics, marchio di Pacific IT Solutions s.r.o., offre un servizio di ricerca, verifica, acquisto per conto del cliente e trasporto di veicoli usati e d'epoca all'interno dell'Unione Europea.</li>
-        <li>Gli annunci mostrati sul sito sono raccolti automaticamente dai portali indicati in ogni scheda: prezzo, disponibilità e descrizione dipendono dal venditore e vanno sempre confermati. Le stime di costo sono indicative.</li>
-        <li>Prima di ogni incarico il cliente riceve un preventivo scritto con: prezzo dell'auto, commissione del 5%, costo di trasporto, 350 € di radiazione e pratiche di esportazione, ed eventuali servizi facoltativi (revisione, immatricolazione).</li>
+        <li>Le auto mostrate sul sito sono selezionate tra annunci pubblicati in tutta Europa: disponibilità e caratteristiche dipendono dal venditore e vengono sempre confermate prima del preventivo. Le stime di trasporto sono indicative.</li>
+        <li>Prima di ogni incarico il cliente riceve un preventivo scritto con: prezzo dell'auto comprensivo del servizio Pacific Classics, costo di trasporto, 350 € di radiazione e pratiche di esportazione, ed eventuali servizi facoltativi (perizia in officina, immatricolazione).</li>
         <li>Il pagamento avviene su un conto di garanzia (escrow) presso un servizio terzo. Le condizioni di sblocco e rimborso sono indicate nel contratto di escrow firmato prima del versamento.</li>
         <li>Le valutazioni sull'affidabilità dei modelli e i "punti salienti" degli annunci sono informazioni orientative, non una garanzia sullo stato del singolo veicolo, che viene accertato con il rapporto di verifica.</li>
         <li>Il contratto completo viene inviato insieme al preventivo.</li>
@@ -130,20 +130,21 @@
     <ol class="steps">
       <li><b>Scegli l'auto</b><p>Dagli annunci di questo sito o mandaci il link di un annuncio che hai trovato tu, in qualsiasi paese europeo. Se non sai cosa cercare, ti consigliamo noi il modello giusto.</p></li>
       <li><b>La verifichiamo</b><p>Contattiamo il venditore nella sua lingua, chiediamo foto, documenti, storico dei tagliandi e numero di telaio, e controlliamo i punti deboli noti di quel modello. Ricevi un <b>rapporto di verifica</b> in PDF con foto, documenti e checklist del modello. Se qualcosa non torna, te lo diciamo prima di comprare.</p></li>
-      <li><b>Ti mandiamo il preventivo completo</b><p>Prezzo dell'auto, commissione, trasporto e pratiche: un totale chiaro, senza sorprese. Decidi tu se procedere.</p></li>
+      <li><b>Ti mandiamo il preventivo completo</b><p>Prezzo dell'auto<span class="admin-only">, commissione</span>, trasporto e pratiche: un totale chiaro, senza sorprese. Decidi tu se procedere.</p></li>
       <li><b>Paghi in escrow</b><p>Versi l'importo su un conto di garanzia (escrow) gestito da un servizio terzo indipendente. Né noi né il venditore possiamo toccare i soldi finché l'operazione non è conclusa.</p></li>
       <li><b>Compriamo e prepariamo l'auto</b><p>Dopo il tuo ok sul rapporto di verifica, l'escrow paga il venditore direttamente, al momento del ritiro dell'auto e dei documenti originali. Poi facciamo radiazione ed esportazione.</p></li>
       <li><b>Trasporto o ritiro</b><p>Te la portiamo su bisarca fino a casa o in officina, assicurata durante il viaggio. Oppure, se preferisci, la ritiri tu e la porti in Italia con targa provvisoria.</p></li>
-      <li><b>Consegna e chiusura</b><p>Controlli l'auto alla consegna. Solo allora l'escrow sblocca la nostra commissione e i costi di trasporto e pratiche.</p></li>
+      <li><b>Consegna e chiusura</b><p>Controlli l'auto alla consegna. Solo allora l'escrow sblocca la parte che spetta a noi: il nostro servizio, il trasporto e le pratiche.</p></li>
     </ol>
 
     <h2 class="sec-title" id="costi">Quanto costa</h2>
     <div class="formula">
-      <div><span>Prezzo dell'auto</span><small>quello pagato al venditore, senza ricarichi</small></div><i>+</i>
-      <div><span>Commissione 5%</span><small>sul prezzo dell'auto: ricerca, verifica, trattativa, acquisto</small></div><i>+</i>
+      <div class="client-only"><span>Prezzo dell'auto</span><small>quello indicato in ogni scheda: comprende già ricerca, verifica, trattativa e acquisto</small></div>
+      <div class="admin-only"><span>Prezzo dell'auto</span><small>quello pagato al venditore, senza ricarichi</small></div><i class="admin-only">+</i>
+      <div class="admin-only"><span>Commissione 5%</span><small>sul prezzo dell'auto: ricerca, verifica, trattativa, acquisto</small></div><i>+</i>
       <div><span>Trasporto</span><small>su bisarca, secondo il paese d'origine</small></div><i>+</i>
       <div><span>Radiazione e pratiche export</span><small>350 € fissi</small></div><i>+</i>
-      <div class="optional"><span>Revisione in Italia</span><small>facoltativa · 79 € (tariffa nazionale presso un centro autorizzato)</small></div>
+      <div class="optional"><span>Perizia in officina</span><small>facoltativa · su preventivo · <a href="#perizia">cos'è</a></small></div>
     </div>
     <p class="note">Tutto viene versato in escrow e sbloccato solo alla consegna. L'immatricolazione italiana (IPT e diritti, variabili per provincia) non è compresa: possiamo seguirla noi su richiesta.</p>
 
@@ -166,15 +167,15 @@
       </div>
       <div class="panel">
         <h3>Esempio</h3>
-        <p class="src">Mercedes 300 D W124 a Stoccarda, prezzo 8.000 €, consegna a Milano su bisarca.</p>
+        <p class="src">Mercedes 300 D W124 a Stoccarda, consegna a Milano su bisarca.</p>
         <table class="price-table">
-          <tr><td>Prezzo dell'auto</td><td>8.000 €</td></tr>
-          <tr><td>Commissione Pacific Classics (5%)</td><td>400 €</td></tr>
+          <tr class="client-only"><td>Prezzo dell'auto (come in scheda)</td><td>8.400 €</td></tr>
+          <tr class="admin-only"><td>Prezzo dell'auto</td><td>8.000 €</td></tr>
+          <tr class="admin-only"><td>Commissione Pacific Classics (5%)</td><td>400 €</td></tr>
           <tr><td>Trasporto Germania sud → Milano</td><td>≈ 650 €</td></tr>
           <tr><td>Radiazione e pratiche export</td><td>350 €</td></tr>
           <tr class="tot"><td>Totale in escrow</td><td>≈ 9.400 €</td></tr>
-          <tr class="opt"><td>+ Revisione in Italia (facoltativa)</td><td>79 €</td></tr>
-          <tr class="opt"><td>Totale con revisione</td><td>≈ 9.480 €</td></tr>
+          <tr class="opt"><td>+ Perizia in officina (facoltativa)</td><td>su preventivo</td></tr>
         </table>
         <p class="src">Ogni scheda auto del sito mostra già una stima del totale con questa formula.</p>
       </div>
@@ -183,8 +184,32 @@
     <h2 class="sec-title">Due modi di ricevere l'auto</h2>
     <div class="cols">
       <div class="panel option"><h3>🚚 Consegna su bisarca</h3><p>Pensiamo a tutto noi: ritiro dal venditore, viaggio assicurato, consegna all'indirizzo che scegli. È l'opzione consigliata per le auto d'epoca e per chi è lontano.</p></div>
-      <div class="panel option"><h3>🔑 Ritiro diretto</h3><p>Non vuoi il camion? Prepariamo radiazione, targa provvisoria e documenti, e tu vai a prendere l'auto e la guidi fino in Italia. Paghi prezzo, commissione e i 350 € delle pratiche, senza il trasporto.</p></div>
+      <div class="panel option"><h3>🔑 Ritiro diretto</h3><p>Non vuoi il camion? Prepariamo radiazione, targa provvisoria e documenti, e tu vai a prendere l'auto e la guidi fino in Italia. Paghi il prezzo dell'auto<span class="admin-only"> e la commissione</span> più i 350 € delle pratiche, senza il trasporto.</p></div>
     </div>
+
+    <h2 class="sec-title" id="perizia">Perizia in officina: l'auto controllata da un meccanico prima di comprarla</h2>
+    <div class="cols perizia">
+      <div class="panel">
+        <h3>Cos'è</h3>
+        <p>Su richiesta, prima dell'acquisto facciamo controllare l'auto da un'<b>officina indipendente vicino al venditore</b>, che non ha nessun interesse a venderla.
+          È come andare a vederla con un meccanico di fiducia, senza dover partire.</p>
+        <p>Il meccanico mette l'auto sul ponte, la prova su strada e ci manda un <b>rapporto scritto con foto</b>. Tu lo leggi e decidi: se qualcosa non ti convince, l'auto non si compra e i soldi in escrow tornano a te.</p>
+        <p class="src">Il costo dipende dal paese e dall'officina: te lo indichiamo nel preventivo, prima di procedere.</p>
+      </div>
+      <div class="panel">
+        <h3>Cosa controlla il meccanico</h3>
+        <ul class="hl">
+          <li>Ruggine e sottoscocca: longheroni, sottoporta, passaruota, punti del cric</li>
+          <li>Motore: avviamento a freddo, perdite d'olio, fumosità, compressione se serve</li>
+          <li>Cambio, frizione, trasmissione e differenziale</li>
+          <li>Freni, sospensioni, sterzo e gomme</li>
+          <li>Impianto elettrico, centralina e spie (lettura dei codici errore)</li>
+          <li>Corrispondenza telaio–documenti e chilometraggio rispetto allo storico</li>
+          <li>Prova su strada completa</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">La perizia non va confusa con la <b>revisione</b> italiana: quella è il controllo obbligatorio della Motorizzazione, fatto in Italia dopo l'immatricolazione.</p>
 
     <h2 class="sec-title">Cos'è l'escrow, in parole semplici</h2>
     <div class="escrow-explain">
@@ -197,7 +222,7 @@
         <i>→</i>
         <div><b>3. Il venditore viene pagato</b><span>Solo quando ritiriamo l'auto e i documenti originali, l'escrow paga il prezzo direttamente al venditore. A noi non passa nulla.</span></div>
         <i>→</i>
-        <div><b>4. Consegna, poi noi</b><span>L'auto arriva da te, la controlli e confermi. Solo allora l'escrow sblocca commissione, trasporto e pratiche a Pacific Classics.</span></div>
+        <div><b>4. Consegna, poi noi</b><span>L'auto arriva da te, la controlli e confermi. Solo allora l'escrow sblocca a Pacific Classics il compenso per il servizio, il trasporto e le pratiche.</span></div>
       </div>
       <div class="cols">
         <div class="panel"><h3>E se qualcosa va storto?</h3><p>Se l'auto non supera la verifica, o tu non approvi il rapporto, l'acquisto non si fa e il denaro torna a te. Le regole su quando si sblocca o si restituisce sono scritte nel contratto di escrow prima che tu paghi.</p></div>
@@ -221,7 +246,8 @@
 
     <h2 class="sec-title">Domande frequenti</h2>
     <div class="faq">
-      <details><summary>Cosa è compreso nella commissione del 5%?</summary><p>Ricerca dell'auto, contatto con il venditore, verifica di foto, documenti e storico, trattativa sul prezzo, acquisto e coordinamento di pratiche e trasporto.</p></details>
+      <details><summary>Cosa comprende il prezzo che vedo nella scheda?</summary><p>Il prezzo dell'auto e tutto il nostro servizio: ricerca, contatto con il venditore, verifica di foto, documenti e storico, trattativa, acquisto e coordinamento di pratiche e trasporto. A parte restano solo il trasporto, i 350 € di pratiche ed eventuali servizi facoltativi.</p></details>
+      <details><summary>Cos'è la perizia in officina?</summary><p>Un controllo approfondito dell'auto fatto da un'officina indipendente vicino al venditore, prima dell'acquisto. Te ne parliamo nel dettaglio <a href="#perizia">qui sopra</a>.</p></details>
       <details><summary>Cosa sono i 350 € di radiazione?</summary><p>Le pratiche nel paese d'origine per cancellare l'auto dal registro locale ed esportarla in Italia: radiazione, documenti di esportazione e, per il ritiro diretto, la targa provvisoria.</p></details>
       <details><summary>L'immatricolazione in Italia è inclusa?</summary><p>No, è un costo a parte che dipende dalla provincia e dall'auto (IPT, diritti, targhe). Possiamo indicarti un'agenzia di fiducia o seguirla noi su richiesta.</p></details>
       <details><summary>E se l'auto non corrisponde all'annuncio?</summary><p>La verifichiamo prima dell'acquisto proprio per evitarlo. Se emergono problemi prima del pagamento al venditore, l'operazione si ferma e i fondi in escrow ti vengono restituiti.</p></details>
@@ -290,6 +316,7 @@
   </div>
 </dialog>
 
+<script src="admin.js"></script>
 <script src="i18n.js"></script>
 <script src="app.js"></script>
 </body>

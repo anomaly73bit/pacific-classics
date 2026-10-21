@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Pacific Classics — Accesso amministratore</title>
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+<header class="masthead">
+  <div class="wrap masthead-in">
+    <a class="brand" href="./"><img src="img/logo.svg" alt="" width="46" height="46"><span><b>Pacific Classics</b><small>Area riservata</small></span></a>
+  </div>
+</header>
+<main class="wrap">
+  <form id="login" class="login-box" autocomplete="on">
+    <h1>Accesso amministratore</h1>
+    <label><span>Utente</span><input id="u" name="username" autocomplete="username" required></label>
+    <label><span>Password</span><input id="p" name="password" type="password" autocomplete="current-password" required></label>
+    <p id="err" class="login-err" hidden>Utente o password errati.</p>
+    <button class="btn primary" id="go" type="submit">Entra</button>
+    <p class="src">I dati riservati sono cifrati: senza le credenziali corrette non possono essere letti.</p>
+  </form>
+</main>
+<script src="admin.js"></script>
+<script>
+  document.getElementById("login").addEventListener("submit", async e => {
+    e.preventDefault();
+    const u = document.getElementById("u").value.trim(), p = document.getElementById("p").value, btn = document.getElementById("go");
+    btn.disabled = true; btn.textContent = "Verifica…"; document.getElementById("err").hidden = true;
+    try {
+      await PCAdmin.open(u, p);
+      sessionStorage.setItem("pc-admin", JSON.stringify({ u, p }));
+      location.href = "./";
+    } catch (x) {
+      document.getElementById("err").hidden = false;
+      btn.disabled = false; btn.textContent = "Entra";
+    }
+  });
+</script>
+</body>
+</html>

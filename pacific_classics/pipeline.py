@@ -4,6 +4,8 @@ from __future__ import annotations
 import json
 import logging
 import re
+import hashlib
+import math
 import os
 import time
 from concurrent.futures import ThreadPoolExecutor
@@ -16,6 +18,7 @@ from .advisor import advise, market_stats
 from .http import Blocked, PoliteClient
 from .translate import translate_listings
 from .highlights import extract as extract_highlights
+from .crypto import decrypt_bundle, encrypt_bundle
 from .knowledge import ROOT, build_queries, load_models, load_sources, match_listing
 from .sources import REGISTRY
 
@@ -175,9 +178,9 @@ def process(raw: list[tuple[dict, list[str]]], models: dict, cfg: dict, report: 
             dropped["no_match"] += 1
             continue
         item["model_id"], item["match_confidence"] = model.id, conf
-        st = state.get(item["id"]) or {"first_seen": today, "first_price": item["price_eur"]}
+        st = state.get(ref_of(item["id"])) or {"first_seen": today, "first_price": item["price_eur"]}
         st["last_seen"] = today
-        state[item["id"]] = st
+        state[ref_of(item["id"])] = st
         item["first_seen"] = st["first_seen"]
         item["_hist"] = st
         seen[item["id"]] = item
@@ -286,19 +289,60 @@ def _mark_cross_site_duplicates(listings: list[dict]):
                     a.setdefault("also_on", []).append({"source": b["source"], "url": b["url"]})
 
 
+COMMISSION = 0.05
+ROUND_TO = 50
+PUBLIC_FIELDS = ("model_id", "variant", "title", "title_it", "year", "year_estimated", "mileage_km", "fuel", "gearbox",
+                 "power_kw", "country", "city", "zip", "region", "images", "seller_type", "highlights", "alerts", "historic",
+                 "score", "first_seen", "sold", "sold_at", "match_confidence", "lang", "price_vs_median_pct", "demo")
+
+
+def ref_of(lid: str) -> str:
+    """Public reference of an ad (no source site in it), e.g. PC-7F3A2C."""
+    return "PC-" + hashlib.sha1(lid.encode()).hexdigest()[:6].upper()
+
+
+def client_price(eur: int | None) -> int | None:
+    """Price shown to customers: car price + Pacific Classics commission, rounded up."""
+    return int(math.ceil(eur * (1 + COMMISSION) / ROUND_TO) * ROUND_TO) if eur else None
+
+
+def public_view(l: dict) -> dict:
+    """Customer-safe copy: final price, no source site, link, seller name or purchase price."""
+    out = {k: l[k] for k in PUBLIC_FIELDS if k in l}
+    out["ref"] = l["ref"]
+    out["price"] = client_price(l.get("price_eur"))
+    alerts = []
+    for a in l.get("alerts", []):
+        p = dict(a.get("params") or {})
+        for k in ("median", "was"):
+            if p.get(k):
+                p[k] = client_price(p[k])
+        alerts.append({**a, "params": p})
+    out["alerts"] = alerts
+    return out
+
+
 def publish(listings: list[dict], models: dict, report: dict, demo: bool = False):
     SITE_DATA.mkdir(parents=True, exist_ok=True)
     out = SITE_DATA / "listings.json"
     if not listings and not demo and out.exists():
-        # every source failed: keep yesterday's cars online instead of publishing an empty site
-        log.warning("crawl returned nothing — keeping previous listings, updating the report only")
-        report["kept_previous"] = True
-        (SITE_DATA / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+        # every source failed: keep the previous cars online instead of publishing an empty site
+        log.warning("crawl returned nothing — keeping previous listings")
         return
-    meta = {"generated": _now(), "demo": demo, "count": len(listings)}
-    (SITE_DATA / "listings.json").write_text(json.dumps({"meta": meta, "listings": listings}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    for l in listings:
+        l["ref"] = ref_of(l["id"])
+    meta = {"generated": _now(), "demo": demo, "count": len(listings), "commission": COMMISSION}
+    public = [public_view(l) for l in listings]
+    out.write_text(json.dumps({"meta": meta, "listings": public}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     (SITE_DATA / "models.json").write_text(json.dumps([m.to_public() for m in models.values()], ensure_ascii=False, indent=1), encoding="utf-8")
-    (SITE_DATA / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+    (SITE_DATA / "report.json").unlink(missing_ok=True)          # the report names the sources: admin bundle only
+    user, pwd = os.environ.get("PACIFIC_ADMIN_USER"), os.environ.get("PACIFIC_ADMIN_PASSWORD")
+    if user and pwd:
+        admin = [{k: v for k, v in l.items() if k != "description"} for l in listings]
+        bundle = encrypt_bundle({"meta": meta, "listings": admin, "report": report}, user, pwd)
+        (SITE_DATA / "admin.enc").write_text(json.dumps(bundle), encoding="utf-8")
+    elif not demo:
+        log.warning("PACIFIC_ADMIN_USER/PASSWORD not set: admin bundle not written")
     log.info("published %d listings → %s", len(listings), SITE_DATA)
 
 
@@ -307,12 +351,15 @@ UNSEEN_DAYS = 3    # an ad we couldn't re-check is kept this long before being d
 
 
 def _load_prev() -> dict[str, dict]:
+    """Previous run's full listings, from the encrypted admin bundle (the public file has no ids/links)."""
+    user, pwd = os.environ.get("PACIFIC_ADMIN_USER"), os.environ.get("PACIFIC_ADMIN_PASSWORD")
     try:
-        data = json.loads((SITE_DATA / "listings.json").read_text(encoding="utf-8"))
+        env = json.loads((SITE_DATA / "admin.enc").read_text(encoding="utf-8"))
+        data = decrypt_bundle(env, user, pwd) if user and pwd else {}
         if data.get("meta", {}).get("demo"):
             return {}
-        return {l["id"]: l for l in data.get("listings", [])}
-    except (FileNotFoundError, json.JSONDecodeError):
+        return {l["id"]: l for l in data.get("listings", []) if "id" in l}
+    except Exception:  # noqa: BLE001 — missing file, no credentials or changed password: start fresh
         return {}
 
 
@@ -323,7 +370,7 @@ def _carry_over(found_ids: set, state: dict, verify: dict, today: str, models: d
     for lid, l in _load_prev().items():
         if lid in found_ids or l.get("model_id") not in models or not l.get("images"):
             continue
-        st = state.setdefault(lid, {"first_seen": l.get("first_seen", today), "last_seen": today})
+        st = state.setdefault(ref_of(lid), {"first_seen": l.get("first_seen", today), "last_seen": today})
         if l.get("sold"):
             if (now - date.fromisoformat(l["sold_at"])).days <= SOLD_DAYS:
                 out.append(l)
