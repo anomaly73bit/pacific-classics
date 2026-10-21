@@ -24,6 +24,7 @@ def main():
     c.add_argument("--models", nargs="*", help="only models whose id contains any of these strings, e.g. w124 volvo-240")
     c.add_argument("--ref-year", type=int, help="year used for historic-eligibility (default: current year)")
     sub.add_parser("demo", help="publish synthetic demo data")
+    sub.add_parser("republish", help="re-price and re-publish the last crawl without crawling (needs admin credentials)")
     s = sub.add_parser("serve", help="preview the website locally")
     s.add_argument("--port", type=int, default=8000)
     ap.add_argument("-v", "--verbose", action="store_true")
@@ -40,6 +41,9 @@ def main():
         report = {"sources": {}, "note": "demo data"}
         listings = process(raw, models, load_sources(), report, demo=True)
         publish(listings, models, report, demo=True)
+    elif a.cmd == "republish":
+        from .pipeline import republish
+        print("republished", republish(), "listings")
     elif a.cmd == "serve":
         handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(ROOT / "site"))
         print(f"Pacific Classics → http://localhost:{a.port}")

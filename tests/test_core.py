@@ -220,9 +220,9 @@ def test_public_view_hides_sources_and_adds_commission():
          "url": "https://www.autoscout24.com/offers/x", "seller_name": "Auto GmbH", "price": 8000, "price_eur": 8000,
          "title": "Mercedes 300 D", "alerts": [{"level": "good", "code": "PRICE_DEAL", "params": {"pct": 30, "median": 11000}}]}
     p = pipeline.public_view(l)
-    assert p["price"] == 8400 and "source" not in p and "url" not in p and "seller_name" not in p and "price_eur" not in p
+    assert p["price"] == 9300 and "source" not in p and "url" not in p and "seller_name" not in p and "price_eur" not in p
     assert p["ref"].startswith("PC-") and "autoscout" not in str(p).lower()
-    assert p["alerts"][0]["params"]["median"] == 11550
+    assert p["alerts"][0]["params"]["median"] == 12450
 
 
 def test_admin_bundle_roundtrip():
@@ -232,3 +232,15 @@ def test_admin_bundle_roundtrip():
     import pytest
     with pytest.raises(Exception):
         decrypt_bundle(env, "user", "wrong")
+
+
+def test_price_ladder():
+    from pacific_classics.pricing import client_price
+    assert client_price(500) == 900          # minimum fee 400
+    assert client_price(1000) == 1400        # 30% = 300 < 400 → minimum
+    assert client_price(4000) == 4800        # 20%
+    assert client_price(10000) == 11300      # 13%
+    assert client_price(60000) == 63000      # 5%
+    # never cheaper just above a threshold
+    for t in (500, 1600, 3000, 5000, 8000, 12000, 18000, 25000, 40000):
+        assert client_price(t + 1) >= client_price(t)

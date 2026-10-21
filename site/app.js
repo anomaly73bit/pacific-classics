@@ -199,7 +199,7 @@
   function estimateHtml(l) {
     const pr = priceOf(l);
     if (!pr) return "";
-    const commission = ADMIN ? Math.round(pr * (META.commission ?? 0.05)) : 0;
+    const commission = ADMIN && l.price_client ? l.price_client - pr : 0;      // admin: fee from the price ladder
     const tr = transportEstimate(l), tot = pr + commission + tr + PAPERS;
     return `<div class="panel est"><h3>${esc(T.estimate)}</h3>
       <table class="price-table">

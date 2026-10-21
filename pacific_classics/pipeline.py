@@ -19,6 +19,7 @@ from .http import Blocked, PoliteClient
 from .translate import translate_listings
 from .highlights import extract as extract_highlights
 from .crypto import decrypt_bundle, encrypt_bundle
+from .pricing import client_price
 from .knowledge import ROOT, build_queries, load_models, load_sources, match_listing
 from .sources import REGISTRY
 
@@ -289,8 +290,6 @@ def _mark_cross_site_duplicates(listings: list[dict]):
                     a.setdefault("also_on", []).append({"source": b["source"], "url": b["url"]})
 
 
-COMMISSION = 0.05
-ROUND_TO = 50
 PUBLIC_FIELDS = ("model_id", "variant", "title", "title_it", "year", "year_estimated", "mileage_km", "fuel", "gearbox",
                  "power_kw", "country", "city", "zip", "region", "images", "seller_type", "highlights", "alerts", "historic",
                  "score", "first_seen", "sold", "sold_at", "match_confidence", "lang", "price_vs_median_pct", "demo")
@@ -301,16 +300,11 @@ def ref_of(lid: str) -> str:
     return "PC-" + hashlib.sha1(lid.encode()).hexdigest()[:6].upper()
 
 
-def client_price(eur: int | None) -> int | None:
-    """Price shown to customers: car price + Pacific Classics commission, rounded up."""
-    return int(math.ceil(eur * (1 + COMMISSION) / ROUND_TO) * ROUND_TO) if eur else None
-
-
 def public_view(l: dict) -> dict:
     """Customer-safe copy: final price, no source site, link, seller name or purchase price."""
     out = {k: l[k] for k in PUBLIC_FIELDS if k in l}
     out["ref"] = l["ref"]
-    out["price"] = client_price(l.get("price_eur"))
+    out["price"] = l.get("price_client") or client_price(l.get("price_eur"))
     alerts = []
     for a in l.get("alerts", []):
         p = dict(a.get("params") or {})
@@ -331,7 +325,9 @@ def publish(listings: list[dict], models: dict, report: dict, demo: bool = False
         return
     for l in listings:
         l["ref"] = ref_of(l["id"])
-    meta = {"generated": _now(), "demo": demo, "count": len(listings), "commission": COMMISSION}
+    for l in listings:
+        l["price_client"] = client_price(l.get("price_eur"))
+    meta = {"generated": _now(), "demo": demo, "count": len(listings)}
     public = [public_view(l) for l in listings]
     out.write_text(json.dumps({"meta": meta, "listings": public}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     (SITE_DATA / "models.json").write_text(json.dumps([m.to_public() for m in models.values()], ensure_ascii=False, indent=1), encoding="utf-8")
@@ -404,3 +400,17 @@ def _save_state(state: dict):
 
 def _now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+
+def republish() -> int:
+    """Re-price and re-publish from the last admin bundle (no crawl): used after changing business.yaml."""
+    user, pwd = os.environ.get("PACIFIC_ADMIN_USER"), os.environ.get("PACIFIC_ADMIN_PASSWORD")
+    env = json.loads((SITE_DATA / "admin.enc").read_text(encoding="utf-8"))
+    data = decrypt_bundle(env, user, pwd)
+    from .knowledge import load_models
+    models = {m.id: m for m in load_models()}
+    listings = [l for l in data["listings"] if l.get("model_id") in models]
+    report = data.get("report", {})
+    report["republished"] = _now()
+    publish(listings, models, report)
+    return len(listings)

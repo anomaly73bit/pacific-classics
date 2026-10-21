@@ -1,0 +1,54 @@
+name: Republish prices
+
+# Re-price and re-publish the last crawl without crawling (e.g. after editing config/business.yaml).
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["config/business.yaml"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  republish:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: crawl
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Republish
+        env:
+          PACIFIC_ADMIN_USER: ${{ secrets.PACIFIC_ADMIN_USER }}
+          PACIFIC_ADMIN_PASSWORD: ${{ secrets.PACIFIC_ADMIN_PASSWORD }}
+        run: python -m pacific_classics republish
+      - name: Commit data
+        run: |
+          git config user.name "pacific-classics-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A site/data
+          git diff --cached --quiet || git commit -m "data: republish $(date -u +%F)"
+          for i in 1 2 3; do git pull --rebase -q -X theirs && git push && break; sleep 5; done
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+  deploy:
+    needs: republish
+    runs-on: ubuntu-latest
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - id: pages
+        uses: actions/deploy-pages@v4
