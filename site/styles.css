@@ -288,3 +288,9 @@ body.is-admin .client-only { display: none !important; }
 .chk li { padding: 7px 10px 7px 32px; background: #fff; border: 1px solid var(--line); border-radius: 8px; position: relative; font-size: 14px; }
 .chk li::before { content: "🔧"; position: absolute; left: 9px; top: 6px; font-size: 13px; }
 @media (max-width: 900px) { .verdict-row { grid-template-columns: 1fr; } }
+
+/* every card photo exactly 4:3, whatever the shape of the original (portrait photos made rows taller) */
+.photo { aspect-ratio: auto; height: 0; padding-top: 75%; overflow: hidden; }
+.photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.card .body { gap: 8px; }
+.card .alerts { min-height: 0; }
