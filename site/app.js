@@ -31,8 +31,9 @@
 
   async function load() {
     const get = p => fetch(p, { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null);
-    const [ls, models] = await Promise.all([get("data/listings.json"), get("data/models.json")]);
+    const [ls, models, checks] = await Promise.all([get("data/listings.json"), get("data/models.json"), get("data/checks.json")]);
     ALL = ls?.listings || []; META = ls?.meta || {}; MODELS = models || [];
+    MODELS.forEach(m => { if (checks?.[m.id]?.length) m.it = { ...(m.it || {}), checks: checks[m.id] }; });
     const creds = (() => { try { return JSON.parse(sessionStorage.getItem("pc-admin") || "null"); } catch (e) { return null; } })();
     if (creds) {
       const bundle = await PCAdmin.open(creds.u, creds.p).catch(() => null);
@@ -271,11 +272,11 @@
       ${l.images?.length ? `<p class="hint">${esc(T.hoverHint)}</p>` : ""}
       <div class="verdict-row">${verdictHtml(l)}${docsHtml(l)}</div>
       <div class="dlg-grid">
-        <div class="panel checks">
+        ${(m.it?.checks || []).length ? `<div class="panel checks">
           <h3>${esc(T.checksTitle(variantName(l, m)))}</h3>
-          <ul class="chk">${(mt(m, "checks") || []).map(c => `<li>${esc(c)}</li>`).join("")}</ul>
+          <ul class="chk">${m.it.checks.map(c => `<li>${esc(c)}</li>`).join("")}</ul>
           <p class="src">${esc(T.checksNote)}</p>
-        </div>
+        </div>` : ""}
         <div class="panel">
           <h3>${esc(T.details)} · ${esc(T.score)} ${l.score}/100</h3>
           <div class="alerts col">${sortAlerts(l.alerts).map(a => `<span class="al ${a.level}">${esc(alertText(a, m))}</span>`).join("")}</div>
