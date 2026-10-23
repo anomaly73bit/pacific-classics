@@ -17,7 +17,7 @@ import requests
 from .advisor import advise, market_stats
 from .http import Blocked, PoliteClient
 from .translate import translate_listings
-from .highlights import extract as extract_highlights
+from .highlights import extract as extract_highlights, extract_docs
 from .crypto import decrypt_bundle, encrypt_bundle
 from .pricing import client_price
 from .knowledge import ROOT, build_queries, load_models, load_sources, match_listing
@@ -201,6 +201,7 @@ def process(raw: list[tuple[dict, list[str]]], models: dict, cfg: dict, report: 
     for l in listings:
         l["variant"] = variant_of(l, models[l["model_id"]])
         l["highlights"] = extract_highlights(" ".join(filter(None, [l.get("title"), l.get("description")])))
+        l["docs"] = extract_docs(" ".join(filter(None, [l.get("title"), l.get("description")])))
     listings.sort(key=lambda l: -l["score"])
     if not demo and os.environ.get("PACIFIC_TRANSLATE", "1") == "1":
         try:
@@ -214,7 +215,7 @@ def process(raw: list[tuple[dict, list[str]]], models: dict, cfg: dict, report: 
     report["dropped"] = dropped
     report["published"] = len(listings)
     report["sold_shown"] = sum(1 for l in listings if l.get("sold"))
-    report["market"] = stats
+    report["market"] = {k: {kk: vv for kk, vv in v.items() if not kk.startswith("_")} for k, v in stats.items()}
     if not demo:
         _save_state(state)
     return listings
@@ -292,7 +293,7 @@ def _mark_cross_site_duplicates(listings: list[dict]):
 
 PUBLIC_FIELDS = ("model_id", "variant", "title", "title_it", "year", "year_estimated", "mileage_km", "fuel", "gearbox",
                  "power_kw", "country", "city", "zip", "region", "images", "seller_type", "highlights", "alerts", "historic",
-                 "score", "first_seen", "sold", "sold_at", "match_confidence", "lang", "price_vs_median_pct", "demo")
+                 "score", "first_seen", "sold", "sold_at", "match_confidence", "lang", "price_vs_median_pct", "demo", "docs")
 
 
 def ref_of(lid: str) -> str:
@@ -313,6 +314,10 @@ def public_view(l: dict) -> dict:
                 p[k] = client_price(p[k])
         alerts.append({**a, "params": p})
     out["alerts"] = alerts
+    r = dict(l.get("price_rating") or {})
+    if r.get("fair"):
+        r["fair"] = client_price(r["fair"])        # customers compare final prices with final prices
+    out["price_rating"] = r
     return out
 
 
@@ -334,7 +339,7 @@ def publish(listings: list[dict], models: dict, report: dict, demo: bool = False
     (SITE_DATA / "report.json").unlink(missing_ok=True)          # the report names the sources: admin bundle only
     user, pwd = os.environ.get("PACIFIC_ADMIN_USER"), os.environ.get("PACIFIC_ADMIN_PASSWORD")
     if user and pwd:
-        admin = [{k: v for k, v in l.items() if k != "description"} for l in listings]
+        admin = [{k: (v[:400] if k == "description" and v else v) for k, v in l.items()} for l in listings]
         bundle = encrypt_bundle({"meta": meta, "listings": admin, "report": report}, user, pwd)
         (SITE_DATA / "admin.enc").write_text(json.dumps(bundle), encoding="utf-8")
     elif not demo:
@@ -411,6 +416,16 @@ def republish() -> int:
     models = {m.id: m for m in load_models()}
     listings = [l for l in data["listings"] if l.get("model_id") in models]
     report = data.get("report", {})
+    # re-run the analysis with the current rules (price verdict, documents, alerts) on the stored ads
+    state = _load_state()
+    stats = market_stats([l for l in listings if not l.get("sold")])
+    for l in listings:
+        if l.get("sold"):
+            continue
+        text = " ".join(filter(None, [l.get("title"), l.get("description"), " ".join(l.get("highlights") or [])]))
+        l.update(advise(l, models[l["model_id"]], stats.get(l["model_id"]), None, state.get(ref_of(l["id"]))))
+        l["docs"] = extract_docs(text)
+    report["market"] = {k: {kk: vv for kk, vv in v.items() if not kk.startswith("_")} for k, v in stats.items()}
     report["republished"] = _now()
     publish(listings, models, report)
     return len(listings)

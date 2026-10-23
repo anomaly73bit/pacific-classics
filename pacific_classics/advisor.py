@@ -44,7 +44,7 @@ def historic_status(year: int | None, ref_year: int) -> dict:
 
 
 def market_stats(listings: list[dict]) -> dict[str, dict]:
-    """Median price / mileage per model family, from the current crawl."""
+    """Per model family: median price/mileage plus the peers used to value each car."""
     by_model: dict[str, list[dict]] = {}
     for l in listings:
         if l.get("model_id") and l.get("price_eur") and not l.get("sold"):
@@ -59,8 +59,60 @@ def market_stats(listings: list[dict]) -> dict[str, dict]:
             "p25": int(prices[len(prices) // 4]),
             "p75": int(prices[(3 * len(prices)) // 4]),
             "median_km": int(statistics.median(kms)) if kms else None,
+            "_peers": [(l.get("year"), l.get("mileage_km"), l["price_eur"]) for l in ls],
         }
     return stats
+
+
+KM_STEP, KM_EFFECT, KM_CAP = 50_000, 0.05, 0.20   # each 50,000 km above/below peers: -/+5% (max ±20%)
+
+
+def _pool(l: dict, stats: dict | None) -> list[float]:
+    """Mileage-adjusted prices of comparable cars (same family, year ±3 when there are enough)."""
+    if not stats:
+        return []
+    peers = stats.get("_peers") or []
+    year, km = l.get("year"), l.get("mileage_km")
+    near = [p for p in peers if year and p[0] and abs(p[0] - year) <= 3]
+    pool = near if len(near) >= 6 else peers
+    if len(pool) < 5:
+        return []
+    out = []
+    for py, pk, pp in pool:
+        # bring each peer to this car's mileage: each 50,000 km more = -5% (max ±20%)
+        if km and pk:
+            pp *= 1 - max(-KM_CAP, min(KM_CAP, (km - pk) / KM_STEP * KM_EFFECT))
+        out.append(pp)
+    return sorted(out)
+
+
+def fair_price(l: dict, stats: dict | None) -> tuple[int | None, int]:
+    """Expected market price of this car (median of comparable cars). Returns (fair_price, n_comparables)."""
+    pool = _pool(l, stats)
+    return (int(statistics.median(pool)), len(pool)) if pool else (None, 0)
+
+
+def price_rating(price: int | None, fair: int | None, n: int, danger: bool, pool: list[float] | None = None) -> dict:
+    """great / good / fair / high / suspicious / unknown + frame colour.
+    Uses both the gap to the fair price and the car's rank among comparable cars, so wide-ranging
+    families (cheap projects next to concours cars) don't turn most ads red."""
+    if not price or not fair:
+        level, pct, rank = "unknown", None, None
+    else:
+        pct = round((price - fair) / fair * 100)
+        rank = (sum(1 for p in pool if p < price) / len(pool)) if pool else 0.5
+        if pct <= -50 and rank <= 0.05:
+            level = "suspicious"
+        elif pct <= -15 and rank <= 0.25:
+            level = "great"
+        elif pct <= -5:
+            level = "good"
+        elif pct >= 20 and rank >= 0.75:
+            level = "high"
+        else:
+            level = "fair"
+    frame = "red" if danger or level in ("high", "suspicious") else "green" if level in ("great", "good") else None
+    return {"level": level, "pct": pct, "fair": fair, "peers": n, "frame": frame}
 
 
 def advise(l: dict, m: Model, stats: dict | None, ref_year: int | None = None,
@@ -87,14 +139,14 @@ def advise(l: dict, m: Model, stats: dict | None, ref_year: int | None = None,
     pct = None
     if not price:
         add("info", "NO_PRICE")
-    elif stats and stats.get("count", 0) >= 4:
-        med = stats["median_price"]
+    elif fair_price(l, stats)[0]:
+        med = fair_price(l, stats)[0]
         pct = round((price - med) / med * 100)
-        if pct <= -45:
+        if pct <= -50 and price_rating(price, med, 0, False, _pool(l, stats))["level"] == "suspicious":
             add("danger", "PRICE_SUSPICIOUS", pct=-pct, median=med)
         elif pct <= -20:
             add("good", "PRICE_DEAL", pct=-pct, median=med)
-        elif pct >= 35:
+        elif price_rating(price, med, 0, False, _pool(l, stats))["level"] == "high":
             add("warn", "PRICE_HIGH", pct=pct, median=med)
         else:
             add("info", "PRICE_FAIR", pct=pct, median=med)
@@ -158,7 +210,10 @@ def advise(l: dict, m: Model, stats: dict | None, ref_year: int | None = None,
         score += max(-12, min(12, -pct / 3))
     score = int(max(0, min(100, round(score))))
 
+    fair, n_peers = fair_price(l, stats)
+    rating = price_rating(price, fair, n_peers, any(a["level"] == "danger" for a in alerts), _pool(l, stats))
     return {
+        "price_rating": rating,
         "alerts": alerts,
         "historic": h,
         "price_vs_median_pct": pct,

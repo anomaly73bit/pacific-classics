@@ -38,6 +38,13 @@ models:
   recommended_engines_it: 2.0D, 2.5D, 2.0/2.3 benzina
   model_it: '190'
   segment: classic
+  checks_it:
+  - Ruggine su passaruota posteriori, sottoporta, punti del cric e attacchi delle molle posteriori
+  - Bracci posteriori multilink e boccole (rumori, usura pneumatici irregolare)
+  - Diesel 2.0D/2.5D – avviamento a freddo, candelette e fumosità
+  - Catena di distribuzione e tendicatena sui benzina (rumore all'avviamento)
+  - Perdite d'olio dalla guarnizione del coperchio punterie e dalla coppa
+  - Iniezione KE-Jetronic (2.0/2.3) – minimo irregolare e partenze a caldo difficili
 - id: mercedes-benz-e-class-w124
   make: Mercedes-Benz
   model: E-Class
@@ -82,6 +89,13 @@ models:
   recommended_engines_it: 200D/250D/300D (OM60x), 230E, 300E (M103)
   model_it: Classe E
   segment: classic
+  checks_it:
+  - Cablaggio motore "biodegradabile" sulle 1993-95 (isolamento che si sbriciola)
+  - Ruggine su sottoporta, passaruota, attacchi del cric, bordo del parabrezza e fondo del bagagliaio
+  - Sospensione autolivellante (station wagon S124) – sfere idrauliche scariche
+  - Diesel OM60x – stato delle candelette, giunti del motore, gioco della pompa iniezione
+  - Cambio automatico – cambiate dure o slittamenti, olio mai sostituito
+  - Supporti motore e silent-block del telaietto posteriore
 - id: mercedes-benz-w123-late-units-w123
   make: Mercedes-Benz
   model: W123 (late units)
@@ -117,6 +131,12 @@ models:
   recommended_engines_it: 240D, 300D, 230E
   model_it: W123 (ultime serie)
   segment: classic
+  checks_it:
+  - Ruggine strutturale – longheroni, sottoporta, pianale anteriore, attacchi del cric, intorno al parabrezza
+  - Freni a disco posteriori e servofreno
+  - Diesel aspirati – potenza scarsa normale, ma verificare compressione e fumosità
+  - Chiusura centralizzata a depressione (pompa e tubicini)
+  - Sterzo con gioco (scatola guida e tiranti)
 - id: mercedes-benz-s-class-w126
   make: Mercedes-Benz
   model: S-Class
@@ -155,6 +175,12 @@ models:
   recommended_engines_it: 300SE, 420SE, 300SD
   model_it: Classe S
   segment: classic
+  checks_it:
+  - Catena di distribuzione e guide in plastica sui V8 (sostituire a scadenza)
+  - Climatizzatore e servomotori dell'aria
+  - Sospensioni pneumatiche/idropneumatiche (SEL/560) – costose da ripristinare
+  - Ruggine sotto le guarnizioni dei finestrini e nei sottoporta
+  - Elettronica di comfort (sedili, specchi, chiusura a depressione)
 - id: mercedes-benz-sl-r107
   make: Mercedes-Benz
   model: SL
@@ -188,6 +214,12 @@ models:
   recommended_engines_it: 300SL, 420SL, 500SL
   model_it: SL
   segment: classic
+  checks_it:
+  - Ruggine sotto i tappeti, nei passaruota e sotto la cromatura delle soglie
+  - Catena di distribuzione a una fila sulle prime 380SL
+  - Capote in tela e hardtop (presenza e stato delle guarnizioni)
+  - Iniezione K/KE-Jetronic – regolazione e partenze a caldo
+  - Corrispondenza numeri di telaio e motore (auto molto contraffatta)
 - id: mercedes-benz-g-class-w460-w463
   make: Mercedes-Benz
   model: G-Class
@@ -224,6 +256,12 @@ models:
   recommended_engines_it: 300GD, 250GD, 230GE
   model_it: Classe G
   segment: classic
+  checks_it:
+  - Ruggine su telaio, porte (bordo inferiore), parafanghi e pianale
+  - Bloccaggi differenziale – verificare che si inseriscano tutti
+  - 'Diesel 300GD/250GD lenti per natura: controllare compressione e fumosità'
+  - Perdite d'olio da assali e riduttore
+  - Infiltrazioni d'acqua da porte e tetto (soprattutto versioni corte)
 - id: mercedes-benz-sl-r129
   make: Mercedes-Benz
   model: SL
@@ -260,6 +298,12 @@ models:
   recommended_engines_it: 300SL, SL320, 500SL
   model_it: SL
   segment: classic
+  checks_it:
+  - Idraulica della capote (pompa, tubi, cilindri che perdono)
+  - Sospensione ADS se presente (costosa)
+  - Cablaggio "biodegradabile" sulle prime serie
+  - Elettronica di comfort e roll-bar automatico
+  - Hardtop – presenza e stato delle guarnizioni
 - id: volvo-240-245-240
   make: Volvo
   model: 240 / 245
@@ -293,6 +337,12 @@ models:
   recommended_engines_it: B230F / B230FK
   model_it: 240 / 245
   segment: classic
+  checks_it:
+  - Ruggine nella parte bassa delle portiere, passaruota e attacchi del ponte posteriore
+  - Cablaggio e connettori, relè della pompa benzina
+  - Cinghia di distribuzione B230 (motore non interferente, ma va cambiata)
+  - Riscaldamento e servomotori del clima
+  - Assale posteriore e boccole delle barre di reazione
 - id: volvo-740-760-700-series
   make: Volvo
   model: 740 / 760
@@ -325,6 +375,12 @@ models:
   recommended_engines_it: B230F, B230FT turbo
   model_it: 740 / 760
   segment: classic
+  checks_it:
+  - Cambio automatico usurato (AW70/71)
+  - Ruggine su passaruota e bordo del portellone
+  - Turbo B230FT – perdite d'olio e gioco della turbina
+  - Elettronica di accensione e flussometro
+  - 'Evitare il V6 PRV (760): consumi e problemi ai alberi a camme'
 - id: volvo-940-960-900-series
   make: Volvo
   model: 940 / 960
@@ -357,6 +413,12 @@ models:
   recommended_engines_it: B230F/FT, 2.4 TD
   model_it: 940 / 960
   segment: classic
+  checks_it:
+  - Cambio automatico – cambiate lente o brusche
+  - '960 sei cilindri: più delicato, verificare manutenzione documentata'
+  - Ruggine su passaruota posteriori e portellone
+  - Turbo B230FT/B204FT – perdite d'olio e manicotti
+  - Climatizzatore ed elettronica del cruscotto
 - id: volvo-850-850
   make: Volvo
   model: '850'
@@ -391,6 +453,12 @@ models:
   recommended_engines_it: 2.0/2.5 5 cilindri aspirati
   model_it: '850'
   segment: classic
+  checks_it:
+  - Cambio automatico AW50-42 (cambiate dure, modalità di emergenza)
+  - Cinghia di distribuzione 5 cilindri – motore interferente, scadenze rigide
+  - Supporti motore e parte anteriore del telaio
+  - 'Turbo T5/R: perdite d''olio e usura della turbina'
+  - Display del contachilometri e quadro strumenti (pixel spenti)
 - id: toyota-land-cruiser-j60-j70-j80
   make: Toyota
   model: Land Cruiser
@@ -432,6 +500,12 @@ models:
   recommended_engines_it: 1HZ, 1HD-T, 12H-T, 3F
   model_it: Land Cruiser
   segment: classic
+  checks_it:
+  - Ruggine al telaio, ai punti di attacco delle balestre e nei passaruota
+  - Guarnizione della testata e testata sui diesel turbo 12H-T/1HD-T
+  - Perdite dai mozzi anteriori (birfield) e dagli assali
+  - Bloccaggi differenziale e riduttore – verificarne il funzionamento
+  - 'Uso fuoristrada pesante: sottoscocca, ammortizzatori, segni di urti'
 - id: toyota-hilux-4runner-n50-n100
   make: Toyota
   model: Hilux / 4Runner
@@ -465,6 +539,12 @@ models:
   recommended_engines_it: 2L, 2L-T, 22R
   model_it: Hilux / 4Runner
   segment: classic
+  checks_it:
+  - Ruggine al telaio e al cassone (pick-up)
+  - 'Diesel 2L/2L-T: testata e guarnizione (surriscaldamento)'
+  - Mozzi a ruota libera e trasmissione 4x4
+  - Molle a balestra e giochi dello sterzo
+  - 'Uso da lavoro: chilometri e manutenzione reali'
 - id: toyota-corolla-e80-e90-e100
   make: Toyota
   model: Corolla
@@ -497,6 +577,12 @@ models:
   recommended_engines_it: 4A-FE, 2C diesel
   model_it: Corolla
   segment: classic
+  checks_it:
+  - Ruggine su passaruota e sottoporta
+  - Perdite d'olio dalla guarnizione del coperchio valvole
+  - Sospensioni e silent-block
+  - Carburatore sulle versioni base (minimo e consumi)
+  - Cinghia di distribuzione
 - id: toyota-camry-carina-ii-carina-e-v20-v30-t150-t190
   make: Toyota
   model: Camry / Carina II / Carina E
@@ -529,6 +615,12 @@ models:
   recommended_engines_it: 3S-FE, 2C
   model_it: Camry / Carina II / Carina E
   segment: classic
+  checks_it:
+  - Ruggine su passaruota posteriori
+  - Cinghia di distribuzione del 3S-FE
+  - Consumo d'olio sui motori molto chilometrati
+  - Cambio automatico (fluido mai sostituito)
+  - 'Pochi esemplari ben tenuti: verificare la storia'
 - id: toyota-celica-mr2-supra-mk3-t160-t180-w10-w20-a70
   make: Toyota
   model: Celica / MR2 / Supra Mk3
@@ -564,6 +656,12 @@ models:
   recommended_engines_it: 3S-GE, 7M-GTE
   model_it: Celica / MR2 / Supra Mk3
   segment: classic
+  checks_it:
+  - 'Supra 7M-GTE: guarnizione della testata (verificare se sostituita con quella multistrato)'
+  - Ruggine su passaruota, sottoporta e tetto targa
+  - Turbo e tubazioni dell'olio sulle versioni turbo
+  - 'Esemplari modificati o elaborati: preferire originali'
+  - 'Celica GT-Four/MR2 turbo: uso sportivo pesante'
 - id: toyota-previa-xr10
   make: Toyota
   model: Previa
@@ -593,6 +691,12 @@ models:
   recommended_engines_it: 2TZ-FE
   model_it: Previa
   segment: classic
+  checks_it:
+  - 'Motore centrale: accesso difficile, verificare perdite d''olio e manutenzione'
+  - Ruggine sotto le porte scorrevoli
+  - Cambio automatico
+  - Climatizzatore posteriore
+  - Ricambi di carrozzeria rari
 - id: lexus-ls400-xf10
   make: Lexus
   model: LS400
@@ -624,6 +728,12 @@ models:
   recommended_engines_it: 1UZ-FE V8
   model_it: LS400
   segment: classic
+  checks_it:
+  - Cinghia di distribuzione del 1UZ (motore non interferente sulle prime, ma va cambiata)
+  - Display del cruscotto e del climatizzatore (pixel spenti)
+  - Ammortizzatori e sospensioni pneumatiche (versioni con sospensione ad aria)
+  - Servosterzo – perdite dalla pompa
+  - Consumi elevati e costi ricambi originali
 - id: honda-civic-crx-accord-prelude-various
   make: Honda
   model: Civic / CRX / Accord / Prelude
@@ -661,6 +771,12 @@ models:
   recommended_engines_it: D16, B16, F20/F22
   model_it: Civic / CRX / Accord / Prelude
   segment: classic
+  checks_it:
+  - Ruggine su passaruota posteriori e sottoporta
+  - 'Esemplari modificati (VTEC elaborati, assetti): preferire originali'
+  - Cinghia di distribuzione (motori interferenti)
+  - 'Prelude 4WS: sterzo posteriore'
+  - 'Cambio manuale: sincronizzatori della seconda e terza'
 - id: mazda-mx-5-na
   make: Mazda
   model: MX-5
@@ -692,6 +808,12 @@ models:
   recommended_engines_it: 1.6, 1.8
   model_it: MX-5
   segment: classic
+  checks_it:
+  - Ruggine ai sottoporta e ai passaruota posteriori (punto critico)
+  - Fori di scarico dell'acqua sotto la capote intasati
+  - Capote in tela (strappi, lunotto opaco)
+  - Primo albero motore "corto" sulle prime 1.6 (verificare puleggia)
+  - Esemplari modificati o con uso in pista
 - id: mazda-323-626-bf-ba-gc-ge
   make: Mazda
   model: 323 / 626
@@ -725,6 +847,12 @@ models:
   recommended_engines_it: B6, FE, RF diesel
   model_it: 323 / 626
   segment: classic
+  checks_it:
+  - Ruggine
+  - Cinghia di distribuzione
+  - Cambio automatico sulle 626 V6
+  - 'Diesel RF: avviamento a freddo e pompa iniezione'
+  - Ricambi di carrozzeria rari
 - id: nissan-patrol-terrano-i-y60-gr-wd21
   make: Nissan
   model: Patrol / Terrano I
@@ -761,6 +889,12 @@ models:
   recommended_engines_it: TD42, RD28
   model_it: Patrol / Terrano I
   segment: classic
+  checks_it:
+  - Ruggine al telaio e ai passaruota
+  - 'TD42: guarnizione della testata se surriscaldato; RD28: testata crepata su abusi'
+  - Evitare lo ZD30 3.0 Di (pistoni e testata)
+  - Mozzi e trasmissione 4x4
+  - 'Uso fuoristrada pesante: sottoscocca e sospensioni'
 - id: nissan-sunny-micra-200sx-n13-n14-k10-s13
   make: Nissan
   model: Sunny / Micra / 200SX
@@ -796,6 +930,12 @@ models:
   recommended_engines_it: GA16, MA10, CA18DET
   model_it: Sunny / Micra / 200SX
   segment: classic
+  checks_it:
+  - Ruggine
+  - '200SX S13: quasi sempre elaborate o usate in drift – preferire originali'
+  - 'Micra K10: carburatore e cambio automatico (sui modelli automatici)'
+  - Catena di distribuzione e consumo d'olio sui motori chilometrati
+  - Sospensioni e silent-block
 - id: mitsubishi-pajero-i-ii
   make: Mitsubishi
   model: Pajero
@@ -831,6 +971,12 @@ models:
   recommended_engines_it: 2.5 TD (4D56), 3.0 V6
   model_it: Pajero
   segment: classic
+  checks_it:
+  - 'Evitare il 2.8 TD (4M40): crepe alla testata'
+  - Ruggine al telaio, passaruota e sottoporta
+  - Cinghie di distribuzione e degli equilibratori del 2.5 TD
+  - Trasmissione Super Select (selezione 4x4 che si inceppa)
+  - Uso fuoristrada pesante
 - id: mitsubishi-galant-lancer-l200-various
   make: Mitsubishi
   model: Galant / Lancer / L200
@@ -865,6 +1011,12 @@ models:
   recommended_engines_it: 4G63, 4D56
   model_it: Galant / Lancer / L200
   segment: classic
+  checks_it:
+  - 'Ruggine (L200: telaio e cassone)'
+  - Cinghia di distribuzione e degli equilibratori del 4G63
+  - 'Versioni turbo/VR-4/Evo: uso sportivo e modifiche'
+  - 'Diesel 4D56: guarnizione della testata'
+  - Ricambi di carrozzeria rari
 - id: subaru-legacy-impreza-bc-bd-gc
   make: Subaru
   model: Legacy / Impreza
@@ -899,6 +1051,12 @@ models:
   recommended_engines_it: EJ18/EJ20 aspirati
   model_it: Legacy / Impreza
   segment: classic
+  checks_it:
+  - Guarnizione della testata (soprattutto EJ25)
+  - Cinghia di distribuzione dei boxer (interferente sulle versioni turbo)
+  - Ruggine su passaruota posteriori
+  - 'Trasmissione integrale: pneumatici tutti uguali, giunti e differenziale centrale'
+  - 'Versioni turbo (WRX/STI): elaborazioni e uso sportivo'
 - id: suzuki-sj-samurai-vitara-sj-et
   make: Suzuki
   model: SJ Samurai / Vitara
@@ -933,6 +1091,12 @@ models:
   recommended_engines_it: 1.3, 1.6
   model_it: SJ Samurai / Vitara
   segment: classic
+  checks_it:
+  - Ruggine al telaio (punto critico) e al pianale
+  - Mozzi a ruota libera e trasmissione 4x4
+  - Esemplari "rialzati" o modificati per fuoristrada
+  - Capote e infiltrazioni d'acqua (versioni cabrio)
+  - Guarnizione della testata se surriscaldato
 - id: daihatsu-rocky-feroza-charade-f70-f80-f300-g100
   make: Daihatsu
   model: Rocky / Feroza / Charade
@@ -967,6 +1131,12 @@ models:
   recommended_engines_it: 2.8 D, 1.6
   model_it: Rocky / Feroza / Charade
   segment: classic
+  checks_it:
+  - Ruggine
+  - Ricambi rari (verificare disponibilità)
+  - 'Diesel 2.8 (Rocky): guarnizione testata e pompa iniezione'
+  - Trasmissione 4x4
+  - Impianto elettrico
 - id: peugeot-205-309-405-306-various
   make: Peugeot
   model: 205 / 309 / 405 / 306
@@ -1003,6 +1173,12 @@ models:
   recommended_engines_it: XUD7/XUD9 diesel, TU benzina
   model_it: 205 / 309 / 405 / 306
   segment: classic
+  checks_it:
+  - Impianto elettrico (connettori, quadro strumenti)
+  - 'Assale posteriore a barre di torsione: cuscinetti dei bracci (ruote posteriori inclinate)'
+  - Cinghia di distribuzione XUD
+  - Ruggine minore su passaruota e sotto le guarnizioni
+  - 'GTI: auto spesso maltrattate e modificate'
 - id: peugeot-505-505
   make: Peugeot
   model: '505'
@@ -1033,6 +1209,12 @@ models:
   recommended_engines_it: 2.0, 2.5 diesel
   model_it: '505'
   segment: classic
+  checks_it:
+  - Ruggine
+  - Ricambi di carrozzeria rari
+  - 'Diesel 2.5: pompa iniezione e testata'
+  - Assale posteriore e sospensioni
+  - Impianto elettrico
 - id: citroen-bx-zx-xantia-various
   make: Citroën
   model: BX / ZX / Xantia
@@ -1071,6 +1253,12 @@ models:
   recommended_engines_it: XUD diesel
   model_it: BX / ZX / Xantia
   segment: classic
+  checks_it:
+  - 'Idraulica (BX, Xantia): sfere da sostituire, tubi idraulici corrosi, pompa'
+  - 'Xantia Activa/V6: sistemi complessi e costosi'
+  - Assale posteriore (cuscinetti dei bracci)
+  - Cinghia di distribuzione XUD
+  - Impianto elettrico
 - id: renault-4-r4
   make: Renault
   model: '4'
@@ -1105,6 +1293,12 @@ models:
   recommended_engines_it: 956/1108 cc
   model_it: '4'
   segment: classic
+  checks_it:
+  - Ruggine al telaio e al pianale (punto critico)
+  - Ruggine nei parafanghi e nei montanti
+  - Freni e servofreno
+  - 'Cambio a cloche: tiranteria usurata'
+  - Impianto elettrico semplice ma spesso rimaneggiato
 - id: renault-express-19-clio-i-diesel-various
   make: Renault
   model: Express / 19 / Clio I diesel
@@ -1142,6 +1336,12 @@ models:
   recommended_engines_it: F8Q, Energy
   model_it: Express / 19 / Clio I diesel
   segment: classic
+  checks_it:
+  - Impianto elettrico e connettori
+  - Cinghia di distribuzione del F8Q
+  - Assale posteriore a barre di torsione (cuscinetti)
+  - 'Ruggine (Express: pianale del vano di carico)'
+  - 'Clio Williams/16V: uso sportivo e modifiche'
 - id: fiat-panda-141
   make: Fiat
   model: Panda
@@ -1174,6 +1374,12 @@ models:
   recommended_engines_it: FIRE 1000/1100, 4x4
   model_it: Panda
   segment: classic
+  checks_it:
+  - Ruggine su sottoporta, pianale, passaruota e attacchi delle balestre posteriori
+  - '4x4: giunto e trasmissione posteriore'
+  - Infiltrazioni d'acqua da parabrezza e tetto apribile
+  - 'FIRE: cinghia di distribuzione'
+  - Impianto elettrico
 - id: fiat-uno-tipo-diesel-146-160
   make: Fiat
   model: Uno / Tipo diesel
@@ -1207,6 +1413,12 @@ models:
   recommended_engines_it: FIRE, 1.7 D
   model_it: Uno / Tipo diesel
   segment: classic
+  checks_it:
+  - Ruggine
+  - 'Uno Turbo: turbina e modifiche'
+  - Cinghia di distribuzione
+  - Impianto elettrico e quadro digitale (Tipo)
+  - Sospensioni
 - id: volkswagen-golf-i-ii-jetta-mk1-mk2
   make: Volkswagen
   model: Golf I/II / Jetta
@@ -1244,6 +1456,12 @@ models:
   recommended_engines_it: 1.6D/TD, 1.6/1.8 benzina
   model_it: Golf I/II / Jetta
   segment: classic
+  checks_it:
+  - Ruggine sotto la batteria, nei passaruota, sottoporta e porte inferiori
+  - 'Diesel 1.6D/TD: guarnizione della testata e turbo'
+  - Cinghia di distribuzione
+  - 'G60 e GTI: modifiche e uso sportivo'
+  - Impianto elettrico e servosterzo
 - id: volkswagen-passat-b3-b4-golf-iii-polo-b3-b4-mk3-6n
   make: Volkswagen
   model: Passat B3/B4 / Golf III / Polo
@@ -1282,6 +1500,12 @@ models:
   recommended_engines_it: 1.9 TDI (1Z/AHU)
   model_it: Passat B3/B4 / Golf III / Polo
   segment: classic
+  checks_it:
+  - Impianto elettrico (alzacristalli, chiusura centralizzata)
+  - '1.9 TDI: iniettori, turbo e volano bimassa'
+  - Cinghia di distribuzione
+  - Ruggine su passaruota e attorno al tetto apribile
+  - 'VR6: raffreddamento e catene di distribuzione'
 - id: volkswagen-transporter-t3-t4-t3-t4
   make: Volkswagen
   model: Transporter T3 / T4
@@ -1323,6 +1547,12 @@ models:
   recommended_engines_it: 1.6TD, 2.5 TDI (T4)
   model_it: Transporter T3 / T4
   segment: classic
+  checks_it:
+  - 'T3: ruggine strutturale (pianale, longheroni, parte bassa delle porte)'
+  - 'T4 2.5 TDI: cinghia di distribuzione e iniettori'
+  - 'Camper (California/Westfalia): infiltrazioni, impianti e omologazione'
+  - 'Uso da lavoro: chilometri reali e manutenzione'
+  - Cambio e frizione
 - id: audi-80-b3-b4
   make: Audi
   model: '80'
@@ -1356,6 +1586,12 @@ models:
   recommended_engines_it: 1.9 TDI, 2.0, 2.3 5 cilindri
   model_it: '80'
   segment: classic
+  checks_it:
+  - Impianto elettrico
+  - '1.9 TDI: iniettori e volano bimassa'
+  - Cinghia di distribuzione
+  - Ruggine minima (scocca zincata) – verificare comunque passaruota
+  - Sospensioni anteriori
 - id: audi-100-c3-c4
   make: Audi
   model: '100'
@@ -1389,6 +1625,12 @@ models:
   recommended_engines_it: 2.5 TDI, 2.3 5 cilindri
   model_it: '100'
   segment: classic
+  checks_it:
+  - Elettronica della C4 (quadro, clima)
+  - Evitare il 2.2 turbo delle prime serie
+  - '2.5 TDI: cinghia di distribuzione e pompa iniezione'
+  - 'Quattro: differenziale centrale Torsen e giunti'
+  - Sospensioni
 - id: bmw-3-series-e30
   make: BMW
   model: 3 Series
@@ -1427,6 +1669,12 @@ models:
   recommended_engines_it: M20 sei cilindri, M40
   model_it: Serie 3
   segment: classic
+  checks_it:
+  - 'Cinghia di distribuzione M20 (motore interferente: cambiare ogni 60.000 km)'
+  - Ruggine su passaruota, sottoporta, attacchi del ponte posteriore e sotto la batteria
+  - Esemplari modificati o con uso sportivo
+  - 'Cabriolet: capote e infiltrazioni'
+  - Impianto di raffreddamento
 - id: bmw-5-series-e34
   make: BMW
   model: 5 Series
@@ -1466,6 +1714,12 @@ models:
   recommended_engines_it: M30 (530i/535i), M50
   model_it: Serie 5
   segment: classic
+  checks_it:
+  - Impianto di raffreddamento (radiatore, vaschetta, pompa acqua)
+  - Evitare i V8 M60 prime serie con cilindri Nikasil
+  - Ruggine su passaruota e porte
+  - Cambio automatico
+  - Elettronica di comfort
 - id: bmw-3-series-e36
   make: BMW
   model: 3 Series
@@ -1505,6 +1759,12 @@ models:
   recommended_engines_it: M50/M52, M43
   model_it: Serie 3
   segment: classic
+  checks_it:
+  - Raffreddamento (radiatore, vaschetta, termostato, pompa acqua)
+  - Attacchi degli ammortizzatori posteriori e del ponte posteriore
+  - Valvola VANOS (M50/M52)
+  - Esemplari modificati o con uso sportivo
+  - Ruggine su passaruota e sottoporta
 - id: saab-900-classic-9000-900-9000
   make: Saab
   model: 900 Classic / 9000
@@ -1538,6 +1798,12 @@ models:
   recommended_engines_it: B201/B202, B234
   model_it: 900 Classic / 9000
   segment: classic
+  checks_it:
+  - Frizione e cambio
+  - Turbo e manicotti
+  - Ruggine su porte e passaruota
+  - '9000 V6: motore GM meno robusto'
+  - 'Ricambi in via di esaurimento: verificare disponibilità'
 - id: opel-kadett-e-vectra-a-omega-a-various
   make: Opel
   model: Kadett E / Vectra A / Omega A
@@ -1573,6 +1839,12 @@ models:
   recommended_engines_it: C20NE, 1.7 D Isuzu
   model_it: Kadett E / Vectra A / Omega A
   segment: classic
+  checks_it:
+  - Ruggine su passaruota, sottoporta e portellone
+  - Cinghia di distribuzione
+  - Impianto elettrico
+  - 'Diesel 1.7 Isuzu: guarnizione testata'
+  - Sospensioni
 - id: ford-sierra-escort-transit-various
   make: Ford
   model: Sierra / Escort / Transit
@@ -1610,6 +1882,12 @@ models:
   recommended_engines_it: Pinto 2.0, Endura D
   model_it: Sierra / Escort / Transit
   segment: classic
+  checks_it:
+  - Ruggine
+  - 'Cosworth/RS: auto da collezione, spesso replica o modificate'
+  - Cinghia di distribuzione
+  - 'Transit: uso da lavoro e telaio'
+  - Impianto elettrico
 - id: land-rover-defender-discovery-i-90-110-series-i
   make: Land Rover
   model: Defender / Discovery I
@@ -1646,6 +1924,12 @@ models:
   recommended_engines_it: 200Tdi, 300Tdi
   model_it: Defender / Discovery I
   segment: classic
+  checks_it:
+  - Ruggine al telaio (traversa posteriore, longheroni) e alla paratia anteriore
+  - Perdite d'olio da motore, cambio e assali (normali entro un limite)
+  - 'Tdi: guarnizione della testata e turbo'
+  - Infiltrazioni d'acqua
+  - Corrispondenza telaio–documenti (auto spesso ricostruite)
 - id: lada-niva-2121
   make: Lada
   model: Niva
@@ -1676,6 +1960,12 @@ models:
   recommended_engines_it: 1.6/1.7
   model_it: Niva
   segment: classic
+  checks_it:
+  - Ruggine (pianale, sottoporta, passaruota)
+  - Trasmissione e differenziale centrale (rumorosità)
+  - Qualità delle finiture
+  - Impianto elettrico
+  - 'Carburatore o iniezione: regolazione'
 - id: porsche-911-carrera-3-2-964-g-model-964
   make: Porsche
   model: 911 Carrera 3.2 / 964
@@ -1711,6 +2001,12 @@ models:
   recommended_engines_it: 3.2 / 3.6
   model_it: 911 Carrera 3.2 / 964
   segment: classic
+  checks_it:
+  - 'Perdite d''olio (964: guarnizioni di testa e catene)'
+  - Tendicatena e catene di distribuzione (3.2)
+  - Ruggine sotto i parafanghi e nella zona del serbatoio
+  - Corrispondenza numeri di telaio e motore ("matching numbers")
+  - 'Esemplari incidentati o ricostruiti: perizia sempre consigliata'
 - id: porsche-944-928-944-928
   make: Porsche
   model: 944 / 928
@@ -1746,6 +2042,12 @@ models:
   recommended_engines_it: 2.5/2.7/3.0, V8
   model_it: 944 / 928
   segment: classic
+  checks_it:
+  - 'Cinghie di distribuzione e degli equilibratori (944: ogni 50.000 km)'
+  - '928: catena e cinghia, impianto elettrico complesso'
+  - Frizione e transaxle
+  - Ruggine minima (scocca zincata), ma verificare sottoporta
+  - Costi di gestione elevati
 - id: toyota-yaris-i-ii-xp10-xp90
   make: Toyota
   model: Yaris I / II
@@ -1782,6 +2084,12 @@ models:
   strengths_it: Motori piccoli che non muoiono mai, costi di gestione minimi
   watch_out_it: Frizione sulle prime 1.0, ruggine rara
   engine_bad_note_it: '1.4 D-4D: iniettori costosi, meglio benzina'
+  checks_it:
+  - Frizione sulle prime 1.0
+  - Cambio robotizzato MMT (evitare o verificare bene)
+  - Consumo d'olio su alcuni 1.3 molto chilometrati
+  - 'Diesel 1.4 D-4D: iniettori'
+  - Ruggine rara
 - id: toyota-aygo-citroen-c1-peugeot-107-ab10
   make: Toyota
   model: Aygo / Citroën C1 / Peugeot 107
@@ -1819,6 +2127,12 @@ models:
   strengths_it: 'Tre cilindri Toyota 1KR: semplice e molto durevole'
   watch_out_it: Frizione, guarnizioni lunotto
   engine_bad_note_it: '1.4 HDi diesel: raro e meno robusto'
+  checks_it:
+  - Frizione
+  - Guarnizioni del lunotto (infiltrazioni nel bagagliaio)
+  - Cambio robotizzato (evitare o verificare bene)
+  - Ruggine rara
+  - Rumorosità del motore a tre cilindri normale
 - id: suzuki-swift-mz-ez
   make: Suzuki
   model: Swift
@@ -1851,6 +2165,12 @@ models:
   strengths_it: Motori semplici a catena, leggera e robusta
   watch_out_it: Ruggine sui passaruota posteriori
   engine_bad_note_it: '1.3 DDiS (diesel Fiat): meno durevole dei benzina'
+  checks_it:
+  - Ruggine sui passaruota posteriori
+  - 'Diesel 1.3 DDiS: FAP e iniettori'
+  - Frizione
+  - Sospensioni
+  - 'Swift Sport: uso sportivo'
 - id: suzuki-ignis-wagon-r-fh-mm
   make: Suzuki
   model: Ignis / Wagon R+
@@ -1883,6 +2203,12 @@ models:
   strengths_it: Essenziali, leggere e quasi indistruttibili
   watch_out_it: Ruggine
   engine_bad_note_it: null
+  checks_it:
+  - Ruggine
+  - Frizione
+  - Impianto elettrico
+  - 'Versioni 4x4: trasmissione'
+  - Ricambi di carrozzeria
 - id: honda-jazz-i-ii-gd-ge
   make: Honda
   model: Jazz I / II
@@ -1915,6 +2241,12 @@ models:
   strengths_it: Motori i-DSI a prova di bomba, sedili magici, tanto spazio
   watch_out_it: Cambio CVT sulle prime, verificare i cambi d'olio
   engine_bad_note_it: 'Automatico CVT (prime serie): cambi d''olio indispensabili'
+  checks_it:
+  - Cambio CVT sulle prime serie (cambi d'olio indispensabili)
+  - Frizione
+  - Bobine di accensione sui 1.4 i-DSI
+  - Ruggine rara
+  - Sedili magici e meccanismi
 - id: daihatsu-sirion-cuore-m1-m3-l7
   make: Daihatsu
   model: Sirion / Cuore
@@ -1947,6 +2279,12 @@ models:
   strengths_it: Motori del gruppo Toyota, costi bassissimi
   watch_out_it: Ruggine, ricambi rari
   engine_bad_note_it: null
+  checks_it:
+  - Ruggine
+  - Ricambi rari
+  - Frizione
+  - Impianto elettrico
+  - Consumo d'olio sui motori chilometrati
 - id: fiat-panda-169-169
   make: Fiat
   model: Panda (169)
@@ -1984,6 +2322,12 @@ models:
   strengths_it: 'Motore FIRE: economico, semplice, ricambi ovunque in Italia'
   watch_out_it: Sospensione posteriore, impianto elettrico
   engine_bad_note_it: '1.3 Multijet: buono ma costi FAP/iniettori sulle ultime'
+  checks_it:
+  - Sospensione posteriore e ammortizzatori
+  - Servosterzo elettrico
+  - Impianto elettrico
+  - '1.3 Multijet: FAP e iniettori sulle ultime'
+  - '4x4: giunto viscoso e trasmissione'
 - id: skoda-fabia-i-6y
   make: Škoda
   model: Fabia I
@@ -2020,6 +2364,12 @@ models:
   strengths_it: '1.9 SDI/TDI: diesel VW da oltre 500.000 km'
   watch_out_it: Catena 1.2 HTP, ruggine alle porte
   engine_bad_note_it: '1.2 HTP tre cilindri: problemi alla catena'
+  checks_it:
+  - Evitare il 1.2 HTP tre cilindri (catena di distribuzione)
+  - '1.9 SDI/TDI: iniettori e volano bimassa'
+  - Ruggine alle porte
+  - Impianto elettrico
+  - Cinghia di distribuzione
 - id: hyundai-getz-kia-picanto-tb-sa
   make: Hyundai
   model: Getz / Kia Picanto
@@ -2053,6 +2403,12 @@ models:
   strengths_it: Motori coreani semplici, costi di gestione bassi
   watch_out_it: Ruggine ai sottoporta, frizione
   engine_bad_note_it: '1.5 CRDi: più debole dei benzina'
+  checks_it:
+  - Ruggine ai sottoporta
+  - Frizione
+  - Cinghia di distribuzione
+  - '1.5 CRDi: iniettori e turbo'
+  - Sospensioni
 - id: mazda-2-dy
   make: Mazda
   model: '2'
@@ -2088,6 +2444,12 @@ models:
   strengths_it: Motori benzina Ford-Mazda, costruzione solida
   watch_out_it: Ruggine sui passaruota posteriori
   engine_bad_note_it: '1.4 CD diesel (Ford-PSA): meno durevole'
+  checks_it:
+  - Ruggine sui passaruota posteriori
+  - 'Diesel 1.4 CD: iniettori'
+  - Frizione
+  - Sospensioni
+  - Impianto elettrico
 - id: dacia-logan-sandero-i-l90-b90
   make: Dacia
   model: Logan / Sandero I
@@ -2124,6 +2486,12 @@ models:
   strengths_it: 'Vecchia meccanica Renault: grezza, economica, indistruttibile'
   watch_out_it: Ruggine sotto la scocca sulle più vecchie
   engine_bad_note_it: null
+  checks_it:
+  - Ruggine sotto la scocca sulle più vecchie
+  - '1.5 dCi: iniettori e turbo'
+  - Impianto elettrico
+  - Finiture interne economiche
+  - Sospensioni
 - id: skoda-octavia-i-1u
   make: Škoda
   model: Octavia I
@@ -2161,6 +2529,12 @@ models:
   strengths_it: 'Preferita dai tassisti: 1.9 TDI oltre 1.000.000 di km'
   watch_out_it: Ruggine sul portellone, volano bimassa
   engine_bad_note_it: '1.8T / RS: turbo benzina, più usura'
+  checks_it:
+  - Volano bimassa e frizione sul 1.9 TDI
+  - Iniettori e turbo
+  - Ruggine sul portellone
+  - Cinghia di distribuzione
+  - '1.8T: bobine e turbo'
 - id: volkswagen-golf-iv-bora-1j
   make: Volkswagen
   model: Golf IV / Bora
@@ -2202,6 +2576,12 @@ models:
   strengths_it: '1.9 TDI ALH: tra i migliori diesel mai costruiti'
   watch_out_it: Alzacristalli, impianto elettrico, sensore temperatura
   engine_bad_note_it: '1.4 16V / 1.8T / V5: più deboli o costosi'
+  checks_it:
+  - Alzacristalli e impianto elettrico
+  - Sensore della temperatura del liquido e strumentazione (pixel)
+  - '1.9 TDI: volano bimassa, iniettori, turbo'
+  - Cinghia di distribuzione
+  - Evitare 1.4 16V, 1.8T e V5 se non documentati
 - id: volkswagen-passat-b5-audi-a4-b5-b6-3b-8d-8e
   make: Volkswagen
   model: Passat B5 / Audi A4 B5-B6
@@ -2244,6 +2624,12 @@ models:
   strengths_it: '1.9 TDI pompa-iniettore: comuni oltre 500.000 km'
   watch_out_it: Bracci sospensione anteriori, V6 TDI da evitare
   engine_bad_note_it: '2.5 V6 TDI: usura alberi a camme, costoso'
+  checks_it:
+  - Bracci delle sospensioni anteriori (rumori e usura)
+  - Evitare il 2.5 V6 TDI (alberi a camme)
+  - '1.9 TDI: volano bimassa, iniettori pompa-iniettore'
+  - Cinghia di distribuzione
+  - 'Cambio automatico/multitronic (Audi): verificare bene'
 - id: toyota-corolla-e120-e120
   make: Toyota
   model: Corolla E120
@@ -2281,6 +2667,12 @@ models:
   strengths_it: Silenziosa, semplice, chilometri infiniti
   watch_out_it: Iniettori 1.4 D-4D, consumo d'olio su alcuni 1.6
   engine_bad_note_it: '2.0/2.2 D-4D: problemi a guarnizione testata e iniettori'
+  checks_it:
+  - Consumo d'olio su alcuni 1.6/1.8 VVT-i
+  - Evitare 2.0/2.2 D-4D (guarnizione testata e iniettori)
+  - Cambio robotizzato MMT
+  - Ruggine rara
+  - Impianto di climatizzazione
 - id: toyota-avensis-t22-t25-t22-t25
   make: Toyota
   model: Avensis T22 / T25
@@ -2318,6 +2710,12 @@ models:
   strengths_it: Berlina da taxi, tassi di guasto bassissimi
   watch_out_it: Guarnizione testata 2.0/2.2 D-4D (T25)
   engine_bad_note_it: '2.0/2.2 D-4D: guarnizioni della testata che cedono'
+  checks_it:
+  - Evitare 2.0/2.2 D-4D (guarnizione della testata)
+  - Consumo d'olio su alcuni 1.8 VVT-i
+  - Cambio automatico
+  - Ruggine rara
+  - Sospensioni
 - id: toyota-prius-ii-xw20
   make: Toyota
   model: Prius II
@@ -2353,6 +2751,12 @@ models:
   strengths_it: Taxi con 500.000-1.000.000 km col sistema ibrido originale
   watch_out_it: Età della batteria ibrida, pompa dell'inverter
   engine_bad_note_it: null
+  checks_it:
+  - Età e stato della batteria ibrida (diagnosi consigliata)
+  - Pompa dell'inverter
+  - Fari e ventola della batteria
+  - Consumo d'olio su esemplari molto chilometrati
+  - 'Taxi: chilometri elevati, ma spesso ben manutenuti'
 - id: honda-civic-vii-accord-vii-eu-ep-cl-cm
   make: Honda
   model: Civic VII / Accord VII
@@ -2392,6 +2796,12 @@ models:
   strengths_it: Benzina i-VTEC quasi indistruttibili
   watch_out_it: Consumo d'olio su alcuni 2.4, catena 2.2 i-CTDi
   engine_bad_note_it: '2.2 i-CTDi diesel: buono ma costoso se trascurato'
+  checks_it:
+  - Consumo d'olio su alcuni 2.4
+  - '2.2 i-CTDi: catena di distribuzione e volano'
+  - Ruggine rara
+  - Sospensioni
+  - Climatizzatore
 - id: mazda-3-6-bk-gg
   make: Mazda
   model: 3 / 6
@@ -2432,6 +2842,12 @@ models:
   strengths_it: Motori benzina MZR molto robusti
   watch_out_it: Ruggine sui passaruota posteriori, diesel 2.0 MZR-CD
   engine_bad_note_it: '2.0 MZR-CD diesel: pompa olio e iniettori'
+  checks_it:
+  - Ruggine sui passaruota posteriori (punto critico)
+  - 'Diesel 2.0 MZR-CD: pompa olio, iniettori, FAP'
+  - Sospensioni
+  - Frizione
+  - Impianto elettrico
 - id: peugeot-406-8b-8e
   make: Peugeot
   model: '406'
@@ -2467,6 +2883,12 @@ models:
   strengths_it: '2.0 HDi: il classico motore dei taxi francesi'
   watch_out_it: Cuscinetti assale posteriore, impianto elettrico
   engine_bad_note_it: '3.0 V6 / 2.2 HDi: costi più alti'
+  checks_it:
+  - Cuscinetti dell'assale posteriore
+  - Impianto elettrico
+  - '2.0 HDi: iniettori e turbo'
+  - Cinghia di distribuzione
+  - Cambio automatico
 - id: mercedes-benz-e-class-w210-w210
   make: Mercedes-Benz
   model: E-Class W210
@@ -2513,6 +2935,12 @@ models:
   strengths_it: 'Sei cilindri diesel OM606: una leggenda'
   watch_out_it: Ruggine pesante (parafanghi, porte, bagagliaio), CDI prima serie
   engine_bad_note_it: 'E 220/270 CDI primo common-rail: guarnizioni iniettori e flap'
+  checks_it:
+  - Ruggine pesante su parafanghi, porte, bagagliaio, sottoporta e attacchi delle molle
+  - 'Prime CDI (E220/270): guarnizioni degli iniettori e flap di aspirazione'
+  - Cambio automatico
+  - Elettronica di comfort
+  - Sospensioni
 - id: bmw-3-series-e46-5-series-e39-e46-e39
   make: BMW
   model: 3 Series E46 / 5 Series E39
@@ -2566,6 +2994,12 @@ models:
   strengths_it: 'Sei cilindri in linea M54: fluido e molto durevole'
   watch_out_it: Raffreddamento, telaietto posteriore (E46), perdite d'olio
   engine_bad_note_it: '4 cilindri N42/N46 e primi diesel: meno durevoli'
+  checks_it:
+  - Telaietto posteriore della E46 (crepe nella scocca)
+  - Raffreddamento (radiatore, vaschetta, pompa acqua)
+  - Perdite d'olio (coperchio valvole, filtro olio)
+  - Valvola VANOS
+  - Cambio automatico
 - id: volvo-v70-ii-s60-p2
   make: Volvo
   model: V70 II / S60
@@ -2606,6 +3040,12 @@ models:
   strengths_it: I 5 cilindri superano normalmente i 400.000 km
   watch_out_it: Cambio automatico (AW55), coppia conica sulle AWD
   engine_bad_note_it: 'T5 / R: alte prestazioni, più usura'
+  checks_it:
+  - Cambio automatico AW55 (cambiate dure)
+  - Coppia conica sulle AWD
+  - Valvola PCV del motore (perdite d'olio)
+  - Cinghia di distribuzione
+  - Elettronica (modulo dell'acceleratore)
 - id: lexus-ls430-is200-ucf30-xe10
   make: Lexus
   model: LS430 / IS200
@@ -2645,6 +3085,12 @@ models:
   strengths_it: Ingegneria di lusso Toyota, tassi di guasto bassissimi
   watch_out_it: Sospensioni pneumatiche (LS430), prezzi ricambi
   engine_bad_note_it: null
+  checks_it:
+  - Sospensioni pneumatiche (LS430)
+  - Prezzi dei ricambi originali
+  - Display e cruscotto
+  - Cambio automatico
+  - Ruggine rara
 - id: toyota-land-cruiser-j100-j100
   make: Toyota
   model: Land Cruiser J100
@@ -2688,6 +3134,12 @@ models:
   strengths_it: '1HD-FTE: leggendario sei cilindri diesel'
   watch_out_it: Ruggine al telaio, avantreno a ruote indipendenti
   engine_bad_note_it: '3.0 D-4D (J120): problemi a iniettori e pistoni'
+  checks_it:
+  - Ruggine al telaio
+  - Avantreno a ruote indipendenti (bracci e giunti)
+  - '1HD-FTE: iniettori e turbo'
+  - Sospensioni AHC (se presenti) costose
+  - Uso fuoristrada pesante
 - id: toyota-hilux-n140-n150-n140-n170
   make: Toyota
   model: Hilux N140-N150
@@ -2723,6 +3175,12 @@ models:
   strengths_it: Top Gear non è riuscito a distruggerne uno
   watch_out_it: Ruggine al telaio, iniettori 2.5 D-4D a km alti
   engine_bad_note_it: null
+  checks_it:
+  - Ruggine al telaio (verificare, ci sono richiami per i telai)
+  - '2.5 D-4D: iniettori a chilometraggi alti'
+  - Frizione e volano
+  - Uso da lavoro
+  - Cassone e balestre
 - id: toyota-rav4-ii-xa20
   make: Toyota
   model: RAV4 II
@@ -2759,6 +3217,12 @@ models:
   strengths_it: SUV benzina semplice e molto affidabile
   watch_out_it: Differenziale posteriore, 2.0 D-4D
   engine_bad_note_it: '2.0 D-4D: meno durevole del benzina'
+  checks_it:
+  - Differenziale posteriore
+  - Evitare il 2.0 D-4D
+  - Consumo d'olio su alcuni benzina
+  - Sospensioni
+  - Ruggine rara
 - id: suzuki-jimny-fj-sn
   make: Suzuki
   model: Jimny
@@ -2794,6 +3258,12 @@ models:
   strengths_it: Piccolo vero fuoristrada semplice che non si ferma mai
   watch_out_it: Ruggine al telaio, ponte posteriore
   engine_bad_note_it: '1.5 DDiS (diesel Renault): meno durevole'
+  checks_it:
+  - Ruggine al telaio (punto critico)
+  - Ponte posteriore
+  - Esemplari modificati per fuoristrada
+  - Frizione
+  - Evitare il 1.5 DDiS se possibile
 - id: suzuki-grand-vitara-ft-jt
   make: Suzuki
   model: Grand Vitara
@@ -2829,6 +3299,12 @@ models:
   strengths_it: Telaio a longheroni (I serie), motori benzina robusti
   watch_out_it: Ruggine, diesel 1.9 DDiS
   engine_bad_note_it: 'Diesel 1.9 DDiS / 2.0 HDi: più deboli'
+  checks_it:
+  - Ruggine
+  - Evitare 1.9 DDiS / 2.0 HDi
+  - Trasmissione 4x4
+  - Sospensioni
+  - Impianto elettrico
 - id: honda-cr-v-ii-rd4-rd9
   make: Honda
   model: CR-V II
@@ -2865,6 +3341,12 @@ models:
   strengths_it: 'Motore K20: uno dei migliori Honda'
   watch_out_it: Olio differenziale posteriore, compressore clima
   engine_bad_note_it: '2.2 i-CTDi: buono ma costoso se trascurato'
+  checks_it:
+  - Olio del differenziale posteriore (rumori in curva)
+  - Compressore del climatizzatore
+  - '2.2 i-CTDi: catena e volano'
+  - Sospensioni
+  - Ruggine rara
 - id: subaru-forester-sf-sg-sf-sg
   make: Subaru
   model: Forester SF / SG
@@ -2905,6 +3387,12 @@ models:
   strengths_it: Trazione integrale simmetrica e boxer aspirato
   watch_out_it: Guarnizioni testata sull'EJ25, ruggine sui passaruota posteriori
   engine_bad_note_it: '2.5 / XT turbo: guarnizione testata e turbo'
+  checks_it:
+  - Guarnizione della testata (EJ25)
+  - Ruggine sui passaruota posteriori
+  - 'Turbo XT: turbina e modifiche'
+  - 'Trasmissione integrale: pneumatici tutti uguali'
+  - Cinghia di distribuzione
 - id: mitsubishi-l200-iii-k60-k70
   make: Mitsubishi
   model: L200 III
@@ -2941,6 +3429,12 @@ models:
   strengths_it: '4D56: diesel meccanico semplice che dura per sempre'
   watch_out_it: Ruggine al telaio, intervalli cinghia di distribuzione
   engine_bad_note_it: '2.5 DI-D (successivo): catena e FAP'
+  checks_it:
+  - Ruggine al telaio e al cassone
+  - Cinghie di distribuzione e degli equilibratori
+  - Uso da lavoro
+  - Trasmissione 4x4
+  - Molle a balestra
 - id: citroen-berlingo-peugeot-partner-i-m49-m59
   make: Citroën
   model: Berlingo / Peugeot Partner I
@@ -2982,6 +3476,12 @@ models:
   strengths_it: '1.9 D DW8: diesel meccanico praticamente indistruttibile'
   watch_out_it: Ruggine ai sottoporta, cuscinetti assale posteriore
   engine_bad_note_it: '1.6 HDi: turbo e guarnizioni iniettori'
+  checks_it:
+  - Ruggine ai sottoporta
+  - Cuscinetti dell'assale posteriore
+  - '1.6 HDi: turbo e guarnizioni degli iniettori'
+  - Uso da lavoro
+  - Impianto elettrico
 - id: renault-kangoo-i-kc
   make: Renault
   model: Kangoo I
@@ -3019,6 +3519,12 @@ models:
   strengths_it: '1.5 dCi: uno dei diesel più diffusi in Europa'
   watch_out_it: Ruggine, impianto elettrico, iniettori dCi a km alti
   engine_bad_note_it: null
+  checks_it:
+  - Ruggine
+  - Impianto elettrico
+  - '1.5 dCi: iniettori a chilometraggi alti'
+  - Uso da lavoro
+  - Cinghia di distribuzione
 - id: fiat-doblo-i-119-223
   make: Fiat
   model: Doblò I
@@ -3055,3 +3561,9 @@ models:
   strengths_it: '1.9 JTD: diesel Fiat robusto, ricambi economici in Italia'
   watch_out_it: Ruggine, sospensione anteriore
   engine_bad_note_it: '1.3 Multijet: meno adatto a uso pesante'
+  checks_it:
+  - Ruggine
+  - Sospensione anteriore
+  - '1.9 JTD: iniettori e turbo'
+  - Uso da lavoro
+  - Impianto elettrico

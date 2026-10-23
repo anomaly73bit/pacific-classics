@@ -163,7 +163,8 @@
         <div class="specs">${[l.year, l.mileage_km != null ? fmt(l.mileage_km) + " km" : null].filter(Boolean).map(x => `<span>${esc(x)}</span>`).join("")}</div>
         <div class="where">${flag(l.country)} <span>${esc(l.city || COUNTRY[l.country] || "")}</span></div>
       </div></article>`;
-    return `<article class="card">
+    const fr = l.price_rating?.frame;
+    return `<article class="card${fr ? " frame-" + fr : ""}">
       <div class="photo" data-open="${esc(keyOf(l))}">
         ${img ? `<img src="${esc(safeUrl(img))}" alt="${esc(tTitle(l))}" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='img/placeholder.svg'">` : `<img src="img/placeholder.svg" alt="">`}
         <span class="badge score ${l.score >= 75 ? "hi" : ""}" title="${esc(T.score)}">${l.score}</span>
@@ -172,7 +173,7 @@
       </div>
       <div class="body">
         <div class="top">
-          <span class="price">${priceHtml(l)}</span>
+          <span class="price">${priceHtml(l)}</span>${ratingBadge(l)}
           ${ADMIN && l.currency && l.currency !== "EUR" && l.price ? `<span class="orig">${fmt(l.price)} ${esc(l.currency)}</span>` : ""}
         </div>
         <h3 class="title"${ADMIN ? ` title="${esc(l.title)}"` : ""}>${esc(tTitle(l))}</h3>
@@ -218,6 +219,37 @@
   const quoteWa = l => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Ciao Pacific Classics, vorrei un preventivo per questa auto: " + carRef(l))}`;
   const quoteMail = l => `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Preventivo Pacific Classics: " + (l?.title || ""))}&body=${encodeURIComponent((l ? "Auto: " + carRef(l) + "\n" : "Link o descrizione dell'auto: \n") + "Città di consegna: \nNome e telefono: \n")}`;
 
+  // ---------- price verdict, documents
+  const RATING = { great: "rGreat", good: "rGood", fair: "rFair", high: "rHigh", suspicious: "rSusp", unknown: "rUnknown" };
+  function ratingBadge(l) {
+    const r = l.price_rating; if (!r || !r.level || r.level === "unknown" || r.level === "fair") return "";
+    return `<span class="rbadge ${r.frame || ""}">${esc(T[RATING[r.level]])}</span>`;
+  }
+  function verdictHtml(l) {
+    const r = l.price_rating || {}, lvl = r.level || "unknown";
+    const fair = r.fair ? (ADMIN ? r.fair : r.fair) : null;
+    const danger = l.alerts.some(a => a.level === "danger");
+    const cls = r.frame || "neutral";
+    const body = lvl === "unknown" ? T.verdictUnknown
+      : T.verdictText(lvl, Math.abs(r.pct), fmt(fair), r.peers);
+    return `<div class="verdict ${cls}">
+      <div class="v-title">${esc(T.verdictTitle)} · <b>${esc(T[RATING[lvl]])}</b></div>
+      <p>${esc(body)}</p>
+      ${danger ? `<p class="v-warn">${esc(T.verdictDanger)}</p>` : ""}
+    </div>`;
+  }
+  function docsHtml(l) {
+    const d = l.docs || {};
+    const row = (k, label) => {
+      const v = d[k], st = v === true ? "yes" : v === false ? "no" : "ask";
+      const txt = v === true ? (k === "owners" && d.owners_n ? T.docOwners(d.owners_n) : T.docYes) : v === false ? T.docNo : T.docAsk;
+      return `<li class="${st}"><span class="dot"></span><b>${esc(label)}</b><em>${esc(txt)}</em></li>`;
+    };
+    return `<div class="docs-box"><div class="v-title">${esc(T.docsTitle)}</div><ul>
+      ${row("service_book", T.docService)}${row("invoices", T.docInvoices)}${row("inspections", T.docInspections)}${row("owners", T.docOwnersLabel)}
+    </ul><p class="src">${esc(T.docsNote)}</p></div>`;
+  }
+
   function openDetail(id) {
     const l = ALL.find(x => keyOf(x) === id); if (!l) return;
     const m = MODEL_BY_ID[l.model_id] || {};
@@ -237,7 +269,13 @@
       <div class="dlg-head"><h2>${priceHtml(l)} · ${esc(tTitle(l))}</h2><button class="x" aria-label="${esc(T.close)}" data-close>×</button></div>
       <div class="gallery">${imgs}</div>
       ${l.images?.length ? `<p class="hint">${esc(T.hoverHint)}</p>` : ""}
+      <div class="verdict-row">${verdictHtml(l)}${docsHtml(l)}</div>
       <div class="dlg-grid">
+        <div class="panel checks">
+          <h3>${esc(T.checksTitle(variantName(l, m)))}</h3>
+          <ul class="chk">${(mt(m, "checks") || []).map(c => `<li>${esc(c)}</li>`).join("")}</ul>
+          <p class="src">${esc(T.checksNote)}</p>
+        </div>
         <div class="panel">
           <h3>${esc(T.details)} · ${esc(T.score)} ${l.score}/100</h3>
           <div class="alerts col">${sortAlerts(l.alerts).map(a => `<span class="al ${a.level}">${esc(alertText(a, m))}</span>`).join("")}</div>

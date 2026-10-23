@@ -21,6 +21,18 @@ window.I18N = {
     updated: d => `Updated ${d}`, reliability: "Reliability", years: "Years", category: "Type",
     stSource: "Source", stStatus: "Status", stFetched: "Fetched", stNote: "Notes", published: n => `${n} listings published`,
     lang: "Italiano", close: "Close", dealer: "Dealer", private: "Private", fuel: "Fuel", gearbox: "Gearbox",
+    checksTitle: n => `Known weak points · ${n}`, checksNote: "What to check on this model: we verify it before buying, in the report or with the workshop inspection.",
+    rGreat: "Great price", rGood: "Good price", rFair: "Fair price", rHigh: "High price", rSusp: "Suspicious price", rUnknown: "Not rated",
+    verdictTitle: "Price verdict",
+    verdictText: (lvl, pct, fair, n) => lvl === "suspicious" ? `${pct}% below the estimated market value (€ ${fair}): too cheap, may hide serious problems, an accident or a fake ad.`
+      : lvl === "high" ? `${pct}% above the estimated market value (€ ${fair}) for this model, year and mileage.`
+      : lvl === "fair" ? `In line with the estimated market value (€ ${fair}) for this model, year and mileage.`
+      : `${pct}% below the estimated market value (€ ${fair}) for this model, year and mileage.`,
+    verdictUnknown: "Too few similar cars for sale to rate this price reliably.",
+    verdictDanger: "Warning: the ad mentions problems (accident, defects or missing papers).",
+    docsTitle: "Paperwork", docService: "Service book", docInvoices: "Repair invoices", docInspections: "Inspection history", docOwnersLabel: "Owners",
+    docYes: "stated in the ad", docNo: "stated missing", docAsk: "not stated: ask", docOwners: n => `${n} owner(s)`,
+    docsNote: "Before buying we always ask the seller for copies of service book, invoices and inspections.",
     original: "Original text", highlights: "Key facts from the ad", sold: "SOLD", soldTitle: "This car has been sold", soldCount: n => `${n} recently sold`, showSold: "Show recently sold cars", estInspection: "+ Workshop inspection (optional)", onRequest: "on request", estCarAdmin: "Purchase price", openSheet: "Details & quote", ref: "Car code", estimate: "Delivered to Italy with Pacific Classics", estCar: "Car price (service included)", estFee: "Commission 5%", estTransport: "Truck transport (estimate)", estPapers: "Deregistration & export papers", estTotal: "Estimated total in escrow", estMore: "How it works", estQuote: "Request a quote", hoverHint: "Hover a photo to enlarge it, click for full screen", prev: "Previous", next: "Next",
     alerts: {
       HIST_FIVA: p => `Historic-eligible (FIVA/EU 30 y) — built ${p.year}`,
@@ -71,6 +83,18 @@ window.I18N = {
     updated: d => `Aggiornato ${d}`, reliability: "Affidabilità", years: "Anni", category: "Tipo",
     stSource: "Sito", stStatus: "Stato", stFetched: "Trovati", stNote: "Note", published: n => `${n} annunci pubblicati`,
     lang: "English", close: "Chiudi", dealer: "Concessionario", private: "Privato", fuel: "Alimentazione", gearbox: "Cambio",
+    checksTitle: n => `Punti deboli noti · ${n}`, checksNote: "Le cose da controllare su questo modello: le verifichiamo prima dell'acquisto, nel rapporto o con la perizia in officina.",
+    rGreat: "Ottimo prezzo", rGood: "Buon prezzo", rFair: "Prezzo nella media", rHigh: "Prezzo alto", rSusp: "Prezzo sospetto", rUnknown: "Non valutabile",
+    verdictTitle: "Giudizio sul prezzo",
+    verdictText: (lvl, pct, fair, n) => lvl === "suspicious" ? `${pct}% sotto il valore di mercato stimato (€ ${fair}): troppo basso, può nascondere problemi seri, un'auto incidentata o un annuncio falso.`
+      : lvl === "high" ? `${pct}% sopra il valore di mercato stimato (€ ${fair}) per questo modello, anno e chilometraggio. Si può trattare, oppure conviene guardare altre auto.`
+      : lvl === "fair" ? `In linea con il valore di mercato stimato (€ ${fair}) per questo modello, anno e chilometraggio.`
+      : `${pct}% sotto il valore di mercato stimato (€ ${fair}) per questo modello, anno e chilometraggio.`,
+    verdictUnknown: "Troppe poche auto simili in vendita per dare un giudizio affidabile sul prezzo.",
+    verdictDanger: "Attenzione: l'annuncio segnala problemi (incidente, guasti o documenti mancanti).",
+    docsTitle: "Documentazione dell'auto", docService: "Libretto tagliandi", docInvoices: "Fatture delle riparazioni", docInspections: "Storico revisioni", docOwnersLabel: "Proprietari",
+    docYes: "dichiarato nell'annuncio", docNo: "dichiarato assente", docAsk: "non indicato: da chiedere", docOwners: n => `${n}° proprietario`,
+    docsNote: "Prima di comprare chiediamo sempre al venditore copie di libretto, fatture e revisioni.",
     original: "Testo originale dell'annuncio", highlights: "Punti salienti dell'annuncio", sold: "VENDUTA", soldTitle: "Quest'auto è stata venduta", soldCount: n => `${n} vendute di recente`, showSold: "Mostra le auto vendute di recente", estInspection: "+ Perizia in officina (facoltativa)", onRequest: "su preventivo", estCarAdmin: "Prezzo d'acquisto", openSheet: "Scheda completa e preventivo", ref: "Codice auto", estimate: "In Italia con Pacific Classics", estCar: "Prezzo dell'auto (servizio incluso)", estFee: "Commissione 5%", estTransport: "Trasporto su bisarca (stima)", estPapers: "Radiazione e pratiche export", estTotal: "Totale stimato in escrow", estMore: "Come funziona", estQuote: "Richiedi un preventivo", hoverHint: "Passa il mouse su una foto per ingrandirla, clicca per vederla a tutto schermo", prev: "Precedente", next: "Successiva",
     alerts: {
       HIST_FIVA: p => `Iscrivibile come storica (FIVA/UE 30 anni) — del ${p.year}`,

@@ -65,3 +65,41 @@ def extract(text: str | None) -> list[str]:
         out.insert(0, f"{o.group(1)}° proprietario")
     # warnings last
     return [x for x in out if not x.startswith("⚠")] + [x for x in out if x.startswith("⚠")]
+
+
+# --- documentation signals: True = stated, False = stated missing, None = not mentioned
+DOCS = {
+    "service_book": (
+        R(r"scheckheft|serviceheft|wartungsheft|servisn[íi] kn[íi][žz]k|servisná kniha|onderhoudsboek|onderhoudshistorie|carnet d.entretien|libro de mantenimiento|service ?(book|history)|libretto (dei )?tagliandi|tagliandi (certificati|documentati)|lückenlos"),
+        R(r"(ohne|kein|keine)\s+(scheckheft|serviceheft)|scheckheft (fehlt|nicht vorhanden)|bez servisn[íi]|geen onderhoudsboek|sans carnet|no service history|senza libretto"),
+    ),
+    "invoices": (
+        R(r"rechnungen|belege|quittungen|faktur[ay]|facturen|nota's|factures|facturas|invoices|receipts|fatture|ricevute"),
+        R(r"(ohne|keine)\s+(rechnungen|belege)|bez faktur|sans factures|senza fatture"),
+    ),
+    "inspections": (
+        R(r"tüv[- ]?(berichte|historie|protokolle)|hu[- ]?berichte|alle tüv|stk protokol|apk[- ]?(rapport|historie)|nap\b|contrôles? techniques?|itv (al día|historial)|storico (delle )?revisioni|revisioni regolari|kilometerstand logisch"),
+        None,
+    ),
+    "owners": (
+        R(r"\b([1-9])\.?\s?(hand|hd\b|majitel|majiteľ|eigenaar|propriétaire|propietario|proprietario)|erstbesitz|first owner|unico proprietario|prima mano"),
+        None,
+    ),
+}
+
+
+def extract_docs(text: str | None) -> dict:
+    """Which documents the seller mentions. Missing from the ad != missing: the site says 'ask'."""
+    t = (text or "").lower()
+    out = {}
+    for key, (pos, neg) in DOCS.items():
+        if neg is not None and neg.search(t):
+            out[key] = False
+        elif pos.search(t):
+            out[key] = True
+        else:
+            out[key] = None
+    m = DOCS["owners"][0].search(t)
+    if m:
+        out["owners_n"] = int(m.group(1)) if m.group(1) else 1
+    return out

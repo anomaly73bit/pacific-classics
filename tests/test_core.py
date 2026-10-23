@@ -108,7 +108,7 @@ def test_historic_status():
 
 def test_advisor_flags():
     m = MODELS["mercedes-benz-e-class-w124"]
-    stats = {"count": 10, "median_price": 8000}
+    stats = {"count": 10, "median_price": 8000, "_peers": [(1990, 420000, 8000)] * 10}
     base = {"title": "Mercedes 300D W124 Unfallfrei Scheckheft", "year": 1990, "mileage_km": 420000,
             "price_eur": 5000, "images": ["x"], "country": "DE", "seller_type": "private", "gearbox": "Manual"}
     codes = {a["code"] for a in advise(base, m, stats, 2026)["alerts"]}
@@ -244,3 +244,19 @@ def test_price_ladder():
     # never cheaper just above a threshold
     for t in (500, 1600, 3000, 5000, 8000, 12000, 18000, 25000, 40000):
         assert client_price(t + 1) >= client_price(t)
+
+
+def test_price_rating_frames():
+    from pacific_classics.advisor import fair_price, price_rating
+    stats = {"_peers": [(1990, 250000, 8000)] * 6 + [(2004, 150000, 3000)] * 6}
+    fair, n = fair_price({"year": 1991, "mileage_km": 250000}, stats)
+    assert fair == 8000 and n == 6                       # compared with cars of similar year only
+    fair_hi_km, _ = fair_price({"year": 1991, "mileage_km": 350000}, stats)
+    assert fair_hi_km == 7200                            # +100,000 km -> peers re-priced -10%
+    pool = [6000, 7000, 7500, 8000, 8500, 9000, 12000]
+    assert price_rating(6500, 8000, 7, False, pool)["frame"] == "green"
+    assert price_rating(10000, 8000, 7, False, pool)["frame"] == "red"
+    assert price_rating(3000, 8000, 7, False, pool)["level"] == "suspicious"
+    assert price_rating(8100, 8000, 6, False)["frame"] is None
+    assert price_rating(7000, 8000, 6, True)["frame"] == "red"   # accident/defect: red whatever the price
+    assert price_rating(7000, None, 2, False)["level"] == "unknown"

@@ -259,3 +259,32 @@ body.is-admin .client-only { display: none !important; }
 .login-err { color: var(--danger); background: var(--danger-bg); padding: 8px 12px; border-radius: 8px; margin: 0; }
 .perizia .hl li { background: var(--info-bg); color: #1f3a5f; }
 .perizia .hl li::before { content: "•"; }
+
+/* price frame on cards */
+.card.frame-green { border: 3px solid #1f9d55; box-shadow: 0 0 0 3px rgba(31,157,85,.12), var(--shadow); }
+.card.frame-red { border: 3px solid #d0313d; box-shadow: 0 0 0 3px rgba(208,49,61,.12), var(--shadow); }
+.rbadge { font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 999px; white-space: nowrap; align-self: center; }
+.rbadge.green { background: #1f9d55; color: #fff; }
+.rbadge.red { background: #d0313d; color: #fff; }
+/* verdict + documents */
+.verdict-row { display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; padding: 0 20px 18px; }
+.verdict, .docs-box { border-radius: 14px; padding: 16px 18px; border: 2px solid var(--line); background: var(--paper); }
+.verdict.green { border-color: #1f9d55; background: #eaf7ef; }
+.verdict.red { border-color: #d0313d; background: #fdecee; }
+.verdict .v-title, .docs-box .v-title { font-size: 13px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin-bottom: 6px; }
+.verdict .v-title b { font-size: 18px; text-transform: none; letter-spacing: 0; color: var(--navy); font-family: "Playfair Display", Georgia, serif; }
+.verdict.green .v-title b { color: #157a41; } .verdict.red .v-title b { color: #b21f2b; }
+.verdict p { margin: 4px 0; }
+.v-warn { color: #b21f2b; font-weight: 600; }
+.docs-box ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 7px; }
+.docs-box li { display: grid; grid-template-columns: 14px 1fr auto; gap: 10px; align-items: center; font-size: 14px; }
+.docs-box .dot { width: 12px; height: 12px; border-radius: 50%; background: #c9c2b0; }
+.docs-box li.yes .dot { background: #1f9d55; } .docs-box li.no .dot { background: #d0313d; }
+.docs-box em { font-style: normal; font-size: 12.5px; color: var(--muted); }
+.docs-box li.yes em { color: #157a41; font-weight: 600; } .docs-box li.no em { color: #b21f2b; font-weight: 600; }
+/* known weak points */
+.panel.checks { border: 2px solid var(--gold); background: #fffaf0; }
+.chk { list-style: none; padding: 0; margin: 6px 0 8px; display: grid; gap: 6px; }
+.chk li { padding: 7px 10px 7px 32px; background: #fff; border: 1px solid var(--line); border-radius: 8px; position: relative; font-size: 14px; }
+.chk li::before { content: "🔧"; position: absolute; left: 9px; top: 6px; font-size: 13px; }
+@media (max-width: 900px) { .verdict-row { grid-template-columns: 1fr; } }
