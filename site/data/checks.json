@@ -1,0 +1,599 @@
+{
+"mercedes-benz-190-w201": [
+"Ruggine su passaruota posteriori, sottoporta, punti del cric e attacchi delle molle posteriori",
+"Bracci posteriori multilink e boccole (rumori, usura pneumatici irregolare)",
+"Diesel 2.0D/2.5D – avviamento a freddo, candelette e fumosità",
+"Catena di distribuzione e tendicatena sui benzina (rumore all'avviamento)",
+"Perdite d'olio dalla guarnizione del coperchio punterie e dalla coppa",
+"Iniezione KE-Jetronic (2.0/2.3) – minimo irregolare e partenze a caldo difficili"
+],
+"mercedes-benz-e-class-w124": [
+"Cablaggio motore \"biodegradabile\" sulle 1993-95 (isolamento che si sbriciola)",
+"Ruggine su sottoporta, passaruota, attacchi del cric, bordo del parabrezza e fondo del bagagliaio",
+"Sospensione autolivellante (station wagon S124) – sfere idrauliche scariche",
+"Diesel OM60x – stato delle candelette, giunti del motore, gioco della pompa iniezione",
+"Cambio automatico – cambiate dure o slittamenti, olio mai sostituito",
+"Supporti motore e silent-block del telaietto posteriore"
+],
+"mercedes-benz-w123-late-units-w123": [
+"Ruggine strutturale – longheroni, sottoporta, pianale anteriore, attacchi del cric, intorno al parabrezza",
+"Freni a disco posteriori e servofreno",
+"Diesel aspirati – potenza scarsa normale, ma verificare compressione e fumosità",
+"Chiusura centralizzata a depressione (pompa e tubicini)",
+"Sterzo con gioco (scatola guida e tiranti)"
+],
+"mercedes-benz-s-class-w126": [
+"Catena di distribuzione e guide in plastica sui V8 (sostituire a scadenza)",
+"Climatizzatore e servomotori dell'aria",
+"Sospensioni pneumatiche/idropneumatiche (SEL/560) – costose da ripristinare",
+"Ruggine sotto le guarnizioni dei finestrini e nei sottoporta",
+"Elettronica di comfort (sedili, specchi, chiusura a depressione)"
+],
+"mercedes-benz-sl-r107": [
+"Ruggine sotto i tappeti, nei passaruota e sotto la cromatura delle soglie",
+"Catena di distribuzione a una fila sulle prime 380SL",
+"Capote in tela e hardtop (presenza e stato delle guarnizioni)",
+"Iniezione K/KE-Jetronic – regolazione e partenze a caldo",
+"Corrispondenza numeri di telaio e motore (auto molto contraffatta)"
+],
+"mercedes-benz-g-class-w460-w463": [
+"Ruggine su telaio, porte (bordo inferiore), parafanghi e pianale",
+"Bloccaggi differenziale – verificare che si inseriscano tutti",
+"Diesel 300GD/250GD lenti per natura: controllare compressione e fumosità",
+"Perdite d'olio da assali e riduttore",
+"Infiltrazioni d'acqua da porte e tetto (soprattutto versioni corte)"
+],
+"mercedes-benz-sl-r129": [
+"Idraulica della capote (pompa, tubi, cilindri che perdono)",
+"Sospensione ADS se presente (costosa)",
+"Cablaggio \"biodegradabile\" sulle prime serie",
+"Elettronica di comfort e roll-bar automatico",
+"Hardtop – presenza e stato delle guarnizioni"
+],
+"volvo-240-245-240": [
+"Ruggine nella parte bassa delle portiere, passaruota e attacchi del ponte posteriore",
+"Cablaggio e connettori, relè della pompa benzina",
+"Cinghia di distribuzione B230 (motore non interferente, ma va cambiata)",
+"Riscaldamento e servomotori del clima",
+"Assale posteriore e boccole delle barre di reazione"
+],
+"volvo-740-760-700-series": [
+"Cambio automatico usurato (AW70/71)",
+"Ruggine su passaruota e bordo del portellone",
+"Turbo B230FT – perdite d'olio e gioco della turbina",
+"Elettronica di accensione e flussometro",
+"Evitare il V6 PRV (760): consumi e problemi ai alberi a camme"
+],
+"volvo-940-960-900-series": [
+"Cambio automatico – cambiate lente o brusche",
+"960 sei cilindri: più delicato, verificare manutenzione documentata",
+"Ruggine su passaruota posteriori e portellone",
+"Turbo B230FT/B204FT – perdite d'olio e manicotti",
+"Climatizzatore ed elettronica del cruscotto"
+],
+"volvo-850-850": [
+"Cambio automatico AW50-42 (cambiate dure, modalità di emergenza)",
+"Cinghia di distribuzione 5 cilindri – motore interferente, scadenze rigide",
+"Supporti motore e parte anteriore del telaio",
+"Turbo T5/R: perdite d'olio e usura della turbina",
+"Display del contachilometri e quadro strumenti (pixel spenti)"
+],
+"toyota-land-cruiser-j60-j70-j80": [
+"Ruggine al telaio, ai punti di attacco delle balestre e nei passaruota",
+"Guarnizione della testata e testata sui diesel turbo 12H-T/1HD-T",
+"Perdite dai mozzi anteriori (birfield) e dagli assali",
+"Bloccaggi differenziale e riduttore – verificarne il funzionamento",
+"Uso fuoristrada pesante: sottoscocca, ammortizzatori, segni di urti"
+],
+"toyota-hilux-4runner-n50-n100": [
+"Ruggine al telaio e al cassone (pick-up)",
+"Diesel 2L/2L-T: testata e guarnizione (surriscaldamento)",
+"Mozzi a ruota libera e trasmissione 4x4",
+"Molle a balestra e giochi dello sterzo",
+"Uso da lavoro: chilometri e manutenzione reali"
+],
+"toyota-corolla-e80-e90-e100": [
+"Ruggine su passaruota e sottoporta",
+"Perdite d'olio dalla guarnizione del coperchio valvole",
+"Sospensioni e silent-block",
+"Carburatore sulle versioni base (minimo e consumi)",
+"Cinghia di distribuzione"
+],
+"toyota-camry-carina-ii-carina-e-v20-v30-t150-t190": [
+"Ruggine su passaruota posteriori",
+"Cinghia di distribuzione del 3S-FE",
+"Consumo d'olio sui motori molto chilometrati",
+"Cambio automatico (fluido mai sostituito)",
+"Pochi esemplari ben tenuti: verificare la storia"
+],
+"toyota-celica-mr2-supra-mk3-t160-t180-w10-w20-a70": [
+"Supra 7M-GTE: guarnizione della testata (verificare se sostituita con quella multistrato)",
+"Ruggine su passaruota, sottoporta e tetto targa",
+"Turbo e tubazioni dell'olio sulle versioni turbo",
+"Esemplari modificati o elaborati: preferire originali",
+"Celica GT-Four/MR2 turbo: uso sportivo pesante"
+],
+"toyota-previa-xr10": [
+"Motore centrale: accesso difficile, verificare perdite d'olio e manutenzione",
+"Ruggine sotto le porte scorrevoli",
+"Cambio automatico",
+"Climatizzatore posteriore",
+"Ricambi di carrozzeria rari"
+],
+"lexus-ls400-xf10": [
+"Cinghia di distribuzione del 1UZ (motore non interferente sulle prime, ma va cambiata)",
+"Display del cruscotto e del climatizzatore (pixel spenti)",
+"Ammortizzatori e sospensioni pneumatiche (versioni con sospensione ad aria)",
+"Servosterzo – perdite dalla pompa",
+"Consumi elevati e costi ricambi originali"
+],
+"honda-civic-crx-accord-prelude-various": [
+"Ruggine su passaruota posteriori e sottoporta",
+"Esemplari modificati (VTEC elaborati, assetti): preferire originali",
+"Cinghia di distribuzione (motori interferenti)",
+"Prelude 4WS: sterzo posteriore",
+"Cambio manuale: sincronizzatori della seconda e terza"
+],
+"mazda-mx-5-na": [
+"Ruggine ai sottoporta e ai passaruota posteriori (punto critico)",
+"Fori di scarico dell'acqua sotto la capote intasati",
+"Capote in tela (strappi, lunotto opaco)",
+"Primo albero motore \"corto\" sulle prime 1.6 (verificare puleggia)",
+"Esemplari modificati o con uso in pista"
+],
+"mazda-323-626-bf-ba-gc-ge": [
+"Ruggine",
+"Cinghia di distribuzione",
+"Cambio automatico sulle 626 V6",
+"Diesel RF: avviamento a freddo e pompa iniezione",
+"Ricambi di carrozzeria rari"
+],
+"nissan-patrol-terrano-i-y60-gr-wd21": [
+"Ruggine al telaio e ai passaruota",
+"TD42: guarnizione della testata se surriscaldato; RD28: testata crepata su abusi",
+"Evitare lo ZD30 3.0 Di (pistoni e testata)",
+"Mozzi e trasmissione 4x4",
+"Uso fuoristrada pesante: sottoscocca e sospensioni"
+],
+"nissan-sunny-micra-200sx-n13-n14-k10-s13": [
+"Ruggine",
+"200SX S13: quasi sempre elaborate o usate in drift – preferire originali",
+"Micra K10: carburatore e cambio automatico (sui modelli automatici)",
+"Catena di distribuzione e consumo d'olio sui motori chilometrati",
+"Sospensioni e silent-block"
+],
+"mitsubishi-pajero-i-ii": [
+"Evitare il 2.8 TD (4M40): crepe alla testata",
+"Ruggine al telaio, passaruota e sottoporta",
+"Cinghie di distribuzione e degli equilibratori del 2.5 TD",
+"Trasmissione Super Select (selezione 4x4 che si inceppa)",
+"Uso fuoristrada pesante"
+],
+"mitsubishi-galant-lancer-l200-various": [
+"Ruggine (L200: telaio e cassone)",
+"Cinghia di distribuzione e degli equilibratori del 4G63",
+"Versioni turbo/VR-4/Evo: uso sportivo e modifiche",
+"Diesel 4D56: guarnizione della testata",
+"Ricambi di carrozzeria rari"
+],
+"subaru-legacy-impreza-bc-bd-gc": [
+"Guarnizione della testata (soprattutto EJ25)",
+"Cinghia di distribuzione dei boxer (interferente sulle versioni turbo)",
+"Ruggine su passaruota posteriori",
+"Trasmissione integrale: pneumatici tutti uguali, giunti e differenziale centrale",
+"Versioni turbo (WRX/STI): elaborazioni e uso sportivo"
+],
+"suzuki-sj-samurai-vitara-sj-et": [
+"Ruggine al telaio (punto critico) e al pianale",
+"Mozzi a ruota libera e trasmissione 4x4",
+"Esemplari \"rialzati\" o modificati per fuoristrada",
+"Capote e infiltrazioni d'acqua (versioni cabrio)",
+"Guarnizione della testata se surriscaldato"
+],
+"daihatsu-rocky-feroza-charade-f70-f80-f300-g100": [
+"Ruggine",
+"Ricambi rari (verificare disponibilità)",
+"Diesel 2.8 (Rocky): guarnizione testata e pompa iniezione",
+"Trasmissione 4x4",
+"Impianto elettrico"
+],
+"peugeot-205-309-405-306-various": [
+"Impianto elettrico (connettori, quadro strumenti)",
+"Assale posteriore a barre di torsione: cuscinetti dei bracci (ruote posteriori inclinate)",
+"Cinghia di distribuzione XUD",
+"Ruggine minore su passaruota e sotto le guarnizioni",
+"GTI: auto spesso maltrattate e modificate"
+],
+"peugeot-505-505": [
+"Ruggine",
+"Ricambi di carrozzeria rari",
+"Diesel 2.5: pompa iniezione e testata",
+"Assale posteriore e sospensioni",
+"Impianto elettrico"
+],
+"citroen-bx-zx-xantia-various": [
+"Idraulica (BX, Xantia): sfere da sostituire, tubi idraulici corrosi, pompa",
+"Xantia Activa/V6: sistemi complessi e costosi",
+"Assale posteriore (cuscinetti dei bracci)",
+"Cinghia di distribuzione XUD",
+"Impianto elettrico"
+],
+"renault-4-r4": [
+"Ruggine al telaio e al pianale (punto critico)",
+"Ruggine nei parafanghi e nei montanti",
+"Freni e servofreno",
+"Cambio a cloche: tiranteria usurata",
+"Impianto elettrico semplice ma spesso rimaneggiato"
+],
+"renault-express-19-clio-i-diesel-various": [
+"Impianto elettrico e connettori",
+"Cinghia di distribuzione del F8Q",
+"Assale posteriore a barre di torsione (cuscinetti)",
+"Ruggine (Express: pianale del vano di carico)",
+"Clio Williams/16V: uso sportivo e modifiche"
+],
+"fiat-panda-141": [
+"Ruggine su sottoporta, pianale, passaruota e attacchi delle balestre posteriori",
+"4x4: giunto e trasmissione posteriore",
+"Infiltrazioni d'acqua da parabrezza e tetto apribile",
+"FIRE: cinghia di distribuzione",
+"Impianto elettrico"
+],
+"fiat-uno-tipo-diesel-146-160": [
+"Ruggine",
+"Uno Turbo: turbina e modifiche",
+"Cinghia di distribuzione",
+"Impianto elettrico e quadro digitale (Tipo)",
+"Sospensioni"
+],
+"volkswagen-golf-i-ii-jetta-mk1-mk2": [
+"Ruggine sotto la batteria, nei passaruota, sottoporta e porte inferiori",
+"Diesel 1.6D/TD: guarnizione della testata e turbo",
+"Cinghia di distribuzione",
+"G60 e GTI: modifiche e uso sportivo",
+"Impianto elettrico e servosterzo"
+],
+"volkswagen-passat-b3-b4-golf-iii-polo-b3-b4-mk3-6n": [
+"Impianto elettrico (alzacristalli, chiusura centralizzata)",
+"1.9 TDI: iniettori, turbo e volano bimassa",
+"Cinghia di distribuzione",
+"Ruggine su passaruota e attorno al tetto apribile",
+"VR6: raffreddamento e catene di distribuzione"
+],
+"volkswagen-transporter-t3-t4-t3-t4": [
+"T3: ruggine strutturale (pianale, longheroni, parte bassa delle porte)",
+"T4 2.5 TDI: cinghia di distribuzione e iniettori",
+"Camper (California/Westfalia): infiltrazioni, impianti e omologazione",
+"Uso da lavoro: chilometri reali e manutenzione",
+"Cambio e frizione"
+],
+"audi-80-b3-b4": [
+"Impianto elettrico",
+"1.9 TDI: iniettori e volano bimassa",
+"Cinghia di distribuzione",
+"Ruggine minima (scocca zincata) – verificare comunque passaruota",
+"Sospensioni anteriori"
+],
+"audi-100-c3-c4": [
+"Elettronica della C4 (quadro, clima)",
+"Evitare il 2.2 turbo delle prime serie",
+"2.5 TDI: cinghia di distribuzione e pompa iniezione",
+"Quattro: differenziale centrale Torsen e giunti",
+"Sospensioni"
+],
+"bmw-3-series-e30": [
+"Cinghia di distribuzione M20 (motore interferente: cambiare ogni 60.000 km)",
+"Ruggine su passaruota, sottoporta, attacchi del ponte posteriore e sotto la batteria",
+"Esemplari modificati o con uso sportivo",
+"Cabriolet: capote e infiltrazioni",
+"Impianto di raffreddamento"
+],
+"bmw-5-series-e34": [
+"Impianto di raffreddamento (radiatore, vaschetta, pompa acqua)",
+"Evitare i V8 M60 prime serie con cilindri Nikasil",
+"Ruggine su passaruota e porte",
+"Cambio automatico",
+"Elettronica di comfort"
+],
+"bmw-3-series-e36": [
+"Raffreddamento (radiatore, vaschetta, termostato, pompa acqua)",
+"Attacchi degli ammortizzatori posteriori e del ponte posteriore",
+"Valvola VANOS (M50/M52)",
+"Esemplari modificati o con uso sportivo",
+"Ruggine su passaruota e sottoporta"
+],
+"saab-900-classic-9000-900-9000": [
+"Frizione e cambio",
+"Turbo e manicotti",
+"Ruggine su porte e passaruota",
+"9000 V6: motore GM meno robusto",
+"Ricambi in via di esaurimento: verificare disponibilità"
+],
+"opel-kadett-e-vectra-a-omega-a-various": [
+"Ruggine su passaruota, sottoporta e portellone",
+"Cinghia di distribuzione",
+"Impianto elettrico",
+"Diesel 1.7 Isuzu: guarnizione testata",
+"Sospensioni"
+],
+"ford-sierra-escort-transit-various": [
+"Ruggine",
+"Cosworth/RS: auto da collezione, spesso replica o modificate",
+"Cinghia di distribuzione",
+"Transit: uso da lavoro e telaio",
+"Impianto elettrico"
+],
+"land-rover-defender-discovery-i-90-110-series-i": [
+"Ruggine al telaio (traversa posteriore, longheroni) e alla paratia anteriore",
+"Perdite d'olio da motore, cambio e assali (normali entro un limite)",
+"Tdi: guarnizione della testata e turbo",
+"Infiltrazioni d'acqua",
+"Corrispondenza telaio–documenti (auto spesso ricostruite)"
+],
+"lada-niva-2121": [
+"Ruggine (pianale, sottoporta, passaruota)",
+"Trasmissione e differenziale centrale (rumorosità)",
+"Qualità delle finiture",
+"Impianto elettrico",
+"Carburatore o iniezione: regolazione"
+],
+"porsche-911-carrera-3-2-964-g-model-964": [
+"Perdite d'olio (964: guarnizioni di testa e catene)",
+"Tendicatena e catene di distribuzione (3.2)",
+"Ruggine sotto i parafanghi e nella zona del serbatoio",
+"Corrispondenza numeri di telaio e motore (\"matching numbers\")",
+"Esemplari incidentati o ricostruiti: perizia sempre consigliata"
+],
+"porsche-944-928-944-928": [
+"Cinghie di distribuzione e degli equilibratori (944: ogni 50.000 km)",
+"928: catena e cinghia, impianto elettrico complesso",
+"Frizione e transaxle",
+"Ruggine minima (scocca zincata), ma verificare sottoporta",
+"Costi di gestione elevati"
+],
+"toyota-yaris-i-ii-xp10-xp90": [
+"Frizione sulle prime 1.0",
+"Cambio robotizzato MMT (evitare o verificare bene)",
+"Consumo d'olio su alcuni 1.3 molto chilometrati",
+"Diesel 1.4 D-4D: iniettori",
+"Ruggine rara"
+],
+"toyota-aygo-citroen-c1-peugeot-107-ab10": [
+"Frizione",
+"Guarnizioni del lunotto (infiltrazioni nel bagagliaio)",
+"Cambio robotizzato (evitare o verificare bene)",
+"Ruggine rara",
+"Rumorosità del motore a tre cilindri normale"
+],
+"suzuki-swift-mz-ez": [
+"Ruggine sui passaruota posteriori",
+"Diesel 1.3 DDiS: FAP e iniettori",
+"Frizione",
+"Sospensioni",
+"Swift Sport: uso sportivo"
+],
+"suzuki-ignis-wagon-r-fh-mm": [
+"Ruggine",
+"Frizione",
+"Impianto elettrico",
+"Versioni 4x4: trasmissione",
+"Ricambi di carrozzeria"
+],
+"honda-jazz-i-ii-gd-ge": [
+"Cambio CVT sulle prime serie (cambi d'olio indispensabili)",
+"Frizione",
+"Bobine di accensione sui 1.4 i-DSI",
+"Ruggine rara",
+"Sedili magici e meccanismi"
+],
+"daihatsu-sirion-cuore-m1-m3-l7": [
+"Ruggine",
+"Ricambi rari",
+"Frizione",
+"Impianto elettrico",
+"Consumo d'olio sui motori chilometrati"
+],
+"fiat-panda-169-169": [
+"Sospensione posteriore e ammortizzatori",
+"Servosterzo elettrico",
+"Impianto elettrico",
+"1.3 Multijet: FAP e iniettori sulle ultime",
+"4x4: giunto viscoso e trasmissione"
+],
+"skoda-fabia-i-6y": [
+"Evitare il 1.2 HTP tre cilindri (catena di distribuzione)",
+"1.9 SDI/TDI: iniettori e volano bimassa",
+"Ruggine alle porte",
+"Impianto elettrico",
+"Cinghia di distribuzione"
+],
+"hyundai-getz-kia-picanto-tb-sa": [
+"Ruggine ai sottoporta",
+"Frizione",
+"Cinghia di distribuzione",
+"1.5 CRDi: iniettori e turbo",
+"Sospensioni"
+],
+"mazda-2-dy": [
+"Ruggine sui passaruota posteriori",
+"Diesel 1.4 CD: iniettori",
+"Frizione",
+"Sospensioni",
+"Impianto elettrico"
+],
+"dacia-logan-sandero-i-l90-b90": [
+"Ruggine sotto la scocca sulle più vecchie",
+"1.5 dCi: iniettori e turbo",
+"Impianto elettrico",
+"Finiture interne economiche",
+"Sospensioni"
+],
+"skoda-octavia-i-1u": [
+"Volano bimassa e frizione sul 1.9 TDI",
+"Iniettori e turbo",
+"Ruggine sul portellone",
+"Cinghia di distribuzione",
+"1.8T: bobine e turbo"
+],
+"volkswagen-golf-iv-bora-1j": [
+"Alzacristalli e impianto elettrico",
+"Sensore della temperatura del liquido e strumentazione (pixel)",
+"1.9 TDI: volano bimassa, iniettori, turbo",
+"Cinghia di distribuzione",
+"Evitare 1.4 16V, 1.8T e V5 se non documentati"
+],
+"volkswagen-passat-b5-audi-a4-b5-b6-3b-8d-8e": [
+"Bracci delle sospensioni anteriori (rumori e usura)",
+"Evitare il 2.5 V6 TDI (alberi a camme)",
+"1.9 TDI: volano bimassa, iniettori pompa-iniettore",
+"Cinghia di distribuzione",
+"Cambio automatico/multitronic (Audi): verificare bene"
+],
+"toyota-corolla-e120-e120": [
+"Consumo d'olio su alcuni 1.6/1.8 VVT-i",
+"Evitare 2.0/2.2 D-4D (guarnizione testata e iniettori)",
+"Cambio robotizzato MMT",
+"Ruggine rara",
+"Impianto di climatizzazione"
+],
+"toyota-avensis-t22-t25-t22-t25": [
+"Evitare 2.0/2.2 D-4D (guarnizione della testata)",
+"Consumo d'olio su alcuni 1.8 VVT-i",
+"Cambio automatico",
+"Ruggine rara",
+"Sospensioni"
+],
+"toyota-prius-ii-xw20": [
+"Età e stato della batteria ibrida (diagnosi consigliata)",
+"Pompa dell'inverter",
+"Fari e ventola della batteria",
+"Consumo d'olio su esemplari molto chilometrati",
+"Taxi: chilometri elevati, ma spesso ben manutenuti"
+],
+"honda-civic-vii-accord-vii-eu-ep-cl-cm": [
+"Consumo d'olio su alcuni 2.4",
+"2.2 i-CTDi: catena di distribuzione e volano",
+"Ruggine rara",
+"Sospensioni",
+"Climatizzatore"
+],
+"mazda-3-6-bk-gg": [
+"Ruggine sui passaruota posteriori (punto critico)",
+"Diesel 2.0 MZR-CD: pompa olio, iniettori, FAP",
+"Sospensioni",
+"Frizione",
+"Impianto elettrico"
+],
+"peugeot-406-8b-8e": [
+"Cuscinetti dell'assale posteriore",
+"Impianto elettrico",
+"2.0 HDi: iniettori e turbo",
+"Cinghia di distribuzione",
+"Cambio automatico"
+],
+"mercedes-benz-e-class-w210-w210": [
+"Ruggine pesante su parafanghi, porte, bagagliaio, sottoporta e attacchi delle molle",
+"Prime CDI (E220/270): guarnizioni degli iniettori e flap di aspirazione",
+"Cambio automatico",
+"Elettronica di comfort",
+"Sospensioni"
+],
+"bmw-3-series-e46-5-series-e39-e46-e39": [
+"Telaietto posteriore della E46 (crepe nella scocca)",
+"Raffreddamento (radiatore, vaschetta, pompa acqua)",
+"Perdite d'olio (coperchio valvole, filtro olio)",
+"Valvola VANOS",
+"Cambio automatico"
+],
+"volvo-v70-ii-s60-p2": [
+"Cambio automatico AW55 (cambiate dure)",
+"Coppia conica sulle AWD",
+"Valvola PCV del motore (perdite d'olio)",
+"Cinghia di distribuzione",
+"Elettronica (modulo dell'acceleratore)"
+],
+"lexus-ls430-is200-ucf30-xe10": [
+"Sospensioni pneumatiche (LS430)",
+"Prezzi dei ricambi originali",
+"Display e cruscotto",
+"Cambio automatico",
+"Ruggine rara"
+],
+"toyota-land-cruiser-j100-j100": [
+"Ruggine al telaio",
+"Avantreno a ruote indipendenti (bracci e giunti)",
+"1HD-FTE: iniettori e turbo",
+"Sospensioni AHC (se presenti) costose",
+"Uso fuoristrada pesante"
+],
+"toyota-hilux-n140-n150-n140-n170": [
+"Ruggine al telaio (verificare, ci sono richiami per i telai)",
+"2.5 D-4D: iniettori a chilometraggi alti",
+"Frizione e volano",
+"Uso da lavoro",
+"Cassone e balestre"
+],
+"toyota-rav4-ii-xa20": [
+"Differenziale posteriore",
+"Evitare il 2.0 D-4D",
+"Consumo d'olio su alcuni benzina",
+"Sospensioni",
+"Ruggine rara"
+],
+"suzuki-jimny-fj-sn": [
+"Ruggine al telaio (punto critico)",
+"Ponte posteriore",
+"Esemplari modificati per fuoristrada",
+"Frizione",
+"Evitare il 1.5 DDiS se possibile"
+],
+"suzuki-grand-vitara-ft-jt": [
+"Ruggine",
+"Evitare 1.9 DDiS / 2.0 HDi",
+"Trasmissione 4x4",
+"Sospensioni",
+"Impianto elettrico"
+],
+"honda-cr-v-ii-rd4-rd9": [
+"Olio del differenziale posteriore (rumori in curva)",
+"Compressore del climatizzatore",
+"2.2 i-CTDi: catena e volano",
+"Sospensioni",
+"Ruggine rara"
+],
+"subaru-forester-sf-sg-sf-sg": [
+"Guarnizione della testata (EJ25)",
+"Ruggine sui passaruota posteriori",
+"Turbo XT: turbina e modifiche",
+"Trasmissione integrale: pneumatici tutti uguali",
+"Cinghia di distribuzione"
+],
+"mitsubishi-l200-iii-k60-k70": [
+"Ruggine al telaio e al cassone",
+"Cinghie di distribuzione e degli equilibratori",
+"Uso da lavoro",
+"Trasmissione 4x4",
+"Molle a balestra"
+],
+"citroen-berlingo-peugeot-partner-i-m49-m59": [
+"Ruggine ai sottoporta",
+"Cuscinetti dell'assale posteriore",
+"1.6 HDi: turbo e guarnizioni degli iniettori",
+"Uso da lavoro",
+"Impianto elettrico"
+],
+"renault-kangoo-i-kc": [
+"Ruggine",
+"Impianto elettrico",
+"1.5 dCi: iniettori a chilometraggi alti",
+"Uso da lavoro",
+"Cinghia di distribuzione"
+],
+"fiat-doblo-i-119-223": [
+"Ruggine",
+"Sospensione anteriore",
+"1.9 JTD: iniettori e turbo",
+"Uso da lavoro",
+"Impianto elettrico"
+]
+}

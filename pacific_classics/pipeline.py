@@ -335,6 +335,7 @@ def publish(listings: list[dict], models: dict, report: dict, demo: bool = False
     meta = {"generated": _now(), "demo": demo, "count": len(listings)}
     public = [public_view(l) for l in listings]
     out.write_text(json.dumps({"meta": meta, "listings": public}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    (SITE_DATA / "checks.json").write_text(json.dumps({m.id: m.it.get("checks", []) for m in models.values()}, ensure_ascii=False), encoding="utf-8")
     (SITE_DATA / "models.json").write_text(json.dumps([m.to_public() for m in models.values()], ensure_ascii=False, indent=1), encoding="utf-8")
     (SITE_DATA / "report.json").unlink(missing_ok=True)          # the report names the sources: admin bundle only
     user, pwd = os.environ.get("PACIFIC_ADMIN_USER"), os.environ.get("PACIFIC_ADMIN_PASSWORD")
