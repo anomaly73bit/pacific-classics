@@ -21,7 +21,15 @@
    "engine_bad_note": "Versioni 16V Cosworth: splendide ma costose e da specialisti",
    "category": "Berlina",
    "recommended_engines": "2.0D, 2.5D, 2.0/2.3 benzina",
-   "model": "190"
+   "model": "190",
+   "checks": [
+    "Ruggine su passaruota posteriori, sottoporta, punti del cric e attacchi delle molle posteriori",
+    "Bracci posteriori multilink e boccole (rumori, usura pneumatici irregolare)",
+    "Diesel 2.0D/2.5D – avviamento a freddo, candelette e fumosità",
+    "Catena di distribuzione e tendicatena sui benzina (rumore all'avviamento)",
+    "Perdite d'olio dalla guarnizione del coperchio punterie e dalla coppa",
+    "Iniezione KE-Jetronic (2.0/2.3) – minimo irregolare e partenze a caldo difficili"
+   ]
   },
   "segment": "classic"
  },
@@ -47,7 +55,15 @@
    "engine_bad_note": "Versioni V8 (E420/500E): magnifiche, ma costi di gestione non da 'increvable'",
    "category": "Berlina / Station wagon / Coupé",
    "recommended_engines": "200D/250D/300D (OM60x), 230E, 300E (M103)",
-   "model": "Classe E"
+   "model": "Classe E",
+   "checks": [
+    "Cablaggio motore \"biodegradabile\" sulle 1993-95 (isolamento che si sbriciola)",
+    "Ruggine su sottoporta, passaruota, attacchi del cric, bordo del parabrezza e fondo del bagagliaio",
+    "Sospensione autolivellante (station wagon S124) – sfere idrauliche scariche",
+    "Diesel OM60x – stato delle candelette, giunti del motore, gioco della pompa iniezione",
+    "Cambio automatico – cambiate dure o slittamenti, olio mai sostituito",
+    "Supporti motore e silent-block del telaietto posteriore"
+   ]
   },
   "segment": "classic"
  },
@@ -73,7 +89,14 @@
    "engine_bad_note": null,
    "category": "Berlina / Station wagon",
    "recommended_engines": "240D, 300D, 230E",
-   "model": "W123 (ultime serie)"
+   "model": "W123 (ultime serie)",
+   "checks": [
+    "Ruggine strutturale – longheroni, sottoporta, pianale anteriore, attacchi del cric, intorno al parabrezza",
+    "Freni a disco posteriori e servofreno",
+    "Diesel aspirati – potenza scarsa normale, ma verificare compressione e fumosità",
+    "Chiusura centralizzata a depressione (pompa e tubicini)",
+    "Sterzo con gioco (scatola guida e tiranti)"
+   ]
   },
   "segment": "classic"
  },
@@ -99,7 +122,14 @@
    "engine_bad_note": "380SE V8 prima serie: problemi alla catena di distribuzione",
    "category": "Berlina / Coupé",
    "recommended_engines": "300SE, 420SE, 300SD",
-   "model": "Classe S"
+   "model": "Classe S",
+   "checks": [
+    "Catena di distribuzione e guide in plastica sui V8 (sostituire a scadenza)",
+    "Climatizzatore e servomotori dell'aria",
+    "Sospensioni pneumatiche/idropneumatiche (SEL/560) – costose da ripristinare",
+    "Ruggine sotto le guarnizioni dei finestrini e nei sottoporta",
+    "Elettronica di comfort (sedili, specchi, chiusura a depressione)"
+   ]
   },
   "segment": "classic"
  },
@@ -125,7 +155,14 @@
    "engine_bad_note": "380SL: catena di distribuzione a una fila sulle prime serie",
    "category": "Roadster",
    "recommended_engines": "300SL, 420SL, 500SL",
-   "model": "SL"
+   "model": "SL",
+   "checks": [
+    "Ruggine sotto i tappeti, nei passaruota e sotto la cromatura delle soglie",
+    "Catena di distribuzione a una fila sulle prime 380SL",
+    "Capote in tela e hardtop (presenza e stato delle guarnizioni)",
+    "Iniezione K/KE-Jetronic – regolazione e partenze a caldo",
+    "Corrispondenza numeri di telaio e motore (auto molto contraffatta)"
+   ]
   },
   "segment": "classic"
  },
@@ -151,7 +188,14 @@
    "engine_bad_note": null,
    "category": "Fuoristrada",
    "recommended_engines": "300GD, 250GD, 230GE",
-   "model": "Classe G"
+   "model": "Classe G",
+   "checks": [
+    "Ruggine su telaio, porte (bordo inferiore), parafanghi e pianale",
+    "Bloccaggi differenziale – verificare che si inseriscano tutti",
+    "Diesel 300GD/250GD lenti per natura: controllare compressione e fumosità",
+    "Perdite d'olio da assali e riduttore",
+    "Infiltrazioni d'acqua da porte e tetto (soprattutto versioni corte)"
+   ]
   },
   "segment": "classic"
  },
@@ -177,7 +221,14 @@
    "engine_bad_note": "SL600 V12: manutenzione molto costosa",
    "category": "Roadster",
    "recommended_engines": "300SL, SL320, 500SL",
-   "model": "SL"
+   "model": "SL",
+   "checks": [
+    "Idraulica della capote (pompa, tubi, cilindri che perdono)",
+    "Sospensione ADS se presente (costosa)",
+    "Cablaggio \"biodegradabile\" sulle prime serie",
+    "Elettronica di comfort e roll-bar automatico",
+    "Hardtop – presenza e stato delle guarnizioni"
+   ]
   },
   "segment": "classic"
  },
@@ -203,7 +254,14 @@
    "engine_bad_note": "V6 PRV (264/B28): da evitare",
    "category": "Berlina / Station wagon",
    "recommended_engines": "B230F / B230FK",
-   "model": "240 / 245"
+   "model": "240 / 245",
+   "checks": [
+    "Ruggine nella parte bassa delle portiere, passaruota e attacchi del ponte posteriore",
+    "Cablaggio e connettori, relè della pompa benzina",
+    "Cinghia di distribuzione B230 (motore non interferente, ma va cambiata)",
+    "Riscaldamento e servomotori del clima",
+    "Assale posteriore e boccole delle barre di reazione"
+   ]
   },
   "segment": "classic"
  },
@@ -229,7 +287,14 @@
    "engine_bad_note": "760 con V6 PRV: il motore debole della gamma",
    "category": "Berlina / Station wagon",
    "recommended_engines": "B230F, B230FT turbo",
-   "model": "740 / 760"
+   "model": "740 / 760",
+   "checks": [
+    "Cambio automatico usurato (AW70/71)",
+    "Ruggine su passaruota e bordo del portellone",
+    "Turbo B230FT – perdite d'olio e gioco della turbina",
+    "Elettronica di accensione e flussometro",
+    "Evitare il V6 PRV (760): consumi e problemi ai alberi a camme"
+   ]
   },
   "segment": "classic"
  },
@@ -255,7 +320,14 @@
    "engine_bad_note": "960 sei cilindri in linea: più delicato e costoso",
    "category": "Berlina / Station wagon",
    "recommended_engines": "B230F/FT, 2.4 TD",
-   "model": "940 / 960"
+   "model": "940 / 960",
+   "checks": [
+    "Cambio automatico – cambiate lente o brusche",
+    "960 sei cilindri: più delicato, verificare manutenzione documentata",
+    "Ruggine su passaruota posteriori e portellone",
+    "Turbo B230FT/B204FT – perdite d'olio e manicotti",
+    "Climatizzatore ed elettronica del cruscotto"
+   ]
   },
   "segment": "classic"
  },
@@ -281,7 +353,14 @@
    "engine_bad_note": "T5/R turbo: usura maggiore, controllare bene",
    "category": "Berlina / Station wagon",
    "recommended_engines": "2.0/2.5 5 cilindri aspirati",
-   "model": "850"
+   "model": "850",
+   "checks": [
+    "Cambio automatico AW50-42 (cambiate dure, modalità di emergenza)",
+    "Cinghia di distribuzione 5 cilindri – motore interferente, scadenze rigide",
+    "Supporti motore e parte anteriore del telaio",
+    "Turbo T5/R: perdite d'olio e usura della turbina",
+    "Display del contachilometri e quadro strumenti (pixel spenti)"
+   ]
   },
   "segment": "classic"
  },
@@ -307,7 +386,14 @@
    "engine_bad_note": "1KZ-TE 3.0 TD (J90): crepe alla testata",
    "category": "Fuoristrada",
    "recommended_engines": "1HZ, 1HD-T, 12H-T, 3F",
-   "model": "Land Cruiser"
+   "model": "Land Cruiser",
+   "checks": [
+    "Ruggine al telaio, ai punti di attacco delle balestre e nei passaruota",
+    "Guarnizione della testata e testata sui diesel turbo 12H-T/1HD-T",
+    "Perdite dai mozzi anteriori (birfield) e dagli assali",
+    "Bloccaggi differenziale e riduttore – verificarne il funzionamento",
+    "Uso fuoristrada pesante: sottoscocca, ammortizzatori, segni di urti"
+   ]
   },
   "segment": "classic"
  },
@@ -333,7 +419,14 @@
    "engine_bad_note": null,
    "category": "Pick-up / Fuoristrada",
    "recommended_engines": "2L, 2L-T, 22R",
-   "model": "Hilux / 4Runner"
+   "model": "Hilux / 4Runner",
+   "checks": [
+    "Ruggine al telaio e al cassone (pick-up)",
+    "Diesel 2L/2L-T: testata e guarnizione (surriscaldamento)",
+    "Mozzi a ruota libera e trasmissione 4x4",
+    "Molle a balestra e giochi dello sterzo",
+    "Uso da lavoro: chilometri e manutenzione reali"
+   ]
   },
   "segment": "classic"
  },
@@ -359,7 +452,14 @@
    "engine_bad_note": null,
    "category": "Utilitaria / Berlina",
    "recommended_engines": "4A-FE, 2C diesel",
-   "model": "Corolla"
+   "model": "Corolla",
+   "checks": [
+    "Ruggine su passaruota e sottoporta",
+    "Perdite d'olio dalla guarnizione del coperchio valvole",
+    "Sospensioni e silent-block",
+    "Carburatore sulle versioni base (minimo e consumi)",
+    "Cinghia di distribuzione"
+   ]
   },
   "segment": "classic"
  },
@@ -385,7 +485,14 @@
    "engine_bad_note": null,
    "category": "Berlina",
    "recommended_engines": "3S-FE, 2C",
-   "model": "Camry / Carina II / Carina E"
+   "model": "Camry / Carina II / Carina E",
+   "checks": [
+    "Ruggine su passaruota posteriori",
+    "Cinghia di distribuzione del 3S-FE",
+    "Consumo d'olio sui motori molto chilometrati",
+    "Cambio automatico (fluido mai sostituito)",
+    "Pochi esemplari ben tenuti: verificare la storia"
+   ]
   },
   "segment": "classic"
  },
@@ -411,7 +518,14 @@
    "engine_bad_note": "7M-GTE: guarnizione della testata punto debole; verificare se sostituita con quella multistrato",
    "category": "Sportiva",
    "recommended_engines": "3S-GE, 7M-GTE",
-   "model": "Celica / MR2 / Supra Mk3"
+   "model": "Celica / MR2 / Supra Mk3",
+   "checks": [
+    "Supra 7M-GTE: guarnizione della testata (verificare se sostituita con quella multistrato)",
+    "Ruggine su passaruota, sottoporta e tetto targa",
+    "Turbo e tubazioni dell'olio sulle versioni turbo",
+    "Esemplari modificati o elaborati: preferire originali",
+    "Celica GT-Four/MR2 turbo: uso sportivo pesante"
+   ]
   },
   "segment": "classic"
  },
@@ -437,7 +551,14 @@
    "engine_bad_note": null,
    "category": "Monovolume",
    "recommended_engines": "2TZ-FE",
-   "model": "Previa"
+   "model": "Previa",
+   "checks": [
+    "Motore centrale: accesso difficile, verificare perdite d'olio e manutenzione",
+    "Ruggine sotto le porte scorrevoli",
+    "Cambio automatico",
+    "Climatizzatore posteriore",
+    "Ricambi di carrozzeria rari"
+   ]
   },
   "segment": "classic"
  },
@@ -463,7 +584,14 @@
    "engine_bad_note": null,
    "category": "Berlina",
    "recommended_engines": "1UZ-FE V8",
-   "model": "LS400"
+   "model": "LS400",
+   "checks": [
+    "Cinghia di distribuzione del 1UZ (motore non interferente sulle prime, ma va cambiata)",
+    "Display del cruscotto e del climatizzatore (pixel spenti)",
+    "Ammortizzatori e sospensioni pneumatiche (versioni con sospensione ad aria)",
+    "Servosterzo – perdite dalla pompa",
+    "Consumi elevati e costi ricambi originali"
+   ]
   },
   "segment": "classic"
  },
@@ -489,7 +617,14 @@
    "engine_bad_note": null,
    "category": "Utilitaria / Coupé / Berlina",
    "recommended_engines": "D16, B16, F20/F22",
-   "model": "Civic / CRX / Accord / Prelude"
+   "model": "Civic / CRX / Accord / Prelude",
+   "checks": [
+    "Ruggine su passaruota posteriori e sottoporta",
+    "Esemplari modificati (VTEC elaborati, assetti): preferire originali",
+    "Cinghia di distribuzione (motori interferenti)",
+    "Prelude 4WS: sterzo posteriore",
+    "Cambio manuale: sincronizzatori della seconda e terza"
+   ]
   },
   "segment": "classic"
  },
@@ -515,7 +650,14 @@
    "engine_bad_note": null,
    "category": "Roadster",
    "recommended_engines": "1.6, 1.8",
-   "model": "MX-5"
+   "model": "MX-5",
+   "checks": [
+    "Ruggine ai sottoporta e ai passaruota posteriori (punto critico)",
+    "Fori di scarico dell'acqua sotto la capote intasati",
+    "Capote in tela (strappi, lunotto opaco)",
+    "Primo albero motore \"corto\" sulle prime 1.6 (verificare puleggia)",
+    "Esemplari modificati o con uso in pista"
+   ]
   },
   "segment": "classic"
  },
@@ -541,7 +683,14 @@
    "engine_bad_note": null,
    "category": "Utilitaria / Berlina",
    "recommended_engines": "B6, FE, RF diesel",
-   "model": "323 / 626"
+   "model": "323 / 626",
+   "checks": [
+    "Ruggine",
+    "Cinghia di distribuzione",
+    "Cambio automatico sulle 626 V6",
+    "Diesel RF: avviamento a freddo e pompa iniezione",
+    "Ricambi di carrozzeria rari"
+   ]
   },
   "segment": "classic"
  },
@@ -567,7 +716,14 @@
    "engine_bad_note": "ZD30 3.0 Di (Patrol successivi): noti per rotture di pistoni e testata",
    "category": "Fuoristrada",
    "recommended_engines": "TD42, RD28",
-   "model": "Patrol / Terrano I"
+   "model": "Patrol / Terrano I",
+   "checks": [
+    "Ruggine al telaio e ai passaruota",
+    "TD42: guarnizione della testata se surriscaldato; RD28: testata crepata su abusi",
+    "Evitare lo ZD30 3.0 Di (pistoni e testata)",
+    "Mozzi e trasmissione 4x4",
+    "Uso fuoristrada pesante: sottoscocca e sospensioni"
+   ]
   },
   "segment": "classic"
  },
@@ -593,7 +749,14 @@
    "engine_bad_note": null,
    "category": "Utilitaria / Coupé",
    "recommended_engines": "GA16, MA10, CA18DET",
-   "model": "Sunny / Micra / 200SX"
+   "model": "Sunny / Micra / 200SX",
+   "checks": [
+    "Ruggine",
+    "200SX S13: quasi sempre elaborate o usate in drift – preferire originali",
+    "Micra K10: carburatore e cambio automatico (sui modelli automatici)",
+    "Catena di distribuzione e consumo d'olio sui motori chilometrati",
+    "Sospensioni e silent-block"
+   ]
   },
   "segment": "classic"
  },
@@ -619,7 +782,14 @@
    "engine_bad_note": "2.8 TD (4M40): crepe alla testata",
    "category": "Fuoristrada",
    "recommended_engines": "2.5 TD (4D56), 3.0 V6",
-   "model": "Pajero"
+   "model": "Pajero",
+   "checks": [
+    "Evitare il 2.8 TD (4M40): crepe alla testata",
+    "Ruggine al telaio, passaruota e sottoporta",
+    "Cinghie di distribuzione e degli equilibratori del 2.5 TD",
+    "Trasmissione Super Select (selezione 4x4 che si inceppa)",
+    "Uso fuoristrada pesante"
+   ]
   },
   "segment": "classic"
  },
@@ -645,7 +815,14 @@
    "engine_bad_note": null,
    "category": "Berlina / Pick-up",
    "recommended_engines": "4G63, 4D56",
-   "model": "Galant / Lancer / L200"
+   "model": "Galant / Lancer / L200",
+   "checks": [
+    "Ruggine (L200: telaio e cassone)",
+    "Cinghia di distribuzione e degli equilibratori del 4G63",
+    "Versioni turbo/VR-4/Evo: uso sportivo e modifiche",
+    "Diesel 4D56: guarnizione della testata",
+    "Ricambi di carrozzeria rari"
+   ]
   },
   "segment": "classic"
  },
@@ -671,7 +848,14 @@
    "engine_bad_note": "EJ25: guarnizioni della testata che cedono",
    "category": "Berlina / Station wagon",
    "recommended_engines": "EJ18/EJ20 aspirati",
-   "model": "Legacy / Impreza"
+   "model": "Legacy / Impreza",
+   "checks": [
+    "Guarnizione della testata (soprattutto EJ25)",
+    "Cinghia di distribuzione dei boxer (interferente sulle versioni turbo)",
+    "Ruggine su passaruota posteriori",
+    "Trasmissione integrale: pneumatici tutti uguali, giunti e differenziale centrale",
+    "Versioni turbo (WRX/STI): elaborazioni e uso sportivo"
+   ]
   },
   "segment": "classic"
  },
@@ -697,7 +881,14 @@
    "engine_bad_note": null,
    "category": "Fuoristrada",
    "recommended_engines": "1.3, 1.6",
-   "model": "SJ Samurai / Vitara"
+   "model": "SJ Samurai / Vitara",
+   "checks": [
+    "Ruggine al telaio (punto critico) e al pianale",
+    "Mozzi a ruota libera e trasmissione 4x4",
+    "Esemplari \"rialzati\" o modificati per fuoristrada",
+    "Capote e infiltrazioni d'acqua (versioni cabrio)",
+    "Guarnizione della testata se surriscaldato"
+   ]
   },
   "segment": "classic"
  },
@@ -723,7 +914,14 @@
    "engine_bad_note": null,
    "category": "Fuoristrada / Utilitaria",
    "recommended_engines": "2.8 D, 1.6",
-   "model": "Rocky / Feroza / Charade"
+   "model": "Rocky / Feroza / Charade",
+   "checks": [
+    "Ruggine",
+    "Ricambi rari (verificare disponibilità)",
+    "Diesel 2.8 (Rocky): guarnizione testata e pompa iniezione",
+    "Trasmissione 4x4",
+    "Impianto elettrico"
+   ]
   },
   "segment": "classic"
  },
@@ -749,7 +947,14 @@
    "engine_bad_note": "GTI 1.9: auto da appassionati, spesso maltrattata",
    "category": "Utilitaria / Berlina",
    "recommended_engines": "XUD7/XUD9 diesel, TU benzina",
-   "model": "205 / 309 / 405 / 306"
+   "model": "205 / 309 / 405 / 306",
+   "checks": [
+    "Impianto elettrico (connettori, quadro strumenti)",
+    "Assale posteriore a barre di torsione: cuscinetti dei bracci (ruote posteriori inclinate)",
+    "Cinghia di distribuzione XUD",
+    "Ruggine minore su passaruota e sotto le guarnizioni",
+    "GTI: auto spesso maltrattate e modificate"
+   ]
   },
   "segment": "classic"
  },
@@ -775,7 +980,14 @@
    "engine_bad_note": null,
    "category": "Berlina / Station wagon",
    "recommended_engines": "2.0, 2.5 diesel",
-   "model": "505"
+   "model": "505",
+   "checks": [
+    "Ruggine",
+    "Ricambi di carrozzeria rari",
+    "Diesel 2.5: pompa iniezione e testata",
+    "Assale posteriore e sospensioni",
+    "Impianto elettrico"
+   ]
   },
   "segment": "classic"
  },
@@ -801,7 +1013,14 @@
    "engine_bad_note": "Xantia Activa / V6: idraulica complessa",
    "category": "Utilitaria / Berlina",
    "recommended_engines": "XUD diesel",
-   "model": "BX / ZX / Xantia"
+   "model": "BX / ZX / Xantia",
+   "checks": [
+    "Idraulica (BX, Xantia): sfere da sostituire, tubi idraulici corrosi, pompa",
+    "Xantia Activa/V6: sistemi complessi e costosi",
+    "Assale posteriore (cuscinetti dei bracci)",
+    "Cinghia di distribuzione XUD",
+    "Impianto elettrico"
+   ]
   },
   "segment": "classic"
  },
@@ -827,7 +1046,14 @@
    "engine_bad_note": null,
    "category": "Utilitaria",
    "recommended_engines": "956/1108 cc",
-   "model": "4"
+   "model": "4",
+   "checks": [
+    "Ruggine al telaio e al pianale (punto critico)",
+    "Ruggine nei parafanghi e nei montanti",
+    "Freni e servofreno",
+    "Cambio a cloche: tiranteria usurata",
+    "Impianto elettrico semplice ma spesso rimaneggiato"
+   ]
   },
   "segment": "classic"
  },
@@ -853,7 +1079,14 @@
    "engine_bad_note": "Clio Williams/16V: sportive, spesso maltrattate",
    "category": "Furgone / Utilitaria",
    "recommended_engines": "F8Q, Energy",
-   "model": "Express / 19 / Clio I diesel"
+   "model": "Express / 19 / Clio I diesel",
+   "checks": [
+    "Impianto elettrico e connettori",
+    "Cinghia di distribuzione del F8Q",
+    "Assale posteriore a barre di torsione (cuscinetti)",
+    "Ruggine (Express: pianale del vano di carico)",
+    "Clio Williams/16V: uso sportivo e modifiche"
+   ]
   },
   "segment": "classic"
  },
@@ -879,7 +1112,14 @@
    "engine_bad_note": null,
    "category": "Utilitaria / Fuoristrada",
    "recommended_engines": "FIRE 1000/1100, 4x4",
-   "model": "Panda"
+   "model": "Panda",
+   "checks": [
+    "Ruggine su sottoporta, pianale, passaruota e attacchi delle balestre posteriori",
+    "4x4: giunto e trasmissione posteriore",
+    "Infiltrazioni d'acqua da parabrezza e tetto apribile",
+    "FIRE: cinghia di distribuzione",
+    "Impianto elettrico"
+   ]
   },
   "segment": "classic"
  },
@@ -905,7 +1145,14 @@
    "engine_bad_note": "Uno Turbo: divertente, ma turbo stanchi",
    "category": "Utilitaria",
    "recommended_engines": "FIRE, 1.7 D",
-   "model": "Uno / Tipo diesel"
+   "model": "Uno / Tipo diesel",
+   "checks": [
+    "Ruggine",
+    "Uno Turbo: turbina e modifiche",
+    "Cinghia di distribuzione",
+    "Impianto elettrico e quadro digitale (Tipo)",
+    "Sospensioni"
+   ]
   },
   "segment": "classic"
  },
@@ -931,7 +1178,14 @@
    "engine_bad_note": "Compressore G60: manutenzione da specialisti",
    "category": "Utilitaria / Berlina",
    "recommended_engines": "1.6D/TD, 1.6/1.8 benzina",
-   "model": "Golf I/II / Jetta"
+   "model": "Golf I/II / Jetta",
+   "checks": [
+    "Ruggine sotto la batteria, nei passaruota, sottoporta e porte inferiori",
+    "Diesel 1.6D/TD: guarnizione della testata e turbo",
+    "Cinghia di distribuzione",
+    "G60 e GTI: modifiche e uso sportivo",
+    "Impianto elettrico e servosterzo"
+   ]
   },
   "segment": "classic"
  },
@@ -957,7 +1211,14 @@
    "engine_bad_note": "VR6: ottimo motore, ma costi di raffreddamento e catena",
    "category": "Utilitaria / Berlina / Station wagon",
    "recommended_engines": "1.9 TDI (1Z/AHU)",
-   "model": "Passat B3/B4 / Golf III / Polo"
+   "model": "Passat B3/B4 / Golf III / Polo",
+   "checks": [
+    "Impianto elettrico (alzacristalli, chiusura centralizzata)",
+    "1.9 TDI: iniettori, turbo e volano bimassa",
+    "Cinghia di distribuzione",
+    "Ruggine su passaruota e attorno al tetto apribile",
+    "VR6: raffreddamento e catene di distribuzione"
+   ]
   },
   "segment": "classic"
  },
@@ -983,7 +1244,14 @@
    "engine_bad_note": "T4 VR6: assetato e complesso",
    "category": "Furgone / Camper",
    "recommended_engines": "1.6TD, 2.5 TDI (T4)",
-   "model": "Transporter T3 / T4"
+   "model": "Transporter T3 / T4",
+   "checks": [
+    "T3: ruggine strutturale (pianale, longheroni, parte bassa delle porte)",
+    "T4 2.5 TDI: cinghia di distribuzione e iniettori",
+    "Camper (California/Westfalia): infiltrazioni, impianti e omologazione",
+    "Uso da lavoro: chilometri reali e manutenzione",
+    "Cambio e frizione"
+   ]
   },
   "segment": "classic"
  },
@@ -1009,7 +1277,14 @@
    "engine_bad_note": null,
    "category": "Berlina / Station wagon",
    "recommended_engines": "1.9 TDI, 2.0, 2.3 5 cilindri",
-   "model": "80"
+   "model": "80",
+   "checks": [
+    "Impianto elettrico",
+    "1.9 TDI: iniettori e volano bimassa",
+    "Cinghia di distribuzione",
+    "Ruggine minima (scocca zincata) – verificare comunque passaruota",
+    "Sospensioni anteriori"
+   ]
   },
   "segment": "classic"
  },
@@ -1035,7 +1310,14 @@
    "engine_bad_note": "2.2 turbo prima serie: più fragile del 5 cilindri aspirato",
    "category": "Berlina / Station wagon",
    "recommended_engines": "2.5 TDI, 2.3 5 cilindri",
-   "model": "100"
+   "model": "100",
+   "checks": [
+    "Elettronica della C4 (quadro, clima)",
+    "Evitare il 2.2 turbo delle prime serie",
+    "2.5 TDI: cinghia di distribuzione e pompa iniezione",
+    "Quattro: differenziale centrale Torsen e giunti",
+    "Sospensioni"
+   ]
   },
   "segment": "classic"
  },
@@ -1061,7 +1343,14 @@
    "engine_bad_note": "E30 324d/td: diesel poco potente e più debole",
    "category": "Berlina / Touring / Cabriolet",
    "recommended_engines": "M20 sei cilindri, M40",
-   "model": "Serie 3"
+   "model": "Serie 3",
+   "checks": [
+    "Cinghia di distribuzione M20 (motore interferente: cambiare ogni 60.000 km)",
+    "Ruggine su passaruota, sottoporta, attacchi del ponte posteriore e sotto la batteria",
+    "Esemplari modificati o con uso sportivo",
+    "Cabriolet: capote e infiltrazioni",
+    "Impianto di raffreddamento"
+   ]
   },
   "segment": "classic"
  },
@@ -1087,7 +1376,14 @@
    "engine_bad_note": "V8 M60 (cilindri Nikasil sulle prime serie)",
    "category": "Berlina / Touring",
    "recommended_engines": "M30 (530i/535i), M50",
-   "model": "Serie 5"
+   "model": "Serie 5",
+   "checks": [
+    "Impianto di raffreddamento (radiatore, vaschetta, pompa acqua)",
+    "Evitare i V8 M60 prime serie con cilindri Nikasil",
+    "Ruggine su passaruota e porte",
+    "Cambio automatico",
+    "Elettronica di comfort"
+   ]
   },
   "segment": "classic"
  },
@@ -1113,7 +1409,14 @@
    "engine_bad_note": "318tds (M41): diesel debole",
    "category": "Berlina / Coupé / Touring",
    "recommended_engines": "M50/M52, M43",
-   "model": "Serie 3"
+   "model": "Serie 3",
+   "checks": [
+    "Raffreddamento (radiatore, vaschetta, termostato, pompa acqua)",
+    "Attacchi degli ammortizzatori posteriori e del ponte posteriore",
+    "Valvola VANOS (M50/M52)",
+    "Esemplari modificati o con uso sportivo",
+    "Ruggine su passaruota e sottoporta"
+   ]
   },
   "segment": "classic"
  },
@@ -1139,7 +1442,14 @@
    "engine_bad_note": "9000 V6: motore GM, meno robusto",
    "category": "Utilitaria / Berlina",
    "recommended_engines": "B201/B202, B234",
-   "model": "900 Classic / 9000"
+   "model": "900 Classic / 9000",
+   "checks": [
+    "Frizione e cambio",
+    "Turbo e manicotti",
+    "Ruggine su porte e passaruota",
+    "9000 V6: motore GM meno robusto",
+    "Ricambi in via di esaurimento: verificare disponibilità"
+   ]
   },
   "segment": "classic"
  },
@@ -1165,7 +1475,14 @@
    "engine_bad_note": null,
    "category": "Utilitaria / Berlina",
    "recommended_engines": "C20NE, 1.7 D Isuzu",
-   "model": "Kadett E / Vectra A / Omega A"
+   "model": "Kadett E / Vectra A / Omega A",
+   "checks": [
+    "Ruggine su passaruota, sottoporta e portellone",
+    "Cinghia di distribuzione",
+    "Impianto elettrico",
+    "Diesel 1.7 Isuzu: guarnizione testata",
+    "Sospensioni"
+   ]
   },
   "segment": "classic"
  },
@@ -1191,7 +1508,14 @@
    "engine_bad_note": "Cosworth/RS: auto da collezione, non da lavoro",
    "category": "Berlina / Furgone",
    "recommended_engines": "Pinto 2.0, Endura D",
-   "model": "Sierra / Escort / Transit"
+   "model": "Sierra / Escort / Transit",
+   "checks": [
+    "Ruggine",
+    "Cosworth/RS: auto da collezione, spesso replica o modificate",
+    "Cinghia di distribuzione",
+    "Transit: uso da lavoro e telaio",
+    "Impianto elettrico"
+   ]
   },
   "segment": "classic"
  },
@@ -1217,7 +1541,14 @@
    "engine_bad_note": "Td5 / V8: affidabilità diversa dal Tdi",
    "category": "Fuoristrada",
    "recommended_engines": "200Tdi, 300Tdi",
-   "model": "Defender / Discovery I"
+   "model": "Defender / Discovery I",
+   "checks": [
+    "Ruggine al telaio (traversa posteriore, longheroni) e alla paratia anteriore",
+    "Perdite d'olio da motore, cambio e assali (normali entro un limite)",
+    "Tdi: guarnizione della testata e turbo",
+    "Infiltrazioni d'acqua",
+    "Corrispondenza telaio–documenti (auto spesso ricostruite)"
+   ]
   },
   "segment": "classic"
  },
@@ -1243,7 +1574,14 @@
    "engine_bad_note": null,
    "category": "Fuoristrada",
    "recommended_engines": "1.6/1.7",
-   "model": "Niva"
+   "model": "Niva",
+   "checks": [
+    "Ruggine (pianale, sottoporta, passaruota)",
+    "Trasmissione e differenziale centrale (rumorosità)",
+    "Qualità delle finiture",
+    "Impianto elettrico",
+    "Carburatore o iniezione: regolazione"
+   ]
   },
   "segment": "classic"
  },
@@ -1269,7 +1607,14 @@
    "engine_bad_note": "930/964 Turbo: manutenzione molto costosa",
    "category": "Sportiva",
    "recommended_engines": "3.2 / 3.6",
-   "model": "911 Carrera 3.2 / 964"
+   "model": "911 Carrera 3.2 / 964",
+   "checks": [
+    "Perdite d'olio (964: guarnizioni di testa e catene)",
+    "Tendicatena e catene di distribuzione (3.2)",
+    "Ruggine sotto i parafanghi e nella zona del serbatoio",
+    "Corrispondenza numeri di telaio e motore (\"matching numbers\")",
+    "Esemplari incidentati o ricostruiti: perizia sempre consigliata"
+   ]
   },
   "segment": "classic"
  },
@@ -1295,7 +1640,14 @@
    "engine_bad_note": "944 Turbo: costi di gestione più alti",
    "category": "Sportiva",
    "recommended_engines": "2.5/2.7/3.0, V8",
-   "model": "944 / 928"
+   "model": "944 / 928",
+   "checks": [
+    "Cinghie di distribuzione e degli equilibratori (944: ogni 50.000 km)",
+    "928: catena e cinghia, impianto elettrico complesso",
+    "Frizione e transaxle",
+    "Ruggine minima (scocca zincata), ma verificare sottoporta",
+    "Costi di gestione elevati"
+   ]
   },
   "segment": "classic"
  },
@@ -1321,7 +1673,14 @@
    "recommended_engines": "1.0 / 1.3 VVT-i",
    "strengths": "Motori piccoli che non muoiono mai, costi di gestione minimi",
    "watch_out": "Frizione sulle prime 1.0, ruggine rara",
-   "engine_bad_note": "1.4 D-4D: iniettori costosi, meglio benzina"
+   "engine_bad_note": "1.4 D-4D: iniettori costosi, meglio benzina",
+   "checks": [
+    "Frizione sulle prime 1.0",
+    "Cambio robotizzato MMT (evitare o verificare bene)",
+    "Consumo d'olio su alcuni 1.3 molto chilometrati",
+    "Diesel 1.4 D-4D: iniettori",
+    "Ruggine rara"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1347,7 +1706,14 @@
    "recommended_engines": "1.0 (Toyota 1KR)",
    "strengths": "Tre cilindri Toyota 1KR: semplice e molto durevole",
    "watch_out": "Frizione, guarnizioni lunotto",
-   "engine_bad_note": "1.4 HDi diesel: raro e meno robusto"
+   "engine_bad_note": "1.4 HDi diesel: raro e meno robusto",
+   "checks": [
+    "Frizione",
+    "Guarnizioni del lunotto (infiltrazioni nel bagagliaio)",
+    "Cambio robotizzato (evitare o verificare bene)",
+    "Ruggine rara",
+    "Rumorosità del motore a tre cilindri normale"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1373,7 +1739,14 @@
    "recommended_engines": "1.3 / 1.5 / 1.6 Sport",
    "strengths": "Motori semplici a catena, leggera e robusta",
    "watch_out": "Ruggine sui passaruota posteriori",
-   "engine_bad_note": "1.3 DDiS (diesel Fiat): meno durevole dei benzina"
+   "engine_bad_note": "1.3 DDiS (diesel Fiat): meno durevole dei benzina",
+   "checks": [
+    "Ruggine sui passaruota posteriori",
+    "Diesel 1.3 DDiS: FAP e iniettori",
+    "Frizione",
+    "Sospensioni",
+    "Swift Sport: uso sportivo"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1399,7 +1772,14 @@
    "recommended_engines": "1.0 / 1.3 / 1.5",
    "strengths": "Essenziali, leggere e quasi indistruttibili",
    "watch_out": "Ruggine",
-   "engine_bad_note": null
+   "engine_bad_note": null,
+   "checks": [
+    "Ruggine",
+    "Frizione",
+    "Impianto elettrico",
+    "Versioni 4x4: trasmissione",
+    "Ricambi di carrozzeria"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1425,7 +1805,14 @@
    "recommended_engines": "1.2 / 1.4 i-DSI",
    "strengths": "Motori i-DSI a prova di bomba, sedili magici, tanto spazio",
    "watch_out": "Cambio CVT sulle prime, verificare i cambi d'olio",
-   "engine_bad_note": "Automatico CVT (prime serie): cambi d'olio indispensabili"
+   "engine_bad_note": "Automatico CVT (prime serie): cambi d'olio indispensabili",
+   "checks": [
+    "Cambio CVT sulle prime serie (cambi d'olio indispensabili)",
+    "Frizione",
+    "Bobine di accensione sui 1.4 i-DSI",
+    "Ruggine rara",
+    "Sedili magici e meccanismi"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1451,7 +1838,14 @@
    "recommended_engines": "1.0 / 1.3",
    "strengths": "Motori del gruppo Toyota, costi bassissimi",
    "watch_out": "Ruggine, ricambi rari",
-   "engine_bad_note": null
+   "engine_bad_note": null,
+   "checks": [
+    "Ruggine",
+    "Ricambi rari",
+    "Frizione",
+    "Impianto elettrico",
+    "Consumo d'olio sui motori chilometrati"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1477,7 +1871,14 @@
    "recommended_engines": "1.2 Fire, 1.1 Fire, 4x4",
    "strengths": "Motore FIRE: economico, semplice, ricambi ovunque in Italia",
    "watch_out": "Sospensione posteriore, impianto elettrico",
-   "engine_bad_note": "1.3 Multijet: buono ma costi FAP/iniettori sulle ultime"
+   "engine_bad_note": "1.3 Multijet: buono ma costi FAP/iniettori sulle ultime",
+   "checks": [
+    "Sospensione posteriore e ammortizzatori",
+    "Servosterzo elettrico",
+    "Impianto elettrico",
+    "1.3 Multijet: FAP e iniettori sulle ultime",
+    "4x4: giunto viscoso e trasmissione"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1503,7 +1904,14 @@
    "recommended_engines": "1.4 MPI, 1.9 SDI / TDI",
    "strengths": "1.9 SDI/TDI: diesel VW da oltre 500.000 km",
    "watch_out": "Catena 1.2 HTP, ruggine alle porte",
-   "engine_bad_note": "1.2 HTP tre cilindri: problemi alla catena"
+   "engine_bad_note": "1.2 HTP tre cilindri: problemi alla catena",
+   "checks": [
+    "Evitare il 1.2 HTP tre cilindri (catena di distribuzione)",
+    "1.9 SDI/TDI: iniettori e volano bimassa",
+    "Ruggine alle porte",
+    "Impianto elettrico",
+    "Cinghia di distribuzione"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1529,7 +1937,14 @@
    "recommended_engines": "1.1 / 1.3 / 1.4",
    "strengths": "Motori coreani semplici, costi di gestione bassi",
    "watch_out": "Ruggine ai sottoporta, frizione",
-   "engine_bad_note": "1.5 CRDi: più debole dei benzina"
+   "engine_bad_note": "1.5 CRDi: più debole dei benzina",
+   "checks": [
+    "Ruggine ai sottoporta",
+    "Frizione",
+    "Cinghia di distribuzione",
+    "1.5 CRDi: iniettori e turbo",
+    "Sospensioni"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1555,7 +1970,14 @@
    "recommended_engines": "1.25 / 1.4 / 1.6",
    "strengths": "Motori benzina Ford-Mazda, costruzione solida",
    "watch_out": "Ruggine sui passaruota posteriori",
-   "engine_bad_note": "1.4 CD diesel (Ford-PSA): meno durevole"
+   "engine_bad_note": "1.4 CD diesel (Ford-PSA): meno durevole",
+   "checks": [
+    "Ruggine sui passaruota posteriori",
+    "Diesel 1.4 CD: iniettori",
+    "Frizione",
+    "Sospensioni",
+    "Impianto elettrico"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1581,7 +2003,14 @@
    "recommended_engines": "1.4 / 1.6 MPI, 1.5 dCi",
    "strengths": "Vecchia meccanica Renault: grezza, economica, indistruttibile",
    "watch_out": "Ruggine sotto la scocca sulle più vecchie",
-   "engine_bad_note": null
+   "engine_bad_note": null,
+   "checks": [
+    "Ruggine sotto la scocca sulle più vecchie",
+    "1.5 dCi: iniettori e turbo",
+    "Impianto elettrico",
+    "Finiture interne economiche",
+    "Sospensioni"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1607,7 +2036,14 @@
    "recommended_engines": "1.9 TDI (ALH/ASV/AXR), 1.6",
    "strengths": "Preferita dai tassisti: 1.9 TDI oltre 1.000.000 di km",
    "watch_out": "Ruggine sul portellone, volano bimassa",
-   "engine_bad_note": "1.8T / RS: turbo benzina, più usura"
+   "engine_bad_note": "1.8T / RS: turbo benzina, più usura",
+   "checks": [
+    "Volano bimassa e frizione sul 1.9 TDI",
+    "Iniettori e turbo",
+    "Ruggine sul portellone",
+    "Cinghia di distribuzione",
+    "1.8T: bobine e turbo"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1633,7 +2069,14 @@
    "recommended_engines": "1.9 TDI (ALH/ASZ/AXR), 1.6",
    "strengths": "1.9 TDI ALH: tra i migliori diesel mai costruiti",
    "watch_out": "Alzacristalli, impianto elettrico, sensore temperatura",
-   "engine_bad_note": "1.4 16V / 1.8T / V5: più deboli o costosi"
+   "engine_bad_note": "1.4 16V / 1.8T / V5: più deboli o costosi",
+   "checks": [
+    "Alzacristalli e impianto elettrico",
+    "Sensore della temperatura del liquido e strumentazione (pixel)",
+    "1.9 TDI: volano bimassa, iniettori, turbo",
+    "Cinghia di distribuzione",
+    "Evitare 1.4 16V, 1.8T e V5 se non documentati"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1659,7 +2102,14 @@
    "recommended_engines": "1.9 TDI (AFN/AVF/AWX)",
    "strengths": "1.9 TDI pompa-iniettore: comuni oltre 500.000 km",
    "watch_out": "Bracci sospensione anteriori, V6 TDI da evitare",
-   "engine_bad_note": "2.5 V6 TDI: usura alberi a camme, costoso"
+   "engine_bad_note": "2.5 V6 TDI: usura alberi a camme, costoso",
+   "checks": [
+    "Bracci delle sospensioni anteriori (rumori e usura)",
+    "Evitare il 2.5 V6 TDI (alberi a camme)",
+    "1.9 TDI: volano bimassa, iniettori pompa-iniettore",
+    "Cinghia di distribuzione",
+    "Cambio automatico/multitronic (Audi): verificare bene"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1685,7 +2135,14 @@
    "recommended_engines": "1.4 / 1.6 VVT-i",
    "strengths": "Silenziosa, semplice, chilometri infiniti",
    "watch_out": "Iniettori 1.4 D-4D, consumo d'olio su alcuni 1.6",
-   "engine_bad_note": "2.0/2.2 D-4D: problemi a guarnizione testata e iniettori"
+   "engine_bad_note": "2.0/2.2 D-4D: problemi a guarnizione testata e iniettori",
+   "checks": [
+    "Consumo d'olio su alcuni 1.6/1.8 VVT-i",
+    "Evitare 2.0/2.2 D-4D (guarnizione testata e iniettori)",
+    "Cambio robotizzato MMT",
+    "Ruggine rara",
+    "Impianto di climatizzazione"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1711,7 +2168,14 @@
    "recommended_engines": "1.8 VVT-i, 2.0 benzina",
    "strengths": "Berlina da taxi, tassi di guasto bassissimi",
    "watch_out": "Guarnizione testata 2.0/2.2 D-4D (T25)",
-   "engine_bad_note": "2.0/2.2 D-4D: guarnizioni della testata che cedono"
+   "engine_bad_note": "2.0/2.2 D-4D: guarnizioni della testata che cedono",
+   "checks": [
+    "Evitare 2.0/2.2 D-4D (guarnizione della testata)",
+    "Consumo d'olio su alcuni 1.8 VVT-i",
+    "Cambio automatico",
+    "Ruggine rara",
+    "Sospensioni"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1737,7 +2201,14 @@
    "recommended_engines": "1.5 Ibrida",
    "strengths": "Taxi con 500.000-1.000.000 km col sistema ibrido originale",
    "watch_out": "Età della batteria ibrida, pompa dell'inverter",
-   "engine_bad_note": null
+   "engine_bad_note": null,
+   "checks": [
+    "Età e stato della batteria ibrida (diagnosi consigliata)",
+    "Pompa dell'inverter",
+    "Fari e ventola della batteria",
+    "Consumo d'olio su esemplari molto chilometrati",
+    "Taxi: chilometri elevati, ma spesso ben manutenuti"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1763,7 +2234,14 @@
    "recommended_engines": "1.4 / 1.6 / 2.0 / 2.4 i-VTEC",
    "strengths": "Benzina i-VTEC quasi indistruttibili",
    "watch_out": "Consumo d'olio su alcuni 2.4, catena 2.2 i-CTDi",
-   "engine_bad_note": "2.2 i-CTDi diesel: buono ma costoso se trascurato"
+   "engine_bad_note": "2.2 i-CTDi diesel: buono ma costoso se trascurato",
+   "checks": [
+    "Consumo d'olio su alcuni 2.4",
+    "2.2 i-CTDi: catena di distribuzione e volano",
+    "Ruggine rara",
+    "Sospensioni",
+    "Climatizzatore"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1789,7 +2267,14 @@
    "recommended_engines": "1.6 / 2.0 benzina",
    "strengths": "Motori benzina MZR molto robusti",
    "watch_out": "Ruggine sui passaruota posteriori, diesel 2.0 MZR-CD",
-   "engine_bad_note": "2.0 MZR-CD diesel: pompa olio e iniettori"
+   "engine_bad_note": "2.0 MZR-CD diesel: pompa olio e iniettori",
+   "checks": [
+    "Ruggine sui passaruota posteriori (punto critico)",
+    "Diesel 2.0 MZR-CD: pompa olio, iniettori, FAP",
+    "Sospensioni",
+    "Frizione",
+    "Impianto elettrico"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1815,7 +2300,14 @@
    "recommended_engines": "2.0 HDi, 1.8 / 2.0 benzina",
    "strengths": "2.0 HDi: il classico motore dei taxi francesi",
    "watch_out": "Cuscinetti assale posteriore, impianto elettrico",
-   "engine_bad_note": "3.0 V6 / 2.2 HDi: costi più alti"
+   "engine_bad_note": "3.0 V6 / 2.2 HDi: costi più alti",
+   "checks": [
+    "Cuscinetti dell'assale posteriore",
+    "Impianto elettrico",
+    "2.0 HDi: iniettori e turbo",
+    "Cinghia di distribuzione",
+    "Cambio automatico"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1841,7 +2333,14 @@
    "recommended_engines": "E 290 TD, E 300 TD (OM606), E 240/280",
    "strengths": "Sei cilindri diesel OM606: una leggenda",
    "watch_out": "Ruggine pesante (parafanghi, porte, bagagliaio), CDI prima serie",
-   "engine_bad_note": "E 220/270 CDI primo common-rail: guarnizioni iniettori e flap"
+   "engine_bad_note": "E 220/270 CDI primo common-rail: guarnizioni iniettori e flap",
+   "checks": [
+    "Ruggine pesante su parafanghi, porte, bagagliaio, sottoporta e attacchi delle molle",
+    "Prime CDI (E220/270): guarnizioni degli iniettori e flap di aspirazione",
+    "Cambio automatico",
+    "Elettronica di comfort",
+    "Sospensioni"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1867,7 +2366,14 @@
    "recommended_engines": "Sei cilindri benzina M54 (320i-330i, 520i-530i)",
    "strengths": "Sei cilindri in linea M54: fluido e molto durevole",
    "watch_out": "Raffreddamento, telaietto posteriore (E46), perdite d'olio",
-   "engine_bad_note": "4 cilindri N42/N46 e primi diesel: meno durevoli"
+   "engine_bad_note": "4 cilindri N42/N46 e primi diesel: meno durevoli",
+   "checks": [
+    "Telaietto posteriore della E46 (crepe nella scocca)",
+    "Raffreddamento (radiatore, vaschetta, pompa acqua)",
+    "Perdite d'olio (coperchio valvole, filtro olio)",
+    "Valvola VANOS",
+    "Cambio automatico"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1893,7 +2399,14 @@
    "recommended_engines": "2.4 / 2.4T benzina 5 cilindri, D5",
    "strengths": "I 5 cilindri superano normalmente i 400.000 km",
    "watch_out": "Cambio automatico (AW55), coppia conica sulle AWD",
-   "engine_bad_note": "T5 / R: alte prestazioni, più usura"
+   "engine_bad_note": "T5 / R: alte prestazioni, più usura",
+   "checks": [
+    "Cambio automatico AW55 (cambiate dure)",
+    "Coppia conica sulle AWD",
+    "Valvola PCV del motore (perdite d'olio)",
+    "Cinghia di distribuzione",
+    "Elettronica (modulo dell'acceleratore)"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1919,7 +2432,14 @@
    "recommended_engines": "4.3 V8 (3UZ), 2.0 sei cilindri in linea",
    "strengths": "Ingegneria di lusso Toyota, tassi di guasto bassissimi",
    "watch_out": "Sospensioni pneumatiche (LS430), prezzi ricambi",
-   "engine_bad_note": null
+   "engine_bad_note": null,
+   "checks": [
+    "Sospensioni pneumatiche (LS430)",
+    "Prezzi dei ricambi originali",
+    "Display e cruscotto",
+    "Cambio automatico",
+    "Ruggine rara"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1945,7 +2465,14 @@
    "recommended_engines": "4.2 TD (1HD-FTE), 4.7 V8",
    "strengths": "1HD-FTE: leggendario sei cilindri diesel",
    "watch_out": "Ruggine al telaio, avantreno a ruote indipendenti",
-   "engine_bad_note": "3.0 D-4D (J120): problemi a iniettori e pistoni"
+   "engine_bad_note": "3.0 D-4D (J120): problemi a iniettori e pistoni",
+   "checks": [
+    "Ruggine al telaio",
+    "Avantreno a ruote indipendenti (bracci e giunti)",
+    "1HD-FTE: iniettori e turbo",
+    "Sospensioni AHC (se presenti) costose",
+    "Uso fuoristrada pesante"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1971,7 +2498,14 @@
    "recommended_engines": "2.4 D, 2.5 / 3.0 D-4D",
    "strengths": "Top Gear non è riuscito a distruggerne uno",
    "watch_out": "Ruggine al telaio, iniettori 2.5 D-4D a km alti",
-   "engine_bad_note": null
+   "engine_bad_note": null,
+   "checks": [
+    "Ruggine al telaio (verificare, ci sono richiami per i telai)",
+    "2.5 D-4D: iniettori a chilometraggi alti",
+    "Frizione e volano",
+    "Uso da lavoro",
+    "Cassone e balestre"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -1997,7 +2531,14 @@
    "recommended_engines": "2.0 VVT-i",
    "strengths": "SUV benzina semplice e molto affidabile",
    "watch_out": "Differenziale posteriore, 2.0 D-4D",
-   "engine_bad_note": "2.0 D-4D: meno durevole del benzina"
+   "engine_bad_note": "2.0 D-4D: meno durevole del benzina",
+   "checks": [
+    "Differenziale posteriore",
+    "Evitare il 2.0 D-4D",
+    "Consumo d'olio su alcuni benzina",
+    "Sospensioni",
+    "Ruggine rara"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -2023,7 +2564,14 @@
    "recommended_engines": "1.3",
    "strengths": "Piccolo vero fuoristrada semplice che non si ferma mai",
    "watch_out": "Ruggine al telaio, ponte posteriore",
-   "engine_bad_note": "1.5 DDiS (diesel Renault): meno durevole"
+   "engine_bad_note": "1.5 DDiS (diesel Renault): meno durevole",
+   "checks": [
+    "Ruggine al telaio (punto critico)",
+    "Ponte posteriore",
+    "Esemplari modificati per fuoristrada",
+    "Frizione",
+    "Evitare il 1.5 DDiS se possibile"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -2049,7 +2597,14 @@
    "recommended_engines": "1.6 / 2.0 / 2.4 benzina",
    "strengths": "Telaio a longheroni (I serie), motori benzina robusti",
    "watch_out": "Ruggine, diesel 1.9 DDiS",
-   "engine_bad_note": "Diesel 1.9 DDiS / 2.0 HDi: più deboli"
+   "engine_bad_note": "Diesel 1.9 DDiS / 2.0 HDi: più deboli",
+   "checks": [
+    "Ruggine",
+    "Evitare 1.9 DDiS / 2.0 HDi",
+    "Trasmissione 4x4",
+    "Sospensioni",
+    "Impianto elettrico"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -2075,7 +2630,14 @@
    "recommended_engines": "2.0 i-VTEC",
    "strengths": "Motore K20: uno dei migliori Honda",
    "watch_out": "Olio differenziale posteriore, compressore clima",
-   "engine_bad_note": "2.2 i-CTDi: buono ma costoso se trascurato"
+   "engine_bad_note": "2.2 i-CTDi: buono ma costoso se trascurato",
+   "checks": [
+    "Olio del differenziale posteriore (rumori in curva)",
+    "Compressore del climatizzatore",
+    "2.2 i-CTDi: catena e volano",
+    "Sospensioni",
+    "Ruggine rara"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -2101,7 +2663,14 @@
    "recommended_engines": "2.0 aspirato (EJ20)",
    "strengths": "Trazione integrale simmetrica e boxer aspirato",
    "watch_out": "Guarnizioni testata sull'EJ25, ruggine sui passaruota posteriori",
-   "engine_bad_note": "2.5 / XT turbo: guarnizione testata e turbo"
+   "engine_bad_note": "2.5 / XT turbo: guarnizione testata e turbo",
+   "checks": [
+    "Guarnizione della testata (EJ25)",
+    "Ruggine sui passaruota posteriori",
+    "Turbo XT: turbina e modifiche",
+    "Trasmissione integrale: pneumatici tutti uguali",
+    "Cinghia di distribuzione"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -2127,7 +2696,14 @@
    "recommended_engines": "2.5 TD (4D56)",
    "strengths": "4D56: diesel meccanico semplice che dura per sempre",
    "watch_out": "Ruggine al telaio, intervalli cinghia di distribuzione",
-   "engine_bad_note": "2.5 DI-D (successivo): catena e FAP"
+   "engine_bad_note": "2.5 DI-D (successivo): catena e FAP",
+   "checks": [
+    "Ruggine al telaio e al cassone",
+    "Cinghie di distribuzione e degli equilibratori",
+    "Uso da lavoro",
+    "Trasmissione 4x4",
+    "Molle a balestra"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -2153,7 +2729,14 @@
    "recommended_engines": "1.9 D (DW8), 2.0 HDi, 1.4 benzina",
    "strengths": "1.9 D DW8: diesel meccanico praticamente indistruttibile",
    "watch_out": "Ruggine ai sottoporta, cuscinetti assale posteriore",
-   "engine_bad_note": "1.6 HDi: turbo e guarnizioni iniettori"
+   "engine_bad_note": "1.6 HDi: turbo e guarnizioni iniettori",
+   "checks": [
+    "Ruggine ai sottoporta",
+    "Cuscinetti dell'assale posteriore",
+    "1.6 HDi: turbo e guarnizioni degli iniettori",
+    "Uso da lavoro",
+    "Impianto elettrico"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -2179,7 +2762,14 @@
    "recommended_engines": "1.5 dCi (K9K), 1.9 D, 1.2 / 1.6 benzina",
    "strengths": "1.5 dCi: uno dei diesel più diffusi in Europa",
    "watch_out": "Ruggine, impianto elettrico, iniettori dCi a km alti",
-   "engine_bad_note": null
+   "engine_bad_note": null,
+   "checks": [
+    "Ruggine",
+    "Impianto elettrico",
+    "1.5 dCi: iniettori a chilometraggi alti",
+    "Uso da lavoro",
+    "Cinghia di distribuzione"
+   ]
   },
   "segment": "youngtimer"
  },
@@ -2205,7 +2795,14 @@
    "recommended_engines": "1.9 JTD / Multijet, 1.4 benzina",
    "strengths": "1.9 JTD: diesel Fiat robusto, ricambi economici in Italia",
    "watch_out": "Ruggine, sospensione anteriore",
-   "engine_bad_note": "1.3 Multijet: meno adatto a uso pesante"
+   "engine_bad_note": "1.3 Multijet: meno adatto a uso pesante",
+   "checks": [
+    "Ruggine",
+    "Sospensione anteriore",
+    "1.9 JTD: iniettori e turbo",
+    "Uso da lavoro",
+    "Impianto elettrico"
+   ]
   },
   "segment": "youngtimer"
  }
