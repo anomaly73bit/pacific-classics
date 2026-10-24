@@ -43,6 +43,7 @@
     document.body.classList.toggle("is-admin", ADMIN);
     document.body.classList.toggle("is-client", !ADMIN);
     $("#adminBar").hidden = !ADMIN;
+    if (!ADMIN) PCStats.page("listings");
     MODEL_BY_ID = Object.fromEntries(MODELS.map(m => [m.id, m]));
     fillSelects();
     applyLang();
@@ -213,8 +214,8 @@
         <tr class="tot"><td>${esc(T.estTotal)}</td><td>≈ € ${fmt(Math.round(tot / 10) * 10)}</td></tr>
         <tr class="opt"><td>${esc(T.estInspection)}</td><td>${esc(T.onRequest)}</td></tr>
       </table>
-      <p class="actions-row"><a class="btn wa" href="${quoteWa(l)}" target="_blank" rel="noopener">💬 WhatsApp</a>
-      <a class="btn primary" href="${quoteMail(l)}">${esc(T.estQuote)}</a>
+      <p class="actions-row"><a class="btn wa" href="${quoteWa(l)}" target="_blank" rel="noopener" data-quote="${esc(l.ref || "")}">💬 WhatsApp</a>
+      <a class="btn primary" href="${quoteMail(l)}" data-quote="${esc(l.ref || "")}">${esc(T.estQuote)}</a>
       <a class="btn sec" href="#" data-goto="service">${esc(T.estMore)}</a></p></div>`;
   }
   const carRef = l => !l ? "" : ADMIN ? l.url : `${l.ref} – ${tTitle(l)} (${location.origin}${location.pathname}#q=${l.ref})`;
@@ -272,6 +273,7 @@
 
   function openDetail(id) {
     const l = ALL.find(x => keyOf(x) === id); if (!l) return;
+    if (!ADMIN) PCStats.track("car", { ref: l.ref, title: tTitle(l) });
     const m = MODEL_BY_ID[l.model_id] || {};
     const h = l.historic || {}, ref = new Date().getFullYear();
     GALLERY = (l.images?.length ? l.images : ["img/placeholder.svg"]).map(safeUrl);
@@ -345,6 +347,11 @@
     document.querySelectorAll(".view").forEach(s => s.hidden = s.id !== "view-" + v);
     if (v === "models") renderModels();
     if (v === "service") scrollTo(0, 0);
+    if (v === "stats" && ADMIN) {
+      let creds = null; try { creds = JSON.parse(sessionStorage.getItem("pc-admin") || "null"); } catch (e) {}
+      PCStats.mount($("#view-stats"), creds || {}, ALL, ref => { const l = ALL.find(x => x.ref === ref); if (l) openDetail(keyOf(l)); });
+    }
+    if (v === "stats" && !ADMIN) showView("listings");
   }
 
   // ---------- photos: big preview on hover, full-screen lightbox on click
@@ -424,5 +431,9 @@
 
   $("#contactBtn").href = quoteMail(null);
   $("#logout").onclick = e => { e.preventDefault(); try { sessionStorage.removeItem("pc-admin"); } catch (x) {} location.reload(); };
+  document.addEventListener("click", e => {
+    const q = e.target.closest("[data-quote]");
+    if (q && !ADMIN) PCStats.track("quote", { ref: q.dataset.quote || null });
+  }, true);
   load();
 })();

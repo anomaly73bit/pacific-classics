@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=202610242257">
+<link rel="stylesheet" href="styles.css?v=202610242343">
 </head>
 <body>
 <header class="masthead">
@@ -23,6 +23,7 @@
       <button class="tab active" data-view="listings" data-t="listings"></button>
       <button class="tab" data-view="models" data-t="models"></button>
       <button class="tab" data-view="service" data-t="service"></button>
+      <button class="tab admin-only" data-view="stats">📊 Statistiche</button>
     </nav>
     <button id="lang" class="lang"></button>
   </div>
@@ -82,6 +83,9 @@
     </div>
   </section>
 
+  <!-- STATS (admin only) -->
+  <section id="view-stats" class="view stats-view" hidden></section>
+
   <!-- LEGAL -->
   <section id="view-legal" class="view legal" hidden>
     <h1>Condizioni del servizio e privacy</h1>
@@ -99,7 +103,7 @@
     <div class="panel">
       <h3>Informativa privacy</h3>
       <p>Titolare del trattamento: Pacific IT Solutions s.r.o., Revoluční 8, 110 00 Praga 1, Repubblica Ceca – IČO 19405553 – <a href="mailto:info@pacificit.solutions">info@pacificit.solutions</a>.</p>
-      <p>Il sito non usa moduli di registrazione né cookie di profilazione. Se ci contatti via email, telefono o WhatsApp, usiamo i dati che ci fornisci (nome, contatti, auto di interesse) solo per risponderti e preparare il preventivo, per il tempo necessario alla trattativa e agli obblighi fiscali. Non li cediamo a terzi, salvo il servizio di escrow e il trasportatore quando l'incarico viene confermato.</p>
+      <p>Il sito non usa moduli di registrazione né cookie. Per contare le visite registriamo in forma anonima il paese e la città approssimativa (ricavati dalla rete, senza salvare l'indirizzo IP), il tipo di dispositivo, il sito di provenienza e le schede auto aperte; i dati sono conservati al massimo 13 mesi. Se ci contatti via email, telefono o WhatsApp, usiamo i dati che ci fornisci (nome, contatti, auto di interesse) solo per risponderti e preparare il preventivo, per il tempo necessario alla trattativa e agli obblighi fiscali. Non li cediamo a terzi, salvo il servizio di escrow e il trasportatore quando l'incarico viene confermato.</p>
       <p>Il sito è ospitato da GitHub Pages e usa i caratteri di Google Fonts: questi servizi possono registrare l'indirizzo IP del visitatore secondo le loro informative. Puoi chiedere in ogni momento accesso, rettifica o cancellazione dei tuoi dati scrivendo all'indirizzo sopra.</p>
     </div>
   </section>
@@ -316,8 +320,9 @@
   </div>
 </dialog>
 
-<script src="admin.js?v=202610242257"></script>
-<script src="i18n.js?v=202610242257"></script>
-<script src="app.js?v=202610242257"></script>
+<script src="stats.js?v=202610242343"></script>
+<script src="admin.js?v=202610242343"></script>
+<script src="i18n.js?v=202610242343"></script>
+<script src="app.js?v=202610242343"></script>
 </body>
 </html>

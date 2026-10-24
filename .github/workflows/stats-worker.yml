@@ -1,0 +1,53 @@
+name: Deploy visit counter
+
+# Deploys worker/ (Cloudflare Worker + D1) to stats.pacificit.solutions.
+# Needs repo secrets CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID, plus the existing
+# PACIFIC_ADMIN_USER / PACIFIC_ADMIN_PASSWORD (the statistics page uses the same login).
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["worker/**", ".github/workflows/stats-worker.yml"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    defaults:
+      run:
+        working-directory: worker
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check secrets
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::error::Add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID in Settings > Secrets and variables > Actions"; exit 1; fi
+      - run: npm i -g wrangler@4
+      - name: Create the database (first run only)
+        run: |
+          ID=$(wrangler d1 list --json | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const d=JSON.parse(s).find(x=>x.name==="pacific-classics-stats");console.log(d?d.uuid:"")})')
+          if [ -z "$ID" ]; then
+            wrangler d1 create pacific-classics-stats
+            ID=$(wrangler d1 list --json | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{console.log(JSON.parse(s).find(x=>x.name==="pacific-classics-stats").uuid)})')
+          fi
+          sed -i "s/__D1_ID__/$ID/" wrangler.toml
+          wrangler d1 execute pacific-classics-stats --remote --file schema.sql
+      - name: Deploy
+        run: wrangler deploy
+      - name: Set secrets
+        env:
+          ADMIN_USER: ${{ secrets.PACIFIC_ADMIN_USER }}
+          ADMIN_PASSWORD: ${{ secrets.PACIFIC_ADMIN_PASSWORD }}
+        run: |
+          printf '%s' "$ADMIN_USER" | wrangler secret put ADMIN_USER
+          printf '%s' "$ADMIN_PASSWORD" | wrangler secret put ADMIN_PASSWORD
+          if [ ! -f .salt-set ]; then openssl rand -hex 16 | wrangler secret put SALT; fi
+      - name: Smoke test
+        run: |
+          sleep 20
+          curl -sf https://stats.pacificit.solutions/ || curl -sf "https://pacific-classics-stats.$(wrangler whoami 2>/dev/null | true).workers.dev/" || true

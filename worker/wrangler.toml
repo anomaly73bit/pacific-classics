@@ -1,0 +1,17 @@
+name = "pacific-classics-stats"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+workers_dev = true
+routes = [{ pattern = "stats.pacificit.solutions", custom_domain = true }]
+
+[vars]
+ALLOWED_ORIGINS = "https://classics.pacificit.solutions,https://anomaly73bit.github.io,http://localhost:8765"
+RETENTION_DAYS = "400"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "pacific-classics-stats"
+database_id = "__D1_ID__"
+
+[triggers]
+crons = ["17 3 * * *"]   # daily cleanup of rows older than RETENTION_DAYS
