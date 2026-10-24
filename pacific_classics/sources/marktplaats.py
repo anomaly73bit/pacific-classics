@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import re
 
+from ..dates import parse_listing_date
 from ..http import dig, next_data, to_int, year_from
 from .base import Source, new_listing
 
@@ -58,6 +59,7 @@ def parse_page(html: str, site: str) -> list[dict]:
             country="BE" if loc.get("countryName") in ("België", "Belgique", "Belgium") else
                     "NL" if loc.get("countryName") in ("Nederland", "Netherlands") else cfg["country"],
             city=loc.get("cityName"),
+            listed_at=parse_listing_date(it.get("date")),
             images=imgs,
             seller_type="dealer" if dig(it, "sellerInformation", "sellerLogoUrl") else "private",
             seller_name=dig(it, "sellerInformation", "sellerName"),

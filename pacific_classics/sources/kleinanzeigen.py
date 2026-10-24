@@ -12,6 +12,7 @@ import re
 
 from bs4 import BeautifulSoup
 
+from ..dates import parse_listing_date
 from ..http import to_int
 from .base import Source, new_listing
 
@@ -82,6 +83,8 @@ def parse_page(html: str, make_hint: str | None = None) -> list[dict]:
         loc = next((t for t in spans if re.match(r"^\d{5}\s+\S", t)), "")
         zm = re.match(r"(\d{5})\s+(.+)", loc)
         alltxt = " | ".join(spans)
+        listed = next((parse_listing_date(t) for t in spans
+                       if re.match(r"^(heute|gestern|\d{1,2}\.\d{1,2}\.\d{4})", t, re.I)), None)
         km = re.search(r"([\d.]+)\s*km\b", alltxt)
         ez = re.search(r"EZ\s*(?:\d{1,2}/)?((?:19|20)\d\d)", alltxt)
         desc_el = art.select_one("p.text-onSurfaceSubdued") or next((p for p in art.select("p") if p is not price_el and "€" not in p.get_text()), None)
@@ -97,6 +100,7 @@ def parse_page(html: str, make_hint: str | None = None) -> list[dict]:
             year=int(ez.group(1)) if ez else None,
             mileage_km=to_int(km.group(1)) if km else None,
             country="DE",
+            listed_at=listed,
             zip=zm.group(1) if zm else None,
             city=zm.group(2) if zm else None,
             images=[_big(img_url)] if img_url and img_url.startswith("http") else [],

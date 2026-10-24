@@ -33,6 +33,10 @@ window.I18N = {
     docsTitle: "Paperwork", docService: "Service book", docInvoices: "Repair invoices", docInspections: "Inspection history", docOwnersLabel: "Owners",
     docYes: "stated in the ad", docNo: "stated missing", docAsk: "not stated: ask", docOwners: n => `${n} owner(s)`,
     docsNote: "Before buying we always ask the seller for copies of service book, invoices and inspections.",
+    onlineLabel: "Online for",
+    onlineFor: n => n === 0 ? "Online since today" : n === 1 ? "Online for 1 day" : `Online for ${n} days`,
+    onlineAtLeast: n => n <= 1 ? "Online for a few days" : `Online for at least ${n} days`,
+    onlineSince: d => `listed on ${d}`, onlineTracked: d => `tracked since ${d}`,
     original: "Original text", highlights: "Key facts from the ad", sold: "SOLD", soldTitle: "This car has been sold", soldCount: n => `${n} recently sold`, showSold: "Show recently sold cars", estInspection: "+ Workshop inspection (optional)", onRequest: "on request", estCarAdmin: "Purchase price", openSheet: "Details & quote", ref: "Car code", estimate: "Delivered to Italy with Pacific Classics", estCar: "Car price (service included)", estFee: "Commission 5%", estTransport: "Truck transport (estimate)", estPapers: "Deregistration & export papers", estTotal: "Estimated total in escrow", estMore: "How it works", estQuote: "Request a quote", hoverHint: "Hover a photo to enlarge it, click for full screen", prev: "Previous", next: "Next",
     alerts: {
       HIST_FIVA: p => `Historic-eligible (FIVA/EU 30 y) — built ${p.year}`,
@@ -95,6 +99,10 @@ window.I18N = {
     docsTitle: "Documentazione dell'auto", docService: "Libretto tagliandi", docInvoices: "Fatture delle riparazioni", docInspections: "Storico revisioni", docOwnersLabel: "Proprietari",
     docYes: "dichiarato nell'annuncio", docNo: "dichiarato assente", docAsk: "non indicato: da chiedere", docOwners: n => `${n}° proprietario`,
     docsNote: "Prima di comprare chiediamo sempre al venditore copie di libretto, fatture e revisioni.",
+    onlineLabel: "Online da",
+    onlineFor: n => n === 0 ? "Online da oggi" : n === 1 ? "Online da 1 giorno" : `Online da ${n} giorni`,
+    onlineAtLeast: n => n <= 1 ? "Online da pochi giorni" : `Online da almeno ${n} giorni`,
+    onlineSince: d => `pubblicata il ${d}`, onlineTracked: d => `la seguiamo dal ${d}`,
     original: "Testo originale dell'annuncio", highlights: "Punti salienti dell'annuncio", sold: "VENDUTA", soldTitle: "Quest'auto è stata venduta", soldCount: n => `${n} vendute di recente`, showSold: "Mostra le auto vendute di recente", estInspection: "+ Perizia in officina (facoltativa)", onRequest: "su preventivo", estCarAdmin: "Prezzo d'acquisto", openSheet: "Scheda completa e preventivo", ref: "Codice auto", estimate: "In Italia con Pacific Classics", estCar: "Prezzo dell'auto (servizio incluso)", estFee: "Commissione 5%", estTransport: "Trasporto su bisarca (stima)", estPapers: "Radiazione e pratiche export", estTotal: "Totale stimato in escrow", estMore: "Come funziona", estQuote: "Richiedi un preventivo", hoverHint: "Passa il mouse su una foto per ingrandirla, clicca per vederla a tutto schermo", prev: "Precedente", next: "Successiva",
     alerts: {
       HIST_FIVA: p => `Iscrivibile come storica (FIVA/UE 30 anni) — del ${p.year}`,

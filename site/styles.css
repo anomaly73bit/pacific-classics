@@ -294,3 +294,8 @@ body.is-admin .client-only { display: none !important; }
 .photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .card .body { gap: 8px; }
 .card .alerts { min-height: 0; }
+
+/* how long the ad has been online */
+.online { font-size: 13px; color: var(--muted); }
+.online.new { color: #157a41; font-weight: 600; }
+.online.old { color: #9a5b00; }

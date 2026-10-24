@@ -117,7 +117,7 @@
       price_desc: (a, b) => (priceOf(b) ?? -1) - (priceOf(a) ?? -1),
       year: (a, b) => (a.year ?? 9999) - (b.year ?? 9999),
       km: (a, b) => (a.mileage_km ?? 9e9) - (b.mileage_km ?? 9e9),
-      new: (a, b) => String(b.first_seen).localeCompare(String(a.first_seen)),
+      new: (a, b) => String(b.online_since || b.first_seen).localeCompare(String(a.online_since || a.first_seen)),
     }[f.sort];
     return out.sort(by);
   }
@@ -179,6 +179,7 @@
         </div>
         <h3 class="title"${ADMIN ? ` title="${esc(l.title)}"` : ""}>${esc(tTitle(l))}</h3>
         <div class="specs">${specs.map(s => `<span>${esc(s)}</span>`).join("")}</div>
+        ${onlineHtml(l)}
         <div class="where">${flag(l.country)} <span>${esc([l.zip, l.city].filter(Boolean).join(" ") || COUNTRY[l.country] || "")}</span>
           · <a href="${mapUrl(l)}" target="_blank" rel="noopener">${esc(T.map)}</a>
           · <span class="src">${ADMIN ? esc(SOURCE_NAMES[l.source] || l.source) + " · " : ""}${l.seller_type ? esc(T[l.seller_type]) : ""}</span></div>
@@ -219,6 +220,24 @@
   const carRef = l => !l ? "" : ADMIN ? l.url : `${l.ref} – ${tTitle(l)} (${location.origin}${location.pathname}#q=${l.ref})`;
   const quoteWa = l => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Ciao Pacific Classics, vorrei un preventivo per questa auto: " + carRef(l))}`;
   const quoteMail = l => `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Preventivo Pacific Classics: " + (l?.title || ""))}&body=${encodeURIComponent((l ? "Auto: " + carRef(l) + "\n" : "Link o descrizione dell'auto: \n") + "Città di consegna: \nNome e telefono: \n")}`;
+
+  // ---------- how long the ad has been online (from the marketplace date, else from when our robot first saw it)
+  const DAY = 86400000;
+  function onlineDays(l) {
+    const d = l.online_since || l.first_seen; if (!d) return null;
+    return Math.max(0, Math.floor((Date.now() - new Date(d + "T00:00:00").getTime()) / DAY));
+  }
+  function onlineText(l, long) {
+    const n = onlineDays(l); if (n == null) return null;
+    const exact = l.online_exact, d = new Date((l.online_since || l.first_seen) + "T00:00:00").toLocaleDateString(lang === "it" ? "it-IT" : "en-GB");
+    const base = exact ? T.onlineFor(n) : T.onlineAtLeast(n);
+    return long ? `${base} · ${exact ? T.onlineSince(d) : T.onlineTracked(d)}` : base;
+  }
+  function onlineHtml(l) {
+    const n = onlineDays(l); if (n == null) return "";
+    const cls = n <= 3 ? "new" : n >= 60 ? "old" : "";
+    return `<div class="online ${cls}">🕒 ${esc(onlineText(l, false))}</div>`;
+  }
 
   // ---------- price verdict, documents
   const RATING = { great: "rGreat", good: "rGood", fair: "rFair", high: "rHigh", suspicious: "rSusp", unknown: "rUnknown" };
@@ -262,6 +281,7 @@
       [T.country, `${flag(l.country)} ${esc(COUNTRY[l.country] || l.country || "")}`],
       ["📍", `${esc([l.zip, l.city, l.region].filter(Boolean).join(" "))} · <a href="${mapUrl(l)}" target="_blank" rel="noopener">${esc(T.map)}</a>`],
       [T.ref, l.ref ? `<b>${esc(l.ref)}</b>` : null],
+      [T.onlineLabel, onlineText(l, true)],
       [T.seller, `${esc(T[l.seller_type] || "–")}${ADMIN && l.seller_name ? " · " + esc(l.seller_name) : ""}`],
       ...(ADMIN ? [[T.median, REPORT.market?.[l.model_id] ? `€ ${fmt(REPORT.market[l.model_id].median_price)} (${REPORT.market[l.model_id].count})` : "–"],
                    ["Fonte", `${esc(SOURCE_NAMES[l.source] || l.source)}${l.currency !== "EUR" && l.price ? " · " + fmt(l.price) + " " + esc(l.currency) : ""}`]] : []),
@@ -297,7 +317,6 @@
           <h3>${esc(T.historicBox)}</h3>
           <p>${esc(T.fivaFrom(h.fiva_year ?? "–"))}${h.fiva ? " · <b>" + esc(T.eligibleNow) + "</b>" : ""}</p>
           <p>${esc(T.asiFrom(h.asi_year ?? "–"))}${h.asi ? " · <b>" + esc(T.eligibleNow) + "</b>" : ""}</p>
-          ${l.first_seen ? `<p class="src">${esc(T.firstSeen(l.first_seen))}</p>` : ""}
           ${ADMIN && l.also_on?.length ? `<p>${esc(T.alsoOn)}: ${l.also_on.map(o => `<a href="${esc(safeUrl(o.url))}" target="_blank" rel="noopener">${esc(SOURCE_NAMES[o.source] || o.source)}</a>`).join(", ")}</p>` : ""}
           ${ADMIN ? `<p style="margin-top:12px"><a class="btn primary" style="display:inline-block" href="${esc(safeUrl(l.url))}" target="_blank" rel="noopener nofollow">${esc(T.view(SOURCE_NAMES[l.source] || l.source))}</a></p>` : ""}
         </div>

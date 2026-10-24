@@ -260,3 +260,13 @@ def test_price_rating_frames():
     assert price_rating(8100, 8000, 6, False)["frame"] is None
     assert price_rating(7000, 8000, 6, True)["frame"] == "red"   # accident/defect: red whatever the price
     assert price_rating(7000, None, 2, False)["level"] == "unknown"
+
+
+def test_listing_dates():
+    from datetime import date
+    from pacific_classics.dates import parse_listing_date as p
+    t = date(2026, 10, 24)
+    assert p("Heute, 11:32", t) == "2026-10-24" and p("Gestern", t) == "2026-10-23"
+    assert p("23.12.2025", t) == "2025-12-23" and p("17 okt 26", t) == "2026-10-17"
+    assert p("3 dec", t) == "2025-12-03" and p("12 mrt. 26", t) == "2026-03-12"
+    assert p("TOP", t) is None

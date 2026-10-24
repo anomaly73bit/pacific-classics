@@ -31,6 +31,7 @@ def new_listing(source: str, sid, **kw) -> dict:
         "seller_type": None,    # dealer | private
         "seller_name": None,
         "description": None,
+        "listed_at": None,      # ISO date the ad went online, when the marketplace shows it
     }
     rec.update({k: v for k, v in kw.items() if v is not None})
     return rec

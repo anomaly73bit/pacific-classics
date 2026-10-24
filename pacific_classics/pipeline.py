@@ -183,6 +183,11 @@ def process(raw: list[tuple[dict, list[str]]], models: dict, cfg: dict, report: 
         st["last_seen"] = today
         state[ref_of(item["id"])] = st
         item["first_seen"] = st["first_seen"]
+        cands = [d for d in (st.get("online_since"), item.get("listed_at")) if d]
+        if cands:
+            st["online_since"] = min(cands)
+        item["online_since"] = st.get("online_since") or st["first_seen"]
+        item["online_exact"] = bool(st.get("online_since"))
         item["_hist"] = st
         seen[item["id"]] = item
 
@@ -293,7 +298,8 @@ def _mark_cross_site_duplicates(listings: list[dict]):
 
 PUBLIC_FIELDS = ("model_id", "variant", "title", "title_it", "year", "year_estimated", "mileage_km", "fuel", "gearbox",
                  "power_kw", "country", "city", "zip", "region", "images", "seller_type", "highlights", "alerts", "historic",
-                 "score", "first_seen", "sold", "sold_at", "match_confidence", "lang", "price_vs_median_pct", "demo", "docs")
+                 "score", "first_seen", "sold", "sold_at", "match_confidence", "lang", "price_vs_median_pct", "demo", "docs",
+                 "online_since", "online_exact")
 
 
 def ref_of(lid: str) -> str:
